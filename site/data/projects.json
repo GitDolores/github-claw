@@ -1,0 +1,26 @@
+[
+  {
+    "name": "ai-projects-learning 示例库",
+    "description": "本仓库的示例项目集合与学习笔记（示例条目，可替换为真实项目）",
+    "repo_url": "https://github.com/GitDolores/github-claw",
+    "tags": ["示例","导航","学习"],
+    "stars": 42,
+    "last_updated": "2026-07-30"
+  },
+  {
+    "name": "transformer-playground",
+    "description": "轻量级 Transformer 实验与可视化示例，适合入门和教学",
+    "repo_url": "https://github.com/huggingface/transformers",
+    "tags": ["Transformer","NLP","示例"],
+    "stars": 130000,
+    "last_updated": "2026-07-01"
+  },
+  {
+    "name": "vision-models-examples",
+    "description": "计算机视觉常用模型与数据预处理实战示例",
+    "repo_url": "https://github.com/onnx/models",
+    "tags": ["CV","模型","实战"],
+    "stars": 8000,
+    "last_updated": "2026-06-12"
+  }
+]
