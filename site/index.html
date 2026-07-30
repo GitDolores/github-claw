@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>AI Projects Learning · 导航站</title>
+  <meta name="description" content="ai-projects-learning — 精选开源 AI 项目、路线图、更新日志与增长趋势一站式导航。" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/styles.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container nav">
+      <a class="brand" href="#">AI Projects Learning</a>
+      <nav>
+        <a href="#projects">精选</a>
+        <a href="#roadmap">路线图</a>
+        <a href="#changelog">更新日志</a>
+        <a href="#growth">增长趋势</a>
+        <a class="btn" href="https://github.com/GitDolores/github-claw" target="_blank">查看仓库</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container hero-grid">
+        <div>
+          <h1>把学习变成可复用的项目库</h1>
+          <p class="lead">ai-projects-learning：精选开源 AI 项目集合、学习路线、最佳实践与成长数据——一页式导航与展示，助你快速上手与贡献。</p>
+          <p class="ctas">
+            <a class="cta primary" href="#projects">探索精选</a>
+            <a class="cta" href="#roadmap">查看路线图</a>
+          </p>
+          <p class="meta">由 <strong>GitDolores</strong> 维护 · 更新时间：<span id="build-time">2026-07-30</span></p>
+        </div>
+        <div class="hero-card">
+          <img alt="AI illustration" src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='600' height='360' viewBox='0 0 600 360'><defs><linearGradient id='g' x1='0' x2='1'><stop stop-color='%233a86ff' offset='0'/><stop stop-color='%238f7bff' offset='1'/></linearGradient></defs><rect rx='18' width='600' height='360' fill='url(%23g)'/><g fill='white' opacity='0.95' transform='translate(40,40)'><rect x='0' y='0' width='220' height='24' rx='6'/><rect x='0' y='40' width='520' height='18' rx='6'/><rect x='0' y='70' width='520' height='14' rx='6'/><circle cx='480' cy='220' r='60' fill='rgba(255,255,255,0.08)'/></g></svg>" />
+        </div>
+      </div>
+    </section>
+
+    <section id="projects" class="container section">
+      <h2>精选项目</h2>
+      <p class="section-lead">从入门到进阶，按主题与用途精选的开源项目，带上学习路线与贡献方法。</p>
+
+      <div class="grid cards" id="projects-list">
+        <!-- 项目卡片由 script.js 填充 -->
+      </div>
+    </section>
+
+    <section id="roadmap" class="container section">
+      <h2>路线图</h2>
+      <div class="timeline">
+        <div class="item"><strong>2026 Q3</strong><span>完善教程、补充中文文档、准备示例课件</span></div>
+        <div class="item"><strong>2026 Q4</strong><span>增加互动学习路径与示例项目挑战</span></div>
+        <div class="item"><strong>2027 Q1</strong><span>搭建社区贡献流程与月度活动</span></div>
+      </div>
+    </section>
+
+    <section id="changelog" class="container section">
+      <h2>更新日志</h2>
+      <ul class="changelog">
+        <li><strong>v0.1</strong> · 2026-07-30 — 首个导航官网上线，包含精选、路线图与增长洞察。</li>
+        <li><strong>v0.0</strong> · 2026-07-15 — 仓库初始化与内容收集。</li>
+      </ul>
+    </section>
+
+    <section id="growth" class="container section">
+      <h2>增长趋势</h2>
+      <p class="section-lead">仓库关注度与贡献热度示例图（每周）</p>
+      <div class="card chart-card">
+        <canvas id="growthChart" height="160"></canvas>
+      </div>
+    </section>
+
+    <section class="container section subscribe">
+      <h2>关注与参与</h2>
+      <p>在 GitHub 上 Star、Fork、提交 Issue 或 Pull Request 都能帮助项目成长。欢迎加入贡献与讨论！</p>
+      <p><a class="btn primary" href="https://github.com/GitDolores/github-claw" target="_blank">前往仓库</a></p>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div> © 2026 GitDolores · ai-projects-learning · <a href="https://github.com/GitDolores/github-claw" target="_blank">GitHub</a></div>
+      <div class="footer-links">由 <strong>Copilot</strong> 协助生成 · 页面自动部署</div>
+    </div>
+  </footer>
+
+  <script src="assets/script.js"></script>
+</body>
+</html>
