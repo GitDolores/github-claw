@@ -9,26 +9,30 @@
     "topics": [],
     "license": null,
     "default_branch": "main",
-    "pushed_at": "2026-08-27T09:05:41Z",
+    "pushed_at": "2026-08-27T09:12:58Z",
     "created_at": "2026-07-29T03:22:23Z",
     "homepage": null,
     "size_kb": 21,
     "archived": false
   },
-  "overview": "「GitDolores/github-claw」是一个以 CSS 为主的项目，仓库里大约有 23 个文件（不含 git 内部文件），源码规模约 104.4 KB。 它在 GitHub 上拿到了 0 颗星、0 次复刻（fork），还有 0 个开放中的 issue。 主要语言构成（按文件数）：CSS 1 个文件、HTML 2 个文件。 用到的关键框架/工具：GitHub Actions。 一句话总结：这是一个以CSS开发的项目，结构和文档都比较规范，适合通读学习。",
+  "overview": "「GitDolores/github-claw」是一个以 JavaScript 为主的项目，仓库里大约有 23 个文件（不含 git 内部文件），源码规模约 105.2 KB。 它在 GitHub 上拿到了 0 颗星、0 次复刻（fork），还有 0 个开放中的 issue。 主要语言构成（按文件数）：JavaScript 4 个文件、CSS 1 个文件、HTML 2 个文件。 用到的关键框架/工具：GitHub Actions。 一句话总结：这是一个以JavaScript开发的项目，结构和文档都比较规范，适合通读学习。",
   "languages": [
+    {
+      "label": "JavaScript",
+      "speak": "网页脚本语言，让页面能动起来",
+      "color": "#f1e05a",
+      "files": 4
+    },
     {
       "label": "CSS",
       "speak": "网页样式语言",
       "color": "#563d7c",
-      "ext": "css",
       "files": 1
     },
     {
       "label": "HTML",
       "speak": "网页骨架标记语言",
       "color": "#e34c26",
-      "ext": "html",
       "files": 2
     }
   ],
@@ -130,7 +134,7 @@
   "core_modules": [
     {
       "path": "tools/analyze.mjs",
-      "size": "24.3 KB",
+      "size": "25.1 KB",
       "why": null
     },
     {
@@ -228,9 +232,9 @@
   ],
   "stats": {
     "files": 23,
-    "bytes": 106905,
+    "bytes": 107674,
     "sampled": 4
   },
-  "generated_at": "2026-08-27T09:09:27.923Z",
+  "generated_at": "2026-08-27T09:13:14.163Z",
   "analyzer": "claw-static-analyzer v1"
 }

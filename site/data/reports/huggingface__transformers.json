@@ -2,7 +2,7 @@
   "meta": {
     "full_name": "huggingface/transformers",
     "description": "🤗 Transformers: the model-definition framework for state-of-the-art machine learning models in text, vision, audio, and multimodal models, for both inference and training. ",
-    "stars": 164489,
+    "stars": 164490,
     "forks": 34383,
     "open_issues": 2404,
     "language": "Python",
@@ -35,8 +35,21 @@
     "size_kb": 507597,
     "archived": false
   },
-  "overview": "「huggingface/transformers」是一个以 Python 为主的项目，仓库里大约有 6449 个文件（不含 git 内部文件），源码规模约 90.3 MB。 官方一句话介绍：🤗 Transformers: the model-definition framework for state-of-the-art machine learning models in text, vision, audio, and multimodal models, for both inference and training.  它在 GitHub 上拿到了 164.5k 颗星、34.4k 次复刻（fork），还有 2404 个开放中的 issue。 官方标签：audio、deep-learning、deepseek、gemma、glm、hacktoberfest。 许可证是 Apache-2.0，决定了你怎么合法使用这些代码。 主要语言：Python。 用到的关键框架/工具：Transformers、PyTorch、torchvision、Accelerate、NumPy、pandas。 一句话总结：这是一个 AI/机器学习项目，适合想了解「模型是怎么搭起来」的读者。",
-  "languages": [],
+  "overview": "「huggingface/transformers」是一个以 Python 为主的项目，仓库里大约有 6449 个文件（不含 git 内部文件），源码规模约 90.3 MB。 官方一句话介绍：🤗 Transformers: the model-definition framework for state-of-the-art machine learning models in text, vision, audio, and multimodal models, for both inference and training.  它在 GitHub 上拿到了 164.5k 颗星、34.4k 次复刻（fork），还有 2404 个开放中的 issue。 官方标签：audio、deep-learning、deepseek、gemma、glm、hacktoberfest。 许可证是 Apache-2.0，决定了你怎么合法使用这些代码。 主要语言构成（按文件数）：Python 4794 个文件、Shell 7 个文件。 用到的关键框架/工具：Transformers、PyTorch、torchvision、Accelerate、NumPy、pandas。 一句话总结：这是一个 AI/机器学习项目（主力语言 Python），适合想了解「模型是怎么搭起来」的读者。",
+  "languages": [
+    {
+      "label": "Python",
+      "speak": "AI 领域第一语言，语法简单好读",
+      "color": "#3572A5",
+      "files": 4794
+    },
+    {
+      "label": "Shell",
+      "speak": "命令行脚本，粘合各种工具",
+      "color": "#89e051",
+      "files": 7
+    }
+  ],
   "frameworks": [
     {
       "dep": "transformers",
@@ -221,12 +234,8 @@
   ],
   "entry_files": [
     {
-      "path": "conftest.py",
-      "hint": "pytest 测试配置"
-    },
-    {
-      "path": "setup.py",
-      "hint": "Python 安装配置"
+      "path": "src/transformers/__init__.py",
+      "hint": "Python 包初始化文件"
     }
   ],
   "core_modules": [
@@ -273,7 +282,7 @@
   ],
   "data_flow": [
     "你（用户/调用方）发起一个动作：运行命令、打开网页或调用接口。",
-    "程序从入口文件「conftest.py」启动，先做初始化：读配置、准备环境、注册要用的组件。",
+    "程序从入口文件「src/transformers/__init__.py」启动，先做初始化：读配置、准备环境、注册要用的组件。",
     "核心逻辑在「src/transformers/models/__init__.py」这类模块里：真正的计算/推理/业务规则都发生在这里。",
     "过程中会借道「utils/check_config_attributes.py」这类工具模块：它们像瑞士军刀，谁需要谁来拿。",
     "需要存取的数据会落到数据库，通过 ORM 层读写。",
@@ -332,7 +341,7 @@
     },
     {
       "title": "第三步：从入口顺藤摸瓜",
-      "body": "从「conftest.py」开始读，每遇到一个陌生函数就跳过去看一眼，回来继续。像逛公园，先走主路再钻小径。"
+      "body": "从「src/transformers/__init__.py」开始读，每遇到一个陌生函数就跳过去看一眼，回来继续。像逛公园，先走主路再钻小径。"
     },
     {
       "title": "善用目录语义",
@@ -348,6 +357,6 @@
     "bytes": 94693741,
     "sampled": 2463
   },
-  "generated_at": "2026-08-27T09:09:33.410Z",
+  "generated_at": "2026-08-27T09:13:19.890Z",
   "analyzer": "claw-static-analyzer v1"
 }
