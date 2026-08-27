@@ -4,7 +4,11 @@
     "description": "Build Agentic workflows, RAG pipelines, with rich AI model and tool support on one collaborative workspace.",
     "repo": "langgenius/dify",
     "repo_url": "https://github.com/langgenius/dify",
-    "tags": ["智能体", "工作流", "RAG"],
+    "tags": [
+      "智能体",
+      "工作流",
+      "RAG"
+    ],
     "stars": 153656,
     "forks": 24286,
     "last_updated": "2026-08-27",
@@ -15,10 +19,30 @@
     "description": "The most powerful and modular diffusion model GUI, api and backend with a graph/nodes interface.",
     "repo": "Comfy-Org/ComfyUI",
     "repo_url": "https://github.com/Comfy-Org/ComfyUI",
-    "tags": ["文生图", "节点式", "Stable Diffusion"],
+    "tags": [
+      "文生图",
+      "节点式",
+      "Stable Diffusion"
+    ],
     "stars": 130238,
     "forks": 15355,
     "last_updated": "2026-08-27",
+    "archived": false
+  },
+  {
+    "name": "llm-course",
+    "description": "Course to get into Large Language Models (LLMs) with roadmaps and Colab notebooks.",
+    "repo": "mlabonne/llm-course",
+    "repo_url": "https://github.com/mlabonne/llm-course",
+    "category": "learning",
+    "tags": [
+      "课程",
+      "LLM",
+      "入门"
+    ],
+    "stars": 82015,
+    "forks": 9542,
+    "last_updated": "2026-02-05",
     "archived": false
   },
   {
@@ -27,7 +51,11 @@
     "repo": "hiyouga/LlamaFactory",
     "repo_url": "https://github.com/hiyouga/LlamaFactory",
     "category": "mlops",
-    "tags": ["微调", "训练框架", "LLM"],
+    "tags": [
+      "微调",
+      "训练框架",
+      "LLM"
+    ],
     "stars": 74393,
     "forks": 9102,
     "last_updated": "2026-08-27",
@@ -38,22 +66,14 @@
     "description": "🌟 The Multi-Agent Framework: First AI Software Company, Towards Natural Language Programming",
     "repo": "FoundationAgents/MetaGPT",
     "repo_url": "https://github.com/FoundationAgents/MetaGPT",
-    "tags": ["智能体", "多智能体", "软件工程"],
+    "tags": [
+      "智能体",
+      "多智能体",
+      "软件工程"
+    ],
     "stars": 70062,
     "forks": 8907,
     "last_updated": "2026-01-21",
-    "archived": false
-  },
-  {
-    "name": "llm-course",
-    "description": "Course to get into Large Language Models (LLMs) with roadmaps and Colab notebooks.",
-    "repo": "mlabonne/llm-course",
-    "repo_url": "https://github.com/mlabonne/llm-course",
-    "category": "learning",
-    "tags": ["课程", "LLM", "入门"],
-    "stars": 82015,
-    "forks": 9542,
-    "last_updated": "2026-02-05",
     "archived": false
   },
   {
@@ -61,7 +81,11 @@
     "description": "Search infrastructure for AI",
     "repo": "chroma-core/chroma",
     "repo_url": "https://github.com/chroma-core/chroma",
-    "tags": ["向量数据库", "RAG", "检索"],
+    "tags": [
+      "向量数据库",
+      "RAG",
+      "检索"
+    ],
     "stars": 29158,
     "forks": 2464,
     "last_updated": "2026-08-27",

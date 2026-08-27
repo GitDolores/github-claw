@@ -1,9 +1,9 @@
 {
-  "generated_at": "2026-08-27T10:59:00.466Z",
+  "generated_at": "2026-08-27T11:36:55.589Z",
   "total_projects": 9,
   "total_featured": 6,
   "total_archived": 3,
-  "total_stars": 939781,
+  "total_stars": 939798,
   "categories": [
     {
       "id": "llm",
@@ -19,17 +19,17 @@
         },
         {
           "name": "llama.cpp",
-          "stars": 125875,
+          "stars": 125885,
           "repo_url": "https://github.com/ggml-org/llama.cpp"
         },
         {
           "name": "vllm",
-          "stars": 90203,
+          "stars": 90205,
           "repo_url": "https://github.com/vllm-project/vllm"
         }
       ],
       "main_language": "Python + C++",
-      "total_stars": 380574,
+      "total_stars": 380586,
       "summary": "大模型 / LLM（语言大模型与相关训练、推理工具）：收录 3 个项目（正在精选 2 个）。最热门的是「transformer-playground」（⭐164.5k）；主力语言 Python + C++。"
     },
     {
@@ -41,7 +41,7 @@
       "top_projects": [
         {
           "name": "stable-diffusion-webui",
-          "stars": 164678,
+          "stars": 164680,
           "repo_url": "https://github.com/AUTOMATIC1111/stable-diffusion-webui"
         },
         {
@@ -51,7 +51,7 @@
         }
       ],
       "main_language": "Python",
-      "total_stars": 174453,
+      "total_stars": 174455,
       "summary": "计算机视觉（图像识别、目标检测、分割与生成）：收录 2 个项目（正在精选 1 个）。最热门的是「stable-diffusion-webui」（⭐164.7k）；主力语言 Python。"
     },
     {
@@ -80,12 +80,12 @@
       "top_projects": [
         {
           "name": "AutoGPT",
-          "stars": 186920,
+          "stars": 186921,
           "repo_url": "https://github.com/Significant-Gravitas/AutoGPT"
         }
       ],
       "main_language": "Python",
-      "total_stars": 186920,
+      "total_stars": 186921,
       "summary": "AI 智能体（能自主规划调用工具的 AI 程序）：收录 1 个项目（正在精选 1 个）。最热门的是「AutoGPT」（⭐186.9k）；主力语言 Python。"
     },
     {
@@ -97,7 +97,7 @@
       "top_projects": [
         {
           "name": "ML-For-Beginners",
-          "stars": 89832,
+          "stars": 89834,
           "repo_url": "https://github.com/microsoft/ML-For-Beginners"
         },
         {
@@ -107,7 +107,7 @@
         }
       ],
       "main_language": "HTML + JavaScript",
-      "total_stars": 89832,
+      "total_stars": 89834,
       "summary": "教程 / 学习资源（课程、笔记、面试题与示例集）：收录 2 个项目（正在精选 1 个）。最热门的是「ML-For-Beginners」（⭐89.8k）；主力语言 HTML + JavaScript。"
     }
   ],
