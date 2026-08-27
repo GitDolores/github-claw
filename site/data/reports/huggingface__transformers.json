@@ -3,7 +3,7 @@
     "full_name": "huggingface/transformers",
     "description": "🤗 Transformers: the model-definition framework for state-of-the-art machine learning models in text, vision, audio, and multimodal models, for both inference and training. ",
     "stars": 164489,
-    "forks": 34385,
+    "forks": 34383,
     "open_issues": 2405,
     "language": "Python",
     "topics": [
@@ -29,58 +29,310 @@
     ],
     "license": "Apache-2.0",
     "default_branch": "main",
-    "pushed_at": "2026-08-27T08:36:34Z",
+    "pushed_at": "2026-08-27T09:03:47Z",
     "created_at": "2018-10-29T13:56:00Z",
     "homepage": "https://huggingface.co/transformers",
     "size_kb": 507597,
     "archived": false
   },
-  "overview": "「huggingface/transformers」规模较大（495.7 MB），静态克隆分析较慢，这里给出基于 GitHub 元数据的轻量档案。官方介绍：🤗 Transformers: the model-definition framework for state-of-the-art machine learning models in text, vision, audio, and multimodal models, for both inference and training.  它有 164.5k 颗星，主要语言是 Python。建议先读 README，再看 examples 目录。",
-  "languages": [
+  "overview": "「huggingface/transformers」是一个以 Python 为主的项目，仓库里大约有 6449 个文件（不含 git 内部文件），源码规模约 90.3 MB。 官方一句话介绍：🤗 Transformers: the model-definition framework for state-of-the-art machine learning models in text, vision, audio, and multimodal models, for both inference and training.  它在 GitHub 上拿到了 164.5k 颗星、34.4k 次复刻（fork），还有 2405 个开放中的 issue。 官方标签：audio、deep-learning、deepseek、gemma、glm、hacktoberfest。 许可证是 Apache-2.0，决定了你怎么合法使用这些代码。 主要语言：Python。 用到的关键框架/工具：Transformers、PyTorch、torchvision、Accelerate、NumPy、pandas。 一句话总结：这是一个 AI/机器学习项目，适合想了解「模型是怎么搭起来」的读者。",
+  "languages": [],
+  "frameworks": [
     {
-      "label": "Python",
-      "speak": "AI 领域第一语言，语法简单好读",
-      "bytes": 74533347,
-      "files": null
+      "dep": "transformers",
+      "label": "Transformers",
+      "speak": "Hugging Face 模型库，NLP 事实标准",
+      "category": "AI"
     },
     {
-      "label": "Dockerfile",
-      "speak": "",
-      "bytes": 52902,
-      "files": null
+      "dep": "torch",
+      "label": "PyTorch",
+      "speak": "深度学习框架，AI 研究首选",
+      "category": "AI"
     },
     {
-      "label": "Makefile",
-      "speak": "",
-      "bytes": 3187,
-      "files": null
+      "dep": "torchvision",
+      "label": "torchvision",
+      "speak": "PyTorch 官方视觉工具集",
+      "category": "AI"
     },
     {
-      "label": "Shell",
-      "speak": "命令行脚本，粘合各种工具",
-      "bytes": 1838,
-      "files": null
+      "dep": "accelerate",
+      "label": "Accelerate",
+      "speak": "多卡/分布式训练加速器",
+      "category": "AI"
     },
     {
-      "label": "Jsonnet",
-      "speak": "",
-      "bytes": 937,
-      "files": null
+      "dep": "numpy",
+      "label": "NumPy",
+      "speak": "科学计算基石",
+      "category": "科学"
+    },
+    {
+      "dep": "pandas",
+      "label": "pandas",
+      "speak": "表格数据处理神器",
+      "category": "科学"
+    },
+    {
+      "label": ".gitignore",
+      "speak": "声明哪些文件不进版本库",
+      "category": "Git"
+    },
+    {
+      "label": "GitHub Actions",
+      "speak": "仓库内置自动化流水线",
+      "category": "CI/CD"
     }
   ],
-  "frameworks": [],
-  "dir_tree": [],
-  "entry_files": [],
-  "core_modules": [],
-  "data_flow": [
-    "（仓库规模大，未做源码级扫描；数据流说明需要克隆分析）"
+  "dir_tree": [
+    {
+      "dir": "src/transformers",
+      "count": 2969,
+      "sample": [
+        "src/transformers/__init__.py",
+        "src/transformers/_typing.py",
+        "src/transformers/activations.py",
+        "src/transformers/audio_utils.py"
+      ],
+      "meaning": "源代码主目录（src = source）"
+    },
+    {
+      "dir": "tests/models",
+      "count": 1395,
+      "sample": [
+        "tests/models/__init__.py",
+        "tests/models/zoedepth/__init__.py",
+        "tests/models/zoedepth/test_image_processing_zoedepth.py",
+        "tests/models/zoedepth/test_modeling_zoedepth.py"
+      ],
+      "meaning": "测试代码"
+    },
+    {
+      "dir": "docs/source",
+      "count": 1371,
+      "sample": [
+        "docs/source/_config.py",
+        "docs/source/zh/_toctree.yml",
+        "docs/source/zh/accelerate.md",
+        "docs/source/zh/add_new_pipeline.md"
+      ],
+      "meaning": "项目文档"
+    },
+    {
+      "dir": "examples/pytorch",
+      "count": 94,
+      "sample": [
+        "examples/pytorch/3d_parallel_checks.py",
+        "examples/pytorch/README.md",
+        "examples/pytorch/_tests_requirements.txt",
+        "examples/pytorch/conftest.py"
+      ],
+      "meaning": "示例代码（学习入口！）"
+    },
+    {
+      "dir": "tests/fixtures",
+      "count": 80,
+      "sample": [
+        "tests/fixtures/config.json",
+        "tests/fixtures/dummy-config.json",
+        "tests/fixtures/dummy_feature_extractor_config.json",
+        "tests/fixtures/empty.txt"
+      ],
+      "meaning": "测试代码"
+    },
+    {
+      "dir": "utils",
+      "count": 73,
+      "sample": [
+        "utils/add_dates.py",
+        "utils/add_pipeline_model_mapping_to_test.py",
+        "utils/aggregate_failure_reports.py",
+        "utils/check_auto.py"
+      ],
+      "meaning": "工具函数集散地"
+    },
+    {
+      "dir": ".github/workflows",
+      "count": 59,
+      "sample": [
+        ".github/workflows/TROUBLESHOOT.md",
+        ".github/workflows/add-model-like.yml",
+        ".github/workflows/ai-review.yml",
+        ".github/workflows/anti-slop.yml"
+      ],
+      "meaning": "GitHub 平台专属配置（Actions、Issue 模板等）"
+    },
+    {
+      "dir": "tests/quantization",
+      "count": 50,
+      "sample": [
+        "tests/quantization/vptq_integration/__init__.py",
+        "tests/quantization/vptq_integration/test_vptq.py",
+        "tests/quantization/torchao_integration/__init__.py",
+        "tests/quantization/torchao_integration/test_torchao.py"
+      ],
+      "meaning": "测试代码"
+    },
+    {
+      "dir": "tests/utils",
+      "count": 47,
+      "sample": [
+        "tests/utils/__init__.py",
+        "tests/utils/test_activations.py",
+        "tests/utils/test_add_new_model_like.py",
+        "tests/utils/test_attention_visualizer.py"
+      ],
+      "meaning": "测试代码"
+    },
+    {
+      "dir": "examples/modular-transformers",
+      "count": 37,
+      "sample": [
+        "examples/modular-transformers/README.md",
+        "examples/modular-transformers/configuration_dummy.py",
+        "examples/modular-transformers/configuration_duplicated_method.py",
+        "examples/modular-transformers/configuration_my_new_model.py"
+      ],
+      "meaning": "示例代码（学习入口！）"
+    },
+    {
+      "dir": "tests/trainer",
+      "count": 36,
+      "sample": [
+        "tests/trainer/TESTING_GUIDE.md",
+        "tests/trainer/__init__.py",
+        "tests/trainer/test_data_collator.py",
+        "tests/trainer/test_trainer.py"
+      ],
+      "meaning": "测试代码"
+    },
+    {
+      "dir": "tests/pipelines",
+      "count": 27,
+      "sample": [
+        "tests/pipelines/__init__.py",
+        "tests/pipelines/test_pipelines_any_to_any.py",
+        "tests/pipelines/test_pipelines_audio_classification.py",
+        "tests/pipelines/test_pipelines_automatic_speech_recognition.py"
+      ],
+      "meaning": "测试代码"
+    }
   ],
-  "patterns": [],
-  "doc_quotes": [],
+  "entry_files": [
+    {
+      "path": "conftest.py",
+      "hint": "pytest 测试配置"
+    },
+    {
+      "path": "setup.py",
+      "hint": "Python 安装配置"
+    }
+  ],
+  "core_modules": [
+    {
+      "path": "src/transformers/models/__init__.py",
+      "size": "16.0 KB",
+      "why": "数据模型层"
+    },
+    {
+      "path": "utils/check_config_attributes.py",
+      "size": "20.4 KB",
+      "why": "工具函数"
+    },
+    {
+      "path": "utils/check_copies.py",
+      "size": "44.8 KB",
+      "why": "工具函数"
+    },
+    {
+      "path": "utils/check_docstrings.py",
+      "size": "87.4 KB",
+      "why": "工具函数"
+    },
+    {
+      "path": "utils/check_repo.py",
+      "size": "70.8 KB",
+      "why": "工具函数"
+    },
+    {
+      "path": "utils/checkers.py",
+      "size": "27.8 KB",
+      "why": "工具函数"
+    },
+    {
+      "path": "utils/create_dummy_models.py",
+      "size": "91.5 KB",
+      "why": "工具函数"
+    },
+    {
+      "path": "utils/modular_model_converter.py",
+      "size": "112.4 KB",
+      "why": "工具函数"
+    }
+  ],
+  "data_flow": [
+    "你（用户/调用方）发起一个动作：运行命令、打开网页或调用接口。",
+    "程序从入口文件「conftest.py」启动，先做初始化：读配置、准备环境、注册要用的组件。",
+    "核心逻辑在「src/transformers/models/__init__.py」这类模块里：真正的计算/推理/业务规则都发生在这里。",
+    "过程中会借道「utils/check_config_attributes.py」这类工具模块：它们像瑞士军刀，谁需要谁来拿。",
+    "需要存取的数据会落到数据库，通过 ORM 层读写。",
+    "处理完成后，结果原路返回：渲染成页面、打印到终端或打包成 API 响应，交回给你。"
+  ],
+  "patterns": [
+    {
+      "pattern": "路由分发",
+      "speak": "URL 映射到处理函数",
+      "severity": "common",
+      "where": "utils/check_config_attributes.py"
+    },
+    {
+      "pattern": "接口约定",
+      "speak": "TypeScript 定义数据形状，契约先行",
+      "severity": "common",
+      "where": "tests/pipelines/test_pipelines_common.py"
+    },
+    {
+      "pattern": "观察者/响应式流",
+      "speak": "数据像水流，订阅了就能收到",
+      "severity": "notable",
+      "where": "tests/models/gemma/test_modeling_gemma.py"
+    },
+    {
+      "pattern": "经典 GoF 模式",
+      "speak": "用名字就能看出意图的面向对象套路",
+      "severity": "notable",
+      "where": "tests/models/code_llama/test_tokenization_code_llama.py"
+    },
+    {
+      "pattern": "async/await",
+      "speak": "用同步写法处理异步，代码更好读",
+      "severity": "common",
+      "where": "src/transformers/utils/network_logging.py"
+    }
+  ],
+  "doc_quotes": [
+    {
+      "file": "CODE_OF_CONDUCT.md",
+      "text": "We as members, contributors, and leaders pledge to make participation in our community a harassment-free experience for everyone, regardless of age, body size, visible or invisible disability, ethnicity, sex characteristics, gender identity and expression, level of experience, education, socio-econo"
+    },
+    {
+      "file": "CONTRIBUTING.md",
+      "text": "<!--- Copyright 2020 The HuggingFace Team. All rights reserved."
+    },
+    {
+      "file": "ISSUES.md",
+      "text": "<!--- Copyright 2020 The HuggingFace Team. All rights reserved."
+    }
+  ],
   "read_suggestions": [
     {
       "title": "第一步：读 README",
       "body": "打开仓库根目录的 README.md，了解它「是什么、解决什么问题、怎么跑起来」。它有官网/文档：https://huggingface.co/transformers"
+    },
+    {
+      "title": "第三步：从入口顺藤摸瓜",
+      "body": "从「conftest.py」开始读，每遇到一个陌生函数就跳过去看一眼，回来继续。像逛公园，先走主路再钻小径。"
     },
     {
       "title": "善用目录语义",
@@ -92,10 +344,10 @@
     }
   ],
   "stats": {
-    "files": null,
-    "bytes": 611146788,
-    "sampled": 0
+    "files": 6449,
+    "bytes": 94693741,
+    "sampled": 2463
   },
-  "generated_at": "2026-08-27T08:58:28.249Z",
-  "analyzer": "claw-metadata-profile v1"
+  "generated_at": "2026-08-27T09:05:01.950Z",
+  "analyzer": "claw-static-analyzer v1"
 }

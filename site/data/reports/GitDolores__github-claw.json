@@ -9,27 +9,27 @@
     "topics": [],
     "license": null,
     "default_branch": "main",
-    "pushed_at": "2026-08-27T07:54:10Z",
+    "pushed_at": "2026-08-27T09:02:15Z",
     "created_at": "2026-07-29T03:22:23Z",
     "homepage": null,
     "size_kb": 21,
     "archived": false
   },
-  "overview": "「GitDolores/github-claw」是一个以 HTML 为主的项目，仓库里大约有 14 个文件（不含 git 内部文件），源码规模约 22.9 KB。 它在 GitHub 上拿到了 0 颗星、0 次复刻（fork），还有 0 个开放中的 issue。 主要语言构成（按文件数）：HTML 1 个文件、CSS 1 个文件。 用到的关键框架/工具：GitHub Actions。 一句话总结：这是一个以HTML开发的项目，结构和文档都比较规范，适合通读学习。",
+  "overview": "「GitDolores/github-claw」是一个以 CSS 为主的项目，仓库里大约有 23 个文件（不含 git 内部文件），源码规模约 94.7 KB。 它在 GitHub 上拿到了 0 颗星、0 次复刻（fork），还有 0 个开放中的 issue。 主要语言构成（按文件数）：CSS 1 个文件、HTML 2 个文件。 用到的关键框架/工具：GitHub Actions。 一句话总结：这是一个以CSS开发的项目，结构和文档都比较规范，适合通读学习。",
   "languages": [
-    {
-      "label": "HTML",
-      "speak": "网页骨架标记语言",
-      "color": "#e34c26",
-      "ext": "html",
-      "files": 1
-    },
     {
       "label": "CSS",
       "speak": "网页样式语言",
       "color": "#563d7c",
       "ext": "css",
       "files": 1
+    },
+    {
+      "label": "HTML",
+      "speak": "网页骨架标记语言",
+      "color": "#e34c26",
+      "ext": "html",
+      "files": 2
     }
   ],
   "frameworks": [
@@ -40,6 +40,17 @@
     }
   ],
   "dir_tree": [
+    {
+      "dir": "site/data",
+      "count": 5,
+      "sample": [
+        "site/data/analysis-status.json",
+        "site/data/projects.json",
+        "site/data/reports/GitDolores__github-claw.json",
+        "site/data/reports/huggingface__transformers.json"
+      ],
+      "meaning": "网站目录"
+    },
     {
       "dir": "/",
       "count": 4,
@@ -53,21 +64,32 @@
     },
     {
       "dir": "site",
-      "count": 2,
+      "count": 3,
       "sample": [
         "site/CNAME",
-        "site/index.html"
+        "site/index.html",
+        "site/report.html"
       ],
       "meaning": "网站目录"
     },
     {
       "dir": "site/assets",
-      "count": 2,
+      "count": 3,
       "sample": [
+        "site/assets/report.js",
         "site/assets/script.js",
         "site/assets/styles.css"
       ],
       "meaning": "网站目录"
+    },
+    {
+      "dir": "tools",
+      "count": 2,
+      "sample": [
+        "tools/analyze.mjs",
+        "tools/dictionaries.mjs"
+      ],
+      "meaning": "开发辅助脚本"
     },
     {
       "dir": "memory/daily",
@@ -79,12 +101,13 @@
       "meaning": null
     },
     {
-      "dir": "site/data",
-      "count": 1,
+      "dir": ".github/workflows",
+      "count": 2,
       "sample": [
-        "site/data/projects.json"
+        ".github/workflows/analyze.yml",
+        ".github/workflows/pages.yml"
       ],
-      "meaning": "网站目录"
+      "meaning": "GitHub 平台专属配置（Actions、Issue 模板等）"
     },
     {
       "dir": "memory",
@@ -101,34 +124,72 @@
         "memory/longterm/.gitkeep"
       ],
       "meaning": null
-    },
-    {
-      "dir": ".github/workflows",
-      "count": 1,
-      "sample": [
-        ".github/workflows/pages.yml"
-      ],
-      "meaning": "GitHub 平台专属配置（Actions、Issue 模板等）"
     }
   ],
   "entry_files": [],
   "core_modules": [
     {
+      "path": "tools/analyze.mjs",
+      "size": "24.3 KB",
+      "why": null
+    },
+    {
+      "path": "tools/dictionaries.mjs",
+      "size": "10.1 KB",
+      "why": null
+    },
+    {
+      "path": "site/assets/report.js",
+      "size": "7.7 KB",
+      "why": null
+    },
+    {
       "path": "site/assets/script.js",
-      "size": "2.5 KB",
+      "size": "3.1 KB",
       "why": null
     }
   ],
   "data_flow": [
     "你（用户/调用方）发起一个动作：运行命令、打开网页或调用接口。",
-    "处理完成后，结果原路返回：渲染成页面、打印到终端或打包成 API 响应，交回给你。"
+    "处理完成后，结果原路返回：渲染成页面、打印到终端或打包成 API 响应，交回给你。",
+    "任何一步出错都会被 try/catch 兜住，转成友好的错误提示，而不是直接崩溃。"
   ],
   "patterns": [
     {
       "pattern": "async/await",
       "speak": "用同步写法处理异步，代码更好读",
       "severity": "common",
-      "where": "site/assets/script.js"
+      "where": "tools/analyze.mjs"
+    },
+    {
+      "pattern": "异常捕获",
+      "speak": "出错不崩溃，兜住处理",
+      "severity": "common",
+      "where": "tools/analyze.mjs"
+    },
+    {
+      "pattern": "路由分发",
+      "speak": "URL 映射到处理函数",
+      "severity": "common",
+      "where": "tools/analyze.mjs"
+    },
+    {
+      "pattern": "依赖注入",
+      "speak": "对象不自己造依赖，由容器分配",
+      "severity": "notable",
+      "where": "tools/dictionaries.mjs"
+    },
+    {
+      "pattern": "状态管理",
+      "speak": "全局状态集中管理，UI 只负责显示",
+      "severity": "notable",
+      "where": "tools/dictionaries.mjs"
+    },
+    {
+      "pattern": "GraphQL",
+      "speak": "按需取数据的新式 API 风格",
+      "severity": "notable",
+      "where": "tools/dictionaries.mjs"
     },
     {
       "pattern": "事件驱动",
@@ -166,10 +227,10 @@
     }
   ],
   "stats": {
-    "files": 14,
-    "bytes": 23472,
-    "sampled": 1
+    "files": 23,
+    "bytes": 96922,
+    "sampled": 4
   },
-  "generated_at": "2026-08-27T08:40:23.702Z",
+  "generated_at": "2026-08-27T09:04:55.995Z",
   "analyzer": "claw-static-analyzer v1"
 }
