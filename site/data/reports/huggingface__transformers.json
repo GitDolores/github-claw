@@ -4,7 +4,7 @@
     "description": "🤗 Transformers: the model-definition framework for state-of-the-art machine learning models in text, vision, audio, and multimodal models, for both inference and training. ",
     "stars": 164489,
     "forks": 34383,
-    "open_issues": 2405,
+    "open_issues": 2404,
     "language": "Python",
     "topics": [
       "audio",
@@ -29,13 +29,13 @@
     ],
     "license": "Apache-2.0",
     "default_branch": "main",
-    "pushed_at": "2026-08-27T09:03:47Z",
+    "pushed_at": "2026-08-27T09:07:43Z",
     "created_at": "2018-10-29T13:56:00Z",
     "homepage": "https://huggingface.co/transformers",
     "size_kb": 507597,
     "archived": false
   },
-  "overview": "「huggingface/transformers」是一个以 Python 为主的项目，仓库里大约有 6449 个文件（不含 git 内部文件），源码规模约 90.3 MB。 官方一句话介绍：🤗 Transformers: the model-definition framework for state-of-the-art machine learning models in text, vision, audio, and multimodal models, for both inference and training.  它在 GitHub 上拿到了 164.5k 颗星、34.4k 次复刻（fork），还有 2405 个开放中的 issue。 官方标签：audio、deep-learning、deepseek、gemma、glm、hacktoberfest。 许可证是 Apache-2.0，决定了你怎么合法使用这些代码。 主要语言：Python。 用到的关键框架/工具：Transformers、PyTorch、torchvision、Accelerate、NumPy、pandas。 一句话总结：这是一个 AI/机器学习项目，适合想了解「模型是怎么搭起来」的读者。",
+  "overview": "「huggingface/transformers」是一个以 Python 为主的项目，仓库里大约有 6449 个文件（不含 git 内部文件），源码规模约 90.3 MB。 官方一句话介绍：🤗 Transformers: the model-definition framework for state-of-the-art machine learning models in text, vision, audio, and multimodal models, for both inference and training.  它在 GitHub 上拿到了 164.5k 颗星、34.4k 次复刻（fork），还有 2404 个开放中的 issue。 官方标签：audio、deep-learning、deepseek、gemma、glm、hacktoberfest。 许可证是 Apache-2.0，决定了你怎么合法使用这些代码。 主要语言：Python。 用到的关键框架/工具：Transformers、PyTorch、torchvision、Accelerate、NumPy、pandas。 一句话总结：这是一个 AI/机器学习项目，适合想了解「模型是怎么搭起来」的读者。",
   "languages": [],
   "frameworks": [
     {
@@ -348,6 +348,6 @@
     "bytes": 94693741,
     "sampled": 2463
   },
-  "generated_at": "2026-08-27T09:05:01.950Z",
+  "generated_at": "2026-08-27T09:09:33.410Z",
   "analyzer": "claw-static-analyzer v1"
 }

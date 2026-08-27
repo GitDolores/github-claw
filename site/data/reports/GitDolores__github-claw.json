@@ -5,17 +5,17 @@
     "stars": 0,
     "forks": 0,
     "open_issues": 0,
-    "language": "CSS",
+    "language": "JavaScript",
     "topics": [],
     "license": null,
     "default_branch": "main",
-    "pushed_at": "2026-08-27T09:02:15Z",
+    "pushed_at": "2026-08-27T09:05:41Z",
     "created_at": "2026-07-29T03:22:23Z",
     "homepage": null,
     "size_kb": 21,
     "archived": false
   },
-  "overview": "「GitDolores/github-claw」是一个以 CSS 为主的项目，仓库里大约有 23 个文件（不含 git 内部文件），源码规模约 94.7 KB。 它在 GitHub 上拿到了 0 颗星、0 次复刻（fork），还有 0 个开放中的 issue。 主要语言构成（按文件数）：CSS 1 个文件、HTML 2 个文件。 用到的关键框架/工具：GitHub Actions。 一句话总结：这是一个以CSS开发的项目，结构和文档都比较规范，适合通读学习。",
+  "overview": "「GitDolores/github-claw」是一个以 CSS 为主的项目，仓库里大约有 23 个文件（不含 git 内部文件），源码规模约 104.4 KB。 它在 GitHub 上拿到了 0 颗星、0 次复刻（fork），还有 0 个开放中的 issue。 主要语言构成（按文件数）：CSS 1 个文件、HTML 2 个文件。 用到的关键框架/工具：GitHub Actions。 一句话总结：这是一个以CSS开发的项目，结构和文档都比较规范，适合通读学习。",
   "languages": [
     {
       "label": "CSS",
@@ -228,9 +228,9 @@
   ],
   "stats": {
     "files": 23,
-    "bytes": 96922,
+    "bytes": 106905,
     "sampled": 4
   },
-  "generated_at": "2026-08-27T09:04:55.995Z",
+  "generated_at": "2026-08-27T09:09:27.923Z",
   "analyzer": "claw-static-analyzer v1"
 }
