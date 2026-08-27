@@ -1,0 +1,240 @@
+{
+  "meta": {
+    "full_name": "openai/whisper",
+    "description": "Robust Speech Recognition via Large-Scale Weak Supervision",
+    "stars": 108002,
+    "forks": 13100,
+    "open_issues": 136,
+    "language": "Python",
+    "topics": [],
+    "license": "MIT",
+    "default_branch": "main",
+    "pushed_at": "2026-07-28T20:18:29Z",
+    "created_at": "2022-09-16T20:02:54Z",
+    "homepage": null,
+    "size_kb": 12799,
+    "archived": false
+  },
+  "overview": "「openai/whisper」是一个以 Python 为主的项目，仓库里大约有 45 个文件（不含 git 内部文件），源码规模约 9.9 MB。 官方一句话介绍：Robust Speech Recognition via Large-Scale Weak Supervision 它在 GitHub 上拿到了 108.0k 颗星、13.1k 次复刻（fork），还有 136 个开放中的 issue。 许可证是 MIT，决定了你怎么合法使用这些代码。 主要语言：Python（AI 领域第一语言，语法简单好读）。 用到的关键框架/工具：PyTorch、NumPy、SciPy、pytest、.gitignore、GitHub Actions。 一句话总结：这是一个 AI/机器学习项目（主力语言 Python），适合想了解「模型是怎么搭起来」的读者。",
+  "languages": [
+    {
+      "label": "Python",
+      "speak": "AI 领域第一语言，语法简单好读",
+      "color": "#3572A5",
+      "files": 20
+    }
+  ],
+  "frameworks": [
+    {
+      "dep": "torch",
+      "label": "PyTorch",
+      "speak": "深度学习框架，AI 研究首选",
+      "category": "AI"
+    },
+    {
+      "dep": "numpy",
+      "label": "NumPy",
+      "speak": "科学计算基石",
+      "category": "科学"
+    },
+    {
+      "dep": "scipy",
+      "label": "SciPy",
+      "speak": "科学计算工具箱",
+      "category": "科学"
+    },
+    {
+      "ext": true,
+      "dep": "pytest",
+      "label": "pytest",
+      "speak": "Python 测试框架",
+      "category": "测试"
+    },
+    {
+      "label": ".gitignore",
+      "speak": "声明哪些文件不进版本库",
+      "category": "Git"
+    },
+    {
+      "label": "GitHub Actions",
+      "speak": "仓库内置自动化流水线",
+      "category": "CI/CD"
+    }
+  ],
+  "dir_tree": [
+    {
+      "dir": "/",
+      "count": 13,
+      "sample": [
+        ".flake8",
+        ".gitattributes",
+        ".gitignore",
+        ".pre-commit-config.yaml"
+      ],
+      "meaning": null
+    },
+    {
+      "dir": "whisper",
+      "count": 11,
+      "sample": [
+        "whisper/__init__.py",
+        "whisper/__main__.py",
+        "whisper/audio.py",
+        "whisper/decoding.py"
+      ],
+      "meaning": null
+    },
+    {
+      "dir": "tests",
+      "count": 7,
+      "sample": [
+        "tests/conftest.py",
+        "tests/jfk.flac",
+        "tests/test_audio.py",
+        "tests/test_normalizer.py"
+      ],
+      "meaning": "测试代码"
+    },
+    {
+      "dir": "whisper/normalizers",
+      "count": 4,
+      "sample": [
+        "whisper/normalizers/__init__.py",
+        "whisper/normalizers/basic.py",
+        "whisper/normalizers/english.json",
+        "whisper/normalizers/english.py"
+      ],
+      "meaning": null
+    },
+    {
+      "dir": "whisper/assets",
+      "count": 3,
+      "sample": [
+        "whisper/assets/gpt2.tiktoken",
+        "whisper/assets/mel_filters.npz",
+        "whisper/assets/multilingual.tiktoken"
+      ],
+      "meaning": null
+    },
+    {
+      "dir": "notebooks",
+      "count": 2,
+      "sample": [
+        "notebooks/LibriSpeech.ipynb",
+        "notebooks/Multilingual_ASR.ipynb"
+      ],
+      "meaning": null
+    },
+    {
+      "dir": "data",
+      "count": 2,
+      "sample": [
+        "data/README.md",
+        "data/meanwhile.json"
+      ],
+      "meaning": "数据文件"
+    },
+    {
+      "dir": ".github/workflows",
+      "count": 2,
+      "sample": [
+        ".github/workflows/python-publish.yml",
+        ".github/workflows/test.yml"
+      ],
+      "meaning": "GitHub 平台专属配置（Actions、Issue 模板等）"
+    },
+    {
+      "dir": ".github",
+      "count": 1,
+      "sample": [
+        ".github/dependabot.yml"
+      ],
+      "meaning": "GitHub 平台专属配置（Actions、Issue 模板等）"
+    }
+  ],
+  "entry_files": [],
+  "core_modules": [
+    {
+      "path": "whisper/model.py",
+      "size": "11.9 KB",
+      "why": "数据/AI 模型定义"
+    },
+    {
+      "path": "whisper/decoding.py",
+      "size": "31.4 KB",
+      "why": null
+    },
+    {
+      "path": "whisper/transcribe.py",
+      "size": "29.7 KB",
+      "why": null
+    },
+    {
+      "path": "whisper/normalizers/english.py",
+      "size": "20.4 KB",
+      "why": null
+    },
+    {
+      "path": "whisper/timing.py",
+      "size": "12.4 KB",
+      "why": null
+    },
+    {
+      "path": "whisper/tokenizer.py",
+      "size": "12.0 KB",
+      "why": null
+    },
+    {
+      "path": "whisper/utils.py",
+      "size": "11.6 KB",
+      "why": null
+    },
+    {
+      "path": "whisper/__init__.py",
+      "size": "7.3 KB",
+      "why": null
+    }
+  ],
+  "data_flow": [
+    "你（用户/调用方）发起一个动作：运行命令、打开网页或调用接口。",
+    "核心逻辑在「whisper/model.py」这类模块里：真正的计算/推理/业务规则都发生在这里。",
+    "过程中会借道「whisper/utils.py」这类工具模块：它们像瑞士军刀，谁需要谁来拿。",
+    "处理完成后，结果原路返回：渲染成页面、打印到终端或打包成 API 响应，交回给你。"
+  ],
+  "patterns": [],
+  "doc_quotes": [
+    {
+      "file": "CHANGELOG.md",
+      "text": "* Fix: Update torch.load to use weights_only=True to prevent security w… ([#2451](https://github.com/openai/whisper/pull/2451)) * Fix: Ensure DTW cost tensor is on the same device as input tensor ([#2561](https://github.com/openai/whisper/pull/2561)) * docs: updated README to specify translation mod"
+    },
+    {
+      "file": "README.md",
+      "text": "[[Blog]](https://openai.com/blog/whisper) [[Paper]](https://arxiv.org/abs/2212.04356) [[Model card]](https://github.com/openai/whisper/blob/main/model-card.md) [[Colab example]](https://colab.research.google.com/github/openai/whisper/blob/master/notebooks/LibriSpeech.ipynb)"
+    },
+    {
+      "file": "model-card.md",
+      "text": "This is the official codebase for running the automatic speech recognition (ASR) models (Whisper models) trained and released by OpenAI."
+    }
+  ],
+  "read_suggestions": [
+    {
+      "title": "第一步：读 README",
+      "body": "打开仓库根目录的 README.md，了解它「是什么、解决什么问题、怎么跑起来」。"
+    },
+    {
+      "title": "善用目录语义",
+      "body": "src=源码、tests=测试、docs=文档、examples=示例，目录名本身就是地图。"
+    },
+    {
+      "title": "带着问题读",
+      "body": "比如「数据从哪进来」「结果存在哪」「错误怎么处理」，带着三个问题读任何项目都不会迷路。"
+    }
+  ],
+  "stats": {
+    "files": 45,
+    "bytes": 10356301,
+    "sampled": 20
+  },
+  "generated_at": "2026-08-27T10:58:40.182Z",
+  "analyzer": "claw-static-analyzer v1"
+}

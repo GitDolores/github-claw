@@ -1,0 +1,319 @@
+{
+  "meta": {
+    "full_name": "microsoft/ML-For-Beginners",
+    "description": "12 weeks, 26 lessons, 52 quizzes, classic Machine Learning for all",
+    "stars": 89832,
+    "forks": 22097,
+    "open_issues": 13,
+    "language": "Jupyter Notebook",
+    "topics": [
+      "data-science",
+      "education",
+      "machine-learning",
+      "machine-learning-algorithms",
+      "machinelearning",
+      "machinelearning-python",
+      "microsoft-for-beginners",
+      "ml",
+      "python",
+      "r",
+      "scikit-learn",
+      "scikit-learn-python"
+    ],
+    "license": "MIT",
+    "default_branch": "main",
+    "pushed_at": "2026-08-20T01:11:33Z",
+    "created_at": "2021-03-03T01:34:05Z",
+    "homepage": null,
+    "size_kb": 2233917,
+    "archived": false
+  },
+  "overview": "「microsoft/ML-For-Beginners」是一个以 HTML 为主的项目，仓库里大约有 17223 个文件（不含 git 内部文件），源码规模约 1.1 GB。 官方一句话介绍：12 weeks, 26 lessons, 52 quizzes, classic Machine Learning for all 它在 GitHub 上拿到了 89.8k 颗星、22.1k 次复刻（fork），还有 13 个开放中的 issue。 官方标签：data-science、education、machine-learning、machine-learning-algorithms、machinelearning、machinelearning-python。 许可证是 MIT，决定了你怎么合法使用这些代码。 主要语言构成（按文件数）：HTML 13 个文件、Python 18 个文件、Vue 4 个文件、JavaScript 5 个文件、CSS 1 个文件。 用到的关键框架/工具：Vue、ESLint、.gitignore、GitHub Actions。 一句话总结：这是一个 AI/机器学习项目（主力语言 HTML），适合想了解「模型是怎么搭起来」的读者。",
+  "languages": [
+    {
+      "label": "HTML",
+      "speak": "网页骨架标记语言",
+      "color": "#e34c26",
+      "files": 13
+    },
+    {
+      "label": "Python",
+      "speak": "AI 领域第一语言，语法简单好读",
+      "color": "#3572A5",
+      "files": 18
+    },
+    {
+      "label": "Vue",
+      "speak": "渐进式前端框架",
+      "color": "#41b883",
+      "files": 4
+    },
+    {
+      "label": "JavaScript",
+      "speak": "网页脚本语言，让页面能动起来",
+      "color": "#f1e05a",
+      "files": 5
+    },
+    {
+      "label": "CSS",
+      "speak": "网页样式语言",
+      "color": "#563d7c",
+      "files": 1
+    }
+  ],
+  "frameworks": [
+    {
+      "dep": "vue",
+      "label": "Vue",
+      "speak": "轻量前端框架，上手快",
+      "category": "前端"
+    },
+    {
+      "dep": "eslint",
+      "label": "ESLint",
+      "speak": "代码风格检查器",
+      "category": "质量"
+    },
+    {
+      "label": ".gitignore",
+      "speak": "声明哪些文件不进版本库",
+      "category": "Git"
+    },
+    {
+      "label": "GitHub Actions",
+      "speak": "仓库内置自动化流水线",
+      "category": "CI/CD"
+    }
+  ],
+  "dir_tree": [
+    {
+      "dir": "translated_images/zh-TW",
+      "count": 154,
+      "sample": [
+        "translated_images/zh-TW/.co-op-translator.json",
+        "translated_images/zh-TW/3.9b58fd8d6c373c20.webp",
+        "translated_images/zh-TW/9-feature-importance.cd3193b4bba3fd4b.webp",
+        "translated_images/zh-TW/9-features-influence.3ead3d3f68a84029.webp"
+      ],
+      "meaning": null
+    },
+    {
+      "dir": "translated_images/zh-MO",
+      "count": 154,
+      "sample": [
+        "translated_images/zh-MO/.co-op-translator.json",
+        "translated_images/zh-MO/3.9b58fd8d6c373c20.webp",
+        "translated_images/zh-MO/9-feature-importance.cd3193b4bba3fd4b.webp",
+        "translated_images/zh-MO/9-features-influence.3ead3d3f68a84029.webp"
+      ],
+      "meaning": null
+    },
+    {
+      "dir": "translated_images/zh-HK",
+      "count": 154,
+      "sample": [
+        "translated_images/zh-HK/.co-op-translator.json",
+        "translated_images/zh-HK/3.9b58fd8d6c373c20.webp",
+        "translated_images/zh-HK/9-feature-importance.cd3193b4bba3fd4b.webp",
+        "translated_images/zh-HK/9-features-influence.3ead3d3f68a84029.webp"
+      ],
+      "meaning": null
+    },
+    {
+      "dir": "translated_images/zh-CN",
+      "count": 154,
+      "sample": [
+        "translated_images/zh-CN/.co-op-translator.json",
+        "translated_images/zh-CN/3.9b58fd8d6c373c20.webp",
+        "translated_images/zh-CN/9-feature-importance.cd3193b4bba3fd4b.webp",
+        "translated_images/zh-CN/9-features-influence.3ead3d3f68a84029.webp"
+      ],
+      "meaning": null
+    },
+    {
+      "dir": "translated_images/vi",
+      "count": 154,
+      "sample": [
+        "translated_images/vi/.co-op-translator.json",
+        "translated_images/vi/3.9b58fd8d6c373c20.webp",
+        "translated_images/vi/9-feature-importance.cd3193b4bba3fd4b.webp",
+        "translated_images/vi/9-features-influence.3ead3d3f68a84029.webp"
+      ],
+      "meaning": null
+    },
+    {
+      "dir": "translated_images/ur",
+      "count": 154,
+      "sample": [
+        "translated_images/ur/.co-op-translator.json",
+        "translated_images/ur/3.9b58fd8d6c373c20.webp",
+        "translated_images/ur/9-feature-importance.cd3193b4bba3fd4b.webp",
+        "translated_images/ur/9-features-influence.3ead3d3f68a84029.webp"
+      ],
+      "meaning": null
+    },
+    {
+      "dir": "translated_images/uk",
+      "count": 154,
+      "sample": [
+        "translated_images/uk/.co-op-translator.json",
+        "translated_images/uk/3.9b58fd8d6c373c20.webp",
+        "translated_images/uk/9-feature-importance.cd3193b4bba3fd4b.webp",
+        "translated_images/uk/9-features-influence.3ead3d3f68a84029.webp"
+      ],
+      "meaning": null
+    },
+    {
+      "dir": "translated_images/tr",
+      "count": 154,
+      "sample": [
+        "translated_images/tr/.co-op-translator.json",
+        "translated_images/tr/3.9b58fd8d6c373c20.webp",
+        "translated_images/tr/9-feature-importance.cd3193b4bba3fd4b.webp",
+        "translated_images/tr/9-features-influence.3ead3d3f68a84029.webp"
+      ],
+      "meaning": null
+    },
+    {
+      "dir": "translated_images/tl",
+      "count": 154,
+      "sample": [
+        "translated_images/tl/.co-op-translator.json",
+        "translated_images/tl/3.9b58fd8d6c373c20.webp",
+        "translated_images/tl/9-feature-importance.cd3193b4bba3fd4b.webp",
+        "translated_images/tl/9-features-influence.3ead3d3f68a84029.webp"
+      ],
+      "meaning": null
+    },
+    {
+      "dir": "translated_images/th",
+      "count": 154,
+      "sample": [
+        "translated_images/th/.co-op-translator.json",
+        "translated_images/th/3.9b58fd8d6c373c20.webp",
+        "translated_images/th/9-feature-importance.cd3193b4bba3fd4b.webp",
+        "translated_images/th/9-features-influence.3ead3d3f68a84029.webp"
+      ],
+      "meaning": null
+    },
+    {
+      "dir": "translated_images/te",
+      "count": 154,
+      "sample": [
+        "translated_images/te/.co-op-translator.json",
+        "translated_images/te/3.9b58fd8d6c373c20.webp",
+        "translated_images/te/9-feature-importance.cd3193b4bba3fd4b.webp",
+        "translated_images/te/9-features-influence.3ead3d3f68a84029.webp"
+      ],
+      "meaning": null
+    },
+    {
+      "dir": "translated_images/ta",
+      "count": 154,
+      "sample": [
+        "translated_images/ta/.co-op-translator.json",
+        "translated_images/ta/3.9b58fd8d6c373c20.webp",
+        "translated_images/ta/9-feature-importance.cd3193b4bba3fd4b.webp",
+        "translated_images/ta/9-features-influence.3ead3d3f68a84029.webp"
+      ],
+      "meaning": null
+    }
+  ],
+  "entry_files": [],
+  "core_modules": [
+    {
+      "path": "quiz-app/src/App.vue",
+      "size": "1.8 KB",
+      "why": "程序主入口：整个应用从这里启动"
+    },
+    {
+      "path": "3-Web-App/1-Web-App/solution/web-app/app.py",
+      "size": "738 B",
+      "why": "程序主入口：整个应用从这里启动"
+    },
+    {
+      "path": "quiz-app/src/router/index.js",
+      "size": "613 B",
+      "why": "入口/汇总文件：这个目录的对外门面"
+    },
+    {
+      "path": "quiz-app/src/assets/translations/index.js",
+      "size": "387 B",
+      "why": "入口/汇总文件：这个目录的对外门面"
+    },
+    {
+      "path": "quiz-app/src/main.js",
+      "size": "304 B",
+      "why": "程序主入口：整个应用从这里启动"
+    },
+    {
+      "path": "8-Reinforcement/1-QLearning/solution/rlboard.py",
+      "size": "7.1 KB",
+      "why": null
+    },
+    {
+      "path": "8-Reinforcement/1-QLearning/rlboard.py",
+      "size": "7.1 KB",
+      "why": null
+    },
+    {
+      "path": "docsifytopdf.js",
+      "size": "583 B",
+      "why": null
+    }
+  ],
+  "data_flow": [
+    "你（用户/调用方）发起一个动作：运行命令、打开网页或调用接口。",
+    "请求进入「quiz-app/src/router/index.js」这类分发层：它判断「你想要什么」，把活儿派给对应的处理单元。",
+    "处理完成后，结果原路返回：渲染成页面、打印到终端或打包成 API 响应，交回给你。"
+  ],
+  "patterns": [
+    {
+      "pattern": "模块化导出",
+      "speak": "功能拆成模块互相引用",
+      "severity": "common",
+      "where": "docsifytopdf.js"
+    },
+    {
+      "pattern": "路由分发",
+      "speak": "URL 映射到处理函数",
+      "severity": "common",
+      "where": "quiz-app/src/App.vue"
+    }
+  ],
+  "doc_quotes": [
+    {
+      "file": "AGENTS.md",
+      "text": "This is **Machine Learning for Beginners**, a comprehensive 12-week, 26-lesson curriculum covering classic machine learning concepts using Python (primarily with Scikit-learn) and R. The repository is designed as a self-paced learning resource with hands-on projects, quizzes, and assignments. Each l"
+    },
+    {
+      "file": "CODE_OF_CONDUCT.md",
+      "text": "This project has adopted the [Microsoft Open Source Code of Conduct](https://opensource.microsoft.com/codeofconduct/)."
+    },
+    {
+      "file": "CONTRIBUTING.md",
+      "text": "This project welcomes contributions and suggestions. Most contributions require you to agree to a Contributor License Agreement (CLA) declaring that you have the right to, and actually do, grant us the rights to use your contribution. For details, visit https://cla.microsoft.com."
+    }
+  ],
+  "read_suggestions": [
+    {
+      "title": "第一步：读 README",
+      "body": "打开仓库根目录的 README.md，了解它「是什么、解决什么问题、怎么跑起来」。"
+    },
+    {
+      "title": "善用目录语义",
+      "body": "src=源码、tests=测试、docs=文档、examples=示例，目录名本身就是地图。"
+    },
+    {
+      "title": "带着问题读",
+      "body": "比如「数据从哪进来」「结果存在哪」「错误怎么处理」，带着三个问题读任何项目都不会迷路。"
+    }
+  ],
+  "stats": {
+    "files": 17223,
+    "bytes": 1218929095,
+    "sampled": 23
+  },
+  "generated_at": "2026-08-27T10:58:54.812Z",
+  "analyzer": "claw-static-analyzer v1"
+}
