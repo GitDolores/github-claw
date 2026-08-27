@@ -137,20 +137,29 @@ function walkFiles(root) {
   return { files, totalBytes };
 }
 
+const EXT2LANG = {
+  js: 'javascript', mjs: 'javascript', cjs: 'javascript', jsx: 'javascript',
+  ts: 'typescript', tsx: 'typescript',
+  py: 'python', go: 'go', rs: 'rust', java: 'java', rb: 'ruby', php: 'php',
+  c: 'c', h: 'c', cpp: 'c++', hpp: 'c++', cc: 'c++',
+  cs: 'c#', swift: 'swift', kt: 'kotlin',
+  html: 'html', css: 'css', sh: 'shell', bash: 'shell', vue: 'vue',
+};
+
 function detectLanguages(files) {
   const byLang = {};
   const byLangBytes = {};
   for (const f of files) {
-    const ext = path.extname(f.rel).toLowerCase().slice(1);
-    if (!LANGUAGES[ext]) continue;
-    byLang[ext] = (byLang[ext] || 0) + 1;
-    byLangBytes[ext] = (byLangBytes[ext] || 0) + f.size;
+    const langName = EXT2LANG[path.extname(f.rel).toLowerCase().slice(1)];
+    if (!langName) continue;
+    byLang[langName] = (byLang[langName] || 0) + 1;
+    byLangBytes[langName] = (byLangBytes[langName] || 0) + f.size;
   }
   // rank by total bytes (matches GitHub's language bar better than file count)
   return Object.entries(byLangBytes)
     .sort((a, b) => b[1] - a[1])
     .slice(0, 6)
-    .map(([ext]) => ({ ...LANGUAGES[ext], ext, files: byLang[ext] }));
+    .map(([name]) => ({ ...LANGUAGES[name], files: byLang[name] }));
 }
 
 function detectFrameworks(files) {
@@ -248,13 +257,23 @@ function explainDir(dir) {
 }
 
 function findEntryFiles(files) {
-  const priorities = ['main.py', 'app.py', 'cli.py', 'index.js', 'index.ts', 'main.go', 'main.rs', 'src/index.js', 'src/index.ts', 'src/main.py', 'src/app.py', 'server.js', 'app.py', 'train.py'];
+  const priorities = [
+    'main.py', 'app.py', 'cli.py', 'index.js', 'index.ts', 'main.go', 'main.rs',
+    'src/index.js', 'src/index.ts', 'src/main.py', 'src/app.py', 'server.js',
+    'src/__init__.py', 'src/main.ts', 'src/main.js', 'src/cli.py',
+  ];
   const byName = new Map(files.map(f => [f.rel, f]));
   for (const p of priorities) {
     if (byName.has(p)) return [byName.get(p)];
   }
-  // fallback: top-level entry-hint files
-  const hits = files.filter(f => ENTRY_HINTS[path.basename(f.rel)] && f.rel.split('/').length <= 2).slice(0, 2);
+  // package-style entry: src/<pkg>/__init__.py (Python package) or src/index.*
+  const pkgInit = files.find(f => /^src\/[^/]+\/__init__\.py$/.test(f.rel) && f.size > 1000);
+  if (pkgInit) return [pkgInit];
+  // fallback: top-level entry-hint files, downweight test/setup config
+  const hits = files
+    .filter(f => ENTRY_HINTS[path.basename(f.rel)] && f.rel.split('/').length <= 2)
+    .filter(f => !/conftest|setup\.(py|cfg)|__init__/i.test(f.rel))
+    .slice(0, 2);
   return hits;
 }
 
@@ -491,7 +510,12 @@ function analyzeRepo(repo, token, onProgress) {
     // Fallback: metadata-only profile
     stage('api-fallback', 60, { note: '仓库太大或克隆失败，改用 GitHub API 元数据生成轻量档案' });
     const langData = curlJson(`https://api.github.com/repos/${repo}/languages`, token);
-    const langs = Object.entries(langData).slice(0, 5).map(([label, bytes]) => ({ label, speak: LANGUAGES[label.toLowerCase()]?.speak || '', bytes, files: null }));
+    const langs = Object.entries(langData).slice(0, 5).map(([label, bytes]) => ({
+      ...LANGUAGES[label.toLowerCase()],
+      label,
+      bytes,
+      files: null,
+    }));
     report.data = {
       meta,
       overview: `「${meta.full_name}」规模较大（${humanizeBytes((meta.size_kb || 0) * 1024)}），静态克隆分析较慢，这里给出基于 GitHub 元数据的轻量档案。${meta.description ? `官方介绍：${meta.description}` : ''} 它有 ${humanizeNum(meta.stars ?? 0)} 颗星，主要语言是 ${meta.language || '未知'}。建议先读 README，再看 examples 目录。`,
@@ -504,7 +528,7 @@ function analyzeRepo(repo, token, onProgress) {
       patterns: [],
       doc_quotes: [],
       read_suggestions: makeReadSuggestion(meta, [], [], langs),
-      stats: { files: null, bytes: (meta.size_kb || 0) * 1204, sampled: 0 },
+      stats: { files: null, bytes: (meta.size_kb || 0) * 1024, sampled: 0 },
       generated_at: now(),
       analyzer: 'claw-metadata-profile v1',
     };

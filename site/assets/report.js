@@ -79,8 +79,7 @@
     const tree = d.dir_tree || [];
     $('dir-tree').innerHTML = tree.map(t =>
       '<div class="dir-item"><div class="dir-name">' + esc(t.dir === '/' ? '（仓库根目录）' : t.dir) + '</div>' +
-      '<div class="dir-desc">' + esc(t.meaning || '（按名字猜：普通资源/代码目录') + ')' +
-      ' · ' + t.count + ' 个文件</div>' +
+      '<div class="dir-desc">' + esc(t.meaning || '普通资源/代码目录') + ' · ' + t.count + ' 个文件</div>' +
       (t.sample && t.sample.length ? '<div class="dir-sample">' + t.sample.map(esc).join(' · ') + '</div>' : '') +
       '</div>').join('') || '<p>（未提供目录结构）</p>';
 
