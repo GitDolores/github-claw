@@ -1,0 +1,101 @@
+{
+  "meta": {
+    "full_name": "huggingface/transformers",
+    "description": "🤗 Transformers: the model-definition framework for state-of-the-art machine learning models in text, vision, audio, and multimodal models, for both inference and training. ",
+    "stars": 164489,
+    "forks": 34385,
+    "open_issues": 2405,
+    "language": "Python",
+    "topics": [
+      "audio",
+      "deep-learning",
+      "deepseek",
+      "gemma",
+      "glm",
+      "hacktoberfest",
+      "llm",
+      "machine-learning",
+      "model-hub",
+      "natural-language-processing",
+      "nlp",
+      "pretrained-models",
+      "python",
+      "pytorch",
+      "pytorch-transformers",
+      "qwen",
+      "speech-recognition",
+      "transformer",
+      "vlm"
+    ],
+    "license": "Apache-2.0",
+    "default_branch": "main",
+    "pushed_at": "2026-08-27T08:36:34Z",
+    "created_at": "2018-10-29T13:56:00Z",
+    "homepage": "https://huggingface.co/transformers",
+    "size_kb": 507597,
+    "archived": false
+  },
+  "overview": "「huggingface/transformers」规模较大（495.7 MB），静态克隆分析较慢，这里给出基于 GitHub 元数据的轻量档案。官方介绍：🤗 Transformers: the model-definition framework for state-of-the-art machine learning models in text, vision, audio, and multimodal models, for both inference and training.  它有 164.5k 颗星，主要语言是 Python。建议先读 README，再看 examples 目录。",
+  "languages": [
+    {
+      "label": "Python",
+      "speak": "AI 领域第一语言，语法简单好读",
+      "bytes": 74533347,
+      "files": null
+    },
+    {
+      "label": "Dockerfile",
+      "speak": "",
+      "bytes": 52902,
+      "files": null
+    },
+    {
+      "label": "Makefile",
+      "speak": "",
+      "bytes": 3187,
+      "files": null
+    },
+    {
+      "label": "Shell",
+      "speak": "命令行脚本，粘合各种工具",
+      "bytes": 1838,
+      "files": null
+    },
+    {
+      "label": "Jsonnet",
+      "speak": "",
+      "bytes": 937,
+      "files": null
+    }
+  ],
+  "frameworks": [],
+  "dir_tree": [],
+  "entry_files": [],
+  "core_modules": [],
+  "data_flow": [
+    "（仓库规模大，未做源码级扫描；数据流说明需要克隆分析）"
+  ],
+  "patterns": [],
+  "doc_quotes": [],
+  "read_suggestions": [
+    {
+      "title": "第一步：读 README",
+      "body": "打开仓库根目录的 README.md，了解它「是什么、解决什么问题、怎么跑起来」。它有官网/文档：https://huggingface.co/transformers"
+    },
+    {
+      "title": "善用目录语义",
+      "body": "src=源码、tests=测试、docs=文档、examples=示例，目录名本身就是地图。"
+    },
+    {
+      "title": "带着问题读",
+      "body": "比如「数据从哪进来」「结果存在哪」「错误怎么处理」，带着三个问题读任何项目都不会迷路。"
+    }
+  ],
+  "stats": {
+    "files": null,
+    "bytes": 611146788,
+    "sampled": 0
+  },
+  "generated_at": "2026-08-27T08:58:28.249Z",
+  "analyzer": "claw-metadata-profile v1"
+}

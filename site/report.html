@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>项目分析报告 · AI Projects Learning</title>
+  <meta name="description" content="通俗版开源项目源码分析报告：概述、技术栈、目录结构、核心模块、数据流、设计模式、阅读建议。" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/styles.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container nav">
+      <a class="brand" href="./">AI Projects Learning</a>
+      <nav>
+        <a href="./#projects">精选</a>
+        <a href="./#roadmap">路线图</a>
+        <a href="./#growth">增长趋势</a>
+        <a class="btn" href="https://github.com/GitDolores/github-claw" target="_blank">查看仓库</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero report-hero">
+      <div class="container">
+        <h1 id="report-title">项目分析报告</h1>
+        <p class="lead" id="report-lead">正在加载报告……</p>
+        <p class="meta" id="report-meta"></p>
+      </div>
+    </section>
+
+    <!-- live progress (shown while analysis is running) -->
+    <section class="container section" id="progress-section" hidden>
+      <h2>⏳ 分析进行中</h2>
+      <p class="section-lead" id="progress-note">后台机器人正在克隆并阅读源码……</p>
+      <div class="progress-track"><div class="progress-bar" id="progress-bar"></div></div>
+      <p class="meta" id="progress-detail"></p>
+    </section>
+
+    <div id="report-body" hidden>
+      <section class="container section" id="sec-overview">
+        <h2>项目概述</h2>
+        <p class="section-lead" id="ov-text"></p>
+        <div class="stat-row" id="ov-stats"></div>
+      </section>
+
+      <section class="container section" id="sec-stack">
+        <h2>技术栈（用人话解释）</h2>
+        <div class="grid cards" id="stack-cards"></div>
+        <h3 class="sub-h">语言构成</h3>
+        <div class="lang-bar" id="lang-bar"></div>
+      </section>
+
+      <section class="container section" id="sec-tree">
+        <h2>目录结构导览</h2>
+        <p class="section-lead">目录名就是地图。下面每个目录都配了一句话解释它是干嘛的。</p>
+        <div id="dir-tree"></div>
+      </section>
+
+      <section class="container section" id="sec-modules">
+        <h2>核心模块</h2>
+        <p class="section-lead">按重要性挑出的几个关键文件，读懂它们就读懂了大半项目。</p>
+        <div class="grid cards" id="module-cards"></div>
+      </section>
+
+      <section class="container section" id="sec-flow">
+        <h2>数据流（程序怎么跑起来的）</h2>
+        <ol class="flow-steps" id="flow-steps"></ol>
+      </section>
+
+      <section class="container section" id="sec-patterns">
+        <h2>设计模式与代码套路</h2>
+        <p class="section-lead">作者反复使用的代码「句型」，认得它们就能少查一半文档。</p>
+        <div class="pattern-list" id="pattern-list"></div>
+      </section>
+
+      <section class="container section" id="sec-docs">
+        <h2>作者原话（文档摘录）</h2>
+        <div id="doc-quotes"></div>
+      </section>
+
+      <section class="container section" id="sec-tips">
+        <h2>阅读建议（傻瓜式路线）</h2>
+        <div class="timeline" id="tip-list"></div>
+      </section>
+
+      <section class="container section" id="sec-raw">
+        <h2>原始数据</h2>
+        <p class="section-lead">
+          <a id="raw-link" href="#" target="_blank">查看完整 JSON 报告</a> ·
+          分析器版本 <span id="analyzer-version"></span> · 生成时间 <span id="generated-at"></span>
+        </p>
+      </section>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div>© 2026 GitDolores · ai-projects-learning · <a href="https://github.com/GitDolores/github-claw" target="_blank">GitHub</a></div>
+      <div class="footer-links">由 <strong>Copilot</strong> 协助生成 · 报告由静态分析自动生成</div>
+    </div>
+  </footer>
+
+  <script src="assets/report.js"></script>
+</body>
+</html>

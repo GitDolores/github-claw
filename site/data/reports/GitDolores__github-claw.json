@@ -1,0 +1,175 @@
+{
+  "meta": {
+    "full_name": "GitDolores/github-claw",
+    "description": "",
+    "stars": 0,
+    "forks": 0,
+    "open_issues": 0,
+    "language": "CSS",
+    "topics": [],
+    "license": null,
+    "default_branch": "main",
+    "pushed_at": "2026-08-27T07:54:10Z",
+    "created_at": "2026-07-29T03:22:23Z",
+    "homepage": null,
+    "size_kb": 21,
+    "archived": false
+  },
+  "overview": "「GitDolores/github-claw」是一个以 HTML 为主的项目，仓库里大约有 14 个文件（不含 git 内部文件），源码规模约 22.9 KB。 它在 GitHub 上拿到了 0 颗星、0 次复刻（fork），还有 0 个开放中的 issue。 主要语言构成（按文件数）：HTML 1 个文件、CSS 1 个文件。 用到的关键框架/工具：GitHub Actions。 一句话总结：这是一个以HTML开发的项目，结构和文档都比较规范，适合通读学习。",
+  "languages": [
+    {
+      "label": "HTML",
+      "speak": "网页骨架标记语言",
+      "color": "#e34c26",
+      "ext": "html",
+      "files": 1
+    },
+    {
+      "label": "CSS",
+      "speak": "网页样式语言",
+      "color": "#563d7c",
+      "ext": "css",
+      "files": 1
+    }
+  ],
+  "frameworks": [
+    {
+      "label": "GitHub Actions",
+      "speak": "仓库内置自动化流水线",
+      "category": "CI/CD"
+    }
+  ],
+  "dir_tree": [
+    {
+      "dir": "/",
+      "count": 4,
+      "sample": [
+        "AGENTS.md",
+        "MEMORY.md",
+        "PULL_REQUEST_TEMPLATE.md",
+        "README.md"
+      ],
+      "meaning": null
+    },
+    {
+      "dir": "site",
+      "count": 2,
+      "sample": [
+        "site/CNAME",
+        "site/index.html"
+      ],
+      "meaning": "网站目录"
+    },
+    {
+      "dir": "site/assets",
+      "count": 2,
+      "sample": [
+        "site/assets/script.js",
+        "site/assets/styles.css"
+      ],
+      "meaning": "网站目录"
+    },
+    {
+      "dir": "memory/daily",
+      "count": 2,
+      "sample": [
+        "memory/daily/.gitkeep",
+        "memory/daily/2026-08-27-pages-deployment-fixed.md"
+      ],
+      "meaning": null
+    },
+    {
+      "dir": "site/data",
+      "count": 1,
+      "sample": [
+        "site/data/projects.json"
+      ],
+      "meaning": "网站目录"
+    },
+    {
+      "dir": "memory",
+      "count": 1,
+      "sample": [
+        "memory/index.md"
+      ],
+      "meaning": null
+    },
+    {
+      "dir": "memory/longterm",
+      "count": 1,
+      "sample": [
+        "memory/longterm/.gitkeep"
+      ],
+      "meaning": null
+    },
+    {
+      "dir": ".github/workflows",
+      "count": 1,
+      "sample": [
+        ".github/workflows/pages.yml"
+      ],
+      "meaning": "GitHub 平台专属配置（Actions、Issue 模板等）"
+    }
+  ],
+  "entry_files": [],
+  "core_modules": [
+    {
+      "path": "site/assets/script.js",
+      "size": "2.5 KB",
+      "why": null
+    }
+  ],
+  "data_flow": [
+    "你（用户/调用方）发起一个动作：运行命令、打开网页或调用接口。",
+    "处理完成后，结果原路返回：渲染成页面、打印到终端或打包成 API 响应，交回给你。"
+  ],
+  "patterns": [
+    {
+      "pattern": "async/await",
+      "speak": "用同步写法处理异步，代码更好读",
+      "severity": "common",
+      "where": "site/assets/script.js"
+    },
+    {
+      "pattern": "事件驱动",
+      "speak": "「有事叫我」：注册回调等事件发生",
+      "severity": "common",
+      "where": "site/assets/script.js"
+    }
+  ],
+  "doc_quotes": [
+    {
+      "file": "AGENTS.md",
+      "text": "这是仓库中长期驻留的个人 AI 助手定义与工作约定，作为本仓库成为长期、可演化的个人 AI 工作空间的核心说明文件。"
+    },
+    {
+      "file": "MEMORY.md",
+      "text": "- memory/longterm/: 永久或跨会话的总结与事实（按主题分文件） - memory/daily/: 每次会话或每日笔记（按日期文件） - memory/index.md: 简短索引，包含每个长记忆的摘要與标签"
+    },
+    {
+      "file": "PULL_REQUEST_TEMPLATE.md",
+      "text": "- AGENTS.md: Defines the long-lived AI assistant role, work rules, memory handling, and task lifecycle for the repository. This file is the core contract for how the personal AI will use this repository as a persistent workspace. - MEMORY.md: Minimal spec for memory/ usage and example metadata heade"
+    }
+  ],
+  "read_suggestions": [
+    {
+      "title": "第一步：读 README",
+      "body": "打开仓库根目录的 README.md，了解它「是什么、解决什么问题、怎么跑起来」。"
+    },
+    {
+      "title": "善用目录语义",
+      "body": "src=源码、tests=测试、docs=文档、examples=示例，目录名本身就是地图。"
+    },
+    {
+      "title": "带着问题读",
+      "body": "比如「数据从哪进来」「结果存在哪」「错误怎么处理」，带着三个问题读任何项目都不会迷路。"
+    }
+  ],
+  "stats": {
+    "files": 14,
+    "bytes": 23472,
+    "sampled": 1
+  },
+  "generated_at": "2026-08-27T08:40:23.702Z",
+  "analyzer": "claw-static-analyzer v1"
+}

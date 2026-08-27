@@ -9,7 +9,20 @@ document.addEventListener('DOMContentLoaded', async () => {
     const res = await fetch('data/projects.json');
     if (!res.ok) throw new Error('Network response not ok');
     const projects = await res.json();
-    projects.forEach(p => {
+
+    // which reports already exist? (cache check)
+    const reportFlags = await Promise.all(projects.map(async p => {
+      const slug = p.repo_url.replace(/^https?:\/\/github\.com\//, '').replace(/\.git$/, '').replace('/', '__');
+      try {
+        const r = await fetch('data/reports/' + encodeURIComponent(slug) + '.json', { method: 'HEAD' });
+        return { slug, done: r.ok };
+      } catch {
+        return { slug, done: false };
+      }
+    }));
+
+    projects.forEach((p, i) => {
+      const slug = reportFlags[i].slug;
       const card = document.createElement('div');
       card.className = 'card';
       card.innerHTML = `
@@ -17,6 +30,7 @@ document.addEventListener('DOMContentLoaded', async () => {
         <p>${escapeHTML(p.description)}</p>
         <div class="tags">${(p.tags||[]).map(t=>`<span class="tag">${escapeHTML(t)}</span>`).join('')}</div>
         <div class="meta">⭐ ${p.stars || 0} · 最近更新 ${p.last_updated || '-'} · <a href="${p.repo_url}" target="_blank" rel="noopener noreferrer">查看</a></div>
+        <div class="card-actions"><a class="analyze-link${reportFlags[i].done ? ' done' : ''}" href="report.html?repo=${encodeURIComponent(slug.replace('__','/'))}">${reportFlags[i].done ? '📖 查看分析报告' : '🤖 分析这个项目'}</a></div>
       `;
       projectsList.appendChild(card);
     });

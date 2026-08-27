@@ -1,0 +1,247 @@
+{
+  "meta": {
+    "full_name": "onnx/models",
+    "description": "A collection of pre-trained, state-of-the-art models in the ONNX format ",
+    "stars": 9775,
+    "forks": 1584,
+    "open_issues": 214,
+    "language": "Jupyter Notebook",
+    "topics": [
+      "deep-learning",
+      "download",
+      "models",
+      "onnx",
+      "pretrained"
+    ],
+    "license": "Apache-2.0",
+    "default_branch": "main",
+    "pushed_at": "2026-08-01T04:35:29Z",
+    "created_at": "2017-10-06T00:03:03Z",
+    "homepage": null,
+    "size_kb": 428966,
+    "archived": false
+  },
+  "overview": "「onnx/models」是一个以 Jupyter Notebook 为主的项目，仓库里大约有 4890 个文件（不含 git 内部文件），源码规模约 24.1 MB。 官方一句话介绍：A collection of pre-trained, state-of-the-art models in the ONNX format  它在 GitHub 上拿到了 9.8k 颗星、1.6k 次复刻（fork），还有 214 个开放中的 issue。 官方标签：deep-learning、download、models、onnx、pretrained。 许可证是 Apache-2.0，决定了你怎么合法使用这些代码。 主要语言：Jupyter Notebook。 用到的关键框架/工具：.gitignore、GitHub Actions。 一句话总结：这是一个 AI/机器学习项目，适合想了解「模型是怎么搭起来」的读者。",
+  "languages": [],
+  "frameworks": [
+    {
+      "label": ".gitignore",
+      "speak": "声明哪些文件不进版本库",
+      "category": "Git"
+    },
+    {
+      "label": "GitHub Actions",
+      "speak": "仓库内置自动化流水线",
+      "category": "CI/CD"
+    }
+  ],
+  "dir_tree": [
+    {
+      "dir": "Computer_Vision/skip",
+      "count": 966,
+      "sample": [
+        "Computer_Vision/skip/xcit_tiny_24_p8_384_dist_Opset18_timm/turnkey_stats.yaml",
+        "Computer_Vision/skip/xcit_tiny_24_p8_384_dist_Opset18_timm/xcit_tiny_24_p8_384_dist_Opset18.onnx",
+        "Computer_Vision/skip/xcit_tiny_24_p8_384_dist_Opset17_timm/turnkey_stats.yaml",
+        "Computer_Vision/skip/xcit_tiny_24_p8_384_dist_Opset17_timm/xcit_tiny_24_p8_384_dist_Opset17.onnx"
+      ],
+      "meaning": null
+    },
+    {
+      "dir": "validated/vision",
+      "count": 452,
+      "sample": [
+        "validated/vision/super_resolution/sub_pixel_cnn_2016/README.md",
+        "validated/vision/super_resolution/sub_pixel_cnn_2016/model/super-resolution-10.onnx",
+        "validated/vision/super_resolution/sub_pixel_cnn_2016/model/super-resolution-10.tar.gz",
+        "validated/vision/super_resolution/sub_pixel_cnn_2016/dependencies/Run_Super_Resolution_Model.ipynb"
+      ],
+      "meaning": null
+    },
+    {
+      "dir": "Natural_Language_Processing/skip",
+      "count": 244,
+      "sample": [
+        "Natural_Language_Processing/skip/yoso_Opset18_transformers/turnkey_stats.yaml",
+        "Natural_Language_Processing/skip/yoso_Opset18_transformers/yoso_Opset18.onnx",
+        "Natural_Language_Processing/skip/yoso_Opset17_transformers/turnkey_stats.yaml",
+        "Natural_Language_Processing/skip/yoso_Opset17_transformers/yoso_Opset17.onnx"
+      ],
+      "meaning": null
+    },
+    {
+      "dir": "Generative_AI/skip",
+      "count": 54,
+      "sample": [
+        "Generative_AI/skip/openaigpt_Opset18_transformers/openaigpt_Opset18.onnx",
+        "Generative_AI/skip/openaigpt_Opset18_transformers/turnkey_stats.yaml",
+        "Generative_AI/skip/openaigpt_Opset17_transformers/openaigpt_Opset17.onnx",
+        "Generative_AI/skip/openaigpt_Opset17_transformers/turnkey_stats.yaml"
+      ],
+      "meaning": null
+    },
+    {
+      "dir": "validated/text",
+      "count": 39,
+      "sample": [
+        "validated/text/machine_comprehension/t5/README.md",
+        "validated/text/machine_comprehension/t5/model/t5-decoder-with-lm-head-12.onnx",
+        "validated/text/machine_comprehension/t5/model/t5-decoder-with-lm-head-12.tar.gz",
+        "validated/text/machine_comprehension/t5/model/t5-encoder-12.onnx"
+      ],
+      "meaning": null
+    },
+    {
+      "dir": "Graph_Machine_Learning/skip",
+      "count": 18,
+      "sample": [
+        "Graph_Machine_Learning/skip/resgatedgraphconv_Opset18_graph_convolutions/resgatedgraphconv_Opset18.onnx",
+        "Graph_Machine_Learning/skip/resgatedgraphconv_Opset18_graph_convolutions/turnkey_stats.yaml",
+        "Graph_Machine_Learning/skip/resgatedgraphconv_Opset16_graph_convolutions/resgatedgraphconv_Opset16.onnx",
+        "Graph_Machine_Learning/skip/resgatedgraphconv_Opset16_graph_convolutions/turnkey_stats.yaml"
+      ],
+      "meaning": null
+    },
+    {
+      "dir": "/",
+      "count": 7,
+      "sample": [
+        ".gitattributes",
+        ".gitignore",
+        ".lfsconfig",
+        "contribute.md"
+      ],
+      "meaning": null
+    },
+    {
+      "dir": "validated/workflow_scripts",
+      "count": 6,
+      "sample": [
+        "validated/workflow_scripts/check_model.py",
+        "validated/workflow_scripts/generate_onnx_hub_manifest.py",
+        "validated/workflow_scripts/onnx_test_data_utils.py",
+        "validated/workflow_scripts/ort_test_dir_utils.py"
+      ],
+      "meaning": null
+    },
+    {
+      "dir": ".github/ISSUE_TEMPLATE",
+      "count": 4,
+      "sample": [
+        ".github/ISSUE_TEMPLATE/bug_report.md",
+        ".github/ISSUE_TEMPLATE/feature_request.md",
+        ".github/ISSUE_TEMPLATE/model_request.md",
+        ".github/ISSUE_TEMPLATE/question.md"
+      ],
+      "meaning": "GitHub 平台专属配置（Actions、Issue 模板等）"
+    },
+    {
+      "dir": "Natural_Language_Processing/xmod_Opset18_transformers",
+      "count": 2,
+      "sample": [
+        "Natural_Language_Processing/xmod_Opset18_transformers/turnkey_stats.yaml",
+        "Natural_Language_Processing/xmod_Opset18_transformers/xmod_Opset18.onnx"
+      ],
+      "meaning": null
+    },
+    {
+      "dir": "Natural_Language_Processing/xmod_Opset17_transformers",
+      "count": 2,
+      "sample": [
+        "Natural_Language_Processing/xmod_Opset17_transformers/turnkey_stats.yaml",
+        "Natural_Language_Processing/xmod_Opset17_transformers/xmod_Opset17.onnx"
+      ],
+      "meaning": null
+    },
+    {
+      "dir": "Natural_Language_Processing/xmod_Opset16_transformers",
+      "count": 2,
+      "sample": [
+        "Natural_Language_Processing/xmod_Opset16_transformers/turnkey_stats.yaml",
+        "Natural_Language_Processing/xmod_Opset16_transformers/xmod_Opset16.onnx"
+      ],
+      "meaning": null
+    }
+  ],
+  "entry_files": [],
+  "core_modules": [
+    {
+      "path": "validated/vision/body_analysis/arcface/dependencies/fresnet.py",
+      "size": "30.0 KB",
+      "why": null
+    },
+    {
+      "path": "validated/vision/body_analysis/arcface/dependencies/mtcnn_detector.py",
+      "size": "23.3 KB",
+      "why": null
+    },
+    {
+      "path": "validated/text/machine_comprehension/bert-squad/dependencies/run_onnx_squad.py",
+      "size": "23.7 KB",
+      "why": null
+    },
+    {
+      "path": "validated/text/machine_comprehension/bert-squad/dependencies/tokenization.py",
+      "size": "12.4 KB",
+      "why": null
+    },
+    {
+      "path": "validated/workflow_scripts/generate_onnx_hub_manifest.py",
+      "size": "11.9 KB",
+      "why": null
+    },
+    {
+      "path": "validated/workflow_scripts/ort_test_dir_utils.py",
+      "size": "11.4 KB",
+      "why": null
+    },
+    {
+      "path": "validated/vision/object_detection_segmentation/duc/dependencies/cityscapes_labels.py",
+      "size": "10.7 KB",
+      "why": null
+    },
+    {
+      "path": "validated/vision/body_analysis/arcface/dependencies/image_iter.py",
+      "size": "9.5 KB",
+      "why": null
+    }
+  ],
+  "data_flow": [
+    "你（用户/调用方）发起一个动作：运行命令、打开网页或调用接口。",
+    "核心逻辑在「validated/vision/body_analysis/arcface/dependencies/fresnet.py」这类模块里：真正的计算/推理/业务规则都发生在这里。",
+    "过程中会借道「validated/workflow_scripts/ort_test_dir_utils.py」这类工具模块：它们像瑞士军刀，谁需要谁来拿。",
+    "处理完成后，结果原路返回：渲染成页面、打印到终端或打包成 API 响应，交回给你。"
+  ],
+  "patterns": [],
+  "doc_quotes": [
+    {
+      "file": "contribute.md",
+      "text": "<!--- SPDX-License-Identifier: Apache-2.0 -->"
+    },
+    {
+      "file": "README.md",
+      "text": "<!--- SPDX-License-Identifier: Apache-2.0 -->"
+    }
+  ],
+  "read_suggestions": [
+    {
+      "title": "第一步：读 README",
+      "body": "打开仓库根目录的 README.md，了解它「是什么、解决什么问题、怎么跑起来」。"
+    },
+    {
+      "title": "善用目录语义",
+      "body": "src=源码、tests=测试、docs=文档、examples=示例，目录名本身就是地图。"
+    },
+    {
+      "title": "带着问题读",
+      "body": "比如「数据从哪进来」「结果存在哪」「错误怎么处理」，带着三个问题读任何项目都不会迷路。"
+    }
+  ],
+  "stats": {
+    "files": 4890,
+    "bytes": 25295525,
+    "sampled": 35
+  },
+  "generated_at": "2026-08-27T08:58:49.286Z",
+  "analyzer": "claw-static-analyzer v1"
+}

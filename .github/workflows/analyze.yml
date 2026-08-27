@@ -1,0 +1,83 @@
+name: Analyze Projects
+
+on:
+  workflow_dispatch:
+    inputs:
+      force:
+        description: 'Re-analyze even if cached'
+        type: boolean
+        default: false
+  schedule:
+    - cron: '0 3 * * 1'  # every Monday 03:00 UTC
+
+permissions:
+  contents: write
+  actions: write
+
+concurrency:
+  group: analyze
+  cancel-in-progress: false
+
+jobs:
+  analyze:
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          ref: main
+          persist-credentials: true
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Run analyzer with live progress pushes
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          FORCE_FLAG: ${{ inputs.force && '--force' || '' }}
+        run: |
+          set -e
+          # Stream status: after the analyzer finishes each repo, commit and push
+          # the status file + any ready reports so the site shows live progress.
+          node tools/analyze.mjs $FORCE_FLAG &
+          ANALYZER_PID=$!
+          LAST_PUSH=0
+          while kill -0 $ANALYZER_PID 2>/dev/null; do
+            sleep 45
+            NOW=$(date +%s)
+            if [ -f site/data/analysis-status.json ] && [ $((NOW - LAST_PUSH)) -ge 45 ]; then
+              git config user.name "github-actions[bot]"
+              git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+              git add site/data/reports site/data/analysis-status.json 2>/dev/null || true
+              if ! git diff --cached --quiet; then
+                git commit -m "chore(analyze): progress update [skip ci]" || true
+                git pull --rebase origin main || true
+                git push || true
+                LAST_PUSH=$(date +%s)
+              fi
+            fi
+          done
+          wait $ANALYZER_PID
+
+      - name: Final commit of reports and status
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add site/data/reports site/data/analysis-status.json
+          if git diff --cached --quiet; then
+            echo "No new reports; nothing to commit."
+          else
+            git commit -m "chore(analyze): refresh project analysis reports [skip ci]"
+            git pull --rebase origin main || true
+            git push
+          fi
+
+      - name: Trigger Pages redeploy
+        uses: benc-uk/workflow-dispatch@v1
+        with:
+          workflow: pages.yml
+          token: ${{ secrets.GITHUB_TOKEN }}
+          ref: main

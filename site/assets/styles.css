@@ -264,3 +264,156 @@ img { max-width: 100%; display: block; }
   .site-header nav a:not(.btn) { display: none; }
   .site-footer .container { flex-direction: column; }
 }
+
+/* ===== report page ===== */
+.report-hero { padding: 3.2rem 0 2.4rem; }
+.report-hero h1 { font-size: clamp(1.5rem, 3.5vw, 2.3rem); word-break: break-all; }
+
+.stat-row { display: flex; flex-wrap: wrap; gap: 1rem; margin-top: 1.4rem; }
+.stat {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 0.9rem 1.4rem;
+  min-width: 8.5rem;
+}
+.stat-v { font-size: 1.35rem; font-weight: 800; }
+.stat-k { color: var(--text-dim); font-size: 0.82rem; }
+
+.sub-h { margin: 1.8rem 0 0.7rem; font-size: 1.05rem; color: var(--text-dim); }
+
+/* language bar */
+.lang-bar { margin-top: 0.6rem; }
+.lang-bar .lang-seg {
+  display: inline-block;
+  height: 12px;
+  border-radius: 3px;
+  margin-right: 2px;
+  vertical-align: middle;
+}
+.lang-legend { display: flex; flex-wrap: wrap; gap: 0.9rem; margin-top: 0.7rem; color: var(--text-dim); font-size: 0.88rem; }
+.lang-legend i {
+  display: inline-block;
+  width: 10px; height: 10px;
+  border-radius: 50%;
+  margin-right: 5px;
+}
+
+/* progress */
+.progress-track {
+  height: 14px;
+  border-radius: 999px;
+  background: var(--bg-soft);
+  border: 1px solid var(--border);
+  overflow: hidden;
+  margin: 1.2rem 0 0.6rem;
+}
+.progress-bar {
+  height: 100%;
+  width: 0;
+  border-radius: 999px;
+  background: linear-gradient(90deg, var(--accent-strong), var(--accent-2));
+  transition: width 0.6s ease;
+}
+
+/* dir tree */
+.dir-item {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 0.85rem 1.2rem;
+  margin-bottom: 0.6rem;
+}
+.dir-name { font-family: ui-monospace, Consolas, monospace; font-weight: 700; color: var(--accent); }
+.dir-desc { color: var(--text-dim); font-size: 0.92rem; margin-top: 0.15rem; }
+.dir-sample { color: var(--text-dim); font-size: 0.8rem; margin-top: 0.3rem; opacity: 0.75; font-family: ui-monospace, Consolas, monospace; }
+
+/* data flow */
+.flow-steps { counter-reset: step; list-style: none; padding: 0; display: grid; gap: 0.7rem; }
+.flow-steps li {
+  counter-increment: step;
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 0.9rem 1.2rem 0.9rem 3.2rem;
+  position: relative;
+  color: var(--text-dim);
+}
+.flow-steps li::before {
+  content: counter(step);
+  position: absolute;
+  left: 1rem;
+  top: 0.85rem;
+  width: 1.6rem; height: 1.6rem;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--accent-strong), var(--accent-2));
+  color: #fff;
+  font-weight: 700;
+  font-size: 0.85rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* patterns */
+.pattern-list { display: grid; gap: 0.6rem; }
+.pattern-item {
+  display: flex;
+  align-items: center;
+  gap: 0.9rem;
+  flex-wrap: wrap;
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 0.75rem 1.1rem;
+}
+.pattern-badge {
+  padding: 0.2rem 0.75rem;
+  border-radius: 999px;
+  background: rgba(107, 140, 255, 0.12);
+  border: 1px solid rgba(107, 140, 255, 0.3);
+  color: var(--accent);
+  font-size: 0.85rem;
+  white-space: nowrap;
+}
+.pattern-badge.notable {
+  background: rgba(143, 123, 255, 0.15);
+  border-color: rgba(143, 123, 255, 0.45);
+  color: #b3a4ff;
+}
+.pattern-speak { color: var(--text-dim); flex: 1; min-width: 14rem; }
+.pattern-where { font-size: 0.78rem; color: var(--text-dim); opacity: 0.7; }
+
+/* doc quotes */
+.doc-quote {
+  margin: 0 0 1rem;
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-left: 3px solid var(--accent);
+  border-radius: 10px;
+  padding: 1rem 1.3rem;
+}
+.doc-quote p { margin: 0 0 0.4rem; color: var(--text-dim); }
+.doc-quote cite { color: var(--text-dim); font-size: 0.82rem; opacity: 0.8; }
+
+/* module cards code */
+.card code {
+  font-family: ui-monospace, Consolas, monospace;
+  font-size: 0.9rem;
+  color: var(--accent);
+  word-break: break-all;
+}
+
+/* analyze button on cards */
+.card .card-actions { margin-top: 0.6rem; }
+.card .analyze-link {
+  font-size: 0.85rem;
+  color: var(--accent);
+  border: 1px dashed rgba(107, 140, 255, 0.4);
+  border-radius: 999px;
+  padding: 0.25rem 0.8rem;
+  display: inline-block;
+  transition: background 0.2s;
+}
+.card .analyze-link:hover { background: rgba(107, 140, 255, 0.12); }
+.card .analyze-link.done { border-style: solid; }
