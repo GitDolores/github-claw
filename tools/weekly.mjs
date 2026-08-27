@@ -105,7 +105,7 @@ function main() {
       ...p,
       archived_at: today,
       featured_weeks: Math.round(weeksBetween(p.featured_since, now) * 10) / 10,
-      category: classifyProject(p),
+      category: p.category || classifyProject(p),
     });
     // avoid duplicates in archive
     const exists = archive.some(a => (a.repo || a.repo_url) === (entry.repo || entry.repo_url));
