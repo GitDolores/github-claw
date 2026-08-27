@@ -417,3 +417,73 @@ img { max-width: 100%; display: block; }
 }
 .card .analyze-link:hover { background: rgba(107, 140, 255, 0.12); }
 .card .analyze-link.done { border-style: solid; }
+
+/* ===== history page ===== */
+.filter-bar { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 1.4rem; }
+.filter-btn {
+  background: transparent;
+  border: 1px solid var(--border);
+  color: var(--text-dim);
+  border-radius: 999px;
+  padding: 0.35rem 1rem;
+  font-size: 0.88rem;
+  cursor: pointer;
+  transition: all 0.15s;
+}
+.filter-btn:hover { border-color: var(--accent); color: var(--text); }
+.filter-btn.active {
+  background: linear-gradient(135deg, var(--accent-strong), var(--accent-2));
+  border-color: transparent;
+  color: #fff;
+}
+
+.hist-group { margin-bottom: 2rem; }
+.hist-cat { font-size: 1.15rem; margin: 0 0 0.8rem; }
+.hist-cat-count {
+  color: var(--text-dim);
+  font-size: 0.85rem;
+  font-weight: 400;
+  margin-left: 0.4rem;
+}
+
+.hist-item {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 0.85rem 1.2rem;
+  margin-bottom: 0.55rem;
+}
+.hist-item.faded { opacity: 0.75; }
+.hist-main { display: flex; align-items: center; gap: 0.7rem; flex-wrap: wrap; }
+.hist-name { font-weight: 700; color: var(--text); }
+.hist-name:hover { color: var(--accent); }
+.hist-badge {
+  font-size: 0.75rem;
+  padding: 0.12rem 0.6rem;
+  border-radius: 999px;
+  background: rgba(107, 140, 255, 0.12);
+  color: var(--accent);
+  border: 1px solid rgba(107, 140, 255, 0.3);
+}
+.hist-item.faded .hist-badge {
+  background: rgba(154, 167, 192, 0.1);
+  color: var(--text-dim);
+  border-color: var(--border);
+}
+.hist-desc { color: var(--text-dim); font-size: 0.9rem; margin-top: 0.25rem; }
+.hist-meta { color: var(--text-dim); font-size: 0.82rem; margin-top: 0.25rem; opacity: 0.85; }
+.hist-meta a { color: var(--accent); }
+
+.sum-block {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-left: 3px solid var(--accent);
+  border-radius: 10px;
+  padding: 1rem 1.3rem;
+  margin-bottom: 0.7rem;
+}
+.sum-head { display: flex; justify-content: space-between; align-items: baseline; gap: 1rem; flex-wrap: wrap; }
+.sum-label { font-weight: 700; }
+.sum-count { color: var(--text-dim); font-size: 0.82rem; }
+.sum-speak { color: var(--text-dim); font-size: 0.85rem; margin: 0.2rem 0 0.3rem; }
+.sum-text { margin: 0; color: var(--text); font-size: 0.95rem; }

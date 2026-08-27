@@ -1,26 +1,119 @@
 [
   {
-    "name": "ai-projects-learning 示例库",
-    "description": "本仓库的示例项目集合与学习笔记（示例条目，可替换为真实项目）",
-    "repo_url": "https://github.com/GitDolores/github-claw",
-    "tags": ["示例","导航","学习"],
-    "stars": 42,
-    "last_updated": "2026-07-30"
+    "category": "agents",
+    "category_label": "AI 智能体",
+    "category_speak": "能自主规划调用工具的 AI 程序",
+    "name": "AutoGPT",
+    "description": "AutoGPT is the vision of accessible AI for everyone, to use and to build on. Our mission is to provide the tools, so that you can focus on what matters.",
+    "repo": "Significant-Gravitas/AutoGPT",
+    "repo_url": "https://github.com/Significant-Gravitas/AutoGPT",
+    "tags": [
+      "智能体",
+      "自动化"
+    ],
+    "stars": 186919,
+    "added": "2026-08-27",
+    "forks": 46048,
+    "last_updated": "2026-08-27",
+    "archived": false,
+    "featured_since": "2026-08-27"
   },
   {
-    "name": "transformer-playground",
-    "description": "轻量级 Transformer 实验与可视化示例，适合入门和教学",
-    "repo_url": "https://github.com/huggingface/transformers",
-    "tags": ["Transformer","NLP","示例"],
-    "stars": 130000,
-    "last_updated": "2026-07-01"
+    "category": "vision",
+    "category_label": "计算机视觉",
+    "category_speak": "图像识别、目标检测、分割与生成",
+    "name": "stable-diffusion-webui",
+    "description": "Stable Diffusion web UI",
+    "repo": "AUTOMATIC1111/stable-diffusion-webui",
+    "repo_url": "https://github.com/AUTOMATIC1111/stable-diffusion-webui",
+    "tags": [
+      "文生图",
+      "WebUI"
+    ],
+    "stars": 164679,
+    "added": "2026-08-27",
+    "forks": 30558,
+    "last_updated": "2026-03-02",
+    "archived": false,
+    "featured_since": "2026-08-27"
   },
   {
-    "name": "vision-models-examples",
-    "description": "计算机视觉常用模型与数据预处理实战示例",
-    "repo_url": "https://github.com/onnx/models",
-    "tags": ["CV","模型","实战"],
-    "stars": 8000,
-    "last_updated": "2026-06-12"
+    "category": "llm",
+    "category_label": "大模型 / LLM",
+    "category_speak": "语言大模型与相关训练、推理工具",
+    "name": "llama.cpp",
+    "description": "LLM inference in C/C++",
+    "repo": "ggml-org/llama.cpp",
+    "repo_url": "https://github.com/ggml-org/llama.cpp",
+    "tags": [
+      "LLM",
+      "推理",
+      "C++"
+    ],
+    "stars": 125868,
+    "added": "2026-08-27",
+    "forks": 22260,
+    "last_updated": "2026-08-27",
+    "archived": false,
+    "featured_since": "2026-08-27"
+  },
+  {
+    "category": "audio",
+    "category_label": "语音 / 音频",
+    "category_speak": "语音识别、合成与音乐生成",
+    "name": "whisper",
+    "description": "Robust Speech Recognition via Large-Scale Weak Supervision",
+    "repo": "openai/whisper",
+    "repo_url": "https://github.com/openai/whisper",
+    "tags": [
+      "语音识别",
+      "多语言"
+    ],
+    "stars": 108002,
+    "added": "2026-08-27",
+    "forks": 13101,
+    "last_updated": "2026-07-28",
+    "archived": false,
+    "featured_since": "2026-08-27"
+  },
+  {
+    "category": "learning",
+    "category_label": "教程 / 学习资源",
+    "category_speak": "课程、笔记、面试题与示例集",
+    "name": "ML-For-Beginners",
+    "description": "12 weeks, 26 lessons, 52 quizzes, classic Machine Learning for all",
+    "repo": "microsoft/ML-For-Beginners",
+    "repo_url": "https://github.com/microsoft/ML-For-Beginners",
+    "tags": [
+      "课程",
+      "入门",
+      "机器学习"
+    ],
+    "stars": 89832,
+    "added": "2026-08-27",
+    "forks": 22098,
+    "last_updated": "2026-08-20",
+    "archived": false,
+    "featured_since": "2026-08-27"
+  },
+  {
+    "category": "llm",
+    "category_label": "大模型 / LLM",
+    "category_speak": "语言大模型与相关训练、推理工具",
+    "name": "vllm",
+    "description": "A high-throughput and memory-efficient inference and serving engine for LLMs",
+    "repo": "vllm-project/vllm",
+    "repo_url": "https://github.com/vllm-project/vllm",
+    "tags": [
+      "推理",
+      "服务",
+      "部署"
+    ],
+    "stars": 90203,
+    "added": "2026-08-27",
+    "forks": 21286,
+    "last_updated": "2026-08-27",
+    "archived": false,
+    "featured_since": "2026-08-27"
   }
 ]

@@ -1,7 +1,7 @@
 {
-  "repo": null,
-  "stage": "all-done",
-  "progress": 100,
-  "note": "全部完成：3 个项目",
-  "updated_at": "2026-08-27T09:13:23.492Z"
+  "repo": "ggml-org/llama.cpp",
+  "stage": "clone",
+  "progress": 20,
+  "note": "克隆仓库（浅克隆，只取最新版本）",
+  "updated_at": "2026-08-27T10:23:34.869Z"
 }

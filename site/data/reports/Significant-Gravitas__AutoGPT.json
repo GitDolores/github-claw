@@ -1,0 +1,407 @@
+{
+  "meta": {
+    "full_name": "Significant-Gravitas/AutoGPT",
+    "description": "AutoGPT is the vision of accessible AI for everyone, to use and to build on. Our mission is to provide the tools, so that you can focus on what matters.",
+    "stars": 186919,
+    "forks": 46048,
+    "open_issues": 504,
+    "language": "Python",
+    "topics": [
+      "agentic-ai",
+      "agents",
+      "ai",
+      "artificial-intelligence",
+      "autonomous-agents",
+      "claude",
+      "gpt",
+      "llama-api",
+      "llm",
+      "openai",
+      "python"
+    ],
+    "license": "NOASSERTION",
+    "default_branch": "master",
+    "pushed_at": "2026-08-27T10:14:04Z",
+    "created_at": "2023-03-16T09:21:07Z",
+    "homepage": "https://agpt.co",
+    "size_kb": 694887,
+    "archived": false
+  },
+  "overview": "「Significant-Gravitas/AutoGPT」是一个以 Python 为主的项目，仓库里大约有 5381 个文件（不含 git 内部文件），源码规模约 181.2 MB。 官方一句话介绍：AutoGPT is the vision of accessible AI for everyone, to use and to build on. Our mission is to provide the tools, so that you can focus on what matters. 它在 GitHub 上拿到了 186.9k 颗星、46.0k 次复刻（fork），还有 504 个开放中的 issue。 官方标签：agentic-ai、agents、ai、artificial-intelligence、autonomous-agents、claude。 许可证是 NOASSERTION，决定了你怎么合法使用这些代码。 主要语言构成（按文件数）：Python 1786 个文件、TypeScript 2301 个文件、JavaScript 22 个文件、Shell 28 个文件、CSS 11 个文件、C 2 个文件。 用到的关键框架/工具：React、Next.js、Vitest、ESLint、TypeScript、FastAPI。 一句话总结：这是一个 AI/机器学习项目（主力语言 Python），适合想了解「模型是怎么搭起来」的读者。",
+  "languages": [
+    {
+      "label": "Python",
+      "speak": "AI 领域第一语言，语法简单好读",
+      "color": "#3572A5",
+      "files": 1786
+    },
+    {
+      "label": "TypeScript",
+      "speak": "带类型检查的 JavaScript，写大项目更稳",
+      "color": "#3178c6",
+      "files": 2301
+    },
+    {
+      "label": "JavaScript",
+      "speak": "网页脚本语言，让页面能动起来",
+      "color": "#f1e05a",
+      "files": 22
+    },
+    {
+      "label": "Shell",
+      "speak": "命令行脚本，粘合各种工具",
+      "color": "#89e051",
+      "files": 28
+    },
+    {
+      "label": "CSS",
+      "speak": "网页样式语言",
+      "color": "#563d7c",
+      "files": 11
+    },
+    {
+      "label": "C",
+      "speak": "贴近硬件的经典语言",
+      "color": "#555555",
+      "files": 2
+    }
+  ],
+  "frameworks": [
+    {
+      "dep": "react",
+      "label": "React",
+      "speak": "前端组件化框架，界面拆成一块块积木",
+      "category": "前端"
+    },
+    {
+      "dep": "next",
+      "label": "Next.js",
+      "speak": "React 全栈框架，服务端渲染",
+      "category": "前端"
+    },
+    {
+      "dep": "vitest",
+      "label": "Vitest",
+      "speak": "Vite 生态测试框架",
+      "category": "测试"
+    },
+    {
+      "dep": "eslint",
+      "label": "ESLint",
+      "speak": "代码风格检查器",
+      "category": "质量"
+    },
+    {
+      "dep": "typescript",
+      "label": "TypeScript",
+      "speak": "JavaScript 的类型增强版",
+      "category": "语言"
+    },
+    {
+      "ext": true,
+      "dep": "fastapi",
+      "label": "FastAPI",
+      "speak": "现代 Python 后端框架",
+      "category": "后端"
+    },
+    {
+      "ext": true,
+      "dep": "pytest",
+      "label": "pytest",
+      "speak": "Python 测试框架",
+      "category": "测试"
+    },
+    {
+      "label": ".gitignore",
+      "speak": "声明哪些文件不进版本库",
+      "category": "Git"
+    },
+    {
+      "label": "Docker Compose",
+      "speak": "一条命令启动整套服务",
+      "category": "部署"
+    },
+    {
+      "label": "GitHub Actions",
+      "speak": "仓库内置自动化流水线",
+      "category": "CI/CD"
+    }
+  ],
+  "dir_tree": [
+    {
+      "dir": "autogpt_platform/frontend",
+      "count": 2456,
+      "sample": [
+        "autogpt_platform/frontend/.env.default",
+        "autogpt_platform/frontend/.eslintrc.json",
+        "autogpt_platform/frontend/.gitignore",
+        "autogpt_platform/frontend/.npmrc"
+      ],
+      "meaning": null
+    },
+    {
+      "dir": "autogpt_platform/backend",
+      "count": 1884,
+      "sample": [
+        "autogpt_platform/backend/.dockerignore",
+        "autogpt_platform/backend/.env.default",
+        "autogpt_platform/backend/.gitignore",
+        "autogpt_platform/backend/AGENTS.md"
+      ],
+      "meaning": null
+    },
+    {
+      "dir": "docs/integrations",
+      "count": 201,
+      "sample": [
+        "docs/integrations/README.md",
+        "docs/integrations/SUMMARY.md",
+        "docs/integrations/guides/llm-providers.md",
+        "docs/integrations/guides/voice-providers.md"
+      ],
+      "meaning": "项目文档"
+    },
+    {
+      "dir": "classic/forge",
+      "count": 172,
+      "sample": [
+        "classic/forge/.env.example",
+        "classic/forge/.flake8",
+        "classic/forge/.gitignore",
+        "classic/forge/CLAUDE.md"
+      ],
+      "meaning": null
+    },
+    {
+      "dir": "classic/direct_benchmark",
+      "count": 115,
+      "sample": [
+        "classic/direct_benchmark/.gitignore",
+        "classic/direct_benchmark/analyze_failures.py",
+        "classic/direct_benchmark/analyze_reports.py",
+        "classic/direct_benchmark/challenges_already_beaten.json"
+      ],
+      "meaning": null
+    },
+    {
+      "dir": "docs/content",
+      "count": 92,
+      "sample": [
+        "docs/content/code-of-conduct.md",
+        "docs/content/contributing.md",
+        "docs/content/index.md",
+        "docs/content/imgs/e2b-dashboard.png"
+      ],
+      "meaning": "项目文档"
+    },
+    {
+      "dir": "classic/original_autogpt",
+      "count": 86,
+      "sample": [
+        "classic/original_autogpt/.coveragerc",
+        "classic/original_autogpt/.env.template",
+        "classic/original_autogpt/.envrc",
+        "classic/original_autogpt/.flake8"
+      ],
+      "meaning": null
+    },
+    {
+      "dir": "docs/platform",
+      "count": 77,
+      "sample": [
+        "docs/platform/advanced_setup.md",
+        "docs/platform/agent-blocks.md",
+        "docs/platform/agent-builder-guide.md",
+        "docs/platform/agent-library.md"
+      ],
+      "meaning": "项目文档"
+    },
+    {
+      "dir": ".claude/skills",
+      "count": 66,
+      "sample": [
+        ".claude/skills/write-frontend-tests/SKILL.md",
+        ".claude/skills/worktree/SKILL.md",
+        ".claude/skills/vercel-react-best-practices/AGENTS.md",
+        ".claude/skills/vercel-react-best-practices/SKILL.md"
+      ],
+      "meaning": null
+    },
+    {
+      "dir": "autogpt_platform/single-container",
+      "count": 46,
+      "sample": [
+        "autogpt_platform/single-container/.env.example",
+        "autogpt_platform/single-container/bootstrap.sh",
+        "autogpt_platform/single-container/common.sh",
+        "autogpt_platform/single-container/disabled-service.sh"
+      ],
+      "meaning": null
+    },
+    {
+      "dir": ".github/workflows",
+      "count": 42,
+      "sample": [
+        ".github/workflows/batch-command-handler.yml",
+        ".github/workflows/batch-command-listener.yml",
+        ".github/workflows/batch-reconcile.yml",
+        ".github/workflows/cla-label-sync.yml"
+      ],
+      "meaning": "GitHub 平台专属配置（Actions、Issue 模板等）"
+    },
+    {
+      "dir": "autogpt_platform/autogpt_libs",
+      "count": 29,
+      "sample": [
+        "autogpt_platform/autogpt_libs/poetry.lock",
+        "autogpt_platform/autogpt_libs/pyproject.toml",
+        "autogpt_platform/autogpt_libs/README.md",
+        "autogpt_platform/autogpt_libs/autogpt_libs/__init__.py"
+      ],
+      "meaning": null
+    }
+  ],
+  "entry_files": [],
+  "core_modules": [
+    {
+      "path": "classic/original_autogpt/autogpt/app/main.py",
+      "size": "33.7 KB",
+      "why": "程序主入口：整个应用从这里启动"
+    },
+    {
+      "path": "autogpt_platform/backend/backend/data/model.py",
+      "size": "39.0 KB",
+      "why": "数据/AI 模型定义"
+    },
+    {
+      "path": "autogpt_platform/backend/backend/copilot/model.py",
+      "size": "66.2 KB",
+      "why": "数据/AI 模型定义"
+    },
+    {
+      "path": "autogpt_platform/backend/backend/copilot/tools/agent_generator/core.py",
+      "size": "23.4 KB",
+      "why": null
+    },
+    {
+      "path": "autogpt_platform/backend/backend/api/features/library/model.py",
+      "size": "22.6 KB",
+      "why": "数据/AI 模型定义"
+    },
+    {
+      "path": "autogpt_platform/backend/backend/api/features/integrations/router.py",
+      "size": "76.3 KB",
+      "why": "路由：把网址分发给对应处理函数"
+    },
+    {
+      "path": "autogpt_platform/backend/backend/api/features/store/model.py",
+      "size": "12.5 KB",
+      "why": "数据/AI 模型定义"
+    },
+    {
+      "path": "classic/forge/forge/models/config.py",
+      "size": "13.7 KB",
+      "why": "配置：集中管理可调参数"
+    }
+  ],
+  "data_flow": [
+    "你（用户/调用方）发起一个动作：运行命令、打开网页或调用接口。",
+    "请求进入「autogpt_platform/backend/backend/api/features/library/model.py」这类分发层：它判断「你想要什么」，把活儿派给对应的处理单元。",
+    "核心逻辑在「autogpt_platform/backend/backend/data/model.py」这类模块里：真正的计算/推理/业务规则都发生在这里。",
+    "处理完成后，结果原路返回：渲染成页面、打印到终端或打包成 API 响应，交回给你。",
+    "任何一步出错都会被 try/catch 兜住，转成友好的错误提示，而不是直接崩溃。"
+  ],
+  "patterns": [
+    {
+      "pattern": "async/await",
+      "speak": "用同步写法处理异步，代码更好读",
+      "severity": "common",
+      "where": "classic/original_autogpt/tests/unit/test_config.py"
+    },
+    {
+      "pattern": "中间件",
+      "speak": "请求像流水线过安检，每站处理一点",
+      "severity": "common",
+      "where": "classic/original_autogpt/autogpt/app/agent_protocol_server.py"
+    },
+    {
+      "pattern": "路由分发",
+      "speak": "URL 映射到处理函数",
+      "severity": "common",
+      "where": "classic/original_autogpt/autogpt/app/agent_protocol_server.py"
+    },
+    {
+      "pattern": "经典 GoF 模式",
+      "speak": "用名字就能看出意图的面向对象套路",
+      "severity": "notable",
+      "where": "classic/original_autogpt/autogpt/app/config.py"
+    },
+    {
+      "pattern": "接口约定",
+      "speak": "TypeScript 定义数据形状，契约先行",
+      "severity": "common",
+      "where": "classic/forge/forge/components/todo/todo.py"
+    },
+    {
+      "pattern": "模块化导出",
+      "speak": "功能拆成模块互相引用",
+      "severity": "common",
+      "where": "autogpt_platform/cloudflare_worker.js"
+    },
+    {
+      "pattern": "事件驱动",
+      "speak": "「有事叫我」：注册回调等事件发生",
+      "severity": "common",
+      "where": "autogpt_platform/frontend/src/tests/integrations/copilot-sse.ts"
+    },
+    {
+      "pattern": "React Hooks",
+      "speak": "函数组件里管理状态的钩子",
+      "severity": "common",
+      "where": "autogpt_platform/frontend/src/services/push-notifications/PushNotificationProvider.tsx"
+    },
+    {
+      "pattern": "异常捕获",
+      "speak": "出错不崩溃，兜住处理",
+      "severity": "common",
+      "where": "autogpt_platform/frontend/src/services/push-notifications/registration.ts"
+    },
+    {
+      "pattern": "观察者/响应式流",
+      "speak": "数据像水流，订阅了就能收到",
+      "severity": "notable",
+      "where": "autogpt_platform/frontend/src/services/push-notifications/registration.ts"
+    }
+  ],
+  "doc_quotes": [
+    {
+      "file": "AGENTS.md",
+      "text": "This guide provides context for coding agents when updating the **autogpt_platform** folder."
+    },
+    {
+      "file": "CODE_OF_CONDUCT.md",
+      "text": "The purpose of this Code of Conduct is to provide guidelines for contributors to the AutoGPT projects on GitHub. We aim to create a positive and inclusive environment where all participants can contribute and collaborate effectively. By participating in this project, you agree to abide by this Code "
+    }
+  ],
+  "read_suggestions": [
+    {
+      "title": "第一步：读 README",
+      "body": "打开仓库根目录的 README.md，了解它「是什么、解决什么问题、怎么跑起来」。它有官网/文档：https://agpt.co"
+    },
+    {
+      "title": "善用目录语义",
+      "body": "src=源码、tests=测试、docs=文档、examples=示例，目录名本身就是地图。"
+    },
+    {
+      "title": "带着问题读",
+      "body": "比如「数据从哪进来」「结果存在哪」「错误怎么处理」，带着三个问题读任何项目都不会迷路。"
+    }
+  ],
+  "stats": {
+    "files": 5381,
+    "bytes": 190014093,
+    "sampled": 2971
+  },
+  "generated_at": "2026-08-27T10:22:18.994Z",
+  "analyzer": "claw-static-analyzer v1"
+}

@@ -125,3 +125,105 @@ export const PATTERN_SIGNALS = [
   { re: /\bGraphQL\b|\bgraphql\b/, pattern: 'GraphQL', speak: '按需取数据的新式 API 风格', severity: 'notable' },
   { re: /\bObservable\b|subscribe\(/i, pattern: '观察者/响应式流', speak: '数据像水流，订阅了就能收到', severity: 'notable' },
 ];
+
+// Category rules: ordered, first match wins.
+// keywords are tested against "owner/repo name description tags topics" (lowercased).
+export const CATEGORY_RULES = [
+  {
+    id: 'llm',
+    label: '大模型 / LLM',
+    speak: '语言大模型与相关训练、推理工具',
+    keywords: ['llm', 'gpt', 'llama', 'mistral', 'qwen', 'deepseek', 'chatglm', '大模型', '语言模型', 'transformer', 'tokeniz', 'inference server', 'vllm', 'text-generation'],
+  },
+  {
+    id: 'vision',
+    label: '计算机视觉',
+    speak: '图像识别、目标检测、分割与生成',
+    keywords: ['vision', 'cv', 'object detection', 'yolo', 'segmentation', '图像', '视觉', 'ocr', 'diffusion', 'stable-diffusion', '文生图', 'image generation', 'gan', 'super resolution'],
+  },
+  {
+    id: 'audio',
+    label: '语音 / 音频',
+    speak: '语音识别、合成与音乐生成',
+    keywords: ['speech', 'asr', 'tts', 'whisper', 'voice', 'audio', '语音', '音乐生成', 'music generation', 'sound'],
+  },
+  {
+    id: 'agents',
+    label: 'AI 智能体',
+    speak: '能自主规划调用工具的 AI 程序',
+    keywords: ['agent', 'autogpt', 'copilot', 'tool use', 'function call', 'mcp', '智能体', 'workflow automation', 'crewai', 'langgraph'],
+  },
+  {
+    id: 'mlops',
+    label: '训练 / 部署框架',
+    speak: '模型训练、加速与生产部署的基础设施',
+    keywords: ['training framework', 'distributed', 'deep learning framework', 'pytorch', 'tensorflow', 'inference', 'quantiz', 'compiler', 'onnx', 'tensorrt', 'ml ops', 'mlops', 'serving'],
+  },
+  {
+    id: 'rag',
+    label: 'RAG / 知识库',
+    speak: '检索增强生成与向量知识库',
+    keywords: ['rag', 'retrieval', 'vector database', 'embedding', '知识库', 'chroma', 'milvus', 'qdrant', 'pinecone', 'faiss', 'langchain', 'llamaindex'],
+  },
+  {
+    id: 'learning',
+    label: '教程 / 学习资源',
+    speak: '课程、笔记、面试题与示例集',
+    keywords: ['tutorial', 'course', 'notes', '面试', '学习', 'roadmap', 'awesome', 'guide', 'handbook', 'cookbook', 'examples', 'interview', '101', '入门'],
+  },
+  {
+    id: 'tools',
+    label: '开发工具',
+    speak: '提升开发效率的实用工具',
+    keywords: ['cli', 'toolkit', 'utility', 'boilerplate', 'template', 'starter', '脚手架', '工具'],
+  },
+  {
+    id: 'web',
+    label: 'Web 应用',
+    speak: '网站、前端与全栈项目',
+    keywords: ['web', 'frontend', 'react', 'vue', 'next', 'nuxt', 'dashboard', 'admin', 'website', 'landing', 'blog', 'fullstack'],
+  },
+  {
+    id: 'other',
+    label: '其他',
+    speak: '暂未归类的好项目',
+    keywords: [],
+  },
+];
+
+export function classifyProject(p) {
+  // name/repo/tags are curated signals; API-fetched descriptions can contain
+  // misleading words ("the vision of accessible AI"), so they rank lower.
+  const strongText = [
+    p.repo || '',
+    p.name || '',
+    (p.tags || []).join(' '),
+    (p.topics || []).join(' '),
+  ].join(' ').toLowerCase();
+  const fullText = strongText + ' ' + (p.description || '').toLowerCase();
+  // word-boundary match for short/ambiguous latin keywords (e.g. "vision"
+  // must not match "supervision", "cv" must not match "opencv" false-friend hits)
+  const wordish = (text, kw) => {
+    if (/^[\u4e00-\u9fff]+$/.test(kw)) return text.includes(kw); // CJK: substring
+    const re = new RegExp(`(^|[^a-z0-9])${kw.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}([^a-z0-9]|$)`);
+    return re.test(text);
+  };
+  for (const rule of CATEGORY_RULES) {
+    if (rule.keywords.some(k => wordish(strongText, k))) return rule.id;
+  }
+  for (const rule of CATEGORY_RULES) {
+    if (rule.keywords.some(k => wordish(fullText, k))) return rule.id;
+  }
+  return 'other';
+}
+
+// Fill in missing plain-language fields for a project entry.
+export function enrichProject(p) {
+  const cat = CATEGORY_RULES.find(c => c.id === (p.category || classifyProject(p)));
+  return {
+    category: cat ? cat.id : 'other',
+    category_label: cat ? cat.label : '其他',
+    category_speak: cat ? cat.speak : '',
+    ...p,
+  };
+}

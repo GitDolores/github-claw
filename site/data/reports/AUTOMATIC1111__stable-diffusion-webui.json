@@ -1,0 +1,349 @@
+{
+  "meta": {
+    "full_name": "AUTOMATIC1111/stable-diffusion-webui",
+    "description": "Stable Diffusion web UI",
+    "stars": 164679,
+    "forks": 30558,
+    "open_issues": 2501,
+    "language": "Python",
+    "topics": [
+      "ai",
+      "ai-art",
+      "deep-learning",
+      "diffusion",
+      "gradio",
+      "image-generation",
+      "image2image",
+      "img2img",
+      "pytorch",
+      "stable-diffusion",
+      "text2image",
+      "torch",
+      "txt2img",
+      "unstable",
+      "upscaling",
+      "web"
+    ],
+    "license": "AGPL-3.0",
+    "default_branch": "master",
+    "pushed_at": "2026-03-02T07:00:53Z",
+    "created_at": "2022-08-22T14:05:26Z",
+    "homepage": null,
+    "size_kb": 36552,
+    "archived": false
+  },
+  "overview": "「AUTOMATIC1111/stable-diffusion-webui」是一个以 Python 为主的项目，仓库里大约有 315 个文件（不含 git 内部文件），源码规模约 3.7 MB。 官方一句话介绍：Stable Diffusion web UI 它在 GitHub 上拿到了 164.7k 颗星、30.6k 次复刻（fork），还有 2501 个开放中的 issue。 官方标签：ai、ai-art、deep-learning、diffusion、gradio、image-generation。 许可证是 AGPL-3.0，决定了你怎么合法使用这些代码。 主要语言构成（按文件数）：Python 213 个文件、JavaScript 30 个文件、CSS 2 个文件、HTML 11 个文件、Shell 3 个文件。 用到的关键框架/工具：ESLint、Transformers、FastAPI、.gitignore、GitHub Actions。 一句话总结：这是一个 AI/机器学习项目（主力语言 Python），适合想了解「模型是怎么搭起来」的读者。",
+  "languages": [
+    {
+      "label": "Python",
+      "speak": "AI 领域第一语言，语法简单好读",
+      "color": "#3572A5",
+      "files": 213
+    },
+    {
+      "label": "JavaScript",
+      "speak": "网页脚本语言，让页面能动起来",
+      "color": "#f1e05a",
+      "files": 30
+    },
+    {
+      "label": "CSS",
+      "speak": "网页样式语言",
+      "color": "#563d7c",
+      "files": 2
+    },
+    {
+      "label": "HTML",
+      "speak": "网页骨架标记语言",
+      "color": "#e34c26",
+      "files": 11
+    },
+    {
+      "label": "Shell",
+      "speak": "命令行脚本，粘合各种工具",
+      "color": "#89e051",
+      "files": 3
+    }
+  ],
+  "frameworks": [
+    {
+      "dep": "eslint",
+      "label": "ESLint",
+      "speak": "代码风格检查器",
+      "category": "质量"
+    },
+    {
+      "dep": "transformers",
+      "label": "Transformers",
+      "speak": "Hugging Face 模型库，NLP 事实标准",
+      "category": "AI"
+    },
+    {
+      "ext": true,
+      "dep": "fastapi",
+      "label": "FastAPI",
+      "speak": "现代 Python 后端框架",
+      "category": "后端"
+    },
+    {
+      "label": ".gitignore",
+      "speak": "声明哪些文件不进版本库",
+      "category": "Git"
+    },
+    {
+      "label": "GitHub Actions",
+      "speak": "仓库内置自动化流水线",
+      "category": "CI/CD"
+    }
+  ],
+  "dir_tree": [
+    {
+      "dir": "modules",
+      "count": 129,
+      "sample": [
+        "modules/cache.py",
+        "modules/call_queue.py",
+        "modules/cmd_args.py",
+        "modules/codeformer_model.py"
+      ],
+      "meaning": null
+    },
+    {
+      "dir": "/",
+      "count": 28,
+      "sample": [
+        ".eslintignore",
+        ".eslintrc.js",
+        ".git-blame-ignore-revs",
+        ".gitignore"
+      ],
+      "meaning": null
+    },
+    {
+      "dir": "javascript",
+      "count": 25,
+      "sample": [
+        "javascript/aspectRatioOverlay.js",
+        "javascript/contextMenus.js",
+        "javascript/dragdrop.js",
+        "javascript/edit-attention.js"
+      ],
+      "meaning": null
+    },
+    {
+      "dir": "extensions-builtin/Lora",
+      "count": 19,
+      "sample": [
+        "extensions-builtin/Lora/extra_networks_lora.py",
+        "extensions-builtin/Lora/lora.py",
+        "extensions-builtin/Lora/lora_logger.py",
+        "extensions-builtin/Lora/lora_patches.py"
+      ],
+      "meaning": null
+    },
+    {
+      "dir": "scripts",
+      "count": 12,
+      "sample": [
+        "scripts/custom_code.py",
+        "scripts/img2imgalt.py",
+        "scripts/loopback.py",
+        "scripts/outpainting_mk_2.py"
+      ],
+      "meaning": "自动化脚本"
+    },
+    {
+      "dir": "html",
+      "count": 12,
+      "sample": [
+        "html/card-no-preview.png",
+        "html/extra-networks-card.html",
+        "html/extra-networks-copy-path-button.html",
+        "html/extra-networks-edit-item-button.html"
+      ],
+      "meaning": null
+    },
+    {
+      "dir": "modules/models",
+      "count": 9,
+      "sample": [
+        "modules/models/sd3/mmdit.py",
+        "modules/models/sd3/other_impls.py",
+        "modules/models/sd3/sd3_cond.py",
+        "modules/models/sd3/sd3_impls.py"
+      ],
+      "meaning": null
+    },
+    {
+      "dir": "test",
+      "count": 8,
+      "sample": [
+        "test/conftest.py",
+        "test/test_extras.py",
+        "test/test_face_restorers.py",
+        "test/test_img2img.py"
+      ],
+      "meaning": "测试代码"
+    },
+    {
+      "dir": "modules/textual_inversion",
+      "count": 8,
+      "sample": [
+        "modules/textual_inversion/autocrop.py",
+        "modules/textual_inversion/dataset.py",
+        "modules/textual_inversion/image_embedding.py",
+        "modules/textual_inversion/learn_schedule.py"
+      ],
+      "meaning": null
+    },
+    {
+      "dir": "configs",
+      "count": 7,
+      "sample": [
+        "configs/alt-diffusion-inference.yaml",
+        "configs/alt-diffusion-m18-inference.yaml",
+        "configs/instruct-pix2pix.yaml",
+        "configs/sd3-inference.yaml"
+      ],
+      "meaning": null
+    },
+    {
+      "dir": "textual_inversion_templates",
+      "count": 6,
+      "sample": [
+        "textual_inversion_templates/hypernetwork.txt",
+        "textual_inversion_templates/none.txt",
+        "textual_inversion_templates/style.txt",
+        "textual_inversion_templates/style_filewords.txt"
+      ],
+      "meaning": null
+    },
+    {
+      "dir": "extensions-builtin/LDSR",
+      "count": 6,
+      "sample": [
+        "extensions-builtin/LDSR/ldsr_model_arch.py",
+        "extensions-builtin/LDSR/preload.py",
+        "extensions-builtin/LDSR/sd_hijack_autoencoder.py",
+        "extensions-builtin/LDSR/sd_hijack_ddpm_v1.py"
+      ],
+      "meaning": null
+    }
+  ],
+  "entry_files": [],
+  "core_modules": [
+    {
+      "path": "scripts/xyz_grid.py",
+      "size": "38.1 KB",
+      "why": null
+    },
+    {
+      "path": "modules/deepbooru_model.py",
+      "size": "35.5 KB",
+      "why": null
+    },
+    {
+      "path": "modules/images.py",
+      "size": "34.8 KB",
+      "why": null
+    },
+    {
+      "path": "modules/launch_utils.py",
+      "size": "19.8 KB",
+      "why": null
+    },
+    {
+      "path": "modules/processing.py",
+      "size": "79.3 KB",
+      "why": null
+    },
+    {
+      "path": "modules/scripts.py",
+      "size": "40.8 KB",
+      "why": null
+    },
+    {
+      "path": "modules/script_callbacks.py",
+      "size": "21.6 KB",
+      "why": null
+    },
+    {
+      "path": "modules/sd_hijack_optimizations.py",
+      "size": "24.0 KB",
+      "why": null
+    }
+  ],
+  "data_flow": [
+    "你（用户/调用方）发起一个动作：运行命令、打开网页或调用接口。",
+    "核心逻辑在「modules/deepbooru_model.py」这类模块里：真正的计算/推理/业务规则都发生在这里。",
+    "过程中会借道「modules/launch_utils.py」这类工具模块：它们像瑞士军刀，谁需要谁来拿。",
+    "需要存取的数据会落到数据库，通过 ORM 层读写。",
+    "处理完成后，结果原路返回：渲染成页面、打印到终端或打包成 API 响应，交回给你。",
+    "任何一步出错都会被 try/catch 兜住，转成友好的错误提示，而不是直接崩溃。"
+  ],
+  "patterns": [
+    {
+      "pattern": "模块化导出",
+      "speak": "功能拆成模块互相引用",
+      "severity": "common",
+      "where": ".eslintrc.js"
+    },
+    {
+      "pattern": "事件驱动",
+      "speak": "「有事叫我」：注册回调等事件发生",
+      "severity": "common",
+      "where": "script.js"
+    },
+    {
+      "pattern": "异常捕获",
+      "speak": "出错不崩溃，兜住处理",
+      "severity": "common",
+      "where": "script.js"
+    },
+    {
+      "pattern": "中间件",
+      "speak": "请求像流水线过安检，每站处理一点",
+      "severity": "common",
+      "where": "modules/initialize_util.py"
+    },
+    {
+      "pattern": "async/await",
+      "speak": "用同步写法处理异步，代码更好读",
+      "severity": "common",
+      "where": "modules/api/api.py"
+    },
+    {
+      "pattern": "路由分发",
+      "speak": "URL 映射到处理函数",
+      "severity": "common",
+      "where": "modules/api/api.py"
+    }
+  ],
+  "doc_quotes": [
+    {
+      "file": "LICENSE.txt",
+      "text": "GNU AFFERO GENERAL PUBLIC LICENSE                        Version 3, 19 November 2007"
+    }
+  ],
+  "read_suggestions": [
+    {
+      "title": "第一步：读 README",
+      "body": "打开仓库根目录的 README.md，了解它「是什么、解决什么问题、怎么跑起来」。"
+    },
+    {
+      "title": "善用目录语义",
+      "body": "src=源码、tests=测试、docs=文档、examples=示例，目录名本身就是地图。"
+    },
+    {
+      "title": "带着问题读",
+      "body": "比如「数据从哪进来」「结果存在哪」「错误怎么处理」，带着三个问题读任何项目都不会迷路。"
+    }
+  ],
+  "stats": {
+    "files": 315,
+    "bytes": 3852884,
+    "sampled": 244
+  },
+  "generated_at": "2026-08-27T10:23:34.202Z",
+  "analyzer": "claw-static-analyzer v1"
+}

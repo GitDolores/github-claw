@@ -1,0 +1,65 @@
+[
+  {
+    "category": "learning",
+    "category_label": "教程 / 学习资源",
+    "category_speak": "课程、笔记、面试题与示例集",
+    "name": "ai-projects-learning 示例库",
+    "description": "本仓库的示例项目集合与学习笔记（示例条目，可替换为真实项目）",
+    "repo": "GitDolores/github-claw",
+    "repo_url": "https://github.com/GitDolores/github-claw",
+    "tags": [
+      "示例",
+      "导航",
+      "学习"
+    ],
+    "stars": 0,
+    "last_updated": "2026-08-27",
+    "featured_since": "2026-08-27",
+    "forks": 0,
+    "archived": false,
+    "archived_at": "2026-08-27",
+    "featured_weeks": 0.1
+  },
+  {
+    "category": "llm",
+    "category_label": "大模型 / LLM",
+    "category_speak": "语言大模型与相关训练、推理工具",
+    "name": "transformer-playground",
+    "description": "🤗 Transformers: the model-definition framework for state-of-the-art machine learning models in text, vision, audio, and multimodal models, for both inference and training. ",
+    "repo": "huggingface/transformers",
+    "repo_url": "https://github.com/huggingface/transformers",
+    "tags": [
+      "Transformer",
+      "NLP",
+      "示例"
+    ],
+    "stars": 164496,
+    "last_updated": "2026-08-27",
+    "featured_since": "2026-08-27",
+    "forks": 34383,
+    "archived": false,
+    "archived_at": "2026-08-27",
+    "featured_weeks": 0.1
+  },
+  {
+    "category": "vision",
+    "category_label": "计算机视觉",
+    "category_speak": "图像识别、目标检测、分割与生成",
+    "name": "vision-models-examples",
+    "description": "A collection of pre-trained, state-of-the-art models in the ONNX format ",
+    "repo": "onnx/models",
+    "repo_url": "https://github.com/onnx/models",
+    "tags": [
+      "CV",
+      "模型",
+      "实战"
+    ],
+    "stars": 9775,
+    "last_updated": "2026-08-01",
+    "featured_since": "2026-08-27",
+    "forks": 1584,
+    "archived": false,
+    "archived_at": "2026-08-27",
+    "featured_weeks": 0.1
+  }
+]

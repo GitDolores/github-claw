@@ -4,16 +4,22 @@
 
 index.html - 主页
 report.html - 项目源码分析报告页（通俗版）
+history.html - 历史项目归档与分类总结页
 assets/ - CSS 与脚本
-data/projects.json - 精选项目列表（编辑此文件以更新项目展示）
-data/reports/ - 自动生成的项目分析报告缓存（勿手编）
+data/projects.json - 当前精选项目（每周轮换）
+data/backlog.json - 精选候选池（补位来源）
+data/archive.json - 历史精选项目（自动分类归档）
+data/summary.json - 分类总结（自动生成）
+data/reports/ - 项目分析报告缓存（勿手编）
 data/analysis-status.json - 分析进度实时状态
 CNAME - 自定义域（lumeup.cn）
 
-如何更新精选项目：
+## 每周精选轮换
 
-编辑 site/data/projects.json（保持有效的 JSON 格式）。
-提交到 main 分支，GitHub Actions 将自动构建并部署站点。
+- 每周一 03:00 UTC，`weekly.yml` 自动执行：刷新精选项目元数据 → 展示满 4 周的项目移入历史（自动分类）→ 从 backlog.json 按星数补位 → 分析新项目 → 生成分类总结 → 部署。
+- 历史项目永远保留在 archive.json，可在 history.html 按分类浏览、随时生成总结。
+- 想让某个项目尽快上精选：把它加进 site/data/backlog.json。
+- 也可在 Actions → Weekly Update → Run workflow 手动触发（可选强制重析）。
 
 ## 自动克隆与源码分析
 

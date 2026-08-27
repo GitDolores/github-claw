@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>项目历史与分类总结 · AI Projects Learning</title>
+  <meta name="description" content="精选项目历史列表：按分类浏览所有展示过的项目，随时生成分类总结。" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container nav">
+      <a class="brand" href="./">AI Projects Learning</a>
+      <nav>
+        <a href="./#projects">精选</a>
+        <a href="#history">历史项目</a>
+        <a href="#summary">分类总结</a>
+        <a class="btn" href="https://github.com/GitDolores/github-claw" target="_blank">查看仓库</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero report-hero">
+      <div class="container">
+        <h1>📚 项目历史与分类总结</h1>
+        <p class="lead">每一期精选过的项目都会归档在这里，按主题分类。想看哪类项目最火、用什么语言，往下翻。</p>
+        <p class="meta" id="headline">加载中……</p>
+      </div>
+    </section>
+
+    <section class="container section" id="summary">
+      <h2>分类总结</h2>
+      <p class="section-lead">数据实时聚合自当前精选 + 全部历史项目。</p>
+      <div id="summary-list"></div>
+    </section>
+
+    <section class="container section" id="history">
+      <h2>历史项目归档</h2>
+      <p class="section-lead">按分类分组。绿色「精选中」表示还在首页展示，灰色为已归档。</p>
+      <div class="filter-bar" id="filter-bar"></div>
+      <div id="history-groups"></div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div>© 2026 GitDolores · ai-projects-learning · <a href="https://github.com/GitDolores/github-claw" target="_blank">GitHub</a></div>
+      <div class="footer-links">由 <strong>Copilot</strong> 协助生成 · 每周一自动轮换</div>
+    </div>
+  </footer>
+
+  <script src="assets/history.js"></script>
+</body>
+</html>
