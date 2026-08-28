@@ -2,9 +2,9 @@
   "meta": {
     "full_name": "Significant-Gravitas/AutoGPT",
     "description": "AutoGPT is the vision of accessible AI for everyone, to use and to build on. Our mission is to provide the tools, so that you can focus on what matters.",
-    "stars": 186919,
-    "forks": 46048,
-    "open_issues": 504,
+    "stars": 186937,
+    "forks": 46046,
+    "open_issues": 509,
     "language": "Python",
     "topics": [
       "agentic-ai",
@@ -21,13 +21,13 @@
     ],
     "license": "NOASSERTION",
     "default_branch": "master",
-    "pushed_at": "2026-08-27T10:14:04Z",
+    "pushed_at": "2026-08-28T00:15:59Z",
     "created_at": "2023-03-16T09:21:07Z",
     "homepage": "https://agpt.co",
-    "size_kb": 694887,
+    "size_kb": 696142,
     "archived": false
   },
-  "overview": "「Significant-Gravitas/AutoGPT」是一个以 Python 为主的项目，仓库里大约有 5381 个文件（不含 git 内部文件），源码规模约 181.2 MB。 官方一句话介绍：AutoGPT is the vision of accessible AI for everyone, to use and to build on. Our mission is to provide the tools, so that you can focus on what matters. 它在 GitHub 上拿到了 186.9k 颗星、46.0k 次复刻（fork），还有 504 个开放中的 issue。 官方标签：agentic-ai、agents、ai、artificial-intelligence、autonomous-agents、claude。 许可证是 NOASSERTION，决定了你怎么合法使用这些代码。 主要语言构成（按文件数）：Python 1786 个文件、TypeScript 2301 个文件、JavaScript 22 个文件、Shell 28 个文件、CSS 11 个文件、C 2 个文件。 用到的关键框架/工具：React、Next.js、Vitest、ESLint、TypeScript、FastAPI。 一句话总结：这是一个 AI/机器学习项目（主力语言 Python），适合想了解「模型是怎么搭起来」的读者。",
+  "overview": "「Significant-Gravitas/AutoGPT」是一个以 Python 为主的项目，仓库里大约有 5376 个文件（不含 git 内部文件），源码规模约 180.1 MB。 官方一句话介绍：AutoGPT is the vision of accessible AI for everyone, to use and to build on. Our mission is to provide the tools, so that you can focus on what matters. 它在 GitHub 上拿到了 186.9k 颗星、46.0k 次复刻（fork），还有 509 个开放中的 issue。 官方标签：agentic-ai、agents、ai、artificial-intelligence、autonomous-agents、claude。 许可证是 NOASSERTION，决定了你怎么合法使用这些代码。 主要语言构成（按文件数）：Python 1786 个文件、TypeScript 2301 个文件、JavaScript 22 个文件、Shell 28 个文件、C 2 个文件、CSS 11 个文件。 用到的关键框架/工具：React、Next.js、Vitest、ESLint、TypeScript、FastAPI。 一句话总结：这是一个 AI/机器学习项目（主力语言 Python），适合想了解「模型是怎么搭起来」的读者。",
   "languages": [
     {
       "label": "Python",
@@ -54,16 +54,16 @@
       "files": 28
     },
     {
-      "label": "CSS",
-      "speak": "网页样式语言",
-      "color": "#563d7c",
-      "files": 11
-    },
-    {
       "label": "C",
       "speak": "贴近硬件的经典语言",
       "color": "#555555",
       "files": 2
+    },
+    {
+      "label": "CSS",
+      "speak": "网页样式语言",
+      "color": "#563d7c",
+      "files": 11
     }
   ],
   "frameworks": [
@@ -177,20 +177,20 @@
       "count": 115,
       "sample": [
         "classic/direct_benchmark/.gitignore",
-        "classic/direct_benchmark/analyze_failures.py",
-        "classic/direct_benchmark/analyze_reports.py",
-        "classic/direct_benchmark/challenges_already_beaten.json"
+        "classic/direct_benchmark/CLAUDE.md",
+        "classic/direct_benchmark/README.md",
+        "classic/direct_benchmark/analyze_failures.py"
       ],
       "meaning": null
     },
     {
       "dir": "docs/content",
-      "count": 92,
+      "count": 88,
       "sample": [
-        "docs/content/code-of-conduct.md",
-        "docs/content/contributing.md",
         "docs/content/index.md",
-        "docs/content/imgs/e2b-dashboard.png"
+        "docs/content/imgs/e2b-dashboard.png",
+        "docs/content/imgs/e2b-log-url.png",
+        "docs/content/imgs/e2b-new-tag.png"
       ],
       "meaning": "项目文档"
     },
@@ -209,10 +209,10 @@
       "dir": "docs/platform",
       "count": 77,
       "sample": [
+        "docs/platform/SUMMARY.md",
         "docs/platform/advanced_setup.md",
         "docs/platform/agent-blocks.md",
-        "docs/platform/agent-builder-guide.md",
-        "docs/platform/agent-library.md"
+        "docs/platform/agent-builder-guide.md"
       ],
       "meaning": "项目文档"
     },
@@ -232,9 +232,9 @@
       "count": 46,
       "sample": [
         "autogpt_platform/single-container/.env.example",
-        "autogpt_platform/single-container/bootstrap.sh",
-        "autogpt_platform/single-container/common.sh",
-        "autogpt_platform/single-container/disabled-service.sh"
+        "autogpt_platform/single-container/Dockerfile",
+        "autogpt_platform/single-container/Dockerfile.dockerignore",
+        "autogpt_platform/single-container/README.md"
       ],
       "meaning": null
     },
@@ -253,9 +253,9 @@
       "dir": "autogpt_platform/autogpt_libs",
       "count": 29,
       "sample": [
+        "autogpt_platform/autogpt_libs/README.md",
         "autogpt_platform/autogpt_libs/poetry.lock",
         "autogpt_platform/autogpt_libs/pyproject.toml",
-        "autogpt_platform/autogpt_libs/README.md",
         "autogpt_platform/autogpt_libs/autogpt_libs/__init__.py"
       ],
       "meaning": null
@@ -265,43 +265,43 @@
   "core_modules": [
     {
       "path": "classic/original_autogpt/autogpt/app/main.py",
-      "size": "33.7 KB",
+      "size": "32.8 KB",
       "why": "程序主入口：整个应用从这里启动"
     },
     {
       "path": "autogpt_platform/backend/backend/data/model.py",
-      "size": "39.0 KB",
+      "size": "38.0 KB",
       "why": "数据/AI 模型定义"
     },
     {
       "path": "autogpt_platform/backend/backend/copilot/model.py",
-      "size": "66.2 KB",
+      "size": "64.6 KB",
       "why": "数据/AI 模型定义"
     },
     {
       "path": "autogpt_platform/backend/backend/copilot/tools/agent_generator/core.py",
-      "size": "23.4 KB",
+      "size": "22.7 KB",
       "why": null
     },
     {
       "path": "autogpt_platform/backend/backend/api/features/library/model.py",
-      "size": "22.6 KB",
+      "size": "22.0 KB",
       "why": "数据/AI 模型定义"
     },
     {
       "path": "autogpt_platform/backend/backend/api/features/integrations/router.py",
-      "size": "76.3 KB",
+      "size": "74.4 KB",
       "why": "路由：把网址分发给对应处理函数"
     },
     {
       "path": "autogpt_platform/backend/backend/api/features/store/model.py",
-      "size": "12.5 KB",
+      "size": "12.1 KB",
       "why": "数据/AI 模型定义"
     },
     {
-      "path": "classic/forge/forge/models/config.py",
-      "size": "13.7 KB",
-      "why": "配置：集中管理可调参数"
+      "path": "autogpt_platform/backend/backend/api/features/executions/review/model.py",
+      "size": "9.5 KB",
+      "why": "数据/AI 模型定义"
     }
   ],
   "data_flow": [
@@ -311,6 +311,66 @@
     "处理完成后，结果原路返回：渲染成页面、打印到终端或打包成 API 响应，交回给你。",
     "任何一步出错都会被 try/catch 兜住，转成友好的错误提示，而不是直接崩溃。"
   ],
+  "flow_graph": {
+    "nodes": [
+      {
+        "id": "user",
+        "label": "用户 / 调用方",
+        "type": "actor"
+      },
+      {
+        "id": "entry",
+        "label": "入口文件",
+        "type": "entry"
+      },
+      {
+        "id": "dispatch",
+        "label": "model.py",
+        "type": "dispatch"
+      },
+      {
+        "id": "core",
+        "label": "model.py",
+        "type": "core"
+      },
+      {
+        "id": "output",
+        "label": "输出：结果返回",
+        "type": "output"
+      },
+      {
+        "id": "api",
+        "label": "REST API",
+        "type": "api"
+      }
+    ],
+    "edges": [
+      [
+        "user",
+        "entry"
+      ],
+      [
+        "user",
+        "api"
+      ],
+      [
+        "entry",
+        "dispatch"
+      ],
+      [
+        "dispatch",
+        "core"
+      ],
+      [
+        "core",
+        "output"
+      ],
+      [
+        "api",
+        "entry"
+      ]
+    ]
+  },
   "patterns": [
     {
       "pattern": "async/await",
@@ -340,7 +400,7 @@
       "pattern": "接口约定",
       "speak": "TypeScript 定义数据形状，契约先行",
       "severity": "common",
-      "where": "classic/forge/forge/components/todo/todo.py"
+      "where": "classic/forge/forge/llm/providers/openai.py"
     },
     {
       "pattern": "模块化导出",
@@ -397,11 +457,220 @@
       "body": "比如「数据从哪进来」「结果存在哪」「错误怎么处理」，带着三个问题读任何项目都不会迷路。"
     }
   ],
+  "interfaces": [
+    {
+      "kind": "脚本入口",
+      "where": "classic/original_autogpt/scripts/check_requirements.py",
+      "speak": "直接 python 运行的脚本入口"
+    },
+    {
+      "kind": "CLI 命令行接口",
+      "where": "classic/original_autogpt/scripts/git_log_to_release_notes.py",
+      "speak": "命令行参数接口：python xxx.py --arg"
+    },
+    {
+      "kind": "REST API",
+      "where": "classic/original_autogpt/autogpt/app/agent_protocol_server.py",
+      "speak": "HTTP 接口：用 URL + GET/POST 等方法调用"
+    },
+    {
+      "kind": "Python Web 框架接口",
+      "where": "classic/original_autogpt/autogpt/app/agent_protocol_server.py",
+      "speak": "用 FastAPI/Flask 暴露 HTTP 接口"
+    },
+    {
+      "kind": "REST 路由",
+      "where": "classic/forge/forge/components/web/playwright_browser.py",
+      "speak": "把 URL 规则映射到处理函数"
+    },
+    {
+      "kind": "WebSocket",
+      "where": "classic/forge/forge/components/web/playwright_browser.py",
+      "speak": "双向实时通信通道"
+    }
+  ],
+  "dependencies": {
+    "manifest": "pyproject.toml",
+    "total": 48,
+    "runtime": [
+      {
+        "name": "aiohttp",
+        "note": null
+      },
+      {
+        "name": "beautifulsoup4",
+        "note": null
+      },
+      {
+        "name": "requests",
+        "note": null
+      },
+      {
+        "name": "trafilatura",
+        "note": null
+      },
+      {
+        "name": "anthropic",
+        "note": null
+      },
+      {
+        "name": "groq",
+        "note": null
+      },
+      {
+        "name": "openai",
+        "note": null
+      },
+      {
+        "name": "tiktoken",
+        "note": null
+      },
+      {
+        "name": "fastapi",
+        "note": null
+      },
+      {
+        "name": "hypercorn",
+        "note": null
+      },
+      {
+        "name": "uvicorn",
+        "note": null
+      },
+      {
+        "name": "python-multipart",
+        "note": null
+      },
+      {
+        "name": "charset-normalizer",
+        "note": null
+      },
+      {
+        "name": "demjson3",
+        "note": null
+      },
+      {
+        "name": "jsonschema",
+        "note": null
+      },
+      {
+        "name": "orjson",
+        "note": null
+      },
+      {
+        "name": "pydantic",
+        "note": null
+      },
+      {
+        "name": "pyyaml",
+        "note": null
+      },
+      {
+        "name": "toml",
+        "note": null
+      },
+      {
+        "name": "boto3",
+        "note": null
+      }
+    ],
+    "build": []
+  },
+  "demo_links": [],
+  "scenarios": [
+    {
+      "when": "想低成本跑/部署开源大模型，或学习推理引擎内部实现",
+      "not": "想训练自己的大模型（应去看训练框架）"
+    }
+  ],
+  "competitors": {
+    "matched": "exact",
+    "list": [
+      {
+        "name": "MetaGPT",
+        "repo": "FoundationAgents/MetaGPT",
+        "edge": "多角色协作分工更像软件公司"
+      },
+      {
+        "name": "LangChain",
+        "repo": "langchain-ai/langchain",
+        "edge": "生态最大，编排积木最全"
+      },
+      {
+        "name": "CrewAI",
+        "repo": "crewAIInc/crewAI",
+        "edge": "上手简单，角色定义直观"
+      }
+    ]
+  },
+  "rework_ideas": [
+    {
+      "idea": "接入自己的模型文件（GGUF/安全张量），跑通一条完整推理链路",
+      "difficulty": "入门"
+    },
+    {
+      "idea": "加一个 Web API 层（FastAPI），把它变成可调用的推理服务",
+      "difficulty": "进阶"
+    },
+    {
+      "idea": "实现自定义量化/裁剪，在低端显卡上压出可接受的速度",
+      "difficulty": "硬核"
+    }
+  ],
+  "pitfalls": [
+    {
+      "pit": "环境不隔离：直接在系统 Python/node 里装依赖，装到一半互相打架",
+      "fix": "先建 venv / 用 nvm 固定版本，再装依赖"
+    },
+    {
+      "pit": "CUDA/驱动不匹配：torch 装了 CUDA 12 版本但驱动只支持 11",
+      "fix": "先 nvidia-smi 看驱动支持的上限，再选对应版本安装"
+    },
+    {
+      "pit": "模型文件放错目录：程序默认去 ./models 找，你下到了下载文件夹",
+      "fix": "先跑一次看报错里的路径，把文件挪过去"
+    },
+    {
+      "pit": "显存不够直接 OOM：模型全精度加载，显卡撑不住",
+      "fix": "用量化版本（4bit/8bit）或换小一号模型"
+    },
+    {
+      "pit": "上下文拉满导致推理极慢",
+      "fix": "控制输入长度，长文档走 RAG 而非硬塞"
+    },
+    {
+      "pit": "并发一上来就崩：单进程扛不住",
+      "fix": "上 vLLM 类服务框架或加队列限流"
+    },
+    {
+      "pit": "容器里 GPU 用不了：没装 nvidia-container-toolkit",
+      "fix": "装 toolkit 并用 --gpus all 参数启动"
+    }
+  ],
+  "community": {
+    "contributors": "100+",
+    "latest_release": {
+      "tag": "preview-seed-fixture",
+      "name": "Preview seed fixture (rolling)",
+      "published_at": "2026-08-06T04:50:42Z",
+      "notes_excerpt": "Rolling, fully SYNTHETIC preview-database seed fixture baked from dev@db7408d43dcb (migration head: 20260822120000_add_chat_session_pending_question_idx). Preview environments restore fixture.dump.gz (custom-format, gzipped, platform schema only, including _prisma_migrations) BEFORE running a PR's o"
+    },
+    "releases_count": 10,
+    "commit_activity": null,
+    "verdict": [
+      "最近 0 天内还有代码提交，维护很活跃",
+      "有 100+ 位贡献者提交过代码",
+      "最新版本 preview-seed-fixture（2026-08-06 发布）",
+      "开放 issue 占星数比例很低，社区响应健康"
+    ],
+    "repo_age_days": 1260
+  },
+  "category": "llm",
   "stats": {
-    "files": 5381,
-    "bytes": 190014093,
+    "files": 5376,
+    "bytes": 188893076,
     "sampled": 2971
   },
-  "generated_at": "2026-08-27T10:22:18.994Z",
-  "analyzer": "claw-static-analyzer v1"
+  "generated_at": "2026-08-28T00:16:53.218Z",
+  "analyzer": "claw-static-analyzer v2"
 }

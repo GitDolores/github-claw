@@ -2,46 +2,46 @@
   "meta": {
     "full_name": "ggml-org/llama.cpp",
     "description": "LLM inference in C/C++",
-    "stars": 125875,
-    "forks": 22258,
-    "open_issues": 2226,
+    "stars": 125959,
+    "forks": 22288,
+    "open_issues": 2246,
     "language": "C++",
     "topics": [
       "ggml"
     ],
     "license": "MIT",
     "default_branch": "master",
-    "pushed_at": "2026-08-27T10:55:09Z",
+    "pushed_at": "2026-08-27T23:49:27Z",
     "created_at": "2023-03-10T18:58:00Z",
     "homepage": "https://llama.app",
-    "size_kb": 434236,
+    "size_kb": 434802,
     "archived": false
   },
-  "overview": "「ggml-org/llama.cpp」是一个以 C++ 为主的项目，仓库里大约有 3467 个文件（不含 git 内部文件），源码规模约 152.8 MB。 官方一句话介绍：LLM inference in C/C++ 它在 GitHub 上拿到了 125.9k 颗星、22.3k 次复刻（fork），还有 2226 个开放中的 issue。 官方标签：ggml。 许可证是 MIT，决定了你怎么合法使用这些代码。 主要语言构成（按文件数）：C++ 709 个文件、C 370 个文件、Python 215 个文件、TypeScript 402 个文件、JavaScript 15 个文件、HTML 2 个文件。 用到的关键框架/工具：Vite、Vitest、ESLint、TypeScript、NumPy、requests。 一句话总结：这是一个 AI/机器学习项目（主力语言 C++），适合想了解「模型是怎么搭起来」的读者。",
+  "overview": "「ggml-org/llama.cpp」是一个以 C++ 为主的项目，仓库里大约有 3471 个文件（不含 git 内部文件），源码规模约 153.0 MB。 官方一句话介绍：LLM inference in C/C++ 它在 GitHub 上拿到了 126.0k 颗星、22.3k 次复刻（fork），还有 2246 个开放中的 issue。 官方标签：ggml。 许可证是 MIT，决定了你怎么合法使用这些代码。 主要语言构成（按文件数）：C++ 711 个文件、C 371 个文件、Python 216 个文件、TypeScript 401 个文件、JavaScript 15 个文件、HTML 2 个文件。 用到的关键框架/工具：Vite、Vitest、ESLint、TypeScript、NumPy、requests。 一句话总结：这是一个 AI/机器学习项目（主力语言 C++），适合想了解「模型是怎么搭起来」的读者。",
   "languages": [
     {
       "label": "C++",
       "speak": "高性能计算与游戏引擎的常客",
       "color": "#f34b7d",
-      "files": 709
+      "files": 711
     },
     {
       "label": "C",
       "speak": "贴近硬件的经典语言",
       "color": "#555555",
-      "files": 370
+      "files": 371
     },
     {
       "label": "Python",
       "speak": "AI 领域第一语言，语法简单好读",
       "color": "#3572A5",
-      "files": 215
+      "files": 216
     },
     {
       "label": "TypeScript",
       "speak": "带类型检查的 JavaScript，写大项目更稳",
       "color": "#3178c6",
-      "files": 402
+      "files": 401
     },
     {
       "label": "JavaScript",
@@ -127,7 +127,7 @@
   "dir_tree": [
     {
       "dir": "ggml/src",
-      "count": 1289,
+      "count": 1291,
       "sample": [
         "ggml/src/CMakeLists.txt",
         "ggml/src/ggml-alloc.c",
@@ -138,7 +138,7 @@
     },
     {
       "dir": "tools/ui",
-      "count": 778,
+      "count": 776,
       "sample": [
         "tools/ui/.env.example",
         "tools/ui/.gitignore",
@@ -149,7 +149,7 @@
     },
     {
       "dir": "src/models",
-      "count": 151,
+      "count": 152,
       "sample": [
         "src/models/afmoe.cpp",
         "src/models/apertus.cpp",
@@ -160,7 +160,7 @@
     },
     {
       "dir": "conversion",
-      "count": 89,
+      "count": 90,
       "sample": [
         "conversion/__init__.py",
         "conversion/afmoe.py",
@@ -204,7 +204,7 @@
     },
     {
       "dir": "src",
-      "count": 64,
+      "count": 66,
       "sample": [
         "src/CMakeLists.txt",
         "src/llama-adapter.cpp",
@@ -262,12 +262,12 @@
   "core_modules": [
     {
       "path": "tools/ui/src/lib/components/app/chat/index.ts",
-      "size": "32.6 KB",
+      "size": "32.2 KB",
       "why": "入口/汇总文件：这个目录的对外门面"
     },
     {
       "path": "tools/server/server.cpp",
-      "size": "22.3 KB",
+      "size": "23.0 KB",
       "why": null
     },
     {
@@ -308,6 +308,66 @@
     "处理完成后，结果原路返回：渲染成页面、打印到终端或打包成 API 响应，交回给你。",
     "任何一步出错都会被 try/catch 兜住，转成友好的错误提示，而不是直接崩溃。"
   ],
+  "flow_graph": {
+    "nodes": [
+      {
+        "id": "user",
+        "label": "用户 / 调用方",
+        "type": "actor"
+      },
+      {
+        "id": "entry",
+        "label": "入口文件",
+        "type": "entry"
+      },
+      {
+        "id": "dispatch",
+        "label": "server.cpp",
+        "type": "dispatch"
+      },
+      {
+        "id": "core",
+        "label": "qwen3tts-gen.cpp",
+        "type": "core"
+      },
+      {
+        "id": "output",
+        "label": "输出：结果返回",
+        "type": "output"
+      },
+      {
+        "id": "api",
+        "label": "WebSocket",
+        "type": "api"
+      }
+    ],
+    "edges": [
+      [
+        "user",
+        "entry"
+      ],
+      [
+        "user",
+        "api"
+      ],
+      [
+        "entry",
+        "dispatch"
+      ],
+      [
+        "dispatch",
+        "core"
+      ],
+      [
+        "core",
+        "output"
+      ],
+      [
+        "api",
+        "entry"
+      ]
+    ]
+  },
   "patterns": [
     {
       "pattern": "async/await",
@@ -398,11 +458,139 @@
       "body": "比如「数据从哪进来」「结果存在哪」「错误怎么处理」，带着三个问题读任何项目都不会迷路。"
     }
   ],
-  "stats": {
-    "files": 3467,
-    "bytes": 160196995,
-    "sampled": 2117
+  "interfaces": [
+    {
+      "kind": "CLI 命令行接口",
+      "where": "pyproject.toml",
+      "speak": "安装后提供的终端命令"
+    },
+    {
+      "kind": "CLI 参数",
+      "where": "convert_hf_to_gguf.py",
+      "speak": "命令行参数定义"
+    },
+    {
+      "kind": "脚本入口",
+      "where": "convert_hf_to_gguf.py",
+      "speak": "直接 python 运行的脚本入口"
+    },
+    {
+      "kind": "WebSocket",
+      "where": "tools/ui/tests/unit/mcp-service.test.ts",
+      "speak": "双向实时通信通道"
+    },
+    {
+      "kind": "JS 模块导出",
+      "where": "tools/ui/tests/stories/fixtures/ai-tutorial.ts",
+      "speak": "npm 库式的导入导出接口"
+    },
+    {
+      "kind": "gRPC 接口",
+      "where": "tools/ui/src/lib/utils/syntax-highlight-language.ts",
+      "speak": "高性能远程调用接口（.proto 文件定义）"
+    }
+  ],
+  "dependencies": {
+    "manifest": "pyproject.toml",
+    "total": 0,
+    "runtime": [],
+    "build": []
   },
-  "generated_at": "2026-08-27T10:58:38.062Z",
-  "analyzer": "claw-static-analyzer v1"
+  "demo_links": [],
+  "scenarios": [
+    {
+      "when": "想低成本跑/部署开源大模型，或学习推理引擎内部实现",
+      "not": "想训练自己的大模型（应去看训练框架）"
+    },
+    {
+      "when": "想研究高性能/系统级实现（SIMD、内存布局、量化内核）",
+      "not": "想快速做应用层产品（用封装好的上层框架更快）"
+    }
+  ],
+  "competitors": {
+    "matched": "exact",
+    "list": [
+      {
+        "name": "vLLM",
+        "repo": "vllm-project/vllm",
+        "edge": "高吞吐服务化，PagedAttention"
+      },
+      {
+        "name": "Ollama",
+        "repo": "ollama/ollama",
+        "edge": "封装更友好，模型一键拉取"
+      },
+      {
+        "name": "text-generation-inference",
+        "repo": "huggingface/text-generation-inference",
+        "edge": "HF 官方推理服务栈"
+      }
+    ]
+  },
+  "rework_ideas": [
+    {
+      "idea": "接入自己的模型文件（GGUF/安全张量），跑通一条完整推理链路",
+      "difficulty": "入门"
+    },
+    {
+      "idea": "加一个 Web API 层（FastAPI），把它变成可调用的推理服务",
+      "difficulty": "进阶"
+    },
+    {
+      "idea": "实现自定义量化/裁剪，在低端显卡上压出可接受的速度",
+      "difficulty": "硬核"
+    }
+  ],
+  "pitfalls": [
+    {
+      "pit": "环境不隔离：直接在系统 Python/node 里装依赖，装到一半互相打架",
+      "fix": "先建 venv / 用 nvm 固定版本，再装依赖"
+    },
+    {
+      "pit": "CUDA/驱动不匹配：torch 装了 CUDA 12 版本但驱动只支持 11",
+      "fix": "先 nvidia-smi 看驱动支持的上限，再选对应版本安装"
+    },
+    {
+      "pit": "模型文件放错目录：程序默认去 ./models 找，你下到了下载文件夹",
+      "fix": "先跑一次看报错里的路径，把文件挪过去"
+    },
+    {
+      "pit": "显存不够直接 OOM：模型全精度加载，显卡撑不住",
+      "fix": "用量化版本（4bit/8bit）或换小一号模型"
+    },
+    {
+      "pit": "上下文拉满导致推理极慢",
+      "fix": "控制输入长度，长文档走 RAG 而非硬塞"
+    },
+    {
+      "pit": "并发一上来就崩：单进程扛不住",
+      "fix": "上 vLLM 类服务框架或加队列限流"
+    }
+  ],
+  "community": {
+    "contributors": "100+",
+    "latest_release": {
+      "tag": "b10664",
+      "name": "b10664",
+      "published_at": "2026-08-27T22:47:46Z",
+      "notes_excerpt": "<details open> ggml-hexagon: add HTP unary ops for ABS and LOG (#27786) Add HVX-accelerated implementations for GGML_OP_LOG and GGML_UNARY_OP_ABS on the HTP backend. - Register HTP_OP_UNARY_ABS and HTP_OP_UNARY_LOG in op_remap_to_htp()"
+    },
+    "releases_count": 10,
+    "commit_activity": null,
+    "verdict": [
+      "最近 0 天内还有代码提交，维护很活跃",
+      "有 100+ 位贡献者提交过代码",
+      "最新版本 b10664（2026-08-27 发布）",
+      "开放 issue 占星数比例很低，社区响应健康"
+    ],
+    "repo_age_days": 1266
+  },
+  "category": "llm",
+  "stats": {
+    "files": 3471,
+    "bytes": 160390082,
+    "sampled": 2119
+  },
+  "generated_at": "2026-08-28T00:16:59.217Z",
+  "analyzer": "claw-static-analyzer v2"
 }

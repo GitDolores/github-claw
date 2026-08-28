@@ -2,8 +2,8 @@
   "meta": {
     "full_name": "AUTOMATIC1111/stable-diffusion-webui",
     "description": "Stable Diffusion web UI",
-    "stars": 164679,
-    "forks": 30558,
+    "stars": 164691,
+    "forks": 30556,
     "open_issues": 2501,
     "language": "Python",
     "topics": [
@@ -101,10 +101,10 @@
       "dir": "modules",
       "count": 129,
       "sample": [
+        "modules/Roboto-Regular.ttf",
         "modules/cache.py",
         "modules/call_queue.py",
-        "modules/cmd_args.py",
-        "modules/codeformer_model.py"
+        "modules/cmd_args.py"
       ],
       "meaning": null
     },
@@ -178,10 +178,10 @@
       "dir": "test",
       "count": 8,
       "sample": [
+        "test/__init__.py",
         "test/conftest.py",
         "test/test_extras.py",
-        "test/test_face_restorers.py",
-        "test/test_img2img.py"
+        "test/test_face_restorers.py"
       ],
       "meaning": "测试代码"
     },
@@ -258,13 +258,13 @@
       "why": null
     },
     {
-      "path": "modules/scripts.py",
-      "size": "40.8 KB",
+      "path": "modules/script_callbacks.py",
+      "size": "21.6 KB",
       "why": null
     },
     {
-      "path": "modules/script_callbacks.py",
-      "size": "21.6 KB",
+      "path": "modules/scripts.py",
+      "size": "40.8 KB",
       "why": null
     },
     {
@@ -281,6 +281,79 @@
     "处理完成后，结果原路返回：渲染成页面、打印到终端或打包成 API 响应，交回给你。",
     "任何一步出错都会被 try/catch 兜住，转成友好的错误提示，而不是直接崩溃。"
   ],
+  "flow_graph": {
+    "nodes": [
+      {
+        "id": "user",
+        "label": "用户 / 调用方",
+        "type": "actor"
+      },
+      {
+        "id": "entry",
+        "label": "入口文件",
+        "type": "entry"
+      },
+      {
+        "id": "core",
+        "label": "deepbooru_model.py",
+        "type": "core"
+      },
+      {
+        "id": "utils",
+        "label": "launch_utils.py",
+        "type": "utils"
+      },
+      {
+        "id": "db",
+        "label": "数据库 / 存储",
+        "type": "store"
+      },
+      {
+        "id": "output",
+        "label": "输出：结果返回",
+        "type": "output"
+      },
+      {
+        "id": "api",
+        "label": "REST API",
+        "type": "api"
+      }
+    ],
+    "edges": [
+      [
+        "user",
+        "entry"
+      ],
+      [
+        "user",
+        "api"
+      ],
+      [
+        "entry",
+        "core"
+      ],
+      [
+        "core",
+        "utils"
+      ],
+      [
+        "utils",
+        "core"
+      ],
+      [
+        "core",
+        "db"
+      ],
+      [
+        "db",
+        "output"
+      ],
+      [
+        "api",
+        "entry"
+      ]
+    ]
+  },
   "patterns": [
     {
       "pattern": "模块化导出",
@@ -339,11 +412,139 @@
       "body": "比如「数据从哪进来」「结果存在哪」「错误怎么处理」，带着三个问题读任何项目都不会迷路。"
     }
   ],
+  "interfaces": [
+    {
+      "kind": "脚本入口",
+      "where": "launch.py",
+      "speak": "直接 python 运行的脚本入口"
+    },
+    {
+      "kind": "Python Web 框架接口",
+      "where": "webui.py",
+      "speak": "用 FastAPI/Flask 暴露 HTTP 接口"
+    },
+    {
+      "kind": "CLI 命令行接口",
+      "where": "modules/cmd_args.py",
+      "speak": "命令行参数接口：python xxx.py --arg"
+    },
+    {
+      "kind": "CLI 参数",
+      "where": "modules/cmd_args.py",
+      "speak": "命令行参数定义"
+    },
+    {
+      "kind": "REST API",
+      "where": "extensions-builtin/Lora/scripts/lora_script.py",
+      "speak": "HTTP 接口：用 URL + GET/POST 等方法调用"
+    }
+  ],
+  "dependencies": {
+    "manifest": "package.json",
+    "total": 1,
+    "runtime": [],
+    "build": [
+      {
+        "name": "eslint",
+        "note": null
+      }
+    ]
+  },
+  "demo_links": [],
+  "scenarios": [
+    {
+      "when": "做图像识别、文生图、目标检测类应用或 demo",
+      "not": "纯文本任务（直接用 LLM 类项目）"
+    }
+  ],
+  "competitors": {
+    "matched": "exact",
+    "list": [
+      {
+        "name": "ComfyUI",
+        "repo": "Comfy-Org/ComfyUI",
+        "edge": "节点式编排，工作流可复用分享"
+      },
+      {
+        "name": "Fooocus",
+        "repo": "lllyasviel/Fooocus",
+        "edge": "开箱即用，追求极简"
+      },
+      {
+        "name": "InvokeAI",
+        "repo": "invoke-ai/InvokeAI",
+        "edge": "专业画布与画师工作流"
+      }
+    ]
+  },
+  "rework_ideas": [
+    {
+      "idea": "换一个自定义数据集微调，认识训练-评估完整闭环",
+      "difficulty": "入门"
+    },
+    {
+      "idea": "用 FastAPI/Gradio 包一层，做个网页演示界面",
+      "difficulty": "进阶"
+    },
+    {
+      "idea": "加批量推理 + 任务队列，把它包成图片处理服务",
+      "difficulty": "进阶"
+    },
+    {
+      "idea": "做多模型级联（检测→生成→后处理），搭一条 pipeline",
+      "difficulty": "硬核"
+    }
+  ],
+  "pitfalls": [
+    {
+      "pit": "环境不隔离：直接在系统 Python/node 里装依赖，装到一半互相打架",
+      "fix": "先建 venv / 用 nvm 固定版本，再装依赖"
+    },
+    {
+      "pit": "CUDA/驱动不匹配：torch 装了 CUDA 12 版本但驱动只支持 11",
+      "fix": "先 nvidia-smi 看驱动支持的上限，再选对应版本安装"
+    },
+    {
+      "pit": "模型文件放错目录：程序默认去 ./models 找，你下到了下载文件夹",
+      "fix": "先跑一次看报错里的路径，把文件挪过去"
+    },
+    {
+      "pit": "显存爆在反而是预处理：图片没缩放直接进模型",
+      "fix": "预处理里 resize 到模型期望的尺寸"
+    },
+    {
+      "pit": "采样器参数抄别人的导致输出全噪点",
+      "fix": "用官方 README 给的推荐参数起步，再微调"
+    },
+    {
+      "pit": "模型与权重版本不匹配：旧代码配新权重",
+      "fix": "锁定 release 版本，代码和权重同版本"
+    }
+  ],
+  "community": {
+    "contributors": "100+",
+    "latest_release": {
+      "tag": "v1.10.1",
+      "name": "1.10.1",
+      "published_at": "2025-02-09T08:00:10Z",
+      "notes_excerpt": "## 1.10.1 ### Bug Fixes: * fix image upscale on cpu ([#16275](https://github.com/AUTOMATIC1111/stable-diffusion-webui/pull/16275))"
+    },
+    "releases_count": 10,
+    "commit_activity": null,
+    "verdict": [
+      "已约 178 天没有提交，节奏放缓（可能在酝酿大版本或进入维护期）",
+      "有 100+ 位贡献者提交过代码",
+      "最新版本 v1.10.1（2025-02-09 发布）",
+      "开放 issue 占星数比例很低，社区响应健康"
+    ],
+    "repo_age_days": 1466
+  },
+  "category": "vision",
   "stats": {
     "files": 315,
-    "bytes": 3852884,
+    "bytes": 3833824,
     "sampled": 244
   },
-  "generated_at": "2026-08-27T10:23:34.202Z",
-  "analyzer": "claw-static-analyzer v1"
+  "generated_at": "2026-08-28T00:16:55.358Z",
+  "analyzer": "claw-static-analyzer v2"
 }
