@@ -13,7 +13,7 @@ import fs from 'node:fs';
 import path from 'node:path';
 import os from 'node:os';
 import { fileURLToPath } from 'node:url';
-import { LANGUAGES, FRAMEWORKS, FILE_SIGNALS, ENTRY_HINTS, PATTERN_SIGNALS } from './dictionaries.mjs';
+import { LANGUAGES, FRAMEWORKS, FILE_SIGNALS, ENTRY_HINTS, PATTERN_SIGNALS, SCENARIOS, COMPETITORS, CATEGORY_PEERS, REWORK_IDEAS, PITFALLS, DEP_NOTES, classifyProject } from './dictionaries.mjs';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const ROOT = path.resolve(__dirname, '..');
@@ -77,10 +77,14 @@ function humanizeNum(n) {
 // ---------- cloning ----------
 function tryClone(repo, workDir) {
   const url = `https://github.com/${repo}.git`;
+  const env = { ...process.env };
+  // respect an explicit proxy for local runs (CI has none)
+  if (process.env.CLONE_PROXY) env.HTTPS_PROXY = process.env.CLONE_PROXY;
   try {
     execFileSync('git', ['clone', '--depth', '1', '--single-branch', url, workDir], {
       stdio: 'pipe',
       timeout: CLONE_TIMEOUT_MS,
+      env,
     });
     return true;
   } catch (e) {
@@ -107,6 +111,222 @@ function fetchMeta(repo, token) {
     size_kb: meta.size,
     archived: meta.archived,
   };
+}
+
+// ---------- community / releases (extra API calls) ----------
+function fetchCommunity(repo, token) {
+  const out = { contributors: null, latest_release: null, releases_count: null, commit_activity: null };
+  try {
+    const rel = curlJson(`https://api.github.com/repos/${repo}/releases?per_page=10`, token);
+    if (Array.isArray(rel) && rel.length) {
+      out.releases_count = rel.length;
+      out.latest_release = {
+        tag: rel[0].tag_name || '',
+        name: rel[0].name || rel[0].tag_name || '',
+        published_at: rel[0].published_at,
+        notes_excerpt: (rel[0].body || '').replace(/\r/g, '').split('\n').filter(l => l.trim()).slice(0, 5).join(' ').slice(0, 300),
+      };
+    }
+  } catch {}
+  try {
+    const contrib = curlJson(`https://api.github.com/repos/${repo}/contributors?per_page=100&anon=1`, token);
+    if (Array.isArray(contrib)) out.contributors = contrib.length === 100 ? '100+' : String(contrib.length);
+  } catch {}
+  return out;
+}
+
+function communityVerdict(meta, community) {
+  const daysSincePush = meta.pushed_at ? Math.floor((Date.now() - new Date(meta.pushed_at)) / 86400000) : null;
+  const lines = [];
+  if (daysSincePush != null) {
+    if (daysSincePush <= 7) lines.push(`最近 ${daysSincePush} 天内还有代码提交，维护很活跃`);
+    else if (daysSincePush <= 60) lines.push(`距上次提交约 ${daysSincePush} 天，处于正常迭代节奏`);
+    else if (daysSincePush <= 180) lines.push(`已约 ${daysSincePush} 天没有提交，节奏放缓（可能在酝酿大版本或进入维护期）`);
+    else lines.push(`已超过半年没有提交，注意评估是否停更`);
+  }
+  if (community.contributors) lines.push(`有 ${community.contributors} 位贡献者提交过代码`);
+  if (community.latest_release) lines.push(`最新版本 ${community.latest_release.tag}${community.latest_release.published_at ? '（' + community.latest_release.published_at.slice(0, 10) + ' 发布）' : ''}`);
+  const issueRatio = meta.stars ? (meta.open_issues / meta.stars) : null;
+  if (issueRatio != null && meta.stars > 1000) {
+    if (issueRatio < 0.02) lines.push('开放 issue 占星数比例很低，社区响应健康');
+    else if (issueRatio > 0.1) lines.push('开放 issue 偏多，常见问题可以搜索 issue 区找答案');
+  }
+  if (meta.archived) lines.push('⚠️ 官方已归档此仓库，不再更新，学习用途没问题，生产选型需谨慎');
+  return lines;
+}
+
+// ---------- interface / API surface detection ----------
+const API_SIGNALS = [
+  { re: /@(?:app|router|api|bp|blueprint)\.(?:get|post|put|delete|patch)\s*\(/i, kind: 'REST API', speak: 'HTTP 接口：用 URL + GET/POST 等方法调用' },
+  { re: /\broute\s*\(\s*['"][A-Z]+['"]\s*,|\.route\s*\(/i, kind: 'REST 路由', speak: '把 URL 规则映射到处理函数' },
+  { re: /@cli\.command\s*\(|@click\.command\s*\(|argparse\.ArgumentParser|import\s+argparse/i, kind: 'CLI 命令行接口', speak: '命令行参数接口：python xxx.py --arg' },
+  { re: /program\.command\s*\(|commander\s*\(/i, kind: 'CLI 命令行接口', speak: 'Node 命令行参数接口' },
+  { re: /\bopenapi\s*\b|\bswagger\s*\b/i, kind: 'OpenAPI/Swagger 文档', speak: '机器可读的接口说明书' },
+  { re: /\bgrpc\s|\.proto\b|syntax\s*=\s*"proto/i, kind: 'gRPC 接口', speak: '高性能远程调用接口（.proto 文件定义）' },
+  { re: /add_argument|--\w[\w-]*\s*\}/i, kind: 'CLI 参数', speak: '命令行参数定义' },
+  { re: /def\s+main\s*\(|if\s+__name__\s*==\s*['"]__main__['"]/, kind: '脚本入口', speak: '直接 python 运行的脚本入口' },
+  { re: /\bWebSocket\b|ws:\/\/|wss:\/\//i, kind: 'WebSocket', speak: '双向实时通信通道' },
+  { re: /export\s+(default\s+)?(async\s+)?(function|const|class)\s+\w+/i, kind: 'JS 模块导出', speak: 'npm 库式的导入导出接口' },
+  { re: /\bFastAPI\b|\bflask\b/i, kind: 'Python Web 框架接口', speak: '用 FastAPI/Flask 暴露 HTTP 接口' },
+];
+
+function detectInterfaces(files, texts) {
+  const found = [];
+  const seen = new Set();
+  // manifest hints (package.json bin / exports, pyproject scripts)
+  for (const f of files) {
+    const base = path.basename(f.rel).toLowerCase();
+    if (base === 'package.json' || base === 'pyproject.toml' || base === 'setup.py' || base === 'setup.cfg') {
+      try {
+        const c = fs.readFileSync(f.full, 'utf8');
+        if (/"bin"\s*:/.test(c) && !seen.has('CLI 命令行接口')) { seen.add('CLI 命令行接口'); found.push({ kind: 'CLI 命令行接口', where: f.rel, speak: '装完就能在终端敲的命令' }); }
+        if (/"exports"\s*:/.test(c) && !seen.has('JS 模块导出')) { seen.add('JS 模块导出'); found.push({ kind: 'JS 模块导出', where: f.rel, speak: '作为 npm 库被 import 使用' }); }
+        if (/\[project\.scripts\]|entry_points|console_scripts/.test(c) && !seen.has('CLI 命令行接口')) { seen.add('CLI 命令行接口'); found.push({ kind: 'CLI 命令行接口', where: f.rel, speak: '安装后提供的终端命令' }); }
+      } catch {}
+    }
+  }
+  // code signals from sampled texts
+  for (const { rel, sample } of texts) {
+    for (const s of API_SIGNALS) {
+      if (seen.has(s.kind)) continue;
+      if (s.re.test(sample)) {
+        seen.add(s.kind);
+        found.push({ kind: s.kind, where: rel, speak: s.speak });
+      }
+    }
+  }
+  return found.slice(0, 6);
+}
+
+// ---------- dependency analysis ----------
+function detectDependencies(files) {
+  const out = { runtime: [], build: [], total: null };
+  const manifest = files.find(f => ['package.json', 'requirements.txt', 'pyproject.toml', 'go.mod', 'cargo.toml', 'pom.xml'].includes(path.basename(f.rel).toLowerCase()));
+  if (!manifest) return out;
+  try {
+    const c = fs.readFileSync(manifest.full, 'utf8');
+    if (manifest.rel.endsWith('package.json')) {
+      try {
+        const pkg = JSON.parse(c);
+        out.runtime = Object.keys(pkg.dependencies || {});
+        out.build = Object.keys(pkg.devDependencies || {});
+        out.manifest = 'package.json';
+      } catch {}
+    } else if (manifest.rel.endsWith('requirements.txt')) {
+      out.runtime = c.split('\n').map(l => l.trim().split(/[=<>~#\[]/)[0].trim()).filter(l => l && !l.startsWith('-'));
+      out.manifest = 'requirements.txt';
+    } else if (manifest.rel.endsWith('pyproject.toml')) {
+      // PEP 621: dependencies = ["pkg>=1.0; sys_platform=='linux'", ...]; poetry: [tool.poetry.dependencies] pkg = "1.0"
+      // skip markers (platform tags) that leak in as "package names"
+      const MARKERS = new Set(['linux', 'linux2', 'win32', 'darwin', 'x86_64', 'amd64', 'arm64', 'aarch64', 'unix', 'windows', 'macos', 'macosx', 'python', 'sys_platform', 'python_version', 'os_name', 'platform_system', 'platform_machine']);
+      const deps = new Set();
+      for (const m of c.matchAll(/dependencies\s*=\s*\[([^\]]*)\]/gs)) {
+        for (const s of m[1].matchAll(/["']([^"'<>!=\s,\]]+)["']/g)) {
+          const n = s[1].toLowerCase();
+          if (!MARKERS.has(n) && /^[a-z_][\w.-]*$/.test(n)) deps.add(n);
+        }
+      }
+      const poetry = c.match(/\[tool\.poetry\.dependencies\]([\s\S]*?)(\n\[|$)/);
+      if (poetry) {
+        for (const m of poetry[1].matchAll(/^\s*([\w.-]+)\s*=\s*["{]/gm)) {
+          if (m[1] !== 'python') deps.add(m[1].toLowerCase());
+        }
+      }
+      out.runtime = [...deps];
+      out.manifest = 'pyproject.toml';
+    } else if (manifest.rel.endsWith('go.mod')) {
+      out.runtime = [...c.matchAll(/^\s+([\w./-]+)\s+v[\d.]+/gm)].map(m => m[1]);
+      out.manifest = 'go.mod';
+    } else if (manifest.rel.toLowerCase().endsWith('cargo.toml')) {
+      out.runtime = [...c.matchAll(/^\s*([\w-]+)\s*=/gm)].map(m => m[1]);
+      out.manifest = 'Cargo.toml';
+    }
+    out.total = out.runtime.length + out.build.length;
+  } catch {}
+  return out;
+}
+
+function explainDependencies(deps) {
+  // annotate deps with plain-language notes where we know them
+  return (deps || []).slice(0, 20).map(name => {
+    const key = name.toLowerCase().replace(/^@?\w+\//, '');
+    const note = DEP_NOTES[key] || DEP_NOTES[key.split('-')[0]] || null;
+    return { name, note };
+  });
+}
+
+// ---------- demo / media links from README ----------
+function findDemoLinks(files) {
+  const out = [];
+  const seen = new Set();
+  const readme = files.find(f => /^readme(\.\w+)?$/i.test(f.rel) && f.rel.split('/').length === 1);
+  if (!readme) return out;
+  try {
+    const c = fs.readFileSync(readme.full, 'utf8').slice(0, 30000);
+    const urls = [...c.matchAll(/https?:\/\/[^\s)\]"<>]+/g)].map(m => m[0]);
+    for (const u of urls) {
+      let kind = null;
+      if (/youtube\.com|youtu\.be|bilibili\.com/i.test(u)) kind = '视频演示';
+      if (/^https?:\/\/[^\s]*\.(png|jpe?g|gif|webp)(\?|$)/i.test(u) && out.length < 3) kind = '效果截图';
+      if (/demo|demo\.|try|playground|huggingface\.co\/spaces/i.test(u) && !/shields\.io|badges\.github/i.test(u)) kind = '在线试用';
+      if (kind && !seen.has(kind + u)) {
+        seen.add(kind + u);
+        out.push({ kind, url: u });
+      }
+      if (out.length >= 5) break;
+    }
+  } catch {}
+  return out;
+}
+
+// ---------- scenarios / competitors / rework / pitfalls ----------
+function classifyRepo(repo, meta) {
+  // reuse the project classifier on API metadata (name/description/topics)
+  return classifyProject({
+    repo,
+    name: (meta.full_name || '').split('/')[1] || '',
+    description: meta.description,
+    topics: meta.topics || [],
+  });
+}
+
+function buildScenarios(meta, category) {
+  const s = SCENARIOS.find(x => x.cat === category) || SCENARIOS.find(x => x.cat === 'other');
+  const scenarios = [{ when: s.when, not: s.not }];
+  // language-specific extras
+  if (/^(c|c\+\+|rust)$/i.test(meta.language || '')) {
+    scenarios.push({ when: '想研究高性能/系统级实现（SIMD、内存布局、量化内核）', not: '想快速做应用层产品（用封装好的上层框架更快）' });
+  }
+  if ((meta.topics || []).includes('docker')) {
+    scenarios.push({ when: '想在服务器/Docker 里自部署服务', not: '—' });
+  }
+  return scenarios;
+}
+
+function buildCompetitors(repo, category) {
+  const exact = COMPETITORS[repo];
+  if (exact) return { matched: 'exact', list: exact };
+  const peers = CATEGORY_PEERS[category];
+  if (peers) {
+    return { matched: 'category', list: peers.filter(p => p.repo.toLowerCase() !== repo.toLowerCase()) };
+  }
+  return { matched: 'none', list: [] };
+}
+
+function buildReworkIdeas(category, langs) {
+  const ideas = [...(REWORK_IDEAS[category] || [])];
+  if (langs[0] && langs[0].label === 'Python' && !ideas.some(i => i.idea.includes('Web API'))) {
+    ideas.splice(1, 0, { idea: '用 FastAPI/Gradio 包一层，做个网页演示界面', difficulty: '进阶' });
+  }
+  return ideas;
+}
+
+function buildPitfalls(category, frameworks) {
+  const list = [...(PITFALLS.common || []), ...(PITFALLS[category] || [])];
+  if (frameworks.some(f => /Docker/i.test(f.label))) {
+    list.push({ pit: '容器里 GPU 用不了：没装 nvidia-container-toolkit', fix: '装 toolkit 并用 --gpus all 参数启动' });
+  }
+  return list.slice(0, 8);
 }
 
 // ---------- scanning ----------
@@ -348,7 +568,9 @@ function extractComments(content, lang) {
 function readSample(f) {
   try {
     const content = fs.readFileSync(f.full, 'utf8');
-    return content.slice(0, 20000); // cap sample size
+    // head (imports/setup) + tail (main/entry logic often lives at the end)
+    if (content.length <= 30000) return content;
+    return content.slice(0, 20000) + '\n' + content.slice(-10000);
   } catch { return ''; }
 }
 
@@ -401,6 +623,53 @@ function makeDataFlow(entry, modules, frameworks, patterns) {
   const errHandling = patterns.find(p => p.pattern === '异常捕获');
   if (errHandling) steps.push(`任何一步出错都会被 try/catch 兜住，转成友好的错误提示，而不是直接崩溃。`);
   return steps;
+}
+
+// Structured graph (nodes + edges) for the flow diagram, derived from the same signals as makeDataFlow
+function makeFlowGraph(meta, entry, modules, frameworks, interfaces) {
+  const nodes = [];
+  const edges = [];
+  const push = (id, label, type) => {
+    if (!nodes.some(n => n.id === id)) nodes.push({ id, label, type });
+  };
+  push('user', '用户 / 调用方', 'actor');
+  edges.push(['user', 'entry']);
+  const entryPath = entry && entry[0] ? entry[0].rel.split('/').pop() : '入口文件';
+  push('entry', entryPath, 'entry');
+  const routerish = modules.find(m => /router|routes|api|server|controller/i.test(m.path));
+  const modelish = modules.find(m => /model|engine|core|net|layers|pipeline|train/i.test(m.path));
+  const utilish = modules.find(m => /util|helper|common/i.test(m.path));
+  let prev = 'entry';
+  if (routerish) {
+    push('dispatch', routerish.path.split('/').pop(), 'dispatch');
+    edges.push([prev, 'dispatch']);
+    prev = 'dispatch';
+  }
+  if (modelish) {
+    push('core', modelish.path.split('/').pop(), 'core');
+    edges.push([prev, 'core']);
+    prev = 'core';
+  }
+  if (utilish) {
+    push('utils', utilish.path.split('/').pop(), 'utils');
+    edges.push([prev === 'core' ? 'core' : prev, 'utils']);
+    edges.push(['utils', prev === 'core' ? 'core' : 'output']);
+  }
+  const hasDb = frameworks.some(f => /数据库|ORM|Prisma|Sequelize|SQL/i.test(f.label));
+  if (hasDb) {
+    push('db', '数据库 / 存储', 'store');
+    edges.push([prev, 'db']);
+    edges.push(['db', 'output']);
+  }
+  push('output', '输出：结果返回', 'output');
+  if (!edges.some(e => e[1] === 'output')) edges.push([prev, 'output']);
+  const iface = (interfaces || []).find(i => /REST|WebSocket|gRPC/.test(i.kind));
+  if (iface) {
+    push('api', iface.kind, 'api');
+    edges.splice(1, 0, ['user', 'api']);
+    edges.push(['api', 'entry']);
+  }
+  return { nodes, edges };
 }
 
 function makeReadSuggestion(meta, entry, modules, langs, frameworks) {
@@ -479,6 +748,11 @@ function analyzeRepo(repo, token, onProgress) {
     const entry = findEntryFiles(files);
     const modules = findCoreModules(files, langs);
     const patterns = findPatterns(texts);
+    const interfaces = detectInterfaces(files, texts);
+    const deps = detectDependencies(files);
+    const demoLinks = findDemoLinks(files);
+    const category = classifyRepo(repo, meta);
+    const community = fetchCommunity(repo, token);
 
     // pull a few doc quotes
     const docQuotes = [];
@@ -499,12 +773,31 @@ function analyzeRepo(repo, token, onProgress) {
       entry_files: entry.map(e => ({ path: e.rel, hint: ENTRY_HINTS[path.basename(e.rel)] || '入口文件' })),
       core_modules: modules,
       data_flow: makeDataFlow(entry, modules, frameworks, patterns),
+      flow_graph: makeFlowGraph(meta, entry, modules, frameworks, interfaces),
       patterns,
       doc_quotes: docQuotes,
       read_suggestions: makeReadSuggestion(meta, entry, modules, langs, frameworks),
+      interfaces,
+      dependencies: {
+        manifest: deps.manifest || null,
+        total: deps.total,
+        runtime: explainDependencies(deps.runtime),
+        build: explainDependencies(deps.build),
+      },
+      demo_links: demoLinks,
+      scenarios: buildScenarios(meta, category),
+      competitors: buildCompetitors(repo, category),
+      rework_ideas: buildReworkIdeas(category, langs),
+      pitfalls: buildPitfalls(category, frameworks),
+      community: {
+        ...community,
+        verdict: communityVerdict(meta, community),
+        repo_age_days: meta.created_at ? Math.floor((Date.now() - new Date(meta.created_at)) / 86400000) : null,
+      },
+      category,
       stats: { files: files.length, bytes: totalBytes, sampled: texts.length },
       generated_at: now(),
-      analyzer: 'claw-static-analyzer v1',
+      analyzer: 'claw-static-analyzer v2',
     };
   } else {
     // Fallback: metadata-only profile
@@ -525,12 +818,26 @@ function analyzeRepo(repo, token, onProgress) {
       entry_files: [],
       core_modules: [],
       data_flow: ['（仓库规模大，未做源码级扫描；数据流说明需要克隆分析）'],
+      flow_graph: null,
       patterns: [],
       doc_quotes: [],
       read_suggestions: makeReadSuggestion(meta, [], [], langs),
+      interfaces: [],
+      dependencies: { manifest: null, total: null, runtime: [], build: [] },
+      demo_links: [],
+      scenarios: buildScenarios(meta, classifyRepo(repo, meta)),
+      competitors: buildCompetitors(repo, classifyRepo(repo, meta)),
+      rework_ideas: buildReworkIdeas(classifyRepo(repo, meta), langs),
+      pitfalls: buildPitfalls(classifyRepo(repo, meta), []),
+      community: {
+        ...fetchCommunity(repo, token),
+        verdict: null,
+        repo_age_days: meta.created_at ? Math.floor((Date.now() - new Date(meta.created_at)) / 86400000) : null,
+      },
+      category: classifyRepo(repo, meta),
       stats: { files: null, bytes: (meta.size_kb || 0) * 1024, sampled: 0 },
       generated_at: now(),
-      analyzer: 'claw-metadata-profile v1',
+      analyzer: 'claw-metadata-profile v2',
     };
   }
 

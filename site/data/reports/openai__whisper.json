@@ -2,8 +2,8 @@
   "meta": {
     "full_name": "openai/whisper",
     "description": "Robust Speech Recognition via Large-Scale Weak Supervision",
-    "stars": 108002,
-    "forks": 13100,
+    "stars": 108031,
+    "forks": 13105,
     "open_issues": 136,
     "language": "Python",
     "topics": [],
@@ -15,7 +15,7 @@
     "size_kb": 12799,
     "archived": false
   },
-  "overview": "「openai/whisper」是一个以 Python 为主的项目，仓库里大约有 45 个文件（不含 git 内部文件），源码规模约 9.9 MB。 官方一句话介绍：Robust Speech Recognition via Large-Scale Weak Supervision 它在 GitHub 上拿到了 108.0k 颗星、13.1k 次复刻（fork），还有 136 个开放中的 issue。 许可证是 MIT，决定了你怎么合法使用这些代码。 主要语言：Python（AI 领域第一语言，语法简单好读）。 用到的关键框架/工具：PyTorch、NumPy、SciPy、pytest、.gitignore、GitHub Actions。 一句话总结：这是一个 AI/机器学习项目（主力语言 Python），适合想了解「模型是怎么搭起来」的读者。",
+  "overview": "「openai/whisper」是一个以 Python 为主的项目，仓库里大约有 45 个文件（不含 git 内部文件），源码规模约 10.0 MB。 官方一句话介绍：Robust Speech Recognition via Large-Scale Weak Supervision 它在 GitHub 上拿到了 108.0k 颗星、13.1k 次复刻（fork），还有 136 个开放中的 issue。 许可证是 MIT，决定了你怎么合法使用这些代码。 主要语言：Python（AI 领域第一语言，语法简单好读）。 用到的关键框架/工具：PyTorch、NumPy、SciPy、pytest、.gitignore、GitHub Actions。 一句话总结：这是一个 AI/机器学习项目（主力语言 Python），适合想了解「模型是怎么搭起来」的读者。",
   "languages": [
     {
       "label": "Python",
@@ -77,10 +77,10 @@
       "dir": "whisper",
       "count": 11,
       "sample": [
-        "whisper/__init__.py",
-        "whisper/__main__.py",
         "whisper/audio.py",
-        "whisper/decoding.py"
+        "whisper/decoding.py",
+        "whisper/model.py",
+        "whisper/timing.py"
       ],
       "meaning": null
     },
@@ -99,10 +99,10 @@
       "dir": "whisper/normalizers",
       "count": 4,
       "sample": [
-        "whisper/normalizers/__init__.py",
         "whisper/normalizers/basic.py",
         "whisper/normalizers/english.json",
-        "whisper/normalizers/english.py"
+        "whisper/normalizers/english.py",
+        "whisper/normalizers/__init__.py"
       ],
       "meaning": null
     },
@@ -129,8 +129,8 @@
       "dir": "data",
       "count": 2,
       "sample": [
-        "data/README.md",
-        "data/meanwhile.json"
+        "data/meanwhile.json",
+        "data/README.md"
       ],
       "meaning": "数据文件"
     },
@@ -156,42 +156,42 @@
   "core_modules": [
     {
       "path": "whisper/model.py",
-      "size": "11.9 KB",
+      "size": "12.3 KB",
       "why": "数据/AI 模型定义"
     },
     {
       "path": "whisper/decoding.py",
-      "size": "31.4 KB",
+      "size": "32.2 KB",
       "why": null
     },
     {
       "path": "whisper/transcribe.py",
-      "size": "29.7 KB",
+      "size": "30.3 KB",
       "why": null
     },
     {
       "path": "whisper/normalizers/english.py",
-      "size": "20.4 KB",
+      "size": "20.9 KB",
       "why": null
     },
     {
       "path": "whisper/timing.py",
-      "size": "12.4 KB",
+      "size": "12.8 KB",
       "why": null
     },
     {
       "path": "whisper/tokenizer.py",
-      "size": "12.0 KB",
+      "size": "12.4 KB",
       "why": null
     },
     {
       "path": "whisper/utils.py",
-      "size": "11.6 KB",
+      "size": "11.9 KB",
       "why": null
     },
     {
       "path": "whisper/__init__.py",
-      "size": "7.3 KB",
+      "size": "7.4 KB",
       "why": null
     }
   ],
@@ -201,6 +201,57 @@
     "过程中会借道「whisper/utils.py」这类工具模块：它们像瑞士军刀，谁需要谁来拿。",
     "处理完成后，结果原路返回：渲染成页面、打印到终端或打包成 API 响应，交回给你。"
   ],
+  "flow_graph": {
+    "nodes": [
+      {
+        "id": "user",
+        "label": "用户 / 调用方",
+        "type": "actor"
+      },
+      {
+        "id": "entry",
+        "label": "入口文件",
+        "type": "entry"
+      },
+      {
+        "id": "core",
+        "label": "model.py",
+        "type": "core"
+      },
+      {
+        "id": "utils",
+        "label": "utils.py",
+        "type": "utils"
+      },
+      {
+        "id": "output",
+        "label": "输出：结果返回",
+        "type": "output"
+      }
+    ],
+    "edges": [
+      [
+        "user",
+        "entry"
+      ],
+      [
+        "entry",
+        "core"
+      ],
+      [
+        "core",
+        "utils"
+      ],
+      [
+        "utils",
+        "core"
+      ],
+      [
+        "core",
+        "output"
+      ]
+    ]
+  },
   "patterns": [],
   "doc_quotes": [
     {
@@ -208,12 +259,12 @@
       "text": "* Fix: Update torch.load to use weights_only=True to prevent security w… ([#2451](https://github.com/openai/whisper/pull/2451)) * Fix: Ensure DTW cost tensor is on the same device as input tensor ([#2561](https://github.com/openai/whisper/pull/2561)) * docs: updated README to specify translation mod"
     },
     {
-      "file": "README.md",
-      "text": "[[Blog]](https://openai.com/blog/whisper) [[Paper]](https://arxiv.org/abs/2212.04356) [[Model card]](https://github.com/openai/whisper/blob/main/model-card.md) [[Colab example]](https://colab.research.google.com/github/openai/whisper/blob/master/notebooks/LibriSpeech.ipynb)"
-    },
-    {
       "file": "model-card.md",
       "text": "This is the official codebase for running the automatic speech recognition (ASR) models (Whisper models) trained and released by OpenAI."
+    },
+    {
+      "file": "README.md",
+      "text": "[[Blog]](https://openai.com/blog/whisper) [[Paper]](https://arxiv.org/abs/2212.04356) [[Model card]](https://github.com/openai/whisper/blob/main/model-card.md) [[Colab example]](https://colab.research.google.com/github/openai/whisper/blob/master/notebooks/LibriSpeech.ipynb)"
     }
   ],
   "read_suggestions": [
@@ -230,11 +281,154 @@
       "body": "比如「数据从哪进来」「结果存在哪」「错误怎么处理」，带着三个问题读任何项目都不会迷路。"
     }
   ],
+  "interfaces": [
+    {
+      "kind": "CLI 命令行接口",
+      "where": "whisper/transcribe.py",
+      "speak": "命令行参数接口：python xxx.py --arg"
+    },
+    {
+      "kind": "CLI 参数",
+      "where": "whisper/transcribe.py",
+      "speak": "命令行参数定义"
+    },
+    {
+      "kind": "脚本入口",
+      "where": "whisper/transcribe.py",
+      "speak": "直接 python 运行的脚本入口"
+    }
+  ],
+  "dependencies": {
+    "manifest": "pyproject.toml",
+    "total": 6,
+    "runtime": [
+      {
+        "name": "more-itertools",
+        "note": null
+      },
+      {
+        "name": "numba",
+        "note": null
+      },
+      {
+        "name": "numpy",
+        "note": "科学计算基石"
+      },
+      {
+        "name": "tiktoken",
+        "note": null
+      },
+      {
+        "name": "torch",
+        "note": null
+      },
+      {
+        "name": "tqdm",
+        "note": null
+      }
+    ],
+    "build": []
+  },
+  "demo_links": [
+    {
+      "kind": "效果截图",
+      "url": "https://raw.githubusercontent.com/openai/whisper/main/approach.png"
+    }
+  ],
+  "scenarios": [
+    {
+      "when": "语音转文字、语音合成、音乐生成类需求",
+      "not": "实时通话场景（需额外工程化）"
+    }
+  ],
+  "competitors": {
+    "matched": "exact",
+    "list": [
+      {
+        "name": "faster-whisper",
+        "repo": "SYSTRAN/faster-whisper",
+        "edge": "CTranslate2 加速，快 4 倍"
+      },
+      {
+        "name": "FunASR",
+        "repo": "modelscope/FunASR",
+        "edge": "中文场景效果更好"
+      },
+      {
+        "name": "whisper.cpp",
+        "repo": "ggml-org/whisper.cpp",
+        "edge": "C++ 移植，CPU/嵌入式可跑"
+      }
+    ]
+  },
+  "rework_ideas": [
+    {
+      "idea": "用自己的录音测试识别效果，观察语言/口音鲁棒性",
+      "difficulty": "入门"
+    },
+    {
+      "idea": "用 FastAPI/Gradio 包一层，做个网页演示界面",
+      "difficulty": "进阶"
+    },
+    {
+      "idea": "加流式识别（VAD 切分 + 增量解码），支持实时字幕",
+      "difficulty": "进阶"
+    },
+    {
+      "idea": "蒸馏/量化到端侧，在手机上跑起来",
+      "difficulty": "硬核"
+    }
+  ],
+  "pitfalls": [
+    {
+      "pit": "环境不隔离：直接在系统 Python/node 里装依赖，装到一半互相打架",
+      "fix": "先建 venv / 用 nvm 固定版本，再装依赖"
+    },
+    {
+      "pit": "CUDA/驱动不匹配：torch 装了 CUDA 12 版本但驱动只支持 11",
+      "fix": "先 nvidia-smi 看驱动支持的上限，再选对应版本安装"
+    },
+    {
+      "pit": "模型文件放错目录：程序默认去 ./models 找，你下到了下载文件夹",
+      "fix": "先跑一次看报错里的路径，把文件挪过去"
+    },
+    {
+      "pit": "采样率不对：模型要 16kHz，你喂了 44.1kHz 音乐文件",
+      "fix": "先重采样到 16kHz 单声道"
+    },
+    {
+      "pit": "长音频一次全喂导致显存爆",
+      "fix": "按 30 秒切块识别再拼结果"
+    },
+    {
+      "pit": "中文识别错字多",
+      "fix": "打开对应语言 token，或换中文优化模型"
+    }
+  ],
+  "community": {
+    "contributors": "82",
+    "latest_release": {
+      "tag": "v20250625",
+      "name": "v20250625",
+      "published_at": "2025-06-26T01:06:09Z",
+      "notes_excerpt": ""
+    },
+    "releases_count": 10,
+    "commit_activity": null,
+    "verdict": [
+      "距上次提交约 30 天，处于正常迭代节奏",
+      "有 82 位贡献者提交过代码",
+      "最新版本 v20250625（2025-06-26 发布）",
+      "开放 issue 占星数比例很低，社区响应健康"
+    ],
+    "repo_age_days": 1441
+  },
+  "category": "audio",
   "stats": {
     "files": 45,
-    "bytes": 10356301,
+    "bytes": 10477541,
     "sampled": 20
   },
-  "generated_at": "2026-08-27T10:58:40.182Z",
-  "analyzer": "claw-static-analyzer v1"
+  "generated_at": "2026-08-28T00:11:21.538Z",
+  "analyzer": "claw-static-analyzer v2"
 }

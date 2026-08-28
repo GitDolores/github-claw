@@ -67,8 +67,33 @@
         <div class="grid cards" id="module-cards"></div>
       </section>
 
+      <section class="container section" id="sec-scenarios">
+        <h2>适用场景</h2>
+        <p class="section-lead">什么情况下选它，什么情况下别选它——一句话说清。</p>
+        <div class="grid cards" id="scenario-cards"></div>
+      </section>
+
+      <section class="container section" id="sec-interfaces">
+        <h2>输出格式 / 接口规范</h2>
+        <p class="section-lead">这个项目以什么形式对外提供能力（命令行、HTTP 接口、库调用……）。</p>
+        <div id="iface-list"></div>
+      </section>
+
+      <section class="container section" id="sec-demo">
+        <h2>效果演示</h2>
+        <p class="section-lead">来自 README 的官方演示链接与截图，先看效果再读代码。</p>
+        <div id="demo-links"></div>
+      </section>
+
+      <section class="container section" id="sec-deps">
+        <h2>依赖分析</h2>
+        <p class="section-lead">它建立在哪些积木之上，每个积木是干嘛的。</p>
+        <div id="dep-list"></div>
+      </section>
+
       <section class="container section" id="sec-flow">
         <h2>数据流（程序怎么跑起来的）</h2>
+        <div class="flow-graph" id="flow-graph"></div>
         <ol class="flow-steps" id="flow-steps"></ol>
       </section>
 
@@ -83,15 +108,44 @@
         <div id="doc-quotes"></div>
       </section>
 
+      <section class="container section" id="sec-community">
+        <h2>社区资源 / 活跃度 / 版本迭代</h2>
+        <div class="stat-row" id="community-stats"></div>
+        <div id="community-verdict"></div>
+      </section>
+
+      <section class="container section" id="sec-competitors">
+        <h2>同类竞品对比</h2>
+        <p class="section-lead">做类似事情的知名项目，各有各的绝活。</p>
+        <div class="grid cards" id="competitor-cards"></div>
+      </section>
+
+      <section class="container section" id="sec-rework">
+        <h2>常见改造方向（含难度评估）</h2>
+        <p class="section-lead">拿它练手的路线图：从入门改到硬核。</p>
+        <div id="rework-list"></div>
+      </section>
+
       <section class="container section" id="sec-tips">
         <h2>阅读建议（傻瓜式路线）</h2>
         <div class="timeline" id="tip-list"></div>
       </section>
 
+      <section class="container section" id="sec-pitfalls">
+        <h2>高频踩坑清单</h2>
+        <p class="section-lead">前人摔过的跟头，看一遍能省一个周末。</p>
+        <div id="pitfall-list"></div>
+      </section>
+
       <section class="container section" id="sec-raw">
-        <h2>原始数据</h2>
+        <h2>原始数据与源码</h2>
         <p class="section-lead">
           <a id="raw-link" href="#" target="_blank">查看完整 JSON 报告</a> ·
+          <a id="download-report" href="#">⬇ 下载报告 JSON</a> ·
+          <a id="copy-report" href="#">📋 复制报告 JSON</a> ·
+          <a id="clone-cmd" href="#">📦 一键复制克隆命令</a>
+        </p>
+        <p class="section-lead">
           分析器版本 <span id="analyzer-version"></span> · 生成时间 <span id="generated-at"></span>
         </p>
       </section>

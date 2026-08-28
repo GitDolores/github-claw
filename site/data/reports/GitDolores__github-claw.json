@@ -9,19 +9,19 @@
     "topics": [],
     "license": null,
     "default_branch": "main",
-    "pushed_at": "2026-08-27T09:12:58Z",
+    "pushed_at": "2026-08-27T11:36:57Z",
     "created_at": "2026-07-29T03:22:23Z",
     "homepage": null,
-    "size_kb": 21,
+    "size_kb": 111,
     "archived": false
   },
-  "overview": "「GitDolores/github-claw」是一个以 JavaScript 为主的项目，仓库里大约有 23 个文件（不含 git 内部文件），源码规模约 105.2 KB。 它在 GitHub 上拿到了 0 颗星、0 次复刻（fork），还有 0 个开放中的 issue。 主要语言构成（按文件数）：JavaScript 4 个文件、CSS 1 个文件、HTML 2 个文件。 用到的关键框架/工具：GitHub Actions。 一句话总结：这是一个以JavaScript开发的项目，结构和文档都比较规范，适合通读学习。",
+  "overview": "「GitDolores/github-claw」是一个以 JavaScript 为主的项目，仓库里大约有 39 个文件（不含 git 内部文件），源码规模约 215.4 KB。 它在 GitHub 上拿到了 0 颗星、0 次复刻（fork），还有 0 个开放中的 issue。 主要语言构成（按文件数）：JavaScript 7 个文件、CSS 1 个文件、HTML 3 个文件。 用到的关键框架/工具：GitHub Actions。 一句话总结：这是一个以JavaScript开发的项目，结构和文档都比较规范，适合通读学习。",
   "languages": [
     {
       "label": "JavaScript",
       "speak": "网页脚本语言，让页面能动起来",
       "color": "#f1e05a",
-      "files": 4
+      "files": 7
     },
     {
       "label": "CSS",
@@ -33,7 +33,7 @@
       "label": "HTML",
       "speak": "网页骨架标记语言",
       "color": "#e34c26",
-      "files": 2
+      "files": 3
     }
   ],
   "frameworks": [
@@ -46,12 +46,12 @@
   "dir_tree": [
     {
       "dir": "site/data",
-      "count": 5,
+      "count": 14,
       "sample": [
         "site/data/analysis-status.json",
-        "site/data/projects.json",
-        "site/data/reports/GitDolores__github-claw.json",
-        "site/data/reports/huggingface__transformers.json"
+        "site/data/archive.json",
+        "site/data/backlog.json",
+        "site/data/projects.json"
       ],
       "meaning": "网站目录"
     },
@@ -67,10 +67,22 @@
       "meaning": null
     },
     {
+      "dir": "tools",
+      "count": 4,
+      "sample": [
+        "tools/analyze.mjs",
+        "tools/dictionaries.mjs",
+        "tools/summarize.mjs",
+        "tools/weekly.mjs"
+      ],
+      "meaning": "开发辅助脚本"
+    },
+    {
       "dir": "site",
-      "count": 3,
+      "count": 4,
       "sample": [
         "site/CNAME",
+        "site/history.html",
         "site/index.html",
         "site/report.html"
       ],
@@ -78,8 +90,9 @@
     },
     {
       "dir": "site/assets",
-      "count": 3,
+      "count": 4,
       "sample": [
+        "site/assets/history.js",
         "site/assets/report.js",
         "site/assets/script.js",
         "site/assets/styles.css"
@@ -87,29 +100,23 @@
       "meaning": "网站目录"
     },
     {
-      "dir": "tools",
-      "count": 2,
-      "sample": [
-        "tools/analyze.mjs",
-        "tools/dictionaries.mjs"
-      ],
-      "meaning": "开发辅助脚本"
-    },
-    {
       "dir": "memory/daily",
-      "count": 2,
+      "count": 4,
       "sample": [
         "memory/daily/.gitkeep",
-        "memory/daily/2026-08-27-pages-deployment-fixed.md"
+        "memory/daily/2026-08-27-analyzer-launched.md",
+        "memory/daily/2026-08-27-pages-deployment-fixed.md",
+        "memory/daily/2026-08-27-weekly-rotation.md"
       ],
       "meaning": null
     },
     {
       "dir": ".github/workflows",
-      "count": 2,
+      "count": 3,
       "sample": [
         ".github/workflows/analyze.yml",
-        ".github/workflows/pages.yml"
+        ".github/workflows/pages.yml",
+        ".github/workflows/weekly.yml"
       ],
       "meaning": "GitHub 平台专属配置（Actions、Issue 模板等）"
     },
@@ -134,22 +141,37 @@
   "core_modules": [
     {
       "path": "tools/analyze.mjs",
-      "size": "25.1 KB",
+      "size": "25.7 KB",
       "why": null
     },
     {
       "path": "tools/dictionaries.mjs",
-      "size": "10.1 KB",
+      "size": "14.3 KB",
+      "why": null
+    },
+    {
+      "path": "tools/weekly.mjs",
+      "size": "5.4 KB",
+      "why": null
+    },
+    {
+      "path": "tools/summarize.mjs",
+      "size": "4.9 KB",
       "why": null
     },
     {
       "path": "site/assets/report.js",
-      "size": "7.7 KB",
+      "size": "7.9 KB",
+      "why": null
+    },
+    {
+      "path": "site/assets/history.js",
+      "size": "5.6 KB",
       "why": null
     },
     {
       "path": "site/assets/script.js",
-      "size": "3.1 KB",
+      "size": "3.2 KB",
       "why": null
     }
   ],
@@ -158,6 +180,35 @@
     "处理完成后，结果原路返回：渲染成页面、打印到终端或打包成 API 响应，交回给你。",
     "任何一步出错都会被 try/catch 兜住，转成友好的错误提示，而不是直接崩溃。"
   ],
+  "flow_graph": {
+    "nodes": [
+      {
+        "id": "user",
+        "label": "用户 / 调用方",
+        "type": "actor"
+      },
+      {
+        "id": "entry",
+        "label": "入口文件",
+        "type": "entry"
+      },
+      {
+        "id": "output",
+        "label": "输出：结果返回",
+        "type": "output"
+      }
+    ],
+    "edges": [
+      [
+        "user",
+        "entry"
+      ],
+      [
+        "entry",
+        "output"
+      ]
+    ]
+  },
   "patterns": [
     {
       "pattern": "async/await",
@@ -176,6 +227,12 @@
       "speak": "URL 映射到处理函数",
       "severity": "common",
       "where": "tools/analyze.mjs"
+    },
+    {
+      "pattern": "模块化导出",
+      "speak": "功能拆成模块互相引用",
+      "severity": "common",
+      "where": "tools/dictionaries.mjs"
     },
     {
       "pattern": "依赖注入",
@@ -199,7 +256,7 @@
       "pattern": "事件驱动",
       "speak": "「有事叫我」：注册回调等事件发生",
       "severity": "common",
-      "where": "site/assets/script.js"
+      "where": "site/assets/history.js"
     }
   ],
   "doc_quotes": [
@@ -230,11 +287,67 @@
       "body": "比如「数据从哪进来」「结果存在哪」「错误怎么处理」，带着三个问题读任何项目都不会迷路。"
     }
   ],
-  "stats": {
-    "files": 23,
-    "bytes": 107674,
-    "sampled": 4
+  "interfaces": [
+    {
+      "kind": "JS 模块导出",
+      "where": "tools/analyze.mjs",
+      "speak": "npm 库式的导入导出接口"
+    },
+    {
+      "kind": "Python Web 框架接口",
+      "where": "tools/dictionaries.mjs",
+      "speak": "用 FastAPI/Flask 暴露 HTTP 接口"
+    }
+  ],
+  "dependencies": {
+    "manifest": null,
+    "total": null,
+    "runtime": [],
+    "build": []
   },
-  "generated_at": "2026-08-27T09:13:14.163Z",
-  "analyzer": "claw-static-analyzer v1"
+  "demo_links": [],
+  "scenarios": [
+    {
+      "when": "按 README 描述评估是否能解决手头问题",
+      "not": "—"
+    }
+  ],
+  "competitors": {
+    "matched": "none",
+    "list": []
+  },
+  "rework_ideas": [],
+  "pitfalls": [
+    {
+      "pit": "环境不隔离：直接在系统 Python/node 里装依赖，装到一半互相打架",
+      "fix": "先建 venv / 用 nvm 固定版本，再装依赖"
+    },
+    {
+      "pit": "CUDA/驱动不匹配：torch 装了 CUDA 12 版本但驱动只支持 11",
+      "fix": "先 nvidia-smi 看驱动支持的上限，再选对应版本安装"
+    },
+    {
+      "pit": "模型文件放错目录：程序默认去 ./models 找，你下到了下载文件夹",
+      "fix": "先跑一次看报错里的路径，把文件挪过去"
+    }
+  ],
+  "community": {
+    "contributors": "3",
+    "latest_release": null,
+    "releases_count": null,
+    "commit_activity": null,
+    "verdict": [
+      "最近 0 天内还有代码提交，维护很活跃",
+      "有 3 位贡献者提交过代码"
+    ],
+    "repo_age_days": 29
+  },
+  "category": "other",
+  "stats": {
+    "files": 39,
+    "bytes": 220537,
+    "sampled": 7
+  },
+  "generated_at": "2026-08-27T12:04:46.935Z",
+  "analyzer": "claw-static-analyzer v2"
 }

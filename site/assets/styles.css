@@ -487,3 +487,62 @@ img { max-width: 100%; display: block; }
 .sum-count { color: var(--text-dim); font-size: 0.82rem; }
 .sum-speak { color: var(--text-dim); font-size: 0.85rem; margin: 0.2rem 0 0.3rem; }
 .sum-text { margin: 0; color: var(--text); font-size: 0.95rem; }
+
+/* ===== report v2 additions ===== */
+
+/* scenario cards */
+.scenario-card h3:first-child { margin-top: 0; }
+.scenario-card h3 { font-size: 0.95rem; }
+
+/* dependency tags */
+.dep-tags { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 0.8rem; }
+.dep-tag {
+  display: inline-flex;
+  flex-direction: column;
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 0.35rem 0.7rem;
+  font-family: ui-monospace, Consolas, monospace;
+  font-size: 0.82rem;
+  color: var(--text);
+}
+.dep-tag em {
+  font-style: normal;
+  font-family: inherit;
+  font-size: 0.72rem;
+  color: var(--text-dim);
+  margin-top: 0.15rem;
+}
+
+/* flow graph */
+.flow-graph { margin-bottom: 1.4rem; overflow-x: auto; }
+.flow-graph svg { min-width: 640px; display: block; height: auto; }
+.fg-edge { fill: none; stroke: rgba(107, 140, 255, 0.55); stroke-width: 1.6; }
+.fg-node rect { fill: var(--card); stroke: rgba(107, 140, 255, 0.35); stroke-width: 1.2; }
+.fg-node.fg-core rect { stroke: var(--accent); stroke-width: 1.8; fill: rgba(107, 140, 255, 0.08); }
+.fg-node.fg-user rect, .fg-node.fg-output rect { stroke-dasharray: 4 3; }
+.fg-label { fill: var(--text); font-size: 11.5px; font-weight: 600; }
+.fg-type { fill: var(--text-dim); font-size: 9.5px; }
+
+/* difficulty badges */
+.pattern-badge.easy { background: rgba(46, 204, 113, 0.12); border-color: rgba(46, 204, 113, 0.4); color: #52d68a; }
+.pattern-badge.mid { background: rgba(241, 196, 15, 0.12); border-color: rgba(241, 196, 15, 0.4); color: #f4d03f; }
+.pattern-badge.hard { background: rgba(231, 76, 60, 0.12); border-color: rgba(231, 76, 60, 0.4); color: #f0716a; }
+
+/* pitfalls */
+.pitfall-item {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 0.85rem 1.2rem;
+  margin-bottom: 0.6rem;
+}
+.pitfall-problem { color: var(--text); font-size: 0.95rem; }
+.pitfall-fix { color: var(--text-dim); font-size: 0.88rem; margin-top: 0.35rem; padding-left: 0.2rem; border-left: 2px solid rgba(46, 204, 113, 0.4); padding: 0.15rem 0 0.15rem 0.7rem; }
+
+/* community verdict */
+.verdict-list { margin: 0 0 1rem; padding-left: 1.2rem; color: var(--text-dim); display: grid; gap: 0.4rem; }
+
+/* demo link rows reuse .pattern-item; give urls room */
+#demo-links a { word-break: break-all; }
