@@ -42,42 +42,143 @@
         </div>
         <div class="hero-card">
           <img class="hero-illu" alt="AI illustration" src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='600' height='360' viewBox='0 0 600 360'><defs><linearGradient id='g' x1='0' x2='1'><stop stop-color='%233a86ff' offset='0'/><stop stop-color='%238f7bff' offset='1'/></linearGradient></defs><rect rx='18' width='600' height='360' fill='url(%23g)'/><g fill='white' opacity='0.95' transform='translate(40,40)'><rect x='0' y='0' width='220' height='24' rx='6'/><rect x='0' y='40' width='520' height='18' rx='6'/><rect x='0' y='70' width='520' height='14' rx='6'/><circle cx='480' cy='220' r='60' fill='rgba(255,255,255,0.08)'/></g></svg>" />
-          <svg class="hero-miku" viewBox="0 0 500 300" preserveAspectRatio="xMidYMid meet" role="img" aria-label="初音未来主题插画：青蓝色双马尾、头戴耳机、开朗笑容">
+          <svg class="hero-mascot" data-mascot="lume" viewBox="0 0 500 300" preserveAspectRatio="xMidYMid meet" role="img" aria-label="Lume 主题插画：星空小狐娘，星蓝紫发、狐耳与尾巴">
+            <defs>
+              <linearGradient id="luBg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#141b3d"/><stop offset="0.55" stop-color="#1d2a5e"/><stop offset="1" stop-color="#2a1d5e"/></linearGradient>
+              <linearGradient id="luHair" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#8f9bff"/><stop offset="1" stop-color="#5a6ae8"/></linearGradient>
+              <linearGradient id="luHair2" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#a8b6ff"/><stop offset="1" stop-color="#6d7df0"/></linearGradient>
+              <linearGradient id="luSkin" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fff4ec"/><stop offset="1" stop-color="#ffe0d2"/></linearGradient>
+              <radialGradient id="luCheek"><stop offset="0" stop-color="#ff9db4" stop-opacity=".8"/><stop offset="1" stop-color="#ff9db4" stop-opacity="0"/></radialGradient>
+              <linearGradient id="luEye" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#7ec8ff"/><stop offset="1" stop-color="#3a6cf0"/></linearGradient>
+              <linearGradient id="luSuit" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#3a3f66"/><stop offset="1" stop-color="#232848"/></linearGradient>
+            </defs>
+            <rect width="500" height="300" fill="url(#luBg)"/>
+            <g class="mascot-stars" fill="#fdf6ff"><circle cx="55" cy="60" r="2"/><circle cx="90" cy="34" r="1.4"/><circle cx="415" cy="52" r="2.2"/><circle cx="450" cy="96" r="1.5"/><circle cx="430" cy="238" r="1.8"/><circle cx="70" cy="230" r="1.5"/><circle cx="180" cy="42" r="1.3"/><circle cx="330" cy="30" r="1.6"/></g>
+            <g class="mascot-deco" fill="#8fd3ff" opacity=".8"><path d="M96 62 l2.2 5.4 5.8 .4 -4.4 3.8 1.5 5.6 -5.1 -3.1 -5.1 3.1 1.5 -5.6 -4.4 -3.8 5.8 -.4 z"/><path d="M402 190 l1.8 4.4 4.8 .4 -3.6 3.1 1.2 4.6 -4.2 -2.6 -4.2 2.6 1.2 -4.6 -3.6 -3.1 4.8 -.4 z"/><path d="M62 160 l1.5 3.7 4 .3 -3 2.6 1 3.8 -3.5 -2.2 -3.5 2.2 1 -3.8 -3 -2.6 4 -.3 z"/></g>
+            <g class="mascot-figure" transform="translate(130, 0)">
+              <path class="mascot-tail" d="M178 236 C 226 224 246 190 238 152 C 236 142 226 140 222 150 C 228 182 214 210 172 222 Z" fill="url(#luHair)"/>
+              <path d="M224 148 c 4 -5 12 -3 11 4 c -1 6 -8 9 -13 12 c -1 -6 -1 -12 2 -16 z" fill="#ffd166"/>
+              <path class="mascot-ear" d="M84 44 C 74 22 88 8 108 12 C 122 15 130 28 128 44 Z" fill="url(#luHair)"/>
+              <path d="M90 40 C 85 26 92 18 102 21 C 110 24 114 32 113 42 Z" fill="#ffb3c9"/>
+              <path class="mascot-ear" d="M156 44 C 166 22 152 8 132 12 C 118 15 110 28 112 44 Z" fill="url(#luHair)"/>
+              <path d="M150 40 C 155 26 148 18 138 21 C 130 24 126 32 127 42 Z" fill="#ffb3c9"/>
+              <path class="mascot-twin" d="M52 96 C 20 132 12 188 32 240 C 40 258 54 260 58 244 C 44 202 52 158 74 124 Z" fill="url(#luHair)" opacity=".95"/>
+              <path class="mascot-twin t" d="M188 96 C 220 132 228 188 208 240 C 200 258 186 260 182 244 C 196 202 188 158 166 124 Z" fill="url(#luHair)" opacity=".95"/>
+              <ellipse cx="120" cy="112" rx="46" ry="50" fill="url(#luSkin)"/>
+              <path d="M120 58 C 76 58 64 90 68 116 C 74 106 78 96 86 92 C 90 104 98 110 110 112 C 102 104 100 96 104 88 C 114 102 130 106 144 104 C 140 96 140 92 144 86 C 152 94 160 104 164 114 C 172 90 158 58 120 58 Z" fill="url(#luHair2)"/>
+              <g><ellipse cx="100" cy="118" rx="10" ry="13" fill="#fff"/><ellipse cx="100" cy="119" rx="7.5" ry="10.5" fill="url(#luEye)"/><circle cx="97.5" cy="114.5" r="3" fill="#fff"/><circle cx="103" cy="123" r="1.6" fill="#fff"/><path d="M87 105 Q 100 96 113 105" stroke="#3a3f66" stroke-width="3" fill="none" stroke-linecap="round"/></g>
+              <g><ellipse cx="140" cy="118" rx="10" ry="13" fill="#fff"/><ellipse cx="140" cy="119" rx="7.5" ry="10.5" fill="url(#luEye)"/><circle cx="137.5" cy="114.5" r="3" fill="#fff"/><circle cx="143" cy="123" r="1.6" fill="#fff"/><path d="M127 105 Q 140 96 153 105" stroke="#3a3f66" stroke-width="3" fill="none" stroke-linecap="round"/></g>
+              <ellipse cx="82" cy="138" rx="12" ry="7" fill="url(#luCheek)"/>
+              <ellipse cx="158" cy="138" rx="12" ry="7" fill="url(#luCheek)"/>
+              <path class="mascot-smile" d="M112 140 q 8 8 16 0" stroke="#d96a8b" stroke-width="3.2" fill="none" stroke-linecap="round"/>
+              <path d="M120 160 C 96 160 78 172 72 192 L 62 252 C 78 262 100 266 120 266 C 140 266 162 262 178 252 L 168 192 C 162 172 144 160 120 160 Z" fill="url(#luSuit)"/>
+              <path d="M104 162 L 120 182 L 136 162 C 130 158 110 158 104 162 Z" fill="#e8ecff"/>
+              <path d="M116 168 L 124 168 L 127 182 L 120 190 L 113 182 Z" fill="#ffd166"/>
+              <g class="mascot-heart" fill="#ffb3c9"><path d="M96 236 c -3 -5 -10 -4 -10 2 c 0 5 6 8 10 11 c 4 -3 10 -6 10 -11 c 0 -6 -7 -7 -10 -2 z"/></g>
+              <g class="mascot-heart h2" fill="#ffb3c9"><path d="M144 236 c -3 -5 -10 -4 -10 2 c 0 5 6 8 10 11 c 4 -3 10 -6 10 -11 c 0 -6 -7 -7 -10 -2 z"/></g>
+            </g>
+          </svg>
+          <svg class="hero-mascot" data-mascot="miku" viewBox="0 0 500 300" preserveAspectRatio="xMidYMid meet" role="img" aria-label="初音未来主题插画：青葱色长双马尾、编号 01、开朗笑容">
             <defs>
               <linearGradient id="mkBg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#ffe3ee"/><stop offset="0.5" stop-color="#e3f4ff"/><stop offset="1" stop-color="#dffaf6"/></linearGradient>
-              <linearGradient id="mkHair" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#7ee8e0"/><stop offset="1" stop-color="#3fb8d8"/></linearGradient>
-              <linearGradient id="mkHair2" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#a5f0ea"/><stop offset="1" stop-color="#57c8e6"/></linearGradient>
-              <linearGradient id="mkSkin" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fff6f2"/><stop offset="1" stop-color="#ffe3dc"/></linearGradient>
+              <linearGradient id="mkHair" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#8ff0e8"/><stop offset="1" stop-color="#3fb8d8"/></linearGradient>
+              <linearGradient id="mkHair2" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#b2f3ee"/><stop offset="1" stop-color="#57c8e6"/></linearGradient>
+              <linearGradient id="mkSkin" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fff8f4"/><stop offset="1" stop-color="#ffe8e0"/></linearGradient>
               <linearGradient id="mkSuit" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#4a5a78"/><stop offset="1" stop-color="#2e3a55"/></linearGradient>
               <linearGradient id="mkTie" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#8ef3e9"/><stop offset="1" stop-color="#3fb8d8"/></linearGradient>
               <radialGradient id="mkCheek"><stop offset="0" stop-color="#ffb3c9" stop-opacity=".9"/><stop offset="1" stop-color="#ffb3c9" stop-opacity="0"/></radialGradient>
               <linearGradient id="mkEye" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#59d6e8"/><stop offset="1" stop-color="#2f9fc8"/></linearGradient>
             </defs>
             <rect width="500" height="300" fill="url(#mkBg)"/>
-            <g class="miku-stars" fill="#ffd166"><path d="M60 52 l2.6 6.4 6.8 0.5 -5.2 4.4 1.7 6.6 -5.9 -3.6 -5.9 3.6 1.7 -6.6 -5.2 -4.4 6.8 -0.5 z"/><path d="M436 74 l2.2 5.4 5.7 0.4 -4.3 3.7 1.4 5.5 -4.9 -3 -4.9 3 1.4 -5.5 -4.3 -3.7 5.7 -0.4 z"/><path d="M455 210 l1.8 4.4 4.7 0.4 -3.6 3 1.2 4.5 -4.1 -2.5 -4.1 2.5 1.2 -4.5 -3.6 -3 4.7 -0.4 z"/><path d="M52 216 l2 4.9 5.2 0.4 -4 3.3 1.3 5 -4.5 -2.7 -4.5 2.7 1.3 -5 -4 -3.3 5.2 -0.4 z"/></g>
-            <g class="miku-notes" fill="#7ad0e8"><path d="M118 46 c 0 -7 5.5 -12 12 -12 l 4 0 0 20 c 0 4 -3 7 -7 7 c -4 0 -7 -3 -7 -7 c 0 -4 3 -7 7 -7 c 1 0 2 0.3 3 0.8 l 0 -9.6 c -6 0.5 -12 5 -12 13 z"/><path d="M376 40 c 0 -7 5.5 -12 12 -12 l 4 0 0 20 c 0 4 -3 7 -7 7 c -4 0 -7 -3 -7 -7 c 0 -4 3 -7 7 -7 c 1 0 2 0.3 3 0.8 l 0 -9.6 c -6 0.5 -12 5 -12 13 z"/><path d="M410 250 c 0 -7 5.5 -12 12 -12 l 4 0 0 20 c 0 4 -3 7 -7 7 c -4 0 -7 -3 -7 -7 c 0 -4 3 -7 7 -7 c 1 0 2 0.3 3 0.8 l 0 -9.6 c -6 0.5 -12 5 -12 13 z"/></g>
-            <g class="miku-figure" transform="translate(130, 0)">
-              <path class="miku-twin" d="M52 92 C 18 130 8 190 30 246 C 38 264 52 268 58 252 C 42 204 52 158 74 122 Z" fill="url(#mkHair)" opacity=".95"/>
-              <path class="miku-twin t" d="M188 92 C 222 130 232 190 210 246 C 202 264 188 268 182 252 C 198 204 188 158 166 122 Z" fill="url(#mkHair)" opacity=".95"/>
-              <g><rect x="30" y="98" width="16" height="16" rx="3" fill="#fff" stroke="#3fb8d8" stroke-width="2"/><rect x="33.5" y="101.5" width="9" height="9" rx="1.5" fill="#5fd6e8"/></g>
-              <g><rect x="194" y="98" width="16" height="16" rx="3" fill="#fff" stroke="#3fb8d8" stroke-width="2"/><rect x="197.5" y="101.5" width="9" height="9" rx="1.5" fill="#5fd6e8"/></g>
+            <g class="mascot-stars" fill="#ffd166"><path d="M60 52 l2.6 6.4 6.8 0.5 -5.2 4.4 1.7 6.6 -5.9 -3.6 -5.9 3.6 1.7 -6.6 -5.2 -4.4 6.8 -0.5 z"/><path d="M436 74 l2.2 5.4 5.7 0.4 -4.3 3.7 1.4 5.5 -4.9 -3 -4.9 3 1.4 -5.5 -4.3 -3.7 5.7 -0.4 z"/><path d="M455 210 l1.8 4.4 4.7 0.4 -3.6 3 1.2 4.5 -4.1 -2.5 -4.1 2.5 1.2 -4.5 -3.6 -3 4.7 -0.4 z"/><path d="M52 216 l2 4.9 5.2 0.4 -4 3.3 1.3 5 -4.5 -2.7 -4.5 2.7 1.3 -5 -4 -3.3 5.2 -0.4 z"/></g>
+            <g class="mascot-deco" fill="#7ad0e8"><path d="M118 46 c 0 -7 5.5 -12 12 -12 l 4 0 0 20 c 0 4 -3 7 -7 7 c -4 0 -7 -3 -7 -7 c 0 -4 3 -7 7 -7 c 1 0 2 0.3 3 0.8 l 0 -9.6 c -6 0.5 -12 5 -12 13 z"/><path d="M376 40 c 0 -7 5.5 -12 12 -12 l 4 0 0 20 c 0 4 -3 7 -7 7 c -4 0 -7 -3 -7 -7 c 0 -4 3 -7 7 -7 c 1 0 2 0.3 3 0.8 l 0 -9.6 c -6 0.5 -12 5 -12 13 z"/><path d="M410 250 c 0 -7 5.5 -12 12 -12 l 4 0 0 20 c 0 4 -3 7 -7 7 c -4 0 -7 -3 -7 -7 c 0 -4 3 -7 7 -7 c 1 0 2 0.3 3 0.8 l 0 -9.6 c -6 0.5 -12 5 -12 13 z"/></g>
+            <g class="mascot-figure" transform="translate(130, 0)">
+              <path class="mascot-twin" d="M52 92 C 18 130 6 194 30 250 C 40 270 56 272 60 254 C 42 206 50 156 74 122 Z" fill="url(#mkHair)" opacity=".95"/>
+              <path class="mascot-twin t" d="M188 92 C 222 130 234 194 210 250 C 200 270 184 272 180 254 C 198 206 190 156 166 122 Z" fill="url(#mkHair)" opacity=".95"/>
+              <g><rect x="28" y="96" width="17" height="17" rx="3" fill="#fff" stroke="#3fb8d8" stroke-width="2"/><rect x="31.5" y="99.5" width="10" height="10" rx="1.5" fill="#5fd6e8"/></g>
+              <g><rect x="195" y="96" width="17" height="17" rx="3" fill="#fff" stroke="#3fb8d8" stroke-width="2"/><rect x="198.5" y="99.5" width="10" height="10" rx="1.5" fill="#5fd6e8"/></g>
               <ellipse cx="120" cy="112" rx="46" ry="50" fill="url(#mkSkin)"/>
               <path d="M120 58 C 74 58 62 92 66 118 C 72 108 76 96 84 92 C 88 104 96 110 108 112 C 100 104 98 96 102 88 C 112 102 128 106 142 104 C 138 96 138 92 142 86 C 150 94 158 104 162 116 C 170 92 158 58 120 58 Z" fill="url(#mkHair2)"/>
               <g><ellipse cx="100" cy="118" rx="10" ry="13" fill="#fff"/><ellipse cx="100" cy="119" rx="7.5" ry="10.5" fill="url(#mkEye)"/><circle cx="97.5" cy="114.5" r="3" fill="#fff"/><circle cx="103" cy="123" r="1.6" fill="#fff"/><path d="M87 105 Q 100 96 113 105" stroke="#4a5a78" stroke-width="3" fill="none" stroke-linecap="round"/></g>
               <g><ellipse cx="140" cy="118" rx="10" ry="13" fill="#fff"/><ellipse cx="140" cy="119" rx="7.5" ry="10.5" fill="url(#mkEye)"/><circle cx="137.5" cy="114.5" r="3" fill="#fff"/><circle cx="143" cy="123" r="1.6" fill="#fff"/><path d="M127 105 Q 140 96 153 105" stroke="#4a5a78" stroke-width="3" fill="none" stroke-linecap="round"/></g>
               <ellipse cx="82" cy="138" rx="13" ry="8" fill="url(#mkCheek)"/>
               <ellipse cx="158" cy="138" rx="13" ry="8" fill="url(#mkCheek)"/>
-              <path class="miku-smile" d="M108 138 q 6 8 12 0 q 6 8 12 0" stroke="#d96a8b" stroke-width="3.5" fill="none" stroke-linecap="round"/>
+              <path class="mascot-smile" d="M108 138 q 6 8 12 0 q 6 8 12 0" stroke="#d96a8b" stroke-width="3.5" fill="none" stroke-linecap="round"/>
               <path d="M66 108 C 66 74 92 56 120 56 C 148 56 174 74 174 108" stroke="#e8f7f9" stroke-width="9" fill="none" stroke-linecap="round"/>
               <path d="M66 108 C 66 74 92 56 120 56 C 148 56 174 74 174 108" stroke="#5fd6e8" stroke-width="4" fill="none" stroke-linecap="round" stroke-dasharray="2 7"/>
-              <g><rect x="50" y="104" width="20" height="30" rx="9" fill="#4a5a78"/><rect x="54" y="109" width="12" height="20" rx="6" fill="#8ef3e9"/></g>
-              <g><rect x="170" y="104" width="20" height="30" rx="9" fill="#4a5a78"/><rect x="174" y="109" width="12" height="20" rx="6" fill="#8ef3e9"/></g>
+              <g><rect x="48" y="102" width="21" height="32" rx="9" fill="#4a5a78"/><rect x="52" y="107" width="13" height="22" rx="6" fill="#8ef3e9"/></g>
+              <g><rect x="171" y="102" width="21" height="32" rx="9" fill="#4a5a78"/><rect x="175" y="107" width="13" height="22" rx="6" fill="#8ef3e9"/></g>
               <path d="M120 160 C 96 160 78 172 72 192 L 62 252 C 78 262 100 266 120 266 C 140 266 162 262 178 252 L 168 192 C 162 172 144 160 120 160 Z" fill="url(#mkSuit)"/>
               <path d="M104 162 L 120 182 L 136 162 C 130 158 110 158 104 162 Z" fill="#e8f7f9"/>
               <path d="M116 168 L 124 168 L 127 182 L 120 190 L 113 182 Z" fill="url(#mkTie)"/>
               <text x="120" y="224" text-anchor="middle" font-family="'Segoe UI',sans-serif" font-size="15" font-weight="700" fill="#8ef3e9">01</text>
-              <g class="miku-heart" fill="#ff9fc0"><path d="M96 236 c -3 -5 -10 -4 -10 2 c 0 5 6 8 10 11 c 4 -3 10 -6 10 -11 c 0 -6 -7 -7 -10 -2 z"/></g>
-              <g class="miku-heart h2" fill="#ff9fc0"><path d="M144 236 c -3 -5 -10 -4 -10 2 c 0 5 6 8 10 11 c 4 -3 10 -6 10 -11 c 0 -6 -7 -7 -10 -2 z"/></g>
+              <g class="mascot-heart" fill="#ff9fc0"><path d="M96 236 c -3 -5 -10 -4 -10 2 c 0 5 6 8 10 11 c 4 -3 10 -6 10 -11 c 0 -6 -7 -7 -10 -2 z"/></g>
+              <g class="mascot-heart h2" fill="#ff9fc0"><path d="M144 236 c -3 -5 -10 -4 -10 2 c 0 5 6 8 10 11 c 4 -3 10 -6 10 -11 c 0 -6 -7 -7 -10 -2 z"/></g>
+            </g>
+          </svg>
+          <svg class="hero-mascot" data-mascot="sakura" viewBox="0 0 500 300" preserveAspectRatio="xMidYMid meet" role="img" aria-label="Sakura 主题插画：樱花精灵，粉发花饰、温柔微笑">
+            <defs>
+              <linearGradient id="saBg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#fff0f5"/><stop offset="0.5" stop-color="#ffe4ee"/><stop offset="1" stop-color="#fdeef7"/></linearGradient>
+              <linearGradient id="saHair" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ffb7cd"/><stop offset="1" stop-color="#e0709a"/></linearGradient>
+              <linearGradient id="saHair2" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#ffc9da"/><stop offset="1" stop-color="#eb87ab"/></linearGradient>
+              <linearGradient id="saSkin" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fff8f5"/><stop offset="1" stop-color="#ffe9e2"/></linearGradient>
+              <linearGradient id="saSuit" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#a05578"/><stop offset="1" stop-color="#7c3d5c"/></linearGradient>
+              <radialGradient id="saCheek"><stop offset="0" stop-color="#ff9fb8" stop-opacity=".9"/><stop offset="1" stop-color="#ff9fb8" stop-opacity="0"/></radialGradient>
+              <linearGradient id="saEye" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#f78fb0"/><stop offset="1" stop-color="#c94f7c"/></linearGradient>
+            </defs>
+            <rect width="500" height="300" fill="url(#saBg)"/>
+            <g class="mascot-petals" fill="#f2a3c3" opacity=".85"><path d="M100 70 c -3 -6 -11 -6 -11 1 c 0 5 6 8 11 11 c 5 -3 11 -6 11 -11 c 0 -7 -8 -7 -11 -1 z"/><path d="M400 90 c -2.5 -5 -9 -5 -9 1 c 0 4 5 7 9 9 c 4 -2 9 -5 9 -9 c 0 -6 -6.5 -6 -9 -1 z"/><path d="M70 220 c -2.5 -5 -9 -5 -9 1 c 0 4 5 7 9 9 c 4 -2 9 -5 9 -9 c 0 -6 -6.5 -6 -9 -1 z"/><path d="M430 230 c -2 -4 -7 -4 -7 .8 c 0 3 4 5.5 7 7 c 3 -1.5 7 -4 7 -7 c 0 -4.8 -5 -4.8 -7 -.8 z"/><path d="M200 40 c -2 -4 -7 -4 -7 .8 c 0 3 4 5.5 7 7 c 3 -1.5 7 -4 7 -7 c 0 -4.8 -5 -4.8 -7 -.8 z"/><path d="M330 264 c -2 -4 -7 -4 -7 .8 c 0 3 4 5.5 7 7 c 3 -1.5 7 -4 7 -7 c 0 -4.8 -5 -4.8 -7 -.8 z"/></g>
+            <g class="mascot-deco" fill="#e0709a"><path d="M150 60 c 0 -7 5.5 -12 12 -12 l 4 0 0 20 c 0 4 -3 7 -7 7 c -4 0 -7 -3 -7 -7 c 0 -4 3 -7 7 -7 c 1 0 2 0.3 3 0.8 l 0 -9.6 c -6 0.5 -12 5 -12 13 z"/><path d="M360 200 c 0 -7 5.5 -12 12 -12 l 4 0 0 20 c 0 4 -3 7 -7 7 c -4 0 -7 -3 -7 -7 c 0 -4 3 -7 7 -7 c 1 0 2 0.3 3 0.8 l 0 -9.6 c -6 0.5 -12 5 -12 13 z"/></g>
+            <g class="mascot-figure" transform="translate(130, 0)">
+              <path class="mascot-twin" d="M52 92 C 18 128 8 186 30 242 C 38 260 52 264 58 248 C 42 202 52 156 74 122 Z" fill="url(#saHair)" opacity=".95"/>
+              <path class="mascot-twin t" d="M188 92 C 222 128 232 186 210 242 C 202 260 188 264 182 248 C 198 202 188 156 166 122 Z" fill="url(#saHair)" opacity=".95"/>
+              <ellipse cx="120" cy="112" rx="46" ry="50" fill="url(#saSkin)"/>
+              <path d="M120 58 C 74 58 62 92 66 118 C 72 108 76 96 84 92 C 88 104 96 110 108 112 C 100 104 98 96 102 88 C 112 102 128 106 142 104 C 138 96 138 92 142 86 C 150 94 158 104 162 116 C 170 92 158 58 120 58 Z" fill="url(#saHair2)"/>
+              <g fill="#fff"><path d="M96 52 c -2 -4 -8 -4 -8 1 c 0 4 4.5 6.5 8 8 c 3.5 -1.5 8 -4 8 -8 c 0 -5 -6 -5 -8 -1 z"/><path d="M144 52 c -2 -4 -8 -4 -8 1 c 0 4 4.5 6.5 8 8 c 3.5 -1.5 8 -4 8 -8 c 0 -5 -6 -5 -8 -1 z"/><circle cx="120" cy="44" r="3.5"/></g>
+              <g fill="#ffd166"><circle cx="92" cy="56" r="2.2"/><circle cx="148" cy="56" r="2.2"/><circle cx="120" cy="38" r="2.2"/></g>
+              <g><ellipse cx="100" cy="118" rx="10" ry="13" fill="#fff"/><ellipse cx="100" cy="119" rx="7.5" ry="10.5" fill="url(#saEye)"/><circle cx="97.5" cy="114.5" r="3" fill="#fff"/><circle cx="103" cy="123" r="1.6" fill="#fff"/><path d="M87 105 Q 100 96 113 105" stroke="#a05578" stroke-width="3" fill="none" stroke-linecap="round"/></g>
+              <g><ellipse cx="140" cy="118" rx="10" ry="13" fill="#fff"/><ellipse cx="140" cy="119" rx="7.5" ry="10.5" fill="url(#saEye)"/><circle cx="137.5" cy="114.5" r="3" fill="#fff"/><circle cx="143" cy="123" r="1.6" fill="#fff"/><path d="M127 105 Q 140 96 153 105" stroke="#a05578" stroke-width="3" fill="none" stroke-linecap="round"/></g>
+              <ellipse cx="82" cy="138" rx="12" ry="7" fill="url(#saCheek)"/>
+              <ellipse cx="158" cy="138" rx="12" ry="7" fill="url(#saCheek)"/>
+              <path class="mascot-smile" d="M112 140 q 8 7 16 0" stroke="#c94f7c" stroke-width="3.2" fill="none" stroke-linecap="round"/>
+              <path d="M120 160 C 96 160 78 172 72 192 L 62 252 C 78 262 100 266 120 266 C 140 266 162 262 178 252 L 168 192 C 162 172 144 160 120 160 Z" fill="url(#saSuit)"/>
+              <path d="M104 162 L 120 182 L 136 162 C 130 158 110 158 104 162 Z" fill="#fff0f5"/>
+              <path d="M116 168 L 124 168 L 127 182 L 120 190 L 113 182 Z" fill="#ffd166"/>
+              <g class="mascot-heart" fill="#f78fb0"><path d="M96 236 c -3 -5 -10 -4 -10 2 c 0 5 6 8 10 11 c 4 -3 10 -6 10 -11 c 0 -6 -7 -7 -10 -2 z"/></g>
+              <g class="mascot-heart h2" fill="#f78fb0"><path d="M144 236 c -3 -5 -10 -4 -10 2 c 0 5 6 8 10 11 c 4 -3 10 -6 10 -11 c 0 -6 -7 -7 -10 -2 z"/></g>
+            </g>
+          </svg>
+          <svg class="hero-mascot" data-mascot="terminal" viewBox="0 0 500 300" preserveAspectRatio="xMidYMid meet" role="img" aria-label="Terminal 主题插画：终端娘，绿发护目镜、黑底代码">
+            <defs>
+              <linearGradient id="tmBg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#0a0f0c"/><stop offset="1" stop-color="#0f1712"/></linearGradient>
+              <linearGradient id="tmHair" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#7be0a3"/><stop offset="1" stop-color="#3fa06a"/></linearGradient>
+              <linearGradient id="tmHair2" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#95e8b8"/><stop offset="1" stop-color="#52d68a"/></linearGradient>
+              <linearGradient id="tmSkin" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fff4ec"/><stop offset="1" stop-color="#ffe4d6"/></linearGradient>
+              <linearGradient id="tmSuit" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#1c2b22"/><stop offset="1" stop-color="#12201a"/></linearGradient>
+              <radialGradient id="tmCheek"><stop offset="0" stop-color="#6ee7a0" stop-opacity=".45"/><stop offset="1" stop-color="#6ee7a0" stop-opacity="0"/></radialGradient>
+              <linearGradient id="tmEye" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#a8e6b8"/><stop offset="1" stop-color="#2ecc71"/></linearGradient>
+            </defs>
+            <rect width="500" height="300" fill="url(#tmBg)"/>
+            <g class="mascot-code" fill="#52d68a" font-family="Consolas,monospace" font-size="12" opacity=".7"><text x="40" y="70">git clone --depth 1</text><text x="40" y="90">npm install</text><text x="40" y="110">npm run dev</text><text x="40" y="130">&gt;_</text></g>
+            <g class="mascot-code" fill="#a8e6b8" font-family="Consolas,monospace" font-size="12" opacity=".5"><text x="380" y="80">const x = 42;</text><text x="380" y="100">if (ok) { … }</text><text x="380" y="120">return true;</text></g>
+            <g class="mascot-deco" fill="#2ecc71"><path d="M96 62 l2.2 5.4 5.8 .4 -4.4 3.8 1.5 5.6 -5.1 -3.1 -5.1 3.1 1.5 -5.6 -4.4 -3.8 5.8 -.4 z"/><path d="M402 190 l1.8 4.4 4.8 .4 -3.6 3.1 1.2 4.6 -4.2 -2.6 -4.2 2.6 1.2 -4.6 -3.6 -3.1 4.8 -.4 z"/></g>
+            <g class="mascot-figure" transform="translate(130, 0)">
+              <path class="mascot-twin" d="M52 92 C 18 130 8 190 30 246 C 38 264 52 268 58 252 C 42 204 52 158 74 122 Z" fill="url(#tmHair)" opacity=".95"/>
+              <path class="mascot-twin t" d="M188 92 C 222 130 232 190 210 246 C 202 264 188 268 182 252 C 198 204 188 158 166 122 Z" fill="url(#tmHair)" opacity=".95"/>
+              <ellipse cx="120" cy="112" rx="46" ry="50" fill="url(#tmSkin)"/>
+              <path d="M120 58 C 74 58 62 92 66 118 C 72 108 76 96 84 92 C 88 104 96 110 108 112 C 100 104 98 96 102 88 C 112 102 128 106 142 104 C 138 96 138 92 142 86 C 150 94 158 104 162 116 C 170 92 158 58 120 58 Z" fill="url(#tmHair2)"/>
+              <g><rect x="76" y="108" width="88" height="20" rx="8" fill="#16211b" stroke="#52d68a" stroke-width="2.5"/><rect x="84" y="115" width="26" height="6" rx="3" fill="#52d68a" opacity=".85"/><rect x="116" y="115" width="26" height="6" rx="3" fill="#52d68a" opacity=".55"/><rect x="148" y="115" width="10" height="6" rx="3" fill="#a8e6b8" opacity=".9"/></g>
+              <g><ellipse cx="100" cy="142" rx="9" ry="11" fill="#fff"/><ellipse cx="100" cy="143" rx="6.5" ry="9" fill="url(#tmEye)"/><circle cx="98" cy="139" r="2.6" fill="#fff"/></g>
+              <g><ellipse cx="140" cy="142" rx="9" ry="11" fill="#fff"/><ellipse cx="140" cy="143" rx="6.5" ry="9" fill="url(#tmEye)"/><circle cx="138" cy="139" r="2.6" fill="#fff"/></g>
+              <ellipse cx="82" cy="152" rx="11" ry="6" fill="url(#tmCheek)"/>
+              <ellipse cx="158" cy="152" rx="11" ry="6" fill="url(#tmCheek)"/>
+              <path class="mascot-smile" d="M112 156 q 8 7 16 0" stroke="#8be0ac" stroke-width="3" fill="none" stroke-linecap="round"/>
+              <path d="M120 160 C 96 160 78 172 72 192 L 62 252 C 78 262 100 266 120 266 C 140 266 162 262 178 252 L 168 192 C 162 172 144 160 120 160 Z" fill="url(#tmSuit)"/>
+              <path d="M104 162 L 120 182 L 136 162 C 130 158 110 158 104 162 Z" fill="#d6f5e2"/>
+              <path d="M116 168 L 124 168 L 127 182 L 120 190 L 113 182 Z" fill="#52d68a"/>
+              <g font-family="Consolas,monospace" font-size="11" fill="#a8e6b8"><text x="112" y="228">$</text><text x="126" y="228">&gt;_</text></g>
+              <g class="mascot-heart" fill="#2ecc71"><path d="M96 236 c -3 -5 -10 -4 -10 2 c 0 5 6 8 10 11 c 4 -3 10 -6 10 -11 c 0 -6 -7 -7 -10 -2 z"/></g>
+              <g class="mascot-heart h2" fill="#2ecc71"><path d="M144 236 c -3 -5 -10 -4 -10 2 c 0 5 6 8 10 11 c 4 -3 10 -6 10 -11 c 0 -6 -7 -7 -10 -2 z"/></g>
             </g>
           </svg>
         </div>

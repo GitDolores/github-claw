@@ -185,9 +185,15 @@ html[data-theme="miku"] .filter-btn.active {
 
 /* miku 涓婚锛歨ero 鍙充晶榛樿鎻掔敾闅愯棌锛屾敼鐢ㄥ垵闊?SVG */
 .hero-card .hero-illu { width: 100%; }
+.hero-card .hero-mascot { width: 100%; display: none; }
+html[data-theme="lume"] .hero-card .hero-illu { display: none; }
 html[data-theme="miku"] .hero-card .hero-illu { display: none; }
-.hero-card .hero-miku { display: none; }
-html[data-theme="miku"] .hero-card .hero-miku { display: block; }
+html[data-theme="sakura"] .hero-card .hero-illu { display: none; }
+html[data-theme="terminal"] .hero-card .hero-illu { display: none; }
+html[data-theme="lume"] .hero-card .hero-mascot[data-mascot="lume"] { display: block; }
+html[data-theme="miku"] .hero-card .hero-mascot[data-mascot="miku"] { display: block; }
+html[data-theme="sakura"] .hero-card .hero-mascot[data-mascot="sakura"] { display: block; }
+html[data-theme="terminal"] .hero-card .hero-mascot[data-mascot="terminal"] { display: block; }
 
 /* 涓婚鍒囨崲鎸夐挳 */
 .theme-switch {
@@ -251,36 +257,49 @@ html[data-theme="miku"] .hero-card .hero-miku { display: block; }
 .theme-item-text strong { font-size: 0.9rem; }
 .theme-item-text em { font-style: normal; font-size: 0.75rem; color: var(--text-dim); }
 
-/* ===== Miku 鐭㈤噺鎻掔敾锛坔ero 鍙充晶锛?===== */
-.hero-miku { width: 100%; }
-.hero-miku .miku-twin { transform-origin: top center; animation: miku-sway 4.5s ease-in-out infinite; }
-.hero-miku .miku-twin.t { animation-delay: -1.2s; }
-@keyframes miku-sway {
+/* ===== 主题吉祥物插画（hero 右侧，各主题一套 ACG 形象） ===== */
+hero-mascot { width: 100%; }
+.hero-mascot .mascot-twin { transform-origin: top center; animation: mascot-sway 4.5s ease-in-out infinite; }
+.hero-mascot .mascot-twin.t { animation-delay: -1.2s; }
+@keyframes mascot-sway {
   0%, 100% { transform: rotate(-2deg); }
   50% { transform: rotate(2deg); }
 }
-.hero-miku .miku-smile {
+.hero-mascot .mascot-smile {
   stroke-dasharray: 40;
   stroke-dashoffset: 40;
-  animation: miku-smile-draw 2.2s 0.8s ease-out forwards;
+  animation: mascot-smile-draw 2.2s 0.8s ease-out forwards;
 }
-@keyframes miku-smile-draw { to { stroke-dashoffset: 0; } }
-.hero-miku .miku-heart { animation: miku-beat 1.8s ease-in-out infinite; transform-origin: center; }
-.hero-miku .miku-heart.h2 { animation-delay: 0.45s; }
-@keyframes miku-beat {
+@keyframes mascot-smile-draw { to { stroke-dashoffset: 0; } }
+.hero-mascot .mascot-heart { animation: mascot-beat 1.8s ease-in-out infinite; transform-origin: center; }
+.hero-mascot .mascot-heart.h2 { animation-delay: 0.45s; }
+@keyframes mascot-beat {
   0%, 100% { transform: scale(1); }
   30% { transform: scale(1.25); }
 }
-.hero-miku .miku-stars { animation: miku-float 5s ease-in-out infinite; transform-origin: center; }
-.hero-miku .miku-notes { animation: miku-float 6s -2s ease-in-out infinite; transform-origin: center; }
-@keyframes miku-float {
+.hero-mascot .mascot-stars { animation: mascot-float 5s ease-in-out infinite; transform-origin: center; }
+.hero-mascot .mascot-deco { animation: mascot-float 6s -2s ease-in-out infinite; transform-origin: center; }
+.hero-mascot .mascot-petals { animation: mascot-fall 7s linear infinite; transform-origin: center; }
+.hero-mascot .mascot-code { animation: mascot-blink 4s steps(1) infinite; }
+@keyframes mascot-float {
   0%, 100% { transform: translateY(0); }
   50% { transform: translateY(-10px); }
 }
+@keyframes mascot-fall {
+  0% { transform: translateY(-6px) rotate(0deg); opacity: .9; }
+  50% { transform: translateY(8px) rotate(180deg); opacity: .6; }
+  100% { transform: translateY(-6px) rotate(360deg); opacity: .9; }
+}
+@keyframes mascot-blink {
+  0%, 60% { opacity: .55; }
+  61%, 70% { opacity: .9; }
+  71%, 100% { opacity: .55; }
+}
 @media (prefers-reduced-motion: reduce) {
   .theme-sparkles::before, .theme-sparkles::after,
-  .hero-miku .miku-twin, .hero-miku .miku-smile, .hero-miku .miku-heart,
-  .hero-miku .miku-stars, .hero-miku .miku-notes { animation: none; }
+  .hero-mascot .mascot-twin, .hero-mascot .mascot-smile, .hero-mascot .mascot-heart,
+  .hero-mascot .mascot-stars, .hero-mascot .mascot-deco,
+  .hero-mascot .mascot-petals, .hero-mascot .mascot-code { animation: none; }
 }
 
 a { color: var(--accent); text-decoration: none; }

@@ -21,7 +21,8 @@ concurrency:
 jobs:
   analyze:
     runs-on: ubuntu-latest
-    timeout-minutes: 90
+    # worst-case retry schedule: 3×5min + 3×60min ≈ 3.4h per repo
+    timeout-minutes: 360
     steps:
       - name: Checkout
         uses: actions/checkout@v4

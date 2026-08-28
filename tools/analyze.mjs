@@ -49,13 +49,28 @@ function httpGetJson(url, token) {
 }
 
 // Sync JSON GET via curl (avoids ESM top-level await complexity in loop)
+// Quick in-process retry for transient network errors before callers see failure.
+class TransientNetError extends Error {}
+
+const TRANSIENT_HINTS = ['timed out', 'timeout', 'connection', 'couldn\'t connect', 'ssl', 'reset by peer', 'network', 'empty response'];
+function isTransientError(err) {
+  const msg = String((err && err.message) || err || '').toLowerCase();
+  return TRANSIENT_HINTS.some(h => msg.includes(h));
+}
+
 function curlJson(url, token) {
   const args = ['-s', '--max-time', '30', url];
   if (token) {
     args.unshift('-H', `Authorization: Bearer ${token}`);
   }
-  const out = execFileSync('curl', args, { encoding: 'utf8', maxBuffer: 20 * 1024 * 1024 }).trim();
-  if (!out) throw new Error(`empty response from ${url}`);
+  let out;
+  try {
+    out = execFileSync('curl', args, { encoding: 'utf8', maxBuffer: 20 * 1024 * 1024 }).trim();
+  } catch (e) {
+    if (isTransientError(e)) throw new TransientNetError(`curl failed: ${e.message}`);
+    throw e;
+  }
+  if (!out) throw new TransientNetError(`empty response from ${url}`);
   const json = JSON.parse(out);
   if (json.message) throw new Error(`GitHub API error: ${json.message}`);
   return json;
@@ -88,6 +103,11 @@ function tryClone(repo, workDir) {
     });
     return true;
   } catch (e) {
+    // network-level clone failure → transient (worth retrying later);
+    // anything else (repo missing, auth) → permanent
+    if (isTransientError(e) || /fatal:.*could not read|early EOF|RPC failed|Connection/i.test(String(e.stderr || '') + ' ' + e.message)) {
+      throw new TransientNetError(`clone failed: ${e.message}`);
+    }
     return false;
   }
 }
@@ -738,6 +758,7 @@ function analyzeRepo(repo, token, onProgress) {
   try {
     meta = fetchMeta(repo, token);
   } catch (e) {
+    if (e instanceof TransientNetError) throw e; // let retry policy handle it
     return { error: `无法获取仓库信息: ${e.message}` };
   }
 
@@ -746,7 +767,13 @@ function analyzeRepo(repo, token, onProgress) {
   let cloneOk = false;
 
   stage('clone', 20, { note: `克隆仓库（浅克隆，只取最新版本）` });
-  cloneOk = tryClone(repo, tmpDir);
+  try {
+    cloneOk = tryClone(repo, tmpDir);
+  } catch (e) {
+    // transient clone failure propagates to the retry policy
+    try { fs.rmSync(tmpDir, { recursive: true, force: true }); } catch {}
+    throw e;
+  }
 
   if (cloneOk) {
     stage('scan', 45, { note: '扫描文件结构' });
@@ -884,6 +911,51 @@ function analyzeRepo(repo, token, onProgress) {
   return { ok: true, path: reportPath };
 }
 
+// ---------- retry policy ----------
+// 网络类失败：先 5 分钟间隔重试 3 次；仍失败则 1 小时间隔重试 3 次；再失败则放弃该项目。
+const RETRY_FAST = { intervalMs: 5 * 60 * 1000, max: 3 };   // 5min × 3
+const RETRY_SLOW = { intervalMs: 60 * 60 * 1000, max: 3 };  // 1h × 3
+
+function sleepSync(ms) {
+  execFileSync('sleep', [String(Math.ceil(ms / 1000))], { stdio: 'ignore' });
+}
+
+async function analyzeWithRetry(repo, token) {
+  const phases = [
+    { label: 'fast', ...RETRY_FAST },
+    { label: 'slow', ...RETRY_SLOW },
+  ];
+  let firstError = null;
+  for (let pi = 0; pi < phases.length; pi++) {
+    const phase = phases[pi];
+    const isFinalPhase = pi === phases.length - 1;
+    for (let attempt = 0; attempt <= phase.max; attempt++) {
+      try {
+        const r = analyzeRepo(repo, token);
+        return r; // success or permanent error object
+      } catch (e) {
+        if (!(e instanceof TransientNetError)) {
+          return { repo, error: e.message };
+        }
+        if (firstError === null) firstError = e.message;
+        const isPhaseLast = attempt === phase.max;
+        if (isPhaseLast && isFinalPhase) break; // gave up entirely
+        // fast-phase exhausted → switch to slow immediately (no extra wait);
+        // otherwise wait this phase's interval before the next attempt
+        if (!(isPhaseLast && !isFinalPhase)) {
+          const waitMs = phase.intervalMs;
+          const total = attempt + 1;
+          console.error(`! ${repo}: transient network error (${e.message}), ` +
+            `${phase.label} retry ${total}/${phase.max} in ${Math.round(waitMs / 60000)} min`);
+          writeStatus({ repo, stage: 'retry-wait', progress: 0, note: `网络错误，${Math.round(waitMs / 60000)} 分钟后第 ${total} 次重试` });
+          sleepSync(waitMs);
+        }
+      }
+    }
+  }
+  return { repo, error: `gave up after retries: ${firstError}` };
+}
+
 // ---------- entry ----------
 async function main() {
   const token = process.env.GITHUB_TOKEN || process.env.GH_TOKEN || null;
@@ -899,10 +971,10 @@ async function main() {
   writeStatus({ repo: null, stage: 'start', progress: 0, note: `开始分析 ${list.length} 个项目` });
   const results = [];
   for (const repo of list) {
-    const r = analyzeRepo(repo, token);
+    const r = await analyzeWithRetry(repo, token);
     results.push({ repo, ...r });
   }
-  writeStatus({ repo: null, stage: 'all-done', progress: 100, note: `全部完成：${results.length} 个项目` });
+  writeStatus({ repo: null, stage: 'all-done', progress: 100, note: `全部完成：${results.filter(r => !r.error).length}/${results.length} 个项目` });
   for (const r of results) {
     if (r.error) console.error(`✗ ${r.repo}: ${r.error}`);
     else if (r.cached) console.log(`= ${r.repo}: cached, skipped`);
