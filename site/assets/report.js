@@ -189,73 +189,85 @@
   function renderFlowGraph(g) {
     const box = $('flow-graph');
     if (!g || !g.nodes || !g.nodes.length) { box.innerHTML = ''; return; }
-    // layered layout: user | api | entry | dispatch | core(+db,utils) | output
-    const layers = ['user', 'api', 'entry', 'dispatch', 'core', 'db', 'utils', 'output'];
     const nodeById = {};
     g.nodes.forEach(n => { nodeById[n.id] = n; });
-    const W = 168, H = 52, GAPX = 92, GAPY = 26;
-    // assign columns by layer order, stack extras vertically within a column
-    const cols = {};
-    const pos = {};
-    const present = layers.filter(l => nodeById[l]);
-    present.forEach(l => { cols[l] = 0; });
-    // core column may hold db & utils side branches
+
+    // compact geometry
+    const W = 118, H = 40, GAPX = 42, GAPY = 14;
+
+    // main chain left→right; side branches (db/utils) stack under the core column
+    const chain = ['user', 'api', 'entry', 'dispatch', 'core', 'output'];
+    const sides = ['db', 'utils'];
     const layout = [];
-    present.forEach(l => {
-      if (l === 'db' || l === 'utils') {
-        // place under core
-        const coreCol = cols.core || 0;
-        layout.push({ id: l, col: coreCol + 0.5, row: (l === 'db' ? 1 : 2) });
-      } else {
-        layout.push({ id: l, col: cols[l]++, row: 0 });
-      }
+    let col = 0, coreCol = 0;
+    chain.forEach(id => {
+      if (!nodeById[id]) return;
+      if (id === 'core') coreCol = col;
+      layout.push({ id, col: col++, row: 0 });
     });
-    const maxCol = Math.max.apply(null, layout.map(n => n.col));
-    const rows = {};
-    const svgW = (maxCol + 1) * (W + GAPX) - GAPX + 24;
+    sides.forEach(id => {
+      if (!nodeById[id]) return;
+      layout.push({ id, col: coreCol, row: layout.filter(n => n.col === coreCol).length });
+    });
+
+    const cols = Math.max.apply(null, layout.map(n => n.col)) + 1;
+    const rows = Math.max.apply(null, layout.map(n => n.row)) + 1;
     layout.forEach(n => {
-      if (n.row === 0) {
-        const r = (rows[n.col] = (rows[n.col] || 0));
-        n.x = n.col * (W + GAPX) + 12;
-        n.y = 20 + r * (H + GAPY);
-        rows[n.col]++;
-      } else {
-        n.x = n.col * (W + GAPX) + 12;
-        n.y = 20 + n.row * (H + GAPY);
-      }
+      n.x = n.col * (W + GAPX) + 8;
+      n.y = 10 + n.row * (H + GAPY);
     });
-    const maxRow = Math.max.apply(null, layout.map(n => Math.floor((n.y - 20) / (H + GAPY))));
-    const svgH = 20 + (maxRow + 1) * (H + GAPY) - GAPY + 16;
-    const typeClass = { actor: 'fg-actor', entry: 'fg-entry', dispatch: 'fg-dispatch', core: 'fg-core', utils: 'fg-utils', db: 'fg-db', output: 'fg-output', api: 'fg-api' };
-    let edgesSvg = '';
-    const nodePos = {};
-    layout.forEach(n => { nodePos[n.id] = n; });
+    const svgW = cols * (W + GAPX) - GAPX + 16;
+    const svgH = 10 + rows * (H + GAPY) - GAPY + 8;
+
+    // merge a→b + b→a into a single double-arrow edge
+    const edgeMap = new Map();
     g.edges.forEach(e => {
-      const a = nodePos[e[0]], b = nodePos[e[1]];
-      if (!a || !b) return;
-      const x1 = a.x + W, y1 = a.y + H / 2;
-      const x2 = b.x, y2 = b.y + H / 2;
-      const mx = (x1 + x2) / 2;
-      let d;
-      if (Math.abs(y1 - y2) < 4) {
+      if (!nodeById[e[0]] || !nodeById[e[1]]) return;
+      const key = [e[0], e[1]].sort().join('|');
+      const cur = edgeMap.get(key);
+      if (!cur) edgeMap.set(key, { from: e[0], to: e[1], both: false });
+      else if (cur.from === e[1] && cur.to === e[0]) cur.both = true;
+    });
+
+    const pos = {};
+    layout.forEach(n => { pos[n.id] = n; });
+    let edgesSvg = '';
+    edgeMap.forEach(({ from, to, both }) => {
+      const a = pos[from], b = pos[to];
+      let x1, y1, x2, y2, d;
+      if (Math.abs(a.x - b.x) < 2 && b.y > a.y) {
+        // vertical: bottom of a → top of b
+        x1 = a.x + W / 2; y1 = a.y + H; x2 = b.x + W / 2; y2 = b.y;
         d = 'M' + x1 + ' ' + y1 + ' L' + x2 + ' ' + y2;
       } else {
-        d = 'M' + x1 + ' ' + y1 + ' C' + mx + ' ' + y1 + ' ' + mx + ' ' + y2 + ' ' + x2 + ' ' + y2;
+        const right = b.x > a.x;
+        x1 = right ? a.x + W : a.x; y1 = a.y + H / 2;
+        x2 = right ? b.x : b.x + W; y2 = b.y + H / 2;
+        if (Math.abs(y1 - y2) < 2) {
+          d = 'M' + x1 + ' ' + y1 + ' L' + x2 + ' ' + y2;
+        } else {
+          const mx = (x1 + x2) / 2;
+          d = 'M' + x1 + ' ' + y1 + ' C' + mx + ' ' + y1 + ', ' + mx + ' ' + y2 + ', ' + x2 + ' ' + y2;
+        }
       }
-      edgesSvg += '<path class="fg-edge" d="' + d + '" marker-end="url(#arrow)"/>';
+      const markers = both ? ' marker-start="url(#arrow)" marker-end="url(#arrow)"' : ' marker-end="url(#arrow)"';
+      edgesSvg += '<path class="fg-edge" d="' + d + '"' + markers + '/>';
     });
+
+    const typeClass = { user: 'fg-user', api: 'fg-api', entry: 'fg-entry', dispatch: 'fg-dispatch', core: 'fg-core', utils: 'fg-utils', db: 'fg-db', output: 'fg-output' };
     let nodesSvg = '';
     layout.forEach(n => {
       const meta = nodeById[n.id] || {};
       nodesSvg += '<g class="fg-node ' + (typeClass[n.id] || '') + '" transform="translate(' + n.x + ',' + n.y + ')">' +
-        '<rect width="' + W + '" height="' + H + '" rx="10"/>' +
-        '<text x="' + (W / 2) + '" y="' + (H / 2 - 4) + '" text-anchor="middle" class="fg-label">' + esc(truncate(meta.label || n.id, 16)) + '</text>' +
-        '<text x="' + (W / 2) + '" y="' + (H / 2 + 14) + '" text-anchor="middle" class="fg-type">' + esc(fgTypeLabel(n.id)) + '</text>' +
+        '<title>' + esc(meta.label || n.id) + (fgTypeLabel(n.id) ? '（' + fgTypeLabel(n.id) + '）' : '') + '</title>' +
+        '<rect width="' + W + '" height="' + H + '" rx="8"/>' +
+        '<text x="' + (W / 2) + '" y="' + (H / 2 - 2) + '" text-anchor="middle" class="fg-label">' + esc(truncate(meta.label || n.id, 13)) + '</text>' +
+        '<text x="' + (W / 2) + '" y="' + (H / 2 + 10) + '" text-anchor="middle" class="fg-type">' + esc(fgTypeLabel(n.id)) + '</text>' +
         '</g>';
     });
-    box.innerHTML = '<svg viewBox="0 0 ' + svgW + ' ' + svgH + '" role="img" aria-label="数据流图">' +
-      '<defs><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">' +
-      '<path d="M 0 0 L 10 5 L 0 10 z" fill="#6b8cff"/></marker></defs>' +
+    box.innerHTML = '<svg viewBox="0 0 ' + svgW + ' ' + svgH + '" width="' + svgW + '" height="' + svgH + '" role="img" aria-label="数据流图">' +
+      '<defs><marker id="arrow" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">' +
+      '<path d="M 0 0 L 10 5 L 0 10 z" fill="#8fa3d9"/></marker></defs>' +
       edgesSvg + nodesSvg + '</svg>';
   }
 

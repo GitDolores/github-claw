@@ -58,6 +58,16 @@ img { max-width: 100%; display: block; }
   font-size: 1.15rem;
   color: var(--text);
   letter-spacing: 0.02em;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.brand-logo {
+  width: 26px;
+  height: 26px;
+  display: block;
+  border-radius: 6px;
 }
 
 .brand:hover { color: #fff; }
@@ -515,15 +525,20 @@ img { max-width: 100%; display: block; }
   margin-top: 0.15rem;
 }
 
-/* flow graph */
-.flow-graph { margin-bottom: 1.4rem; overflow-x: auto; }
-.flow-graph svg { min-width: 640px; display: block; height: auto; }
-.fg-edge { fill: none; stroke: rgba(107, 140, 255, 0.55); stroke-width: 1.6; }
-.fg-node rect { fill: var(--card); stroke: rgba(107, 140, 255, 0.35); stroke-width: 1.2; }
-.fg-node.fg-core rect { stroke: var(--accent); stroke-width: 1.8; fill: rgba(107, 140, 255, 0.08); }
-.fg-node.fg-user rect, .fg-node.fg-output rect { stroke-dasharray: 4 3; }
-.fg-label { fill: var(--text); font-size: 11.5px; font-weight: 600; }
-.fg-type { fill: var(--text-dim); font-size: 9.5px; }
+/* flow graph (compact) */
+.flow-graph { margin-bottom: 1.2rem; overflow-x: auto; }
+.flow-graph svg { display: block; height: auto; max-width: 100%; }
+.fg-edge { fill: none; stroke: rgba(143, 163, 217, 0.6); stroke-width: 1.3; }
+.fg-node rect { fill: var(--card); stroke: rgba(143, 163, 217, 0.4); stroke-width: 1; }
+.fg-node.fg-user rect, .fg-node.fg-output rect { stroke-dasharray: 3 2; }
+.fg-node.fg-entry rect { stroke: rgba(107, 140, 255, 0.55); }
+.fg-node.fg-dispatch rect { stroke: rgba(107, 140, 255, 0.55); }
+.fg-node.fg-core rect { stroke: var(--accent); stroke-width: 1.5; fill: rgba(107, 140, 255, 0.09); }
+.fg-node.fg-utils rect { stroke: rgba(154, 167, 192, 0.45); }
+.fg-node.fg-db rect { stroke: rgba(46, 204, 113, 0.5); }
+.fg-node.fg-api rect { stroke: rgba(143, 123, 255, 0.55); }
+.fg-label { fill: var(--text); font-size: 10.5px; font-weight: 600; }
+.fg-type { fill: var(--text-dim); font-size: 8.5px; }
 
 /* difficulty badges */
 .pattern-badge.easy { background: rgba(46, 204, 113, 0.12); border-color: rgba(46, 204, 113, 0.4); color: #52d68a; }
