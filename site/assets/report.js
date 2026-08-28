@@ -56,7 +56,7 @@
     panels.forEach(function (p, i) {
       const head = p.querySelector('.panel-head');
       if (!head) return;
-      setOpen(p, i < 3); // 默认展开前三个板块
+      setOpen(p, false); // 默认全部收起
       head.setAttribute('role', 'button');
       head.setAttribute('tabindex', '0');
       head.addEventListener('click', function () {
