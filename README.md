@@ -1,4 +1,8 @@
-本目录包含用于 GitHub Pages 部署的静态站点内容。
+# LumeClaw
+
+**用 Claw 抓取开源项目，用 Lume 点亮 AI 学习之路。**
+
+LumeClaw 是一个 AI 项目学习库：自动抓取并分析精选开源 AI 项目，提供通俗版源码分析报告、学习路线与成长数据。本目录包含用于 GitHub Pages 部署的静态站点内容（lumeup.cn）。
 
 结构说明：
 
