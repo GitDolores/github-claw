@@ -114,11 +114,12 @@
     // languages
     const langs = (d.languages || []).filter(l => l.label);
     const total = langs.reduce((s, l) => s + (l.bytes || l.files || 0), 0) || 1;
+    const accent = getComputedStyle(document.documentElement).getPropertyValue('--accent').trim() || '#6b8cff';
     $('lang-bar').innerHTML = langs.map(l => {
       const w = ((l.bytes || l.files || 0) / total * 100);
-      return '<div class="lang-seg" style="width:' + w.toFixed(1) + '%;background:' + (l.color || '#6b8cff') + '" title="' + esc(l.label) + ' ' + w.toFixed(1) + '%"></div>';
+      return '<div class="lang-seg" style="width:' + w.toFixed(1) + '%;background:' + (l.color || accent) + '" title="' + esc(l.label) + ' ' + w.toFixed(1) + '%"></div>';
     }).join('') + '<div class="lang-legend">' + langs.map(l =>
-      '<span><i style="background:' + (l.color || '#6b8cff') + '"></i>' + esc(l.label) +
+      '<span><i style="background:' + (l.color || accent) + '"></i>' + esc(l.label) +
       (l.speak ? '（' + esc(l.speak) + '）' : '') + '</span>').join('') + '</div>';
 
     // dir tree
@@ -314,7 +315,7 @@
     });
     box.innerHTML = '<svg viewBox="0 0 ' + svgW + ' ' + svgH + '" width="' + svgW + '" height="' + svgH + '" role="img" aria-label="数据流图">' +
       '<defs><marker id="arrow" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">' +
-      '<path d="M 0 0 L 10 5 L 0 10 z" fill="#8fa3d9"/></marker></defs>' +
+      '<path d="M 0 0 L 10 5 L 0 10 z" fill="currentColor" style="color:var(--text-dim,#8fa3d9)"/></marker></defs>' +
       edgesSvg + nodesSvg + '</svg>';
   }
 

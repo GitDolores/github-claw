@@ -44,30 +44,36 @@ document.addEventListener('DOMContentLoaded', async () => {
   if (ctx && window.Chart) {
     const labels = ['6周前','5周前','4周前','3周前','2周前','上周','本周'];
     const data = [8,12,22,29,37,48,62];
-    new Chart(ctx.getContext('2d'), {
-      type: 'line',
-      data: {
-        labels,
-        datasets: [{
-          label: '每周 Stars 增长',
-          data,
-          borderColor: '#6b8cff',
-          backgroundColor: 'rgba(107,140,255,0.12)',
-          tension: 0.28,
-          fill: true,
-          pointRadius: 4,
-          pointBackgroundColor: '#fff'
-        }]
-      },
-      options: {
-        responsive: true,
-        plugins: {legend: {display: false}},
-        scales: {
-          x: {ticks:{color:'#9aa7c0'}, grid:{display:false}},
-          y: {beginAtZero:true, ticks:{color:'#9aa7c0'}, grid:{color:'rgba(255,255,255,0.03)'}}
+    const cssVar = name => getComputedStyle(document.documentElement).getPropertyValue(name).trim();
+    const drawChart = () => {
+      if (window.__growthChart) window.__growthChart.destroy();
+      window.__growthChart = new Chart(ctx.getContext('2d'), {
+        type: 'line',
+        data: {
+          labels,
+          datasets: [{
+            label: '每周 Stars 增长',
+            data,
+            borderColor: cssVar('--chart-line'),
+            backgroundColor: cssVar('--chart-fill'),
+            tension: 0.28,
+            fill: true,
+            pointRadius: 4,
+            pointBackgroundColor: cssVar('--card')
+          }]
+        },
+        options: {
+          responsive: true,
+          plugins: {legend: {display: false}},
+          scales: {
+            x: {ticks:{color: cssVar('--chart-tick')}, grid:{display:false}},
+            y: {beginAtZero:true, ticks:{color: cssVar('--chart-tick')}, grid:{color: cssVar('--chart-grid')}}
+          }
         }
-      }
-    });
+      });
+    };
+    drawChart();
+    document.addEventListener('themechange', drawChart);
   }
 
   // simple keyboard focus enhancement for cards
