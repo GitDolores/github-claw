@@ -25,7 +25,7 @@
     </div>
   </header>
 
-  <main>
+  <main class="report-page">
     <section class="hero report-hero">
       <div class="container">
         <h1 id="report-title">项目分析报告</h1>
@@ -43,112 +43,151 @@
     </section>
 
     <div id="report-body" hidden>
-      <section class="container section" id="sec-overview">
-        <h2>项目概述</h2>
-        <p class="section-lead" id="ov-text"></p>
-        <div class="stat-row" id="ov-stats"></div>
+      <div class="container panel-toolbar">
+        <button class="filter-btn" id="toggle-all" type="button">⬇ 全部展开</button>
+        <span class="meta" id="panel-hint">17 个板块 · 点击标题可折叠/展开</span>
+      </div>
+
+      <section class="container section panel" id="sec-overview">
+        <h2 class="panel-head"><span class="panel-title">项目概述</span><span class="panel-chev" aria-hidden="true">▸</span></h2>
+        <div class="panel-body">
+          <p class="section-lead" id="ov-text"></p>
+          <div class="stat-row" id="ov-stats"></div>
+        </div>
       </section>
 
-      <section class="container section" id="sec-stack">
-        <h2>技术栈（用人话解释）</h2>
-        <div class="grid cards" id="stack-cards"></div>
-        <h3 class="sub-h">语言构成</h3>
-        <div class="lang-bar" id="lang-bar"></div>
+      <section class="container section panel" id="sec-stack">
+        <h2 class="panel-head"><span class="panel-title">技术栈（用人话解释）</span><span class="panel-chev" aria-hidden="true">▸</span></h2>
+        <div class="panel-body">
+          <div class="grid cards" id="stack-cards"></div>
+          <h3 class="sub-h">语言构成</h3>
+          <div class="lang-bar" id="lang-bar"></div>
+        </div>
       </section>
 
-      <section class="container section" id="sec-tree">
-        <h2>目录结构导览</h2>
-        <p class="section-lead">目录名就是地图。下面每个目录都配了一句话解释它是干嘛的。</p>
-        <div id="dir-tree"></div>
+      <section class="container section panel" id="sec-tree">
+        <h2 class="panel-head"><span class="panel-title">目录结构导览</span><span class="panel-chev" aria-hidden="true">▸</span></h2>
+        <div class="panel-body">
+          <p class="section-lead">目录名就是地图。下面每个目录都配了一句话解释它是干嘛的。</p>
+          <div id="dir-tree"></div>
+        </div>
       </section>
 
-      <section class="container section" id="sec-modules">
-        <h2>核心模块</h2>
-        <p class="section-lead">按重要性挑出的几个关键文件，读懂它们就读懂了大半项目。</p>
-        <div class="grid cards" id="module-cards"></div>
+      <section class="container section panel" id="sec-modules">
+        <h2 class="panel-head"><span class="panel-title">核心模块</span><span class="panel-chev" aria-hidden="true">▸</span></h2>
+        <div class="panel-body">
+          <p class="section-lead">按重要性挑出的几个关键文件，读懂它们就读懂了大半项目。</p>
+          <div class="grid cards" id="module-cards"></div>
+        </div>
       </section>
 
-      <section class="container section" id="sec-scenarios">
-        <h2>适用场景</h2>
-        <p class="section-lead">什么情况下选它，什么情况下别选它——一句话说清。</p>
-        <div class="grid cards" id="scenario-cards"></div>
+      <section class="container section panel" id="sec-scenarios">
+        <h2 class="panel-head"><span class="panel-title">适用场景</span><span class="panel-chev" aria-hidden="true">▸</span></h2>
+        <div class="panel-body">
+          <p class="section-lead">什么情况下选它，什么情况下别选它——一句话说清。</p>
+          <div class="grid cards" id="scenario-cards"></div>
+        </div>
       </section>
 
-      <section class="container section" id="sec-interfaces">
-        <h2>输出格式 / 接口规范</h2>
-        <p class="section-lead">这个项目以什么形式对外提供能力（命令行、HTTP 接口、库调用……）。</p>
-        <div id="iface-list"></div>
+      <section class="container section panel" id="sec-interfaces">
+        <h2 class="panel-head"><span class="panel-title">输出格式 / 接口规范</span><span class="panel-chev" aria-hidden="true">▸</span></h2>
+        <div class="panel-body">
+          <p class="section-lead">这个项目以什么形式对外提供能力（命令行、HTTP 接口、库调用……）。</p>
+          <div id="iface-list"></div>
+        </div>
       </section>
 
-      <section class="container section" id="sec-demo">
-        <h2>效果演示</h2>
-        <p class="section-lead">来自 README 的官方演示链接与截图，先看效果再读代码。</p>
-        <div id="demo-links"></div>
+      <section class="container section panel" id="sec-demo">
+        <h2 class="panel-head"><span class="panel-title">效果演示</span><span class="panel-chev" aria-hidden="true">▸</span></h2>
+        <div class="panel-body">
+          <p class="section-lead">来自 README 的官方演示链接与截图，先看效果再读代码。</p>
+          <div id="demo-links"></div>
+        </div>
       </section>
 
-      <section class="container section" id="sec-deps">
-        <h2>依赖分析</h2>
-        <p class="section-lead">它建立在哪些积木之上，每个积木是干嘛的。</p>
-        <div id="dep-list"></div>
+      <section class="container section panel" id="sec-deps">
+        <h2 class="panel-head"><span class="panel-title">依赖分析</span><span class="panel-chev" aria-hidden="true">▸</span></h2>
+        <div class="panel-body">
+          <p class="section-lead">它建立在哪些积木之上，每个积木是干嘛的。</p>
+          <div id="dep-list"></div>
+        </div>
       </section>
 
-      <section class="container section" id="sec-flow">
-        <h2>数据流（程序怎么跑起来的）</h2>
-        <div class="flow-graph" id="flow-graph"></div>
-        <ol class="flow-steps" id="flow-steps"></ol>
+      <section class="container section panel" id="sec-flow">
+        <h2 class="panel-head"><span class="panel-title">数据流（程序怎么跑起来的）</span><span class="panel-chev" aria-hidden="true">▸</span></h2>
+        <div class="panel-body">
+          <div class="flow-graph" id="flow-graph"></div>
+          <ol class="flow-steps" id="flow-steps"></ol>
+        </div>
       </section>
 
-      <section class="container section" id="sec-patterns">
-        <h2>设计模式与代码套路</h2>
-        <p class="section-lead">作者反复使用的代码「句型」，认得它们就能少查一半文档。</p>
-        <div class="pattern-list" id="pattern-list"></div>
+      <section class="container section panel" id="sec-patterns">
+        <h2 class="panel-head"><span class="panel-title">设计模式与代码套路</span><span class="panel-chev" aria-hidden="true">▸</span></h2>
+        <div class="panel-body">
+          <p class="section-lead">作者反复使用的代码「句型」，认得它们就能少查一半文档。</p>
+          <div class="pattern-list" id="pattern-list"></div>
+        </div>
       </section>
 
-      <section class="container section" id="sec-docs">
-        <h2>作者原话（文档摘录）</h2>
-        <div id="doc-quotes"></div>
+      <section class="container section panel" id="sec-docs">
+        <h2 class="panel-head"><span class="panel-title">作者原话（文档摘录）</span><span class="panel-chev" aria-hidden="true">▸</span></h2>
+        <div class="panel-body">
+          <div id="doc-quotes"></div>
+        </div>
       </section>
 
-      <section class="container section" id="sec-community">
-        <h2>社区资源 / 活跃度 / 版本迭代</h2>
-        <div class="stat-row" id="community-stats"></div>
-        <div id="community-verdict"></div>
+      <section class="container section panel" id="sec-community">
+        <h2 class="panel-head"><span class="panel-title">社区资源 / 活跃度 / 版本迭代</span><span class="panel-chev" aria-hidden="true">▸</span></h2>
+        <div class="panel-body">
+          <div class="stat-row" id="community-stats"></div>
+          <div id="community-verdict"></div>
+        </div>
       </section>
 
-      <section class="container section" id="sec-competitors">
-        <h2>同类竞品对比</h2>
-        <p class="section-lead">做类似事情的知名项目，各有各的绝活。</p>
-        <div class="grid cards" id="competitor-cards"></div>
+      <section class="container section panel" id="sec-competitors">
+        <h2 class="panel-head"><span class="panel-title">同类竞品对比</span><span class="panel-chev" aria-hidden="true">▸</span></h2>
+        <div class="panel-body">
+          <p class="section-lead">做类似事情的知名项目，各有各的绝活。</p>
+          <div class="grid cards" id="competitor-cards"></div>
+        </div>
       </section>
 
-      <section class="container section" id="sec-rework">
-        <h2>常见改造方向（含难度评估）</h2>
-        <p class="section-lead">拿它练手的路线图：从入门改到硬核。</p>
-        <div id="rework-list"></div>
+      <section class="container section panel" id="sec-rework">
+        <h2 class="panel-head"><span class="panel-title">常见改造方向（含难度评估）</span><span class="panel-chev" aria-hidden="true">▸</span></h2>
+        <div class="panel-body">
+          <p class="section-lead">拿它练手的路线图：从入门改到硬核。</p>
+          <div id="rework-list"></div>
+        </div>
       </section>
 
-      <section class="container section" id="sec-tips">
-        <h2>阅读建议（傻瓜式路线）</h2>
-        <div class="timeline" id="tip-list"></div>
+      <section class="container section panel" id="sec-tips">
+        <h2 class="panel-head"><span class="panel-title">阅读建议（傻瓜式路线）</span><span class="panel-chev" aria-hidden="true">▸</span></h2>
+        <div class="panel-body">
+          <div class="timeline" id="tip-list"></div>
+        </div>
       </section>
 
-      <section class="container section" id="sec-pitfalls">
-        <h2>高频踩坑清单</h2>
-        <p class="section-lead">前人摔过的跟头，看一遍能省一个周末。</p>
-        <div id="pitfall-list"></div>
+      <section class="container section panel" id="sec-pitfalls">
+        <h2 class="panel-head"><span class="panel-title">高频踩坑清单</span><span class="panel-chev" aria-hidden="true">▸</span></h2>
+        <div class="panel-body">
+          <p class="section-lead">前人摔过的跟头，看一遍能省一个周末。</p>
+          <div id="pitfall-list"></div>
+        </div>
       </section>
 
-      <section class="container section" id="sec-raw">
-        <h2>原始数据与源码</h2>
-        <p class="section-lead">
-          <a id="raw-link" href="#" target="_blank">查看完整 JSON 报告</a> ·
-          <a id="download-report" href="#">⬇ 下载报告 JSON</a> ·
-          <a id="copy-report" href="#">📋 复制报告 JSON</a> ·
-          <a id="clone-cmd" href="#">📦 一键复制克隆命令</a>
-        </p>
-        <p class="section-lead">
-          分析器版本 <span id="analyzer-version"></span> · 生成时间 <span id="generated-at"></span>
-        </p>
+      <section class="container section panel" id="sec-raw">
+        <h2 class="panel-head"><span class="panel-title">原始数据与源码</span><span class="panel-chev" aria-hidden="true">▸</span></h2>
+        <div class="panel-body">
+          <p class="section-lead">
+            <a id="raw-link" href="#" target="_blank">查看完整 JSON 报告</a> ·
+            <a id="download-report" href="#">⬇ 下载报告 JSON</a> ·
+            <a id="copy-report" href="#">📋 复制报告 JSON</a> ·
+            <a id="clone-cmd" href="#">📦 一键复制克隆命令</a>
+          </p>
+          <p class="section-lead">
+            分析器版本 <span id="analyzer-version"></span> · 生成时间 <span id="generated-at"></span>
+          </p>
+        </div>
       </section>
     </div>
   </main>

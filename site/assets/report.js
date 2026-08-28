@@ -36,6 +36,52 @@
     catch { return iso; }
   }
 
+  // ---------- collapsible panels ----------
+  function setupPanels() {
+    const panels = Array.prototype.slice.call(document.querySelectorAll('#report-body .panel'));
+    const toggleBtn = $('toggle-all');
+    const hint = $('panel-hint');
+
+    function isOpen(p) { return p.classList.contains('open'); }
+    function setOpen(p, open) {
+      p.classList.toggle('open', open);
+      const head = p.querySelector('.panel-head');
+      if (head) head.setAttribute('aria-expanded', open ? 'true' : 'false');
+    }
+    function refreshToggle() {
+      const allOpen = panels.length > 0 && panels.every(isOpen);
+      toggleBtn.textContent = allOpen ? '⬆ 全部收起' : '⬇ 全部展开';
+    }
+
+    panels.forEach(function (p, i) {
+      const head = p.querySelector('.panel-head');
+      if (!head) return;
+      setOpen(p, i < 3); // 默认展开前三个板块
+      head.setAttribute('role', 'button');
+      head.setAttribute('tabindex', '0');
+      head.addEventListener('click', function () {
+        setOpen(p, !isOpen(p));
+        refreshToggle();
+      });
+      head.addEventListener('keydown', function (ev) {
+        if (ev.key === 'Enter' || ev.key === ' ') {
+          ev.preventDefault();
+          setOpen(p, !isOpen(p));
+          refreshToggle();
+        }
+      });
+    });
+
+    toggleBtn.addEventListener('click', function () {
+      const allOpen = panels.length > 0 && panels.every(isOpen);
+      panels.forEach(function (p) { setOpen(p, !allOpen); });
+      refreshToggle();
+    });
+
+    if (hint) hint.textContent = panels.length + ' 个板块 · 点击标题可折叠/展开';
+    refreshToggle();
+  }
+
   // ---------- render report ----------
   function renderReport(repo, d) {
     $('report-title').textContent = d.meta.full_name || repo;
@@ -183,6 +229,7 @@
 
     $('progress-section').hidden = true;
     $('report-body').hidden = false;
+    setupPanels();
   }
 
   // ---------- flow graph ----------

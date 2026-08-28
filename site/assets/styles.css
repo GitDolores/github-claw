@@ -279,6 +279,64 @@ img { max-width: 100%; display: block; }
 .report-hero { padding: 3.2rem 0 2.4rem; }
 .report-hero h1 { font-size: clamp(1.5rem, 3.5vw, 2.3rem); word-break: break-all; }
 
+/* collapsible panels */
+.panel-toolbar {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding-top: 1.4rem;
+}
+.panel { padding: 1.6rem 0 1.2rem; }
+.panel-head {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  cursor: pointer;
+  user-select: none;
+  margin: 0;
+}
+.panel-title { flex: 1; }
+.panel-chev {
+  color: var(--text-dim);
+  font-size: 0.95rem;
+  transition: transform 0.2s;
+  display: inline-block;
+}
+.panel.open .panel-chev { transform: rotate(90deg); }
+.panel-body { display: none; padding-top: 0.7rem; }
+.panel.open .panel-body { display: block; }
+.panel-head:hover .panel-title { color: var(--accent); }
+.panel + .panel { border-top: 1px solid var(--border); }
+
+/* report-page compaction: cards & spacing ~25% tighter */
+.report-page .section { padding: 2.6rem 0; }
+.report-page .panel { padding: 1.6rem 0 1.2rem; }
+.report-page .section h2 { font-size: 1.25rem; }
+.report-page .section-lead { margin: 0 0 1.35rem; }
+.report-page .grid.cards { gap: 0.9rem; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); }
+.report-page .card { padding: 1.05rem; border-radius: 11px; }
+.report-page .card h3 { margin: 0 0 0.4rem; }
+.report-page .card p { margin: 0 0 0.6rem; }
+.report-page .stat-row { gap: 0.75rem; margin-top: 1.05rem; }
+.report-page .stat { padding: 0.68rem 1.05rem; min-width: 7.5rem; }
+.report-page .sub-h { margin: 1.35rem 0 0.5rem; }
+.report-page .lang-legend { gap: 0.68rem; }
+.report-page .dir-item { padding: 0.64rem 0.9rem; margin-bottom: 0.45rem; }
+.report-page .flow-steps { gap: 0.5rem; }
+.report-page .flow-steps li { padding: 0.68rem 0.9rem 0.68rem 2.5rem; }
+.report-page .flow-steps li::before { left: 0.75rem; top: 0.65rem; width: 1.3rem; height: 1.3rem; font-size: 0.78rem; }
+.report-page .pattern-list { gap: 0.45rem; }
+.report-page .pattern-item { padding: 0.56rem 0.82rem; gap: 0.68rem; }
+.report-page .pattern-badge { padding: 0.15rem 0.56rem; font-size: 0.8rem; }
+.report-page .doc-quote { padding: 0.75rem 0.97rem; margin: 0 0 0.75rem; }
+.report-page .timeline { gap: 0.75rem; }
+.report-page .timeline .item { padding: 0.75rem 0.97rem; }
+.report-page .pitfall-item { padding: 0.64rem 0.9rem; margin-bottom: 0.45rem; }
+.report-page .dep-tags { gap: 0.4rem; margin-top: 0.6rem; }
+.report-page .dep-tag { padding: 0.26rem 0.52rem; }
+.report-page .verdict-list { margin: 0 0 0.75rem; }
+.report-page .tags { gap: 0.34rem; margin-bottom: 0.6rem; }
+
 .stat-row { display: flex; flex-wrap: wrap; gap: 1rem; margin-top: 1.4rem; }
 .stat {
   background: var(--card);
