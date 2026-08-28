@@ -2,9 +2,9 @@
   "meta": {
     "full_name": "vllm-project/vllm",
     "description": "A high-throughput and memory-efficient inference and serving engine for LLMs",
-    "stars": 90203,
-    "forks": 21286,
-    "open_issues": 7106,
+    "stars": 90246,
+    "forks": 21305,
+    "open_issues": 7135,
     "language": "Python",
     "topics": [
       "amd",
@@ -30,19 +30,19 @@
     ],
     "license": "Apache-2.0",
     "default_branch": "main",
-    "pushed_at": "2026-08-27T10:56:07Z",
+    "pushed_at": "2026-08-27T23:36:33Z",
     "created_at": "2023-02-09T11:23:20Z",
     "homepage": "https://vllm.ai",
-    "size_kb": 267990,
+    "size_kb": 268511,
     "archived": false
   },
-  "overview": "「vllm-project/vllm」是一个以 Python 为主的项目，仓库里大约有 6678 个文件（不含 git 内部文件），源码规模约 101.8 MB。 官方一句话介绍：A high-throughput and memory-efficient inference and serving engine for LLMs 它在 GitHub 上拿到了 90.2k 颗星、21.3k 次复刻（fork），还有 7106 个开放中的 issue。 官方标签：amd、blackwell、cuda、deepseek、deepseek-v3、gpt。 许可证是 Apache-2.0，决定了你怎么合法使用这些代码。 主要语言构成（按文件数）：Python 4288 个文件、HTML 3 个文件、Rust 309 个文件、C++ 91 个文件、JavaScript 7 个文件、Shell 137 个文件。 用到的关键框架/工具：PyTorch、Transformers、NumPy、pandas、.gitignore、GitHub Actions。 一句话总结：这是一个 AI/机器学习项目（主力语言 Python），适合想了解「模型是怎么搭起来」的读者。",
+  "overview": "「vllm-project/vllm」是一个以 Python 为主的项目，仓库里大约有 6683 个文件（不含 git 内部文件），源码规模约 101.9 MB。 官方一句话介绍：A high-throughput and memory-efficient inference and serving engine for LLMs 它在 GitHub 上拿到了 90.2k 颗星、21.3k 次复刻（fork），还有 7135 个开放中的 issue。 官方标签：amd、blackwell、cuda、deepseek、deepseek-v3、gpt。 许可证是 Apache-2.0，决定了你怎么合法使用这些代码。 主要语言构成（按文件数）：Python 4290 个文件、HTML 3 个文件、Rust 309 个文件、C++ 91 个文件、JavaScript 7 个文件、Shell 139 个文件。 用到的关键框架/工具：PyTorch、Transformers、NumPy、pandas、.gitignore、GitHub Actions。 一句话总结：这是一个 AI/机器学习项目（主力语言 Python），适合想了解「模型是怎么搭起来」的读者。",
   "languages": [
     {
       "label": "Python",
       "speak": "AI 领域第一语言，语法简单好读",
       "color": "#3572A5",
-      "files": 4288
+      "files": 4290
     },
     {
       "label": "HTML",
@@ -72,7 +72,7 @@
       "label": "Shell",
       "speak": "命令行脚本，粘合各种工具",
       "color": "#89e051",
-      "files": 137
+      "files": 139
     }
   ],
   "frameworks": [
@@ -125,7 +125,7 @@
     },
     {
       "dir": "tests/v1",
-      "count": 419,
+      "count": 420,
       "sample": [
         "tests/v1/__init__.py",
         "tests/v1/test_kv_cache_spec_registry.py",
@@ -158,7 +158,7 @@
     },
     {
       "dir": "tests/kernels",
-      "count": 264,
+      "count": 265,
       "sample": [
         "tests/kernels/__init__.py",
         "tests/kernels/allclose_default.py",
@@ -295,6 +295,75 @@
     "需要存取的数据会落到数据库，通过 ORM 层读写。",
     "处理完成后，结果原路返回：渲染成页面、打印到终端或打包成 API 响应，交回给你。"
   ],
+  "flow_graph": {
+    "nodes": [
+      {
+        "id": "user",
+        "label": "用户 / 调用方",
+        "type": "actor"
+      },
+      {
+        "id": "entry",
+        "label": "入口文件",
+        "type": "entry"
+      },
+      {
+        "id": "dispatch",
+        "label": "server.py",
+        "type": "dispatch"
+      },
+      {
+        "id": "core",
+        "label": "core.py",
+        "type": "core"
+      },
+      {
+        "id": "db",
+        "label": "数据库 / 存储",
+        "type": "store"
+      },
+      {
+        "id": "output",
+        "label": "输出：结果返回",
+        "type": "output"
+      },
+      {
+        "id": "api",
+        "label": "gRPC 接口",
+        "type": "api"
+      }
+    ],
+    "edges": [
+      [
+        "user",
+        "entry"
+      ],
+      [
+        "user",
+        "api"
+      ],
+      [
+        "entry",
+        "dispatch"
+      ],
+      [
+        "dispatch",
+        "core"
+      ],
+      [
+        "core",
+        "db"
+      ],
+      [
+        "db",
+        "output"
+      ],
+      [
+        "api",
+        "entry"
+      ]
+    ]
+  },
   "patterns": [
     {
       "pattern": "接口约定",
@@ -363,11 +432,143 @@
       "body": "比如「数据从哪进来」「结果存在哪」「错误怎么处理」，带着三个问题读任何项目都不会迷路。"
     }
   ],
-  "stats": {
-    "files": 6678,
-    "bytes": 106721141,
-    "sampled": 2839
+  "interfaces": [
+    {
+      "kind": "CLI 命令行接口",
+      "where": "pyproject.toml",
+      "speak": "安装后提供的终端命令"
+    },
+    {
+      "kind": "gRPC 接口",
+      "where": "setup.py",
+      "speak": "高性能远程调用接口（.proto 文件定义）"
+    },
+    {
+      "kind": "CLI 参数",
+      "where": "use_existing_torch.py",
+      "speak": "命令行参数定义"
+    },
+    {
+      "kind": "脚本入口",
+      "where": "use_existing_torch.py",
+      "speak": "直接 python 运行的脚本入口"
+    },
+    {
+      "kind": "OpenAPI/Swagger 文档",
+      "where": "vllm/v1/serial_utils.py",
+      "speak": "机器可读的接口说明书"
+    },
+    {
+      "kind": "Python Web 框架接口",
+      "where": "vllm/plugins/endpoint_plugins/interface.py",
+      "speak": "用 FastAPI/Flask 暴露 HTTP 接口"
+    }
+  ],
+  "dependencies": {
+    "manifest": "pyproject.toml",
+    "total": 0,
+    "runtime": [],
+    "build": []
   },
-  "generated_at": "2026-08-27T10:59:00.228Z",
-  "analyzer": "claw-static-analyzer v1"
+  "demo_links": [
+    {
+      "kind": "效果截图",
+      "url": "https://raw.githubusercontent.com/vllm-project/vllm/main/docs/assets/logos/vllm-logo-text-dark.png"
+    },
+    {
+      "kind": "效果截图",
+      "url": "https://raw.githubusercontent.com/vllm-project/vllm/main/docs/assets/logos/vllm-logo-text-light.png"
+    }
+  ],
+  "scenarios": [
+    {
+      "when": "想低成本跑/部署开源大模型，或学习推理引擎内部实现",
+      "not": "想训练自己的大模型（应去看训练框架）"
+    }
+  ],
+  "competitors": {
+    "matched": "exact",
+    "list": [
+      {
+        "name": "llama.cpp",
+        "repo": "ggml-org/llama.cpp",
+        "edge": "CPU/边缘设备友好，量化强"
+      },
+      {
+        "name": "TGI",
+        "repo": "huggingface/text-generation-inference",
+        "edge": "HF 生态集成深"
+      },
+      {
+        "name": "SGLang",
+        "repo": "sgl-project/sglang",
+        "edge": "结构化输出与缓存激进优化"
+      }
+    ]
+  },
+  "rework_ideas": [
+    {
+      "idea": "接入自己的模型文件（GGUF/安全张量），跑通一条完整推理链路",
+      "difficulty": "入门"
+    },
+    {
+      "idea": "加一个 Web API 层（FastAPI），把它变成可调用的推理服务",
+      "difficulty": "进阶"
+    },
+    {
+      "idea": "实现自定义量化/裁剪，在低端显卡上压出可接受的速度",
+      "difficulty": "硬核"
+    }
+  ],
+  "pitfalls": [
+    {
+      "pit": "环境不隔离：直接在系统 Python/node 里装依赖，装到一半互相打架",
+      "fix": "先建 venv / 用 nvm 固定版本，再装依赖"
+    },
+    {
+      "pit": "CUDA/驱动不匹配：torch 装了 CUDA 12 版本但驱动只支持 11",
+      "fix": "先 nvidia-smi 看驱动支持的上限，再选对应版本安装"
+    },
+    {
+      "pit": "模型文件放错目录：程序默认去 ./models 找，你下到了下载文件夹",
+      "fix": "先跑一次看报错里的路径，把文件挪过去"
+    },
+    {
+      "pit": "显存不够直接 OOM：模型全精度加载，显卡撑不住",
+      "fix": "用量化版本（4bit/8bit）或换小一号模型"
+    },
+    {
+      "pit": "上下文拉满导致推理极慢",
+      "fix": "控制输入长度，长文档走 RAG 而非硬塞"
+    },
+    {
+      "pit": "并发一上来就崩：单进程扛不住",
+      "fix": "上 vLLM 类服务框架或加队列限流"
+    }
+  ],
+  "community": {
+    "contributors": "100+",
+    "latest_release": {
+      "tag": "v0.28.0",
+      "name": "v0.28.0",
+      "published_at": "2026-08-26T09:46:30Z",
+      "notes_excerpt": "# v0.28.0 ## Highlights This release features 584 commits from 270 contributors (76 new)! * **Kimi-K3 performance push**: a major optimization effort for Kimi-K3 across the stack — Decode Context Parallel (DCP) support (#50484), fused FlashKDA decode and prefill kernels (#50654, #51311, #52458), SiT"
+    },
+    "releases_count": 10,
+    "commit_activity": null,
+    "verdict": [
+      "最近 0 天内还有代码提交，维护很活跃",
+      "有 100+ 位贡献者提交过代码",
+      "最新版本 v0.28.0（2026-08-26 发布）"
+    ],
+    "repo_age_days": 1295
+  },
+  "category": "llm",
+  "stats": {
+    "files": 6683,
+    "bytes": 106866972,
+    "sampled": 2840
+  },
+  "generated_at": "2026-08-28T00:17:33.299Z",
+  "analyzer": "claw-static-analyzer v2"
 }

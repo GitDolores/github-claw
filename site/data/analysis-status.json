@@ -1,7 +1,7 @@
 {
-  "repo": "vllm-project/vllm",
-  "stage": "clone",
-  "progress": 20,
-  "note": "克隆仓库（浅克隆，只取最新版本）",
-  "updated_at": "2026-08-28T00:17:27.225Z"
+  "repo": null,
+  "stage": "all-done",
+  "progress": 100,
+  "note": "全部完成：6 个项目",
+  "updated_at": "2026-08-28T00:17:33.520Z"
 }
