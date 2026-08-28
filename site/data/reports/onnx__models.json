@@ -2,8 +2,8 @@
   "meta": {
     "full_name": "onnx/models",
     "description": "A collection of pre-trained, state-of-the-art models in the ONNX format ",
-    "stars": 9775,
-    "forks": 1584,
+    "stars": 9778,
+    "forks": 1583,
     "open_issues": 214,
     "language": "Jupyter Notebook",
     "topics": [
@@ -21,7 +21,7 @@
     "size_kb": 428966,
     "archived": false
   },
-  "overview": "「onnx/models」是一个以 Python 为主的项目，仓库里大约有 4890 个文件（不含 git 内部文件），源码规模约 23.6 MB。 官方一句话介绍：A collection of pre-trained, state-of-the-art models in the ONNX format  它在 GitHub 上拿到了 9.8k 颗星、1.6k 次复刻（fork），还有 214 个开放中的 issue。 官方标签：deep-learning、download、models、onnx、pretrained。 许可证是 Apache-2.0，决定了你怎么合法使用这些代码。 主要语言：Python（AI 领域第一语言，语法简单好读）。 用到的关键框架/工具：.gitignore、GitHub Actions。 一句话总结：这是一个 AI/机器学习项目（主力语言 Python），适合想了解「模型是怎么搭起来」的读者。",
+  "overview": "「onnx/models」是一个以 Python 为主的项目，仓库里大约有 4890 个文件（不含 git 内部文件），源码规模约 24.1 MB。 官方一句话介绍：A collection of pre-trained, state-of-the-art models in the ONNX format  它在 GitHub 上拿到了 9.8k 颗星、1.6k 次复刻（fork），还有 214 个开放中的 issue。 官方标签：deep-learning、download、models、onnx、pretrained。 许可证是 Apache-2.0，决定了你怎么合法使用这些代码。 主要语言：Python（AI 领域第一语言，语法简单好读）。 用到的关键框架/工具：.gitignore、GitHub Actions。 一句话总结：这是一个 AI/机器学习项目（主力语言 Python），适合想了解「模型是怎么搭起来」的读者。",
   "languages": [
     {
       "label": "Python",
@@ -80,10 +80,10 @@
       "dir": "Generative_AI/skip",
       "count": 54,
       "sample": [
-        "Generative_AI/skip/openaigptlmhead_Opset18_transformers/openaigptlmhead_Opset18.onnx",
-        "Generative_AI/skip/openaigptlmhead_Opset18_transformers/turnkey_stats.yaml",
-        "Generative_AI/skip/openaigptlmhead_Opset17_transformers/openaigptlmhead_Opset17.onnx",
-        "Generative_AI/skip/openaigptlmhead_Opset17_transformers/turnkey_stats.yaml"
+        "Generative_AI/skip/openaigpt_Opset18_transformers/openaigpt_Opset18.onnx",
+        "Generative_AI/skip/openaigpt_Opset18_transformers/turnkey_stats.yaml",
+        "Generative_AI/skip/openaigpt_Opset17_transformers/openaigpt_Opset17.onnx",
+        "Generative_AI/skip/openaigpt_Opset17_transformers/turnkey_stats.yaml"
       ],
       "meaning": null
     },
@@ -116,7 +116,7 @@
         ".gitattributes",
         ".gitignore",
         ".lfsconfig",
-        "LICENSE"
+        "contribute.md"
       ],
       "meaning": null
     },
@@ -174,42 +174,42 @@
   "core_modules": [
     {
       "path": "validated/vision/body_analysis/arcface/dependencies/fresnet.py",
-      "size": "29.5 KB",
+      "size": "30.0 KB",
       "why": null
     },
     {
       "path": "validated/vision/body_analysis/arcface/dependencies/mtcnn_detector.py",
-      "size": "22.7 KB",
+      "size": "23.3 KB",
       "why": null
     },
     {
       "path": "validated/text/machine_comprehension/bert-squad/dependencies/run_onnx_squad.py",
-      "size": "23.1 KB",
+      "size": "23.7 KB",
       "why": null
     },
     {
       "path": "validated/text/machine_comprehension/bert-squad/dependencies/tokenization.py",
-      "size": "12.0 KB",
+      "size": "12.4 KB",
       "why": null
     },
     {
       "path": "validated/workflow_scripts/generate_onnx_hub_manifest.py",
-      "size": "11.6 KB",
+      "size": "11.9 KB",
       "why": null
     },
     {
       "path": "validated/workflow_scripts/ort_test_dir_utils.py",
-      "size": "11.1 KB",
+      "size": "11.4 KB",
       "why": null
     },
     {
       "path": "validated/vision/object_detection_segmentation/duc/dependencies/cityscapes_labels.py",
-      "size": "10.6 KB",
+      "size": "10.7 KB",
       "why": null
     },
     {
       "path": "validated/vision/body_analysis/arcface/dependencies/image_iter.py",
-      "size": "9.3 KB",
+      "size": "9.5 KB",
       "why": null
     }
   ],
@@ -219,14 +219,65 @@
     "过程中会借道「validated/workflow_scripts/ort_test_dir_utils.py」这类工具模块：它们像瑞士军刀，谁需要谁来拿。",
     "处理完成后，结果原路返回：渲染成页面、打印到终端或打包成 API 响应，交回给你。"
   ],
+  "flow_graph": {
+    "nodes": [
+      {
+        "id": "user",
+        "label": "用户 / 调用方",
+        "type": "actor"
+      },
+      {
+        "id": "entry",
+        "label": "入口文件",
+        "type": "entry"
+      },
+      {
+        "id": "core",
+        "label": "fresnet.py",
+        "type": "core"
+      },
+      {
+        "id": "utils",
+        "label": "ort_test_dir_utils.py",
+        "type": "utils"
+      },
+      {
+        "id": "output",
+        "label": "输出：结果返回",
+        "type": "output"
+      }
+    ],
+    "edges": [
+      [
+        "user",
+        "entry"
+      ],
+      [
+        "entry",
+        "core"
+      ],
+      [
+        "core",
+        "utils"
+      ],
+      [
+        "utils",
+        "core"
+      ],
+      [
+        "core",
+        "output"
+      ]
+    ]
+  },
   "patterns": [],
   "doc_quotes": [
     {
-      "file": "README.md",
+      "file": "contribute.md",
       "text": "<!--- SPDX-License-Identifier: Apache-2.0 -->"
     },
     {
-      "file": "contribute.md",
+      "file": "README.md",
       "text": "<!--- SPDX-License-Identifier: Apache-2.0 -->"
     }
   ],
@@ -244,11 +295,138 @@
       "body": "比如「数据从哪进来」「结果存在哪」「错误怎么处理」，带着三个问题读任何项目都不会迷路。"
     }
   ],
+  "interfaces": [
+    {
+      "kind": "CLI 命令行接口",
+      "where": "validated/workflow_scripts/generate_onnx_hub_manifest.py",
+      "speak": "命令行参数接口：python xxx.py --arg"
+    },
+    {
+      "kind": "CLI 参数",
+      "where": "validated/workflow_scripts/generate_onnx_hub_manifest.py",
+      "speak": "命令行参数定义"
+    },
+    {
+      "kind": "脚本入口",
+      "where": "validated/workflow_scripts/onnx_test_data_utils.py",
+      "speak": "直接 python 运行的脚本入口"
+    }
+  ],
+  "dependencies": {
+    "manifest": null,
+    "total": null,
+    "runtime": [],
+    "build": []
+  },
+  "demo_links": [
+    {
+      "kind": "在线试用",
+      "url": "https://huggingface.co/spaces/onnx/ResNet"
+    },
+    {
+      "kind": "在线试用",
+      "url": "https://huggingface.co/spaces/onnx/SqueezeNet"
+    },
+    {
+      "kind": "在线试用",
+      "url": "https://huggingface.co/spaces/onnx/VGG"
+    },
+    {
+      "kind": "在线试用",
+      "url": "https://huggingface.co/spaces/onnx/AlexNet"
+    },
+    {
+      "kind": "在线试用",
+      "url": "https://huggingface.co/spaces/onnx/GoogleNet"
+    }
+  ],
+  "scenarios": [
+    {
+      "when": "要微调/部署模型，或搭建训练流水线",
+      "not": "只想调用现成 API（无需本地框架）"
+    }
+  ],
+  "competitors": {
+    "matched": "category",
+    "list": [
+      {
+        "name": "DeepSpeed",
+        "repo": "microsoft/DeepSpeed",
+        "edge": "大模型分布式训练"
+      },
+      {
+        "name": "Ray",
+        "repo": "ray-project/ray",
+        "edge": "分布式计算全家桶"
+      },
+      {
+        "name": "ONNX Runtime",
+        "repo": "microsoft/onnxruntime",
+        "edge": "跨平台推理加速"
+      }
+    ]
+  },
+  "rework_ideas": [
+    {
+      "idea": "跑通官方示例训练任务，读懂配置文件每个字段",
+      "difficulty": "入门"
+    },
+    {
+      "idea": "用 FastAPI/Gradio 包一层，做个网页演示界面",
+      "difficulty": "进阶"
+    },
+    {
+      "idea": "对接自己的数据集做一次微调并导出部署",
+      "difficulty": "进阶"
+    },
+    {
+      "idea": "做多节点分布式训练，分析通信瓶颈",
+      "difficulty": "硬核"
+    }
+  ],
+  "pitfalls": [
+    {
+      "pit": "环境不隔离：直接在系统 Python/node 里装依赖，装到一半互相打架",
+      "fix": "先建 venv / 用 nvm 固定版本，再装依赖"
+    },
+    {
+      "pit": "CUDA/驱动不匹配：torch 装了 CUDA 12 版本但驱动只支持 11",
+      "fix": "先 nvidia-smi 看驱动支持的上限，再选对应版本安装"
+    },
+    {
+      "pit": "模型文件放错目录：程序默认去 ./models 找，你下到了下载文件夹",
+      "fix": "先跑一次看报错里的路径，把文件挪过去"
+    },
+    {
+      "pit": "batch size 抄别人的，自己卡直接 OOM",
+      "fix": "从小的开始试，逐步加倍找上限"
+    },
+    {
+      "pit": "数据路径写在代码里，换机器就崩",
+      "fix": "路径进配置文件/环境变量"
+    },
+    {
+      "pit": "忘了固定随机种子，结果无法复现",
+      "fix": "seed 写进配置并记录版本号"
+    }
+  ],
+  "community": {
+    "contributors": "66",
+    "latest_release": null,
+    "releases_count": null,
+    "commit_activity": null,
+    "verdict": [
+      "距上次提交约 26 天，处于正常迭代节奏",
+      "有 66 位贡献者提交过代码"
+    ],
+    "repo_age_days": 3248
+  },
+  "category": "mlops",
   "stats": {
     "files": 4890,
-    "bytes": 24782901,
+    "bytes": 25295525,
     "sampled": 35
   },
-  "generated_at": "2026-08-27T09:13:23.303Z",
-  "analyzer": "claw-static-analyzer v1"
+  "generated_at": "2026-08-28T00:21:47.856Z",
+  "analyzer": "claw-static-analyzer v2"
 }

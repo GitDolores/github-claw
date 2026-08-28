@@ -2,9 +2,9 @@
   "meta": {
     "full_name": "huggingface/transformers",
     "description": "🤗 Transformers: the model-definition framework for state-of-the-art machine learning models in text, vision, audio, and multimodal models, for both inference and training. ",
-    "stars": 164490,
-    "forks": 34383,
-    "open_issues": 2404,
+    "stars": 164517,
+    "forks": 34389,
+    "open_issues": 2407,
     "language": "Python",
     "topics": [
       "audio",
@@ -29,19 +29,19 @@
     ],
     "license": "Apache-2.0",
     "default_branch": "main",
-    "pushed_at": "2026-08-27T09:07:43Z",
+    "pushed_at": "2026-08-28T00:12:58Z",
     "created_at": "2018-10-29T13:56:00Z",
     "homepage": "https://huggingface.co/transformers",
-    "size_kb": 507597,
+    "size_kb": 507117,
     "archived": false
   },
-  "overview": "「huggingface/transformers」是一个以 Python 为主的项目，仓库里大约有 6449 个文件（不含 git 内部文件），源码规模约 90.3 MB。 官方一句话介绍：🤗 Transformers: the model-definition framework for state-of-the-art machine learning models in text, vision, audio, and multimodal models, for both inference and training.  它在 GitHub 上拿到了 164.5k 颗星、34.4k 次复刻（fork），还有 2404 个开放中的 issue。 官方标签：audio、deep-learning、deepseek、gemma、glm、hacktoberfest。 许可证是 Apache-2.0，决定了你怎么合法使用这些代码。 主要语言构成（按文件数）：Python 4794 个文件、Shell 7 个文件。 用到的关键框架/工具：Transformers、PyTorch、torchvision、Accelerate、NumPy、pandas。 一句话总结：这是一个 AI/机器学习项目（主力语言 Python），适合想了解「模型是怎么搭起来」的读者。",
+  "overview": "「huggingface/transformers」是一个以 Python 为主的项目，仓库里大约有 6467 个文件（不含 git 内部文件），源码规模约 90.5 MB。 官方一句话介绍：🤗 Transformers: the model-definition framework for state-of-the-art machine learning models in text, vision, audio, and multimodal models, for both inference and training.  它在 GitHub 上拿到了 164.5k 颗星、34.4k 次复刻（fork），还有 2407 个开放中的 issue。 官方标签：audio、deep-learning、deepseek、gemma、glm、hacktoberfest。 许可证是 Apache-2.0，决定了你怎么合法使用这些代码。 主要语言构成（按文件数）：Python 4805 个文件、Shell 7 个文件。 用到的关键框架/工具：Transformers、PyTorch、torchvision、Accelerate、NumPy、pandas。 一句话总结：这是一个 AI/机器学习项目（主力语言 Python），适合想了解「模型是怎么搭起来」的读者。",
   "languages": [
     {
       "label": "Python",
       "speak": "AI 领域第一语言，语法简单好读",
       "color": "#3572A5",
-      "files": 4794
+      "files": 4805
     },
     {
       "label": "Shell",
@@ -101,34 +101,34 @@
   "dir_tree": [
     {
       "dir": "src/transformers",
-      "count": 2969,
+      "count": 2976,
       "sample": [
-        "src/transformers/__init__.py",
-        "src/transformers/_typing.py",
         "src/transformers/activations.py",
-        "src/transformers/audio_utils.py"
+        "src/transformers/audio_utils.py",
+        "src/transformers/backbone_utils.py",
+        "src/transformers/cache_utils.py"
       ],
       "meaning": "源代码主目录（src = source）"
     },
     {
       "dir": "tests/models",
-      "count": 1395,
+      "count": 1398,
       "sample": [
         "tests/models/__init__.py",
-        "tests/models/zoedepth/__init__.py",
         "tests/models/zoedepth/test_image_processing_zoedepth.py",
-        "tests/models/zoedepth/test_modeling_zoedepth.py"
+        "tests/models/zoedepth/test_modeling_zoedepth.py",
+        "tests/models/zoedepth/__init__.py"
       ],
       "meaning": "测试代码"
     },
     {
       "dir": "docs/source",
-      "count": 1371,
+      "count": 1374,
       "sample": [
         "docs/source/_config.py",
-        "docs/source/zh/_toctree.yml",
         "docs/source/zh/accelerate.md",
-        "docs/source/zh/add_new_pipeline.md"
+        "docs/source/zh/add_new_pipeline.md",
+        "docs/source/zh/attention.md"
       ],
       "meaning": "项目文档"
     },
@@ -137,15 +137,15 @@
       "count": 94,
       "sample": [
         "examples/pytorch/3d_parallel_checks.py",
-        "examples/pytorch/README.md",
-        "examples/pytorch/_tests_requirements.txt",
-        "examples/pytorch/conftest.py"
+        "examples/pytorch/conftest.py",
+        "examples/pytorch/context_parallel.py",
+        "examples/pytorch/continuous_batching.py"
       ],
       "meaning": "示例代码（学习入口！）"
     },
     {
       "dir": "tests/fixtures",
-      "count": 80,
+      "count": 82,
       "sample": [
         "tests/fixtures/config.json",
         "tests/fixtures/dummy-config.json",
@@ -161,7 +161,7 @@
         "utils/add_dates.py",
         "utils/add_pipeline_model_mapping_to_test.py",
         "utils/aggregate_failure_reports.py",
-        "utils/check_auto.py"
+        "utils/checkers-requirements.txt"
       ],
       "meaning": "工具函数集散地"
     },
@@ -169,10 +169,10 @@
       "dir": ".github/workflows",
       "count": 59,
       "sample": [
-        ".github/workflows/TROUBLESHOOT.md",
         ".github/workflows/add-model-like.yml",
         ".github/workflows/ai-review.yml",
-        ".github/workflows/anti-slop.yml"
+        ".github/workflows/anti-slop.yml",
+        ".github/workflows/assign-reviewers.yml"
       ],
       "meaning": "GitHub 平台专属配置（Actions、Issue 模板等）"
     },
@@ -180,21 +180,21 @@
       "dir": "tests/quantization",
       "count": 50,
       "sample": [
-        "tests/quantization/vptq_integration/__init__.py",
         "tests/quantization/vptq_integration/test_vptq.py",
-        "tests/quantization/torchao_integration/__init__.py",
-        "tests/quantization/torchao_integration/test_torchao.py"
+        "tests/quantization/vptq_integration/__init__.py",
+        "tests/quantization/torchao_integration/test_torchao.py",
+        "tests/quantization/torchao_integration/__init__.py"
       ],
       "meaning": "测试代码"
     },
     {
       "dir": "tests/utils",
-      "count": 47,
+      "count": 48,
       "sample": [
-        "tests/utils/__init__.py",
         "tests/utils/test_activations.py",
         "tests/utils/test_add_new_model_like.py",
-        "tests/utils/test_attention_visualizer.py"
+        "tests/utils/test_attention_visualizer.py",
+        "tests/utils/test_audio_utils.py"
       ],
       "meaning": "测试代码"
     },
@@ -202,10 +202,10 @@
       "dir": "examples/modular-transformers",
       "count": 37,
       "sample": [
-        "examples/modular-transformers/README.md",
         "examples/modular-transformers/configuration_dummy.py",
         "examples/modular-transformers/configuration_duplicated_method.py",
-        "examples/modular-transformers/configuration_my_new_model.py"
+        "examples/modular-transformers/configuration_my_new_model.py",
+        "examples/modular-transformers/configuration_my_new_model2.py"
       ],
       "meaning": "示例代码（学习入口！）"
     },
@@ -214,9 +214,9 @@
       "count": 36,
       "sample": [
         "tests/trainer/TESTING_GUIDE.md",
-        "tests/trainer/__init__.py",
         "tests/trainer/test_data_collator.py",
-        "tests/trainer/test_trainer.py"
+        "tests/trainer/test_trainer.py",
+        "tests/trainer/test_trainer_accelerator.py"
       ],
       "meaning": "测试代码"
     },
@@ -224,10 +224,10 @@
       "dir": "tests/pipelines",
       "count": 27,
       "sample": [
-        "tests/pipelines/__init__.py",
         "tests/pipelines/test_pipelines_any_to_any.py",
         "tests/pipelines/test_pipelines_audio_classification.py",
-        "tests/pipelines/test_pipelines_automatic_speech_recognition.py"
+        "tests/pipelines/test_pipelines_automatic_speech_recognition.py",
+        "tests/pipelines/test_pipelines_common.py"
       ],
       "meaning": "测试代码"
     }
@@ -241,8 +241,13 @@
   "core_modules": [
     {
       "path": "src/transformers/models/__init__.py",
-      "size": "16.0 KB",
+      "size": "16.1 KB",
       "why": "数据模型层"
+    },
+    {
+      "path": "utils/checkers.py",
+      "size": "27.8 KB",
+      "why": "工具函数"
     },
     {
       "path": "utils/check_config_attributes.py",
@@ -261,12 +266,7 @@
     },
     {
       "path": "utils/check_repo.py",
-      "size": "70.8 KB",
-      "why": "工具函数"
-    },
-    {
-      "path": "utils/checkers.py",
-      "size": "27.8 KB",
+      "size": "71.0 KB",
       "why": "工具函数"
     },
     {
@@ -284,10 +284,83 @@
     "你（用户/调用方）发起一个动作：运行命令、打开网页或调用接口。",
     "程序从入口文件「src/transformers/__init__.py」启动，先做初始化：读配置、准备环境、注册要用的组件。",
     "核心逻辑在「src/transformers/models/__init__.py」这类模块里：真正的计算/推理/业务规则都发生在这里。",
-    "过程中会借道「utils/check_config_attributes.py」这类工具模块：它们像瑞士军刀，谁需要谁来拿。",
+    "过程中会借道「utils/checkers.py」这类工具模块：它们像瑞士军刀，谁需要谁来拿。",
     "需要存取的数据会落到数据库，通过 ORM 层读写。",
     "处理完成后，结果原路返回：渲染成页面、打印到终端或打包成 API 响应，交回给你。"
   ],
+  "flow_graph": {
+    "nodes": [
+      {
+        "id": "user",
+        "label": "用户 / 调用方",
+        "type": "actor"
+      },
+      {
+        "id": "entry",
+        "label": "__init__.py",
+        "type": "entry"
+      },
+      {
+        "id": "core",
+        "label": "__init__.py",
+        "type": "core"
+      },
+      {
+        "id": "utils",
+        "label": "checkers.py",
+        "type": "utils"
+      },
+      {
+        "id": "db",
+        "label": "数据库 / 存储",
+        "type": "store"
+      },
+      {
+        "id": "output",
+        "label": "输出：结果返回",
+        "type": "output"
+      },
+      {
+        "id": "api",
+        "label": "REST 路由",
+        "type": "api"
+      }
+    ],
+    "edges": [
+      [
+        "user",
+        "entry"
+      ],
+      [
+        "user",
+        "api"
+      ],
+      [
+        "entry",
+        "core"
+      ],
+      [
+        "core",
+        "utils"
+      ],
+      [
+        "utils",
+        "core"
+      ],
+      [
+        "core",
+        "db"
+      ],
+      [
+        "db",
+        "output"
+      ],
+      [
+        "api",
+        "entry"
+      ]
+    ]
+  },
   "patterns": [
     {
       "pattern": "路由分发",
@@ -299,7 +372,7 @@
       "pattern": "接口约定",
       "speak": "TypeScript 定义数据形状，契约先行",
       "severity": "common",
-      "where": "tests/pipelines/test_pipelines_common.py"
+      "where": "tests/utils/test_audio_utils.py"
     },
     {
       "pattern": "观察者/响应式流",
@@ -322,16 +395,8 @@
   ],
   "doc_quotes": [
     {
-      "file": "CODE_OF_CONDUCT.md",
-      "text": "We as members, contributors, and leaders pledge to make participation in our community a harassment-free experience for everyone, regardless of age, body size, visible or invisible disability, ethnicity, sex characteristics, gender identity and expression, level of experience, education, socio-econo"
-    },
-    {
-      "file": "CONTRIBUTING.md",
-      "text": "<!--- Copyright 2020 The HuggingFace Team. All rights reserved."
-    },
-    {
-      "file": "ISSUES.md",
-      "text": "<!--- Copyright 2020 The HuggingFace Team. All rights reserved."
+      "file": "awesome-transformers.md",
+      "text": "This page lists awesome projects built on top of Transformers. Transformers is more than a toolkit to use pretrained models: it's a community of projects built around it and the Hugging Face Hub. We want Transformers to enable developers, researchers, students, professors, engineers, and anyone else"
     }
   ],
   "read_suggestions": [
@@ -352,11 +417,189 @@
       "body": "比如「数据从哪进来」「结果存在哪」「错误怎么处理」，带着三个问题读任何项目都不会迷路。"
     }
   ],
-  "stats": {
-    "files": 6449,
-    "bytes": 94693741,
-    "sampled": 2463
+  "interfaces": [
+    {
+      "kind": "CLI 命令行接口",
+      "where": "setup.py",
+      "speak": "安装后提供的终端命令"
+    },
+    {
+      "kind": "脚本入口",
+      "where": "setup.py",
+      "speak": "直接 python 运行的脚本入口"
+    },
+    {
+      "kind": "Python Web 框架接口",
+      "where": "setup.py",
+      "speak": "用 FastAPI/Flask 暴露 HTTP 接口"
+    },
+    {
+      "kind": "CLI 参数",
+      "where": "utils/add_dates.py",
+      "speak": "命令行参数定义"
+    },
+    {
+      "kind": "REST 路由",
+      "where": "tests/models/starcoder2/test_modeling_starcoder2.py",
+      "speak": "把 URL 规则映射到处理函数"
+    },
+    {
+      "kind": "gRPC 接口",
+      "where": "src/transformers/convert_slow_tokenizer.py",
+      "speak": "高性能远程调用接口（.proto 文件定义）"
+    }
+  ],
+  "dependencies": {
+    "manifest": "setup.py",
+    "total": 9,
+    "runtime": [
+      {
+        "name": "huggingface-hub",
+        "note": null
+      },
+      {
+        "name": "numpy",
+        "note": "科学计算基石"
+      },
+      {
+        "name": "packaging",
+        "note": null
+      },
+      {
+        "name": "pyyaml",
+        "note": null
+      },
+      {
+        "name": "regex",
+        "note": null
+      },
+      {
+        "name": "tokenizers",
+        "note": null
+      },
+      {
+        "name": "typer",
+        "note": null
+      },
+      {
+        "name": "safetensors",
+        "note": "更安全的模型权重格式（相比 pickle）"
+      },
+      {
+        "name": "tqdm",
+        "note": null
+      }
+    ],
+    "build": []
   },
-  "generated_at": "2026-08-27T09:13:19.890Z",
-  "analyzer": "claw-static-analyzer v1"
+  "demo_links": [
+    {
+      "kind": "效果截图",
+      "url": "https://huggingface.co/datasets/huggingface/documentation-images/resolve/main/transformers/transformers_as_a_model_definition.png"
+    },
+    {
+      "kind": "效果截图",
+      "url": "https://huggingface.co/datasets/Narsil/image_dummy/raw/main/parrots.png"
+    },
+    {
+      "kind": "效果截图",
+      "url": "https://huggingface.co/datasets/huggingface/documentation-images/resolve/main/transformers/tasks/idefics-few-shot.jpg"
+    },
+    {
+      "kind": "在线试用",
+      "url": "https://aclanthology.org/2020.emnlp-demos.6/"
+    }
+  ],
+  "scenarios": [
+    {
+      "when": "想低成本跑/部署开源大模型，或学习推理引擎内部实现",
+      "not": "想训练自己的大模型（应去看训练框架）"
+    }
+  ],
+  "competitors": {
+    "matched": "category",
+    "list": [
+      {
+        "name": "llama.cpp",
+        "repo": "ggml-org/llama.cpp",
+        "edge": "本地推理代表"
+      },
+      {
+        "name": "vLLM",
+        "repo": "vllm-project/vllm",
+        "edge": "服务化推理代表"
+      },
+      {
+        "name": "Ollama",
+        "repo": "ollama/ollama",
+        "edge": "易用性代表"
+      }
+    ]
+  },
+  "rework_ideas": [
+    {
+      "idea": "接入自己的模型文件（GGUF/安全张量），跑通一条完整推理链路",
+      "difficulty": "入门"
+    },
+    {
+      "idea": "加一个 Web API 层（FastAPI），把它变成可调用的推理服务",
+      "difficulty": "进阶"
+    },
+    {
+      "idea": "实现自定义量化/裁剪，在低端显卡上压出可接受的速度",
+      "difficulty": "硬核"
+    }
+  ],
+  "pitfalls": [
+    {
+      "pit": "环境不隔离：直接在系统 Python/node 里装依赖，装到一半互相打架",
+      "fix": "先建 venv / 用 nvm 固定版本，再装依赖"
+    },
+    {
+      "pit": "CUDA/驱动不匹配：torch 装了 CUDA 12 版本但驱动只支持 11",
+      "fix": "先 nvidia-smi 看驱动支持的上限，再选对应版本安装"
+    },
+    {
+      "pit": "模型文件放错目录：程序默认去 ./models 找，你下到了下载文件夹",
+      "fix": "先跑一次看报错里的路径，把文件挪过去"
+    },
+    {
+      "pit": "显存不够直接 OOM：模型全精度加载，显卡撑不住",
+      "fix": "用量化版本（4bit/8bit）或换小一号模型"
+    },
+    {
+      "pit": "上下文拉满导致推理极慢",
+      "fix": "控制输入长度，长文档走 RAG 而非硬塞"
+    },
+    {
+      "pit": "并发一上来就崩：单进程扛不住",
+      "fix": "上 vLLM 类服务框架或加队列限流"
+    }
+  ],
+  "community": {
+    "contributors": "100+",
+    "latest_release": {
+      "tag": "v5.16.1",
+      "name": "Release v5.16.1",
+      "published_at": "2026-08-26T14:50:01Z",
+      "notes_excerpt": "# Release v5.16.1 This is a special release as we include GLM! (and a few small fixes) # GLM-5.3-Flash <img width=\"4239\" height=\"2643\" alt=\"image\" src=\"https://github.com/user-attachments/assets/17bc9c29-758b-44c8-8230-42f945ded209\" /> GLM-5.3-Flash, the first **natively multimodal model** in the GL"
+    },
+    "releases_count": 10,
+    "commit_activity": null,
+    "verdict": [
+      "最近 0 天内还有代码提交，维护很活跃",
+      "有 100+ 位贡献者提交过代码",
+      "最新版本 v5.16.1（2026-08-26 发布）",
+      "开放 issue 占星数比例很低，社区响应健康"
+    ],
+    "repo_age_days": 2859
+  },
+  "category": "llm",
+  "stats": {
+    "files": 6467,
+    "bytes": 94922876,
+    "sampled": 2462
+  },
+  "generated_at": "2026-08-28T00:29:26.598Z",
+  "analyzer": "claw-static-analyzer v2"
 }

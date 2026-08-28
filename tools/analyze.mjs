@@ -201,21 +201,41 @@ function detectInterfaces(files, texts) {
 // ---------- dependency analysis ----------
 function detectDependencies(files) {
   const out = { runtime: [], build: [], total: null };
-  const manifest = files.find(f => ['package.json', 'requirements.txt', 'pyproject.toml', 'go.mod', 'cargo.toml', 'pom.xml'].includes(path.basename(f.rel).toLowerCase()));
+  const byName = {};
+  for (const f of files) {
+    if (f.rel.includes('/')) continue; // root-level manifests only
+    byName[path.basename(f.rel).toLowerCase()] = f;
+  }
+  // preference order; setup.py is checked last as pyproject fallback
+  const candidates = ['package.json', 'requirements.txt', 'pyproject.toml', 'go.mod', 'cargo.toml', 'setup.py'];
+  let manifest = null;
+  for (const name of candidates) {
+    const f = byName[name];
+    if (!f) continue;
+    const parsed = parseManifest(f, name);
+    if (parsed && parsed.runtime && parsed.runtime.length) { manifest = { f, parsed }; break; }
+    if (!manifest && f) manifest = { f, parsed }; // remember first existing even if empty
+  }
   if (!manifest) return out;
+  const { parsed } = manifest;
+  out.runtime = parsed.runtime;
+  out.build = parsed.build;
+  out.total = parsed.runtime.length + parsed.build.length;
+  out.manifest = parsed.manifest;
+  return out;
+}
+
+function parseManifest(f, name) {
   try {
-    const c = fs.readFileSync(manifest.full, 'utf8');
-    if (manifest.rel.endsWith('package.json')) {
-      try {
-        const pkg = JSON.parse(c);
-        out.runtime = Object.keys(pkg.dependencies || {});
-        out.build = Object.keys(pkg.devDependencies || {});
-        out.manifest = 'package.json';
-      } catch {}
-    } else if (manifest.rel.endsWith('requirements.txt')) {
-      out.runtime = c.split('\n').map(l => l.trim().split(/[=<>~#\[]/)[0].trim()).filter(l => l && !l.startsWith('-'));
-      out.manifest = 'requirements.txt';
-    } else if (manifest.rel.endsWith('pyproject.toml')) {
+    const c = fs.readFileSync(f.full, 'utf8');
+    if (name === 'package.json') {
+      const pkg = JSON.parse(c);
+      return { manifest: 'package.json', runtime: Object.keys(pkg.dependencies || {}), build: Object.keys(pkg.devDependencies || {}) };
+    }
+    if (name === 'requirements.txt') {
+      return { manifest: 'requirements.txt', runtime: c.split('\n').map(l => l.trim().split(/[=<>~#\[]/)[0].trim()).filter(l => l && !l.startsWith('-')), build: [] };
+    }
+    if (name === 'pyproject.toml') {
       // PEP 621: dependencies = ["pkg>=1.0; sys_platform=='linux'", ...]; poetry: [tool.poetry.dependencies] pkg = "1.0"
       // skip markers (platform tags) that leak in as "package names"
       const MARKERS = new Set(['linux', 'linux2', 'win32', 'darwin', 'x86_64', 'amd64', 'arm64', 'aarch64', 'unix', 'windows', 'macos', 'macosx', 'python', 'sys_platform', 'python_version', 'os_name', 'platform_system', 'platform_machine']);
@@ -232,18 +252,26 @@ function detectDependencies(files) {
           if (m[1] !== 'python') deps.add(m[1].toLowerCase());
         }
       }
-      out.runtime = [...deps];
-      out.manifest = 'pyproject.toml';
-    } else if (manifest.rel.endsWith('go.mod')) {
-      out.runtime = [...c.matchAll(/^\s+([\w./-]+)\s+v[\d.]+/gm)].map(m => m[1]);
-      out.manifest = 'go.mod';
-    } else if (manifest.rel.toLowerCase().endsWith('cargo.toml')) {
-      out.runtime = [...c.matchAll(/^\s*([\w-]+)\s*=/gm)].map(m => m[1]);
-      out.manifest = 'Cargo.toml';
+      return { manifest: 'pyproject.toml', runtime: [...deps], build: [] };
     }
-    out.total = out.runtime.length + out.build.length;
+    if (name === 'go.mod') {
+      return { manifest: 'go.mod', runtime: [...c.matchAll(/^\s+([\w./-]+)\s+v[\d.]+/gm)].map(m => m[1]), build: [] };
+    }
+    if (name === 'cargo.toml') {
+      return { manifest: 'Cargo.toml', runtime: [...c.matchAll(/^\s*([\w-]+)\s*=/gm)].map(m => m[1]), build: [] };
+    }
+    if (name === 'setup.py') {
+      // setup.py may reference deps via deps["name"] lookups or plain strings
+      const deps = new Set();
+      for (const m of c.matchAll(/deps\[\s*["']([\w.-]+)["']\s*\]/g)) deps.add(m[1].toLowerCase());
+      if (!deps.size) {
+        const arr = c.match(/install_requires\s*=\s*\[([\s\S]*?)\]/);
+        if (arr) for (const m of arr[1].matchAll(/["']([^"'<>!=,\s]+)["']/g)) deps.add(m[1].toLowerCase());
+      }
+      return { manifest: 'setup.py', runtime: [...deps], build: [] };
+    }
   } catch {}
-  return out;
+  return { manifest: null, runtime: [], build: [] };
 }
 
 function explainDependencies(deps) {
