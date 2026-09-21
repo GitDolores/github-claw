@@ -1,9 +1,9 @@
 {
-  "generated_at": "2026-09-14T08:32:26.671Z",
+  "generated_at": "2026-09-21T08:34:01.429Z",
   "total_projects": 9,
   "total_featured": 6,
   "total_archived": 3,
-  "total_stars": 945887,
+  "total_stars": 948299,
   "categories": [
     {
       "id": "llm",
@@ -19,17 +19,17 @@
         },
         {
           "name": "llama.cpp",
-          "stars": 128166,
+          "stars": 129017,
           "repo_url": "https://github.com/ggml-org/llama.cpp"
         },
         {
           "name": "vllm",
-          "stars": 91693,
+          "stars": 92300,
           "repo_url": "https://github.com/vllm-project/vllm"
         }
       ],
       "main_language": "Python + C++",
-      "total_stars": 384355,
+      "total_stars": 385813,
       "summary": "大模型 / LLM（语言大模型与相关训练、推理工具）：收录 3 个项目（正在精选 2 个）。最热门的是「transformer-playground」（⭐164.5k）；主力语言 Python + C++。"
     },
     {
@@ -41,7 +41,7 @@
       "top_projects": [
         {
           "name": "stable-diffusion-webui",
-          "stars": 164935,
+          "stars": 165033,
           "repo_url": "https://github.com/AUTOMATIC1111/stable-diffusion-webui"
         },
         {
@@ -51,8 +51,8 @@
         }
       ],
       "main_language": "Python",
-      "total_stars": 174710,
-      "summary": "计算机视觉（图像识别、目标检测、分割与生成）：收录 2 个项目（正在精选 1 个）。最热门的是「stable-diffusion-webui」（⭐164.9k）；主力语言 Python。"
+      "total_stars": 174808,
+      "summary": "计算机视觉（图像识别、目标检测、分割与生成）：收录 2 个项目（正在精选 1 个）。最热门的是「stable-diffusion-webui」（⭐165.0k）；主力语言 Python。"
     },
     {
       "id": "audio",
@@ -63,13 +63,13 @@
       "top_projects": [
         {
           "name": "whisper",
-          "stars": 109063,
+          "stars": 109421,
           "repo_url": "https://github.com/openai/whisper"
         }
       ],
       "main_language": "Python",
-      "total_stars": 109063,
-      "summary": "语音 / 音频（语音识别、合成与音乐生成）：收录 1 个项目（正在精选 1 个）。最热门的是「whisper」（⭐109.1k）；主力语言 Python。"
+      "total_stars": 109421,
+      "summary": "语音 / 音频（语音识别、合成与音乐生成）：收录 1 个项目（正在精选 1 个）。最热门的是「whisper」（⭐109.4k）；主力语言 Python。"
     },
     {
       "id": "agents",
@@ -80,13 +80,13 @@
       "top_projects": [
         {
           "name": "AutoGPT",
-          "stars": 187316,
+          "stars": 187469,
           "repo_url": "https://github.com/Significant-Gravitas/AutoGPT"
         }
       ],
       "main_language": "Python",
-      "total_stars": 187316,
-      "summary": "AI 智能体（能自主规划调用工具的 AI 程序）：收录 1 个项目（正在精选 1 个）。最热门的是「AutoGPT」（⭐187.3k）；主力语言 Python。"
+      "total_stars": 187469,
+      "summary": "AI 智能体（能自主规划调用工具的 AI 程序）：收录 1 个项目（正在精选 1 个）。最热门的是「AutoGPT」（⭐187.5k）；主力语言 Python。"
     },
     {
       "id": "learning",
@@ -97,7 +97,7 @@
       "top_projects": [
         {
           "name": "ML-For-Beginners",
-          "stars": 90443,
+          "stars": 90788,
           "repo_url": "https://github.com/microsoft/ML-For-Beginners"
         },
         {
@@ -107,8 +107,8 @@
         }
       ],
       "main_language": "HTML + JavaScript",
-      "total_stars": 90443,
-      "summary": "教程 / 学习资源（课程、笔记、面试题与示例集）：收录 2 个项目（正在精选 1 个）。最热门的是「ML-For-Beginners」（⭐90.4k）；主力语言 HTML + JavaScript。"
+      "total_stars": 90788,
+      "summary": "教程 / 学习资源（课程、笔记、面试题与示例集）：收录 2 个项目（正在精选 1 个）。最热门的是「ML-For-Beginners」（⭐90.8k）；主力语言 HTML + JavaScript。"
     }
   ],
   "headline": "共收录 9 个项目：当前精选 6 个、历史 3 个，覆盖 5 个分类。星数最多的分类是「大模型 / LLM」。"

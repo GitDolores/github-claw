@@ -11,10 +11,10 @@
       "智能体",
       "自动化"
     ],
-    "stars": 187316,
+    "stars": 187469,
     "added": "2026-08-27",
-    "forks": 46016,
-    "last_updated": "2026-09-14",
+    "forks": 46007,
+    "last_updated": "2026-09-21",
     "archived": false,
     "featured_since": "2026-08-27"
   },
@@ -30,9 +30,9 @@
       "文生图",
       "WebUI"
     ],
-    "stars": 164935,
+    "stars": 165033,
     "added": "2026-08-27",
-    "forks": 30555,
+    "forks": 31246,
     "last_updated": "2026-03-02",
     "archived": false,
     "featured_since": "2026-08-27"
@@ -50,10 +50,10 @@
       "推理",
       "C++"
     ],
-    "stars": 128166,
+    "stars": 129017,
     "added": "2026-08-27",
-    "forks": 23152,
-    "last_updated": "2026-09-14",
+    "forks": 23522,
+    "last_updated": "2026-09-21",
     "archived": false,
     "featured_since": "2026-08-27"
   },
@@ -69,9 +69,9 @@
       "语音识别",
       "多语言"
     ],
-    "stars": 109063,
+    "stars": 109421,
     "added": "2026-08-27",
-    "forks": 13213,
+    "forks": 13275,
     "last_updated": "2026-08-31",
     "archived": false,
     "featured_since": "2026-08-27"
@@ -89,10 +89,10 @@
       "入门",
       "机器学习"
     ],
-    "stars": 90443,
+    "stars": 90788,
     "added": "2026-08-27",
-    "forks": 22295,
-    "last_updated": "2026-09-13",
+    "forks": 22381,
+    "last_updated": "2026-09-15",
     "archived": false,
     "featured_since": "2026-08-27"
   },
@@ -109,10 +109,10 @@
       "服务",
       "部署"
     ],
-    "stars": 91693,
+    "stars": 92300,
     "added": "2026-08-27",
-    "forks": 22164,
-    "last_updated": "2026-09-14",
+    "forks": 22468,
+    "last_updated": "2026-09-21",
     "archived": false,
     "featured_since": "2026-08-27"
   }
