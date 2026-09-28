@@ -1,16 +1,16 @@
 {
-  "generated_at": "2026-09-21T08:34:01.429Z",
-  "total_projects": 9,
+  "generated_at": "2026-09-28T09:21:26.665Z",
+  "total_projects": 15,
   "total_featured": 6,
-  "total_archived": 3,
-  "total_stars": 948299,
+  "total_archived": 9,
+  "total_stars": 1501408,
   "categories": [
     {
       "id": "llm",
       "label": "大模型 / LLM",
       "speak": "语言大模型与相关训练、推理工具",
       "count": 3,
-      "featured_now": 2,
+      "featured_now": 0,
       "top_projects": [
         {
           "name": "transformer-playground",
@@ -19,30 +19,35 @@
         },
         {
           "name": "llama.cpp",
-          "stars": 129017,
+          "stars": 129749,
           "repo_url": "https://github.com/ggml-org/llama.cpp"
         },
         {
           "name": "vllm",
-          "stars": 92300,
+          "stars": 92849,
           "repo_url": "https://github.com/vllm-project/vllm"
         }
       ],
       "main_language": "Python + C++",
-      "total_stars": 385813,
-      "summary": "大模型 / LLM（语言大模型与相关训练、推理工具）：收录 3 个项目（正在精选 2 个）。最热门的是「transformer-playground」（⭐164.5k）；主力语言 Python + C++。"
+      "total_stars": 387094,
+      "summary": "大模型 / LLM（语言大模型与相关训练、推理工具）：收录 3 个项目（正在精选 0 个）。最热门的是「transformer-playground」（⭐164.5k）；主力语言 Python + C++。"
     },
     {
       "id": "vision",
       "label": "计算机视觉",
       "speak": "图像识别、目标检测、分割与生成",
-      "count": 2,
+      "count": 3,
       "featured_now": 1,
       "top_projects": [
         {
           "name": "stable-diffusion-webui",
-          "stars": 165033,
+          "stars": 165147,
           "repo_url": "https://github.com/AUTOMATIC1111/stable-diffusion-webui"
+        },
+        {
+          "name": "ComfyUI",
+          "stars": 135286,
+          "repo_url": "https://github.com/Comfy-Org/ComfyUI"
         },
         {
           "name": "vision-models-examples",
@@ -51,54 +56,103 @@
         }
       ],
       "main_language": "Python",
-      "total_stars": 174808,
-      "summary": "计算机视觉（图像识别、目标检测、分割与生成）：收录 2 个项目（正在精选 1 个）。最热门的是「stable-diffusion-webui」（⭐165.0k）；主力语言 Python。"
+      "total_stars": 310208,
+      "summary": "计算机视觉（图像识别、目标检测、分割与生成）：收录 3 个项目（正在精选 1 个）。最热门的是「stable-diffusion-webui」（⭐165.1k）；主力语言 Python。"
     },
     {
       "id": "audio",
       "label": "语音 / 音频",
       "speak": "语音识别、合成与音乐生成",
       "count": 1,
-      "featured_now": 1,
+      "featured_now": 0,
       "top_projects": [
         {
           "name": "whisper",
-          "stars": 109421,
+          "stars": 109677,
           "repo_url": "https://github.com/openai/whisper"
         }
       ],
       "main_language": "Python",
-      "total_stars": 109421,
-      "summary": "语音 / 音频（语音识别、合成与音乐生成）：收录 1 个项目（正在精选 1 个）。最热门的是「whisper」（⭐109.4k）；主力语言 Python。"
+      "total_stars": 109677,
+      "summary": "语音 / 音频（语音识别、合成与音乐生成）：收录 1 个项目（正在精选 0 个）。最热门的是「whisper」（⭐109.7k）；主力语言 Python。"
     },
     {
       "id": "agents",
       "label": "AI 智能体",
       "speak": "能自主规划调用工具的 AI 程序",
+      "count": 3,
+      "featured_now": 2,
+      "top_projects": [
+        {
+          "name": "AutoGPT",
+          "stars": 187593,
+          "repo_url": "https://github.com/Significant-Gravitas/AutoGPT"
+        },
+        {
+          "name": "dify",
+          "stars": 157386,
+          "repo_url": "https://github.com/langgenius/dify"
+        },
+        {
+          "name": "MetaGPT",
+          "stars": 70661,
+          "repo_url": "https://github.com/FoundationAgents/MetaGPT"
+        }
+      ],
+      "main_language": "TypeScript + HTML",
+      "total_stars": 415640,
+      "summary": "AI 智能体（能自主规划调用工具的 AI 程序）：收录 3 个项目（正在精选 2 个）。最热门的是「AutoGPT」（⭐187.6k）；主力语言 TypeScript + HTML。"
+    },
+    {
+      "id": "mlops",
+      "label": "训练 / 部署框架",
+      "speak": "模型训练、加速与生产部署的基础设施",
       "count": 1,
       "featured_now": 1,
       "top_projects": [
         {
-          "name": "AutoGPT",
-          "stars": 187469,
-          "repo_url": "https://github.com/Significant-Gravitas/AutoGPT"
+          "name": "LlamaFactory",
+          "stars": 75132,
+          "repo_url": "https://github.com/hiyouga/LlamaFactory"
         }
       ],
       "main_language": "Python",
-      "total_stars": 187469,
-      "summary": "AI 智能体（能自主规划调用工具的 AI 程序）：收录 1 个项目（正在精选 1 个）。最热门的是「AutoGPT」（⭐187.5k）；主力语言 Python。"
+      "total_stars": 75132,
+      "summary": "训练 / 部署框架（模型训练、加速与生产部署的基础设施）：收录 1 个项目（正在精选 1 个）。最热门的是「LlamaFactory」（⭐75.1k）；主力语言 Python。"
+    },
+    {
+      "id": "rag",
+      "label": "RAG / 知识库",
+      "speak": "检索增强生成与向量知识库",
+      "count": 1,
+      "featured_now": 1,
+      "top_projects": [
+        {
+          "name": "chroma",
+          "stars": 29403,
+          "repo_url": "https://github.com/chroma-core/chroma"
+        }
+      ],
+      "main_language": "Rust",
+      "total_stars": 29403,
+      "summary": "RAG / 知识库（检索增强生成与向量知识库）：收录 1 个项目（正在精选 1 个）。最热门的是「chroma」（⭐29.4k）；主力语言 Rust。"
     },
     {
       "id": "learning",
       "label": "教程 / 学习资源",
       "speak": "课程、笔记、面试题与示例集",
-      "count": 2,
+      "count": 3,
       "featured_now": 1,
       "top_projects": [
         {
           "name": "ML-For-Beginners",
-          "stars": 90788,
+          "stars": 91067,
           "repo_url": "https://github.com/microsoft/ML-For-Beginners"
+        },
+        {
+          "name": "llm-course",
+          "stars": 83187,
+          "repo_url": "https://github.com/mlabonne/llm-course"
         },
         {
           "name": "LumeClaw 示例库",
@@ -106,10 +160,10 @@
           "repo_url": "https://github.com/GitDolores/github-claw"
         }
       ],
-      "main_language": "HTML + JavaScript",
-      "total_stars": 90788,
-      "summary": "教程 / 学习资源（课程、笔记、面试题与示例集）：收录 2 个项目（正在精选 1 个）。最热门的是「ML-For-Beginners」（⭐90.8k）；主力语言 HTML + JavaScript。"
+      "main_language": "JavaScript + HTML",
+      "total_stars": 174254,
+      "summary": "教程 / 学习资源（课程、笔记、面试题与示例集）：收录 3 个项目（正在精选 1 个）。最热门的是「ML-For-Beginners」（⭐91.1k）；主力语言 JavaScript + HTML。"
     }
   ],
-  "headline": "共收录 9 个项目：当前精选 6 个、历史 3 个，覆盖 5 个分类。星数最多的分类是「大模型 / LLM」。"
+  "headline": "共收录 15 个项目：当前精选 6 个、历史 9 个，覆盖 7 个分类。星数最多的分类是「AI 智能体」。"
 }

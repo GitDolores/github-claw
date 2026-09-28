@@ -1,0 +1,632 @@
+{
+  "meta": {
+    "full_name": "FoundationAgents/MetaGPT",
+    "description": "🌟 The Multi-Agent Framework: First AI Software Company, Towards Natural Language Programming",
+    "stars": 70661,
+    "forks": 8972,
+    "open_issues": 141,
+    "language": "Python",
+    "topics": [
+      "agent",
+      "gpt",
+      "llm",
+      "metagpt",
+      "multi-agent"
+    ],
+    "license": "MIT",
+    "default_branch": "main",
+    "pushed_at": "2026-01-21T10:12:33Z",
+    "created_at": "2023-06-30T09:04:55Z",
+    "homepage": "https://atoms.dev/",
+    "size_kb": 184037,
+    "archived": false
+  },
+  "overview": "「FoundationAgents/MetaGPT」是一个以 HTML 为主的项目，仓库里大约有 1255 个文件（不含 git 内部文件），源码规模约 38.2 MB。 官方一句话介绍：🌟 The Multi-Agent Framework: First AI Software Company, Towards Natural Language Programming 它在 GitHub 上拿到了 70.7k 颗星、9.0k 次复刻（fork），还有 141 个开放中的 issue。 官方标签：agent、gpt、llm、metagpt、multi-agent。 许可证是 MIT，决定了你怎么合法使用这些代码。 主要语言构成（按文件数）：HTML 2 个文件、Python 890 个文件、JavaScript 15 个文件、TypeScript 8 个文件、Shell 12 个文件。 用到的关键框架/工具：NumPy、pandas、scikit-learn、Express、TypeScript、.gitignore。 一句话总结：这是一个 AI/机器学习项目（主力语言 HTML），适合想了解「模型是怎么搭起来」的读者。",
+  "languages": [
+    {
+      "label": "HTML",
+      "speak": "网页骨架标记语言",
+      "color": "#e34c26",
+      "files": 2
+    },
+    {
+      "label": "Python",
+      "speak": "AI 领域第一语言，语法简单好读",
+      "color": "#3572A5",
+      "files": 890
+    },
+    {
+      "label": "JavaScript",
+      "speak": "网页脚本语言，让页面能动起来",
+      "color": "#f1e05a",
+      "files": 15
+    },
+    {
+      "label": "TypeScript",
+      "speak": "带类型检查的 JavaScript，写大项目更稳",
+      "color": "#3178c6",
+      "files": 8
+    },
+    {
+      "label": "Shell",
+      "speak": "命令行脚本，粘合各种工具",
+      "color": "#89e051",
+      "files": 12
+    }
+  ],
+  "frameworks": [
+    {
+      "dep": "numpy",
+      "label": "NumPy",
+      "speak": "科学计算基石",
+      "category": "科学"
+    },
+    {
+      "dep": "pandas",
+      "label": "pandas",
+      "speak": "表格数据处理神器",
+      "category": "科学"
+    },
+    {
+      "dep": "scikit-learn",
+      "label": "scikit-learn",
+      "speak": "传统机器学习全家桶",
+      "category": "AI"
+    },
+    {
+      "dep": "express",
+      "label": "Express",
+      "speak": "Node 后端小框架",
+      "category": "后端"
+    },
+    {
+      "dep": "typescript",
+      "label": "TypeScript",
+      "speak": "JavaScript 的类型增强版",
+      "category": "语言"
+    },
+    {
+      "label": ".gitignore",
+      "speak": "声明哪些文件不进版本库",
+      "category": "Git"
+    },
+    {
+      "label": "GitHub Actions",
+      "speak": "仓库内置自动化流水线",
+      "category": "CI/CD"
+    }
+  ],
+  "dir_tree": [
+    {
+      "dir": "tests/metagpt",
+      "count": 299,
+      "sample": [
+        "tests/metagpt/__init__.py",
+        "tests/metagpt/test_config.py",
+        "tests/metagpt/test_context.py",
+        "tests/metagpt/test_context_mixin.py"
+      ],
+      "meaning": "测试代码"
+    },
+    {
+      "dir": "metagpt/ext",
+      "count": 193,
+      "sample": [
+        "metagpt/ext/__init__.py",
+        "metagpt/ext/werewolf/__init__.py",
+        "metagpt/ext/werewolf/schema.py",
+        "metagpt/ext/werewolf/werewolf_game.py"
+      ],
+      "meaning": null
+    },
+    {
+      "dir": "docs/resources",
+      "count": 66,
+      "sample": [
+        "docs/resources/MetaGPT-new-log-v2.png",
+        "docs/resources/MetaGPT-new-log.png",
+        "docs/resources/software_company_cd.jpeg",
+        "docs/resources/software_company_sd.jpeg"
+      ],
+      "meaning": "项目文档"
+    },
+    {
+      "dir": "metagpt/environment",
+      "count": 63,
+      "sample": [
+        "metagpt/environment/README.md",
+        "metagpt/environment/__init__.py",
+        "metagpt/environment/base_env.py",
+        "metagpt/environment/werewolf/__init__.py"
+      ],
+      "meaning": null
+    },
+    {
+      "dir": "metagpt/actions",
+      "count": 61,
+      "sample": [
+        "metagpt/actions/__init__.py",
+        "metagpt/actions/action.py",
+        "metagpt/actions/action_graph.py",
+        "metagpt/actions/action_node.py"
+      ],
+      "meaning": null
+    },
+    {
+      "dir": "metagpt/tools",
+      "count": 54,
+      "sample": [
+        "metagpt/tools/__init__.py",
+        "metagpt/tools/azure_tts.py",
+        "metagpt/tools/iflytek_tts.py",
+        "metagpt/tools/metagpt_oas3_api_svc.py"
+      ],
+      "meaning": null
+    },
+    {
+      "dir": "metagpt/utils",
+      "count": 50,
+      "sample": [
+        "metagpt/utils/__init__.py",
+        "metagpt/utils/a11y_tree.py",
+        "metagpt/utils/ahttp_client.py",
+        "metagpt/utils/async_helper.py"
+      ],
+      "meaning": null
+    },
+    {
+      "dir": "tests/data",
+      "count": 48,
+      "sample": [
+        "tests/data/docx_for_test.docx",
+        "tests/data/mermaid_rsp_cache.json",
+        "tests/data/rsp_cache.json",
+        "tests/data/search_rsp_cache.json"
+      ],
+      "meaning": "测试代码"
+    },
+    {
+      "dir": "metagpt/skills",
+      "count": 40,
+      "sample": [
+        "metagpt/skills/WriterSkill/TwoSentenceSummary/config.json",
+        "metagpt/skills/WriterSkill/TwoSentenceSummary/skprompt.txt",
+        "metagpt/skills/WriterSkill/Translate/config.json",
+        "metagpt/skills/WriterSkill/Translate/skprompt.txt"
+      ],
+      "meaning": null
+    },
+    {
+      "dir": "metagpt/provider",
+      "count": 30,
+      "sample": [
+        "metagpt/provider/__init__.py",
+        "metagpt/provider/anthropic_api.py",
+        "metagpt/provider/ark_api.py",
+        "metagpt/provider/azure_openai_api.py"
+      ],
+      "meaning": null
+    },
+    {
+      "dir": "examples/di",
+      "count": 30,
+      "sample": [
+        "examples/di/README.md",
+        "examples/di/arxiv_reader.py",
+        "examples/di/atomization_capacity_plan.py",
+        "examples/di/automated_planning_of_tasks.py"
+      ],
+      "meaning": "示例代码（学习入口！）"
+    },
+    {
+      "dir": "metagpt/rag",
+      "count": 29,
+      "sample": [
+        "metagpt/rag/__init__.py",
+        "metagpt/rag/interface.py",
+        "metagpt/rag/schema.py",
+        "metagpt/rag/retrievers/__init__.py"
+      ],
+      "meaning": null
+    }
+  ],
+  "entry_files": [],
+  "core_modules": [
+    {
+      "path": "metagpt/environment/minecraft/mineflayer/index.js",
+      "size": "13.1 KB",
+      "why": "入口/汇总文件：这个目录的对外门面"
+    },
+    {
+      "path": "metagpt/ext/spo/app.py",
+      "size": "11.6 KB",
+      "why": "程序主入口：整个应用从这里启动"
+    },
+    {
+      "path": "metagpt/repo_parser.py",
+      "size": "34.7 KB",
+      "why": null
+    },
+    {
+      "path": "metagpt/schema.py",
+      "size": "32.4 KB",
+      "why": null
+    },
+    {
+      "path": "tests/metagpt/tools/libs/test_editor.py",
+      "size": "25.2 KB",
+      "why": null
+    },
+    {
+      "path": "tests/data/incremental_dev_project/mock.py",
+      "size": "23.1 KB",
+      "why": null
+    },
+    {
+      "path": "metagpt/utils/common.py",
+      "size": "42.0 KB",
+      "why": "工具函数"
+    },
+    {
+      "path": "metagpt/utils/git_repository.py",
+      "size": "25.8 KB",
+      "why": "工具函数"
+    }
+  ],
+  "data_flow": [
+    "你（用户/调用方）发起一个动作：运行命令、打开网页或调用接口。",
+    "过程中会借道「metagpt/utils/common.py」这类工具模块：它们像瑞士军刀，谁需要谁来拿。",
+    "处理完成后，结果原路返回：渲染成页面、打印到终端或打包成 API 响应，交回给你。",
+    "任何一步出错都会被 try/catch 兜住，转成友好的错误提示，而不是直接崩溃。"
+  ],
+  "flow_graph": {
+    "nodes": [
+      {
+        "id": "user",
+        "label": "用户 / 调用方",
+        "type": "actor"
+      },
+      {
+        "id": "entry",
+        "label": "入口文件",
+        "type": "entry"
+      },
+      {
+        "id": "utils",
+        "label": "common.py",
+        "type": "utils"
+      },
+      {
+        "id": "output",
+        "label": "输出：结果返回",
+        "type": "output"
+      },
+      {
+        "id": "api",
+        "label": "WebSocket",
+        "type": "api"
+      }
+    ],
+    "edges": [
+      [
+        "user",
+        "entry"
+      ],
+      [
+        "user",
+        "api"
+      ],
+      [
+        "entry",
+        "utils"
+      ],
+      [
+        "utils",
+        "output"
+      ],
+      [
+        "api",
+        "entry"
+      ]
+    ]
+  },
+  "patterns": [
+    {
+      "pattern": "async/await",
+      "speak": "用同步写法处理异步，代码更好读",
+      "severity": "common",
+      "where": "tests/conftest.py"
+    },
+    {
+      "pattern": "观察者/响应式流",
+      "speak": "数据像水流，订阅了就能收到",
+      "severity": "notable",
+      "where": "tests/metagpt/test_subscription.py"
+    },
+    {
+      "pattern": "经典 GoF 模式",
+      "speak": "用名字就能看出意图的面向对象套路",
+      "severity": "notable",
+      "where": "tests/metagpt/rag/factories/test_base.py"
+    },
+    {
+      "pattern": "异常捕获",
+      "speak": "出错不崩溃，兜住处理",
+      "severity": "common",
+      "where": "tests/data/code/js/1.js"
+    },
+    {
+      "pattern": "事件驱动",
+      "speak": "「有事叫我」：注册回调等事件发生",
+      "severity": "common",
+      "where": "metagpt/utils/mmdc_playwright.py"
+    },
+    {
+      "pattern": "模块化导出",
+      "speak": "功能拆成模块互相引用",
+      "severity": "common",
+      "where": "metagpt/environment/minecraft/mineflayer/mineflayer-collectblock/src/BlockVeins.ts"
+    },
+    {
+      "pattern": "接口约定",
+      "speak": "TypeScript 定义数据形状，契约先行",
+      "severity": "common",
+      "where": "metagpt/environment/minecraft/mineflayer/mineflayer-collectblock/src/CollectBlock.ts"
+    },
+    {
+      "pattern": "继承体系",
+      "speak": "子类复用父类代码，模板方法思路",
+      "severity": "common",
+      "where": "metagpt/environment/minecraft/mineflayer/lib/observation/chests.js"
+    }
+  ],
+  "doc_quotes": [
+    {
+      "file": "README.md",
+      "text": "<p align=\"center\"> <a href=\"\"><img src=\"docs/resources/MetaGPT-new-log.png\" alt=\"MetaGPT logo: Enable GPT to work in a software company, collaborating to tackle more complex tasks.\" width=\"150px\"></a> </p>"
+    },
+    {
+      "file": "SECURITY.md",
+      "text": "| Version | Supported          | |---------|--------------------|  | 0.7.x   | :x:                |  | 0.6.x   | :x:                | | < 0.6.x | :x:                |"
+    },
+    {
+      "file": "requirements.txt",
+      "text": "aiohttp==3.8.6 #azure_storage==0.37.0 channels==4.0.0 # Django==4.1.5 # docx==0.2.4 #faiss==1.5.3 faiss_cpu==1.7.4 fire==0.4.0 typer==0.9.0 # godot==0.1.1 # google_api_python_client==2.93.0  # Used by search_engine.py lancedb==0.4.0 loguru==0.6.0 meilisearch==0.21.0 numpy~=1.26.4 openai~=1.64.0 open"
+    }
+  ],
+  "read_suggestions": [
+    {
+      "title": "第一步：读 README",
+      "body": "打开仓库根目录的 README.md，了解它「是什么、解决什么问题、怎么跑起来」。它有官网/文档：https://atoms.dev/"
+    },
+    {
+      "title": "善用目录语义",
+      "body": "src=源码、tests=测试、docs=文档、examples=示例，目录名本身就是地图。"
+    },
+    {
+      "title": "带着问题读",
+      "body": "比如「数据从哪进来」「结果存在哪」「错误怎么处理」，带着三个问题读任何项目都不会迷路。"
+    }
+  ],
+  "interfaces": [
+    {
+      "kind": "CLI 命令行接口",
+      "where": "setup.py",
+      "speak": "安装后提供的终端命令"
+    },
+    {
+      "kind": "脚本入口",
+      "where": "tests/metagpt/test_environment.py",
+      "speak": "直接 python 运行的脚本入口"
+    },
+    {
+      "kind": "OpenAPI/Swagger 文档",
+      "where": "tests/metagpt/utils/test_code_parser.py",
+      "speak": "机器可读的接口说明书"
+    },
+    {
+      "kind": "Python Web 框架接口",
+      "where": "tests/metagpt/utils/test_code_parser.py",
+      "speak": "用 FastAPI/Flask 暴露 HTTP 接口"
+    },
+    {
+      "kind": "CLI 参数",
+      "where": "tests/metagpt/roles/di/run_swe_agent_for_benchmark.py",
+      "speak": "命令行参数定义"
+    },
+    {
+      "kind": "WebSocket",
+      "where": "tests/metagpt/provider/mock_llm_config.py",
+      "speak": "双向实时通信通道"
+    }
+  ],
+  "dependencies": {
+    "manifest": "requirements.txt",
+    "total": 71,
+    "runtime": [
+      {
+        "name": "aiohttp",
+        "note": null
+      },
+      {
+        "name": "channels",
+        "note": null
+      },
+      {
+        "name": "faiss_cpu",
+        "note": null
+      },
+      {
+        "name": "fire",
+        "note": null
+      },
+      {
+        "name": "typer",
+        "note": null
+      },
+      {
+        "name": "lancedb",
+        "note": null
+      },
+      {
+        "name": "loguru",
+        "note": null
+      },
+      {
+        "name": "meilisearch",
+        "note": null
+      },
+      {
+        "name": "numpy",
+        "note": "科学计算基石"
+      },
+      {
+        "name": "openai",
+        "note": null
+      },
+      {
+        "name": "openpyxl",
+        "note": null
+      },
+      {
+        "name": "beautifulsoup4",
+        "note": null
+      },
+      {
+        "name": "pandas",
+        "note": null
+      },
+      {
+        "name": "pydantic",
+        "note": null
+      },
+      {
+        "name": "python_docx",
+        "note": null
+      },
+      {
+        "name": "PyYAML",
+        "note": null
+      },
+      {
+        "name": "setuptools",
+        "note": null
+      },
+      {
+        "name": "tenacity",
+        "note": null
+      },
+      {
+        "name": "tiktoken",
+        "note": null
+      },
+      {
+        "name": "tqdm",
+        "note": null
+      }
+    ],
+    "build": []
+  },
+  "demo_links": [
+    {
+      "kind": "在线试用",
+      "url": "https://huggingface.co/spaces/deepwisdom/MetaGPT-SoftwareCompany"
+    },
+    {
+      "kind": "视频演示",
+      "url": "https://youtu.be/uT75J_KG_aY"
+    }
+  ],
+  "scenarios": [
+    {
+      "when": "想低成本跑/部署开源大模型，或学习推理引擎内部实现",
+      "not": "想训练自己的大模型（应去看训练框架）"
+    }
+  ],
+  "competitors": {
+    "matched": "category",
+    "list": [
+      {
+        "name": "llama.cpp",
+        "repo": "ggml-org/llama.cpp",
+        "edge": "本地推理代表"
+      },
+      {
+        "name": "vLLM",
+        "repo": "vllm-project/vllm",
+        "edge": "服务化推理代表"
+      },
+      {
+        "name": "Ollama",
+        "repo": "ollama/ollama",
+        "edge": "易用性代表"
+      }
+    ]
+  },
+  "rework_ideas": [
+    {
+      "idea": "接入自己的模型文件（GGUF/安全张量），跑通一条完整推理链路",
+      "difficulty": "入门"
+    },
+    {
+      "idea": "加一个 Web API 层（FastAPI），把它变成可调用的推理服务",
+      "difficulty": "进阶"
+    },
+    {
+      "idea": "实现自定义量化/裁剪，在低端显卡上压出可接受的速度",
+      "difficulty": "硬核"
+    }
+  ],
+  "pitfalls": [
+    {
+      "pit": "环境不隔离：直接在系统 Python/node 里装依赖，装到一半互相打架",
+      "fix": "先建 venv / 用 nvm 固定版本，再装依赖"
+    },
+    {
+      "pit": "CUDA/驱动不匹配：torch 装了 CUDA 12 版本但驱动只支持 11",
+      "fix": "先 nvidia-smi 看驱动支持的上限，再选对应版本安装"
+    },
+    {
+      "pit": "模型文件放错目录：程序默认去 ./models 找，你下到了下载文件夹",
+      "fix": "先跑一次看报错里的路径，把文件挪过去"
+    },
+    {
+      "pit": "显存不够直接 OOM：模型全精度加载，显卡撑不住",
+      "fix": "用量化版本（4bit/8bit）或换小一号模型"
+    },
+    {
+      "pit": "上下文拉满导致推理极慢",
+      "fix": "控制输入长度，长文档走 RAG 而非硬塞"
+    },
+    {
+      "pit": "并发一上来就崩：单进程扛不住",
+      "fix": "上 vLLM 类服务框架或加队列限流"
+    }
+  ],
+  "community": {
+    "contributors": "100+",
+    "latest_release": {
+      "tag": "v0.8.2",
+      "name": "v0.8.2",
+      "published_at": "2025-03-09T15:59:39Z",
+      "notes_excerpt": "fix bugs and some merged PRs"
+    },
+    "releases_count": 10,
+    "commit_activity": null,
+    "verdict": [
+      "已超过半年没有提交，注意评估是否停更",
+      "有 100+ 位贡献者提交过代码",
+      "最新版本 v0.8.2（2025-03-09 发布）",
+      "开放 issue 占星数比例很低，社区响应健康"
+    ],
+    "repo_age_days": 1186
+  },
+  "category": "llm",
+  "stats": {
+    "files": 1255,
+    "bytes": 40024843,
+    "sampled": 904
+  },
+  "generated_at": "2026-09-28T09:21:22.440Z",
+  "analyzer": "claw-static-analyzer v2"
+}

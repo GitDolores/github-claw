@@ -1,0 +1,652 @@
+{
+  "meta": {
+    "full_name": "hiyouga/LlamaFactory",
+    "description": "Unified Efficient Fine-Tuning of 100+ LLMs & VLMs (ACL 2024)",
+    "stars": 75132,
+    "forks": 9200,
+    "open_issues": 1153,
+    "language": "Python",
+    "topics": [
+      "agent",
+      "ai",
+      "deepseek",
+      "fine-tuning",
+      "gemma",
+      "gpt",
+      "instruction-tuning",
+      "large-language-models",
+      "llama",
+      "llama3",
+      "llm",
+      "lora",
+      "moe",
+      "nlp",
+      "peft",
+      "qlora",
+      "quantization",
+      "qwen",
+      "rlhf",
+      "transformers"
+    ],
+    "license": "Apache-2.0",
+    "default_branch": "main",
+    "pushed_at": "2026-09-28T09:10:59Z",
+    "created_at": "2023-05-28T10:09:12Z",
+    "homepage": "https://llamafactory.readthedocs.io",
+    "size_kb": 14165,
+    "archived": false
+  },
+  "overview": "「hiyouga/LlamaFactory」是一个以 Python 为主的项目，仓库里大约有 599 个文件（不含 git 内部文件），源码规模约 13.0 MB。 官方一句话介绍：Unified Efficient Fine-Tuning of 100+ LLMs & VLMs (ACL 2024) 它在 GitHub 上拿到了 75.1k 颗星、9.2k 次复刻（fork），还有 1153 个开放中的 issue。 官方标签：agent、ai、deepseek、fine-tuning、gemma、gpt。 许可证是 Apache-2.0，决定了你怎么合法使用这些代码。 主要语言构成（按文件数）：Python 304 个文件、JavaScript 1 个文件、CSS 2 个文件、Shell 4 个文件。 用到的关键框架/工具：PyTorch、Transformers、Accelerate、NumPy、pandas、SciPy。 一句话总结：这是一个 AI/机器学习项目（主力语言 Python），适合想了解「模型是怎么搭起来」的读者。",
+  "languages": [
+    {
+      "label": "Python",
+      "speak": "AI 领域第一语言，语法简单好读",
+      "color": "#3572A5",
+      "files": 304
+    },
+    {
+      "label": "JavaScript",
+      "speak": "网页脚本语言，让页面能动起来",
+      "color": "#f1e05a",
+      "files": 1
+    },
+    {
+      "label": "CSS",
+      "speak": "网页样式语言",
+      "color": "#563d7c",
+      "files": 2
+    },
+    {
+      "label": "Shell",
+      "speak": "命令行脚本，粘合各种工具",
+      "color": "#89e051",
+      "files": 4
+    }
+  ],
+  "frameworks": [
+    {
+      "dep": "torch",
+      "label": "PyTorch",
+      "speak": "深度学习框架，AI 研究首选",
+      "category": "AI"
+    },
+    {
+      "dep": "transformers",
+      "label": "Transformers",
+      "speak": "Hugging Face 模型库，NLP 事实标准",
+      "category": "AI"
+    },
+    {
+      "dep": "accelerate",
+      "label": "Accelerate",
+      "speak": "多卡/分布式训练加速器",
+      "category": "AI"
+    },
+    {
+      "dep": "numpy",
+      "label": "NumPy",
+      "speak": "科学计算基石",
+      "category": "科学"
+    },
+    {
+      "dep": "pandas",
+      "label": "pandas",
+      "speak": "表格数据处理神器",
+      "category": "科学"
+    },
+    {
+      "dep": "scipy",
+      "label": "SciPy",
+      "speak": "科学计算工具箱",
+      "category": "科学"
+    },
+    {
+      "ext": true,
+      "dep": "fastapi",
+      "label": "FastAPI",
+      "speak": "现代 Python 后端框架",
+      "category": "后端"
+    },
+    {
+      "label": ".gitignore",
+      "speak": "声明哪些文件不进版本库",
+      "category": "Git"
+    },
+    {
+      "label": "Docker Compose",
+      "speak": "一条命令启动整套服务",
+      "category": "部署"
+    },
+    {
+      "label": "GitHub Actions",
+      "speak": "仓库内置自动化流水线",
+      "category": "CI/CD"
+    }
+  ],
+  "dir_tree": [
+    {
+      "dir": "src/llamafactory",
+      "count": 219,
+      "sample": [
+        "src/llamafactory/__init__.py",
+        "src/llamafactory/cli.py",
+        "src/llamafactory/launcher.py",
+        "src/llamafactory/webui/__init__.py"
+      ],
+      "meaning": "源代码主目录（src = source）"
+    },
+    {
+      "dir": "docs/zh",
+      "count": 37,
+      "sample": [
+        "docs/zh/conf.py",
+        "docs/zh/index.rst",
+        "docs/zh/quick_start.md",
+        "docs/zh/multi-backend/npu/index.md"
+      ],
+      "meaning": "项目文档"
+    },
+    {
+      "dir": "docs/en",
+      "count": 30,
+      "sample": [
+        "docs/en/conf.py",
+        "docs/en/getting-started.md",
+        "docs/en/index.rst",
+        "docs/en/installation.md"
+      ],
+      "meaning": "项目文档"
+    },
+    {
+      "dir": "requirements",
+      "count": 26,
+      "sample": [
+        "requirements/adam-mini.txt",
+        "requirements/apollo.txt",
+        "requirements/aqlm.txt",
+        "requirements/badam.txt"
+      ],
+      "meaning": null
+    },
+    {
+      "dir": "examples/extras",
+      "count": 26,
+      "sample": [
+        "examples/extras/qoft/llama3_oft_sft_awq.yaml",
+        "examples/extras/qoft/llama3_oft_sft_bnb_npu.yaml",
+        "examples/extras/qoft/llama3_oft_sft_gptq.yaml",
+        "examples/extras/pissa/init.sh"
+      ],
+      "meaning": "示例代码（学习入口！）"
+    },
+    {
+      "dir": "data",
+      "count": 24,
+      "sample": [
+        "data/README.md",
+        "data/README_zh.md",
+        "data/alpaca_en_demo.json",
+        "data/alpaca_zh_demo.json"
+      ],
+      "meaning": "数据文件"
+    },
+    {
+      "dir": "examples/v1",
+      "count": 19,
+      "sample": [
+        "examples/v1/train_qlora/quantization.yaml",
+        "examples/v1/train_lora/export_lora.yaml",
+        "examples/v1/train_lora/train_lora_dpo.yaml",
+        "examples/v1/train_lora/train_lora_sft.yaml"
+      ],
+      "meaning": "示例代码（学习入口！）"
+    },
+    {
+      "dir": "tests/data",
+      "count": 13,
+      "sample": [
+        "tests/data/test_collator.py",
+        "tests/data/test_converter.py",
+        "tests/data/test_formatter.py",
+        "tests/data/test_loader.py"
+      ],
+      "meaning": "测试代码"
+    },
+    {
+      "dir": "/",
+      "count": 12,
+      "sample": [
+        ".dockerignore",
+        ".env.local",
+        ".gitattributes",
+        ".gitignore"
+      ],
+      "meaning": null
+    },
+    {
+      "dir": "tests/model",
+      "count": 12,
+      "sample": [
+        "tests/model/test_base.py",
+        "tests/model/test_freeze.py",
+        "tests/model/test_full.py",
+        "tests/model/test_lora.py"
+      ],
+      "meaning": "测试代码"
+    },
+    {
+      "dir": "examples/train_lora",
+      "count": 12,
+      "sample": [
+        "examples/train_lora/mossvl_lora_sft.yaml",
+        "examples/train_lora/qwen3_lora_dpo.yaml",
+        "examples/train_lora/qwen3_lora_kto.yaml",
+        "examples/train_lora/qwen3_lora_pretrain.yaml"
+      ],
+      "meaning": "示例代码（学习入口！）"
+    },
+    {
+      "dir": "examples/ktransformers",
+      "count": 11,
+      "sample": [
+        "examples/ktransformers/train_lora/deepseek_v2_lora_sft_kt.yaml",
+        "examples/ktransformers/train_lora/deepseek_v3_int8_lora_sft_kt.yaml",
+        "examples/ktransformers/train_lora/deepseek_v3_lora_sft_kt.yaml",
+        "examples/ktransformers/train_lora/qwen3_5moe_lora_sft_kt.yaml"
+      ],
+      "meaning": "示例代码（学习入口！）"
+    }
+  ],
+  "entry_files": [
+    {
+      "path": "src/llamafactory/__init__.py",
+      "hint": "Python 包初始化文件"
+    }
+  ],
+  "core_modules": [
+    {
+      "path": "src/llamafactory/webui/components/train.py",
+      "size": "17.5 KB",
+      "why": "训练逻辑：教 AI 学东西的代码"
+    },
+    {
+      "path": "src/llamafactory/model/patcher.py",
+      "size": "24.2 KB",
+      "why": null
+    },
+    {
+      "path": "src/llamafactory/v1/core/base_trainer.py",
+      "size": "17.1 KB",
+      "why": "核心引擎模块"
+    },
+    {
+      "path": "src/llamafactory/model/adapter.py",
+      "size": "15.4 KB",
+      "why": null
+    },
+    {
+      "path": "src/train.py",
+      "size": "762 B",
+      "why": "训练逻辑：教 AI 学东西的代码"
+    },
+    {
+      "path": "src/llamafactory/model/loader.py",
+      "size": "10.0 KB",
+      "why": null
+    },
+    {
+      "path": "src/llamafactory/v1/core/model_engine.py",
+      "size": "8.8 KB",
+      "why": "核心引擎模块"
+    },
+    {
+      "path": "src/llamafactory/v1/core/data_engine.py",
+      "size": "8.8 KB",
+      "why": "核心引擎模块"
+    }
+  ],
+  "data_flow": [
+    "你（用户/调用方）发起一个动作：运行命令、打开网页或调用接口。",
+    "程序从入口文件「src/llamafactory/__init__.py」启动，先做初始化：读配置、准备环境、注册要用的组件。",
+    "核心逻辑在「src/llamafactory/webui/components/train.py」这类模块里：真正的计算/推理/业务规则都发生在这里。",
+    "需要存取的数据会落到数据库，通过 ORM 层读写。",
+    "处理完成后，结果原路返回：渲染成页面、打印到终端或打包成 API 响应，交回给你。"
+  ],
+  "flow_graph": {
+    "nodes": [
+      {
+        "id": "user",
+        "label": "用户 / 调用方",
+        "type": "actor"
+      },
+      {
+        "id": "entry",
+        "label": "__init__.py",
+        "type": "entry"
+      },
+      {
+        "id": "core",
+        "label": "train.py",
+        "type": "core"
+      },
+      {
+        "id": "db",
+        "label": "数据库 / 存储",
+        "type": "store"
+      },
+      {
+        "id": "output",
+        "label": "输出：结果返回",
+        "type": "output"
+      },
+      {
+        "id": "api",
+        "label": "REST API",
+        "type": "api"
+      }
+    ],
+    "edges": [
+      [
+        "user",
+        "entry"
+      ],
+      [
+        "user",
+        "api"
+      ],
+      [
+        "entry",
+        "core"
+      ],
+      [
+        "core",
+        "db"
+      ],
+      [
+        "db",
+        "output"
+      ],
+      [
+        "api",
+        "entry"
+      ]
+    ]
+  },
+  "patterns": [
+    {
+      "pattern": "路由分发",
+      "speak": "URL 映射到处理函数",
+      "severity": "common",
+      "where": "src/llamafactory/v1/plugins/model_plugins/kernels/ops/mlp/npu_fused_moe.py"
+    },
+    {
+      "pattern": "async/await",
+      "speak": "用同步写法处理异步，代码更好读",
+      "severity": "common",
+      "where": "src/llamafactory/v1/core/base_sampler.py"
+    },
+    {
+      "pattern": "经典 GoF 模式",
+      "speak": "用名字就能看出意图的面向对象套路",
+      "severity": "notable",
+      "where": "src/llamafactory/v1/config/arg_utils.py"
+    },
+    {
+      "pattern": "接口约定",
+      "speak": "TypeScript 定义数据形状，契约先行",
+      "severity": "common",
+      "where": "src/llamafactory/model/model_utils/moe.py"
+    },
+    {
+      "pattern": "中间件",
+      "speak": "请求像流水线过安检，每站处理一点",
+      "severity": "common",
+      "where": "src/llamafactory/api/app.py"
+    },
+    {
+      "pattern": "事件驱动",
+      "speak": "「有事叫我」：注册回调等事件发生",
+      "severity": "common",
+      "where": "docs/_static/js/switcher.js"
+    }
+  ],
+  "doc_quotes": [
+    {
+      "file": "README.md",
+      "text": "[![GitHub Repo stars](https://img.shields.io/github/stars/hiyouga/LlamaFactory?style=social)](https://github.com/hiyouga/LlamaFactory/stargazers) [![GitHub last commit](https://img.shields.io/github/last-commit/hiyouga/LlamaFactory)](https://github.com/hiyouga/LlamaFactory/commits/main) [![GitHub co"
+    },
+    {
+      "file": "README_zh.md",
+      "text": "[![GitHub Repo stars](https://img.shields.io/github/stars/hiyouga/LlamaFactory?style=social)](https://github.com/hiyouga/LlamaFactory/stargazers) [![GitHub last commit](https://img.shields.io/github/last-commit/hiyouga/LlamaFactory)](https://github.com/hiyouga/LlamaFactory/commits/main) [![GitHub co"
+    }
+  ],
+  "read_suggestions": [
+    {
+      "title": "第一步：读 README",
+      "body": "打开仓库根目录的 README.md，了解它「是什么、解决什么问题、怎么跑起来」。它有官网/文档：https://llamafactory.readthedocs.io"
+    },
+    {
+      "title": "第三步：从入口顺藤摸瓜",
+      "body": "从「src/llamafactory/__init__.py」开始读，每遇到一个陌生函数就跳过去看一眼，回来继续。像逛公园，先走主路再钻小径。"
+    },
+    {
+      "title": "善用目录语义",
+      "body": "src=源码、tests=测试、docs=文档、examples=示例，目录名本身就是地图。"
+    },
+    {
+      "title": "带着问题读",
+      "body": "比如「数据从哪进来」「结果存在哪」「错误怎么处理」，带着三个问题读任何项目都不会迷路。"
+    }
+  ],
+  "interfaces": [
+    {
+      "kind": "CLI 命令行接口",
+      "where": "pyproject.toml",
+      "speak": "安装后提供的终端命令"
+    },
+    {
+      "kind": "脚本入口",
+      "where": "tests_v1/core/rendering/test_rendering.py",
+      "speak": "直接 python 运行的脚本入口"
+    },
+    {
+      "kind": "Python Web 框架接口",
+      "where": "src/llamafactory/extras/packages.py",
+      "speak": "用 FastAPI/Flask 暴露 HTTP 接口"
+    },
+    {
+      "kind": "REST API",
+      "where": "src/llamafactory/api/app.py",
+      "speak": "HTTP 接口：用 URL + GET/POST 等方法调用"
+    }
+  ],
+  "dependencies": {
+    "manifest": "pyproject.toml",
+    "total": 18,
+    "runtime": [
+      {
+        "name": "einops",
+        "note": null
+      },
+      {
+        "name": "numpy",
+        "note": "科学计算基石"
+      },
+      {
+        "name": "pandas",
+        "note": null
+      },
+      {
+        "name": "scipy",
+        "note": null
+      },
+      {
+        "name": "sentencepiece",
+        "note": null
+      },
+      {
+        "name": "tiktoken",
+        "note": null
+      },
+      {
+        "name": "modelscope",
+        "note": null
+      },
+      {
+        "name": "hf-transfer",
+        "note": null
+      },
+      {
+        "name": "safetensors",
+        "note": "更安全的模型权重格式（相比 pickle）"
+      },
+      {
+        "name": "fire",
+        "note": null
+      },
+      {
+        "name": "omegaconf",
+        "note": null
+      },
+      {
+        "name": "packaging",
+        "note": null
+      },
+      {
+        "name": "protobuf",
+        "note": "谷歌的二进制序列化格式，快且省流量"
+      },
+      {
+        "name": "pyyaml",
+        "note": null
+      },
+      {
+        "name": "pydantic",
+        "note": null
+      },
+      {
+        "name": "uvicorn",
+        "note": null
+      },
+      {
+        "name": "fastapi",
+        "note": null
+      },
+      {
+        "name": "sse-starlette",
+        "note": null
+      }
+    ],
+    "build": []
+  },
+  "demo_links": [
+    {
+      "kind": "在线试用",
+      "url": "https://huggingface.co/spaces/hiyouga/LLaMA-Board"
+    },
+    {
+      "kind": "效果截图",
+      "url": "https://github.com/hiyouga/llamafactory-community/blob/main/wechat/main.jpg"
+    },
+    {
+      "kind": "效果截图",
+      "url": "https://github.com/hiyouga/llamafactory-community/blob/main/wechat/npu.jpg"
+    }
+  ],
+  "scenarios": [
+    {
+      "when": "想低成本跑/部署开源大模型，或学习推理引擎内部实现",
+      "not": "想训练自己的大模型（应去看训练框架）"
+    }
+  ],
+  "competitors": {
+    "matched": "category",
+    "list": [
+      {
+        "name": "llama.cpp",
+        "repo": "ggml-org/llama.cpp",
+        "edge": "本地推理代表"
+      },
+      {
+        "name": "vLLM",
+        "repo": "vllm-project/vllm",
+        "edge": "服务化推理代表"
+      },
+      {
+        "name": "Ollama",
+        "repo": "ollama/ollama",
+        "edge": "易用性代表"
+      }
+    ]
+  },
+  "rework_ideas": [
+    {
+      "idea": "接入自己的模型文件（GGUF/安全张量），跑通一条完整推理链路",
+      "difficulty": "入门"
+    },
+    {
+      "idea": "加一个 Web API 层（FastAPI），把它变成可调用的推理服务",
+      "difficulty": "进阶"
+    },
+    {
+      "idea": "实现自定义量化/裁剪，在低端显卡上压出可接受的速度",
+      "difficulty": "硬核"
+    }
+  ],
+  "pitfalls": [
+    {
+      "pit": "环境不隔离：直接在系统 Python/node 里装依赖，装到一半互相打架",
+      "fix": "先建 venv / 用 nvm 固定版本，再装依赖"
+    },
+    {
+      "pit": "CUDA/驱动不匹配：torch 装了 CUDA 12 版本但驱动只支持 11",
+      "fix": "先 nvidia-smi 看驱动支持的上限，再选对应版本安装"
+    },
+    {
+      "pit": "模型文件放错目录：程序默认去 ./models 找，你下到了下载文件夹",
+      "fix": "先跑一次看报错里的路径，把文件挪过去"
+    },
+    {
+      "pit": "显存不够直接 OOM：模型全精度加载，显卡撑不住",
+      "fix": "用量化版本（4bit/8bit）或换小一号模型"
+    },
+    {
+      "pit": "上下文拉满导致推理极慢",
+      "fix": "控制输入长度，长文档走 RAG 而非硬塞"
+    },
+    {
+      "pit": "并发一上来就崩：单进程扛不住",
+      "fix": "上 vLLM 类服务框架或加队列限流"
+    },
+    {
+      "pit": "容器里 GPU 用不了：没装 nvidia-container-toolkit",
+      "fix": "装 toolkit 并用 --gpus all 参数启动"
+    }
+  ],
+  "community": {
+    "contributors": "100+",
+    "latest_release": {
+      "tag": "v0.9.5",
+      "name": "v0.9.5: Qwen3.5/3.6, Gemma 4, Transformers v5",
+      "published_at": "2026-05-30T15:57:58Z",
+      "notes_excerpt": "Added primary support for Qwen3.5/Qwen3.6/Gemma4 models and compatibility with Transformers v5. ## What's Changed * [misc] set dev version by @hiyouga in https://github.com/hiyouga/LlamaFactory/pull/9703 * fix(fp8): add Transformer Engine backend support by @sbhavani in https://github.com/hiyouga/Ll"
+    },
+    "releases_count": 10,
+    "commit_activity": null,
+    "verdict": [
+      "最近 0 天内还有代码提交，维护很活跃",
+      "有 100+ 位贡献者提交过代码",
+      "最新版本 v0.9.5（2026-05-30 发布）",
+      "开放 issue 占星数比例很低，社区响应健康"
+    ],
+    "repo_age_days": 1218
+  },
+  "category": "llm",
+  "stats": {
+    "files": 599,
+    "bytes": 13615880,
+    "sampled": 281
+  },
+  "generated_at": "2026-09-28T09:21:19.458Z",
+  "analyzer": "claw-static-analyzer v2"
+}

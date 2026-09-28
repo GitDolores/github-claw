@@ -1,0 +1,686 @@
+{
+  "meta": {
+    "full_name": "langgenius/dify",
+    "description": "Build Agentic workflows, RAG pipelines, with rich AI model and tool support on one collaborative workspace. Deploy on cloud, VPC, or self-hosted, so teams move from prototype to production without rebuilding the stack.",
+    "stars": 157386,
+    "forks": 24801,
+    "open_issues": 800,
+    "language": "TypeScript",
+    "topics": [
+      "agent",
+      "agentic-ai",
+      "agentic-framework",
+      "agentic-workflow",
+      "ai",
+      "automation",
+      "claude",
+      "deepseek",
+      "genai",
+      "gpt",
+      "llm",
+      "low-code",
+      "mcp",
+      "nextjs",
+      "no-code",
+      "openai",
+      "python",
+      "skills",
+      "workflow"
+    ],
+    "license": "NOASSERTION",
+    "default_branch": "main",
+    "pushed_at": "2026-09-28T09:14:56Z",
+    "created_at": "2023-04-12T07:40:24Z",
+    "homepage": "https://dify.ai",
+    "size_kb": 581145,
+    "archived": false
+  },
+  "overview": "「langgenius/dify」是一个以 TypeScript 为主的项目，仓库里大约有 14133 个文件（不含 git 内部文件），源码规模约 121.7 MB。 官方一句话介绍：Build Agentic workflows, RAG pipelines, with rich AI model and tool support on one collaborative workspace. Deploy on cloud, VPC, or self-hosted, so teams move from prototype to production without rebuilding the stack. 它在 GitHub 上拿到了 157.4k 颗星、24.8k 次复刻（fork），还有 800 个开放中的 issue。 官方标签：agent、agentic-ai、agentic-framework、agentic-workflow、ai、automation。 许可证是 NOASSERTION，决定了你怎么合法使用这些代码。 主要语言构成（按文件数）：TypeScript 6913 个文件、Python 4185 个文件、JavaScript 141 个文件、CSS 68 个文件、Go 66 个文件、HTML 60 个文件。 用到的关键框架/工具：Vite、ESLint、TypeScript、React、Next.js、Vitest。 一句话总结：这是一个 AI/机器学习项目（主力语言 TypeScript），适合想了解「模型是怎么搭起来」的读者。",
+  "languages": [
+    {
+      "label": "TypeScript",
+      "speak": "带类型检查的 JavaScript，写大项目更稳",
+      "color": "#3178c6",
+      "files": 6913
+    },
+    {
+      "label": "Python",
+      "speak": "AI 领域第一语言，语法简单好读",
+      "color": "#3572A5",
+      "files": 4185
+    },
+    {
+      "label": "JavaScript",
+      "speak": "网页脚本语言，让页面能动起来",
+      "color": "#f1e05a",
+      "files": 141
+    },
+    {
+      "label": "CSS",
+      "speak": "网页样式语言",
+      "color": "#563d7c",
+      "files": 68
+    },
+    {
+      "label": "Go",
+      "speak": "Google 出品，擅长高并发服务",
+      "color": "#00ADD8",
+      "files": 66
+    },
+    {
+      "label": "HTML",
+      "speak": "网页骨架标记语言",
+      "color": "#e34c26",
+      "files": 60
+    }
+  ],
+  "frameworks": [
+    {
+      "dep": "vite",
+      "label": "Vite",
+      "speak": "新一代前端构建工具，快",
+      "category": "构建"
+    },
+    {
+      "dep": "eslint",
+      "label": "ESLint",
+      "speak": "代码风格检查器",
+      "category": "质量"
+    },
+    {
+      "dep": "typescript",
+      "label": "TypeScript",
+      "speak": "JavaScript 的类型增强版",
+      "category": "语言"
+    },
+    {
+      "dep": "react",
+      "label": "React",
+      "speak": "前端组件化框架，界面拆成一块块积木",
+      "category": "前端"
+    },
+    {
+      "dep": "next",
+      "label": "Next.js",
+      "speak": "React 全栈框架，服务端渲染",
+      "category": "前端"
+    },
+    {
+      "dep": "vitest",
+      "label": "Vitest",
+      "speak": "Vite 生态测试框架",
+      "category": "测试"
+    },
+    {
+      "label": ".gitignore",
+      "speak": "声明哪些文件不进版本库",
+      "category": "Git"
+    },
+    {
+      "label": "GitHub Actions",
+      "speak": "仓库内置自动化流水线",
+      "category": "CI/CD"
+    }
+  ],
+  "dir_tree": [
+    {
+      "dir": "web/app",
+      "count": 5531,
+      "sample": [
+        "web/app/error.tsx",
+        "web/app/get-query-client.ts",
+        "web/app/layout.tsx",
+        "web/app/query-provider.tsx"
+      ],
+      "meaning": null
+    },
+    {
+      "dir": "api/tests",
+      "count": 1722,
+      "sample": [
+        "api/tests/__init__.py",
+        "api/tests/conftest.py",
+        "api/tests/pytest_dify.py",
+        "api/tests/pytest_timing.py"
+      ],
+      "meaning": "后端接口目录"
+    },
+    {
+      "dir": "web/i18n",
+      "count": 1401,
+      "sample": [
+        "web/i18n/README.md",
+        "web/i18n/client.ts",
+        "web/i18n/index.ts",
+        "web/i18n/language.ts"
+      ],
+      "meaning": null
+    },
+    {
+      "dir": "api/core",
+      "count": 670,
+      "sample": [
+        "api/core/__init__.py",
+        "api/core/credit_usage.py",
+        "api/core/hosting_configuration.py",
+        "api/core/indexing_runner.py"
+      ],
+      "meaning": "后端接口目录"
+    },
+    {
+      "dir": "packages/iconify-collections",
+      "count": 525,
+      "sample": [
+        "packages/iconify-collections/README.md",
+        "packages/iconify-collections/package.json",
+        "packages/iconify-collections/tsconfig.json",
+        "packages/iconify-collections/scripts/check-icon-dimensions.ts"
+      ],
+      "meaning": null
+    },
+    {
+      "dir": "api/services",
+      "count": 392,
+      "sample": [
+        "api/services/__init__.py",
+        "api/services/account_access_service.py",
+        "api/services/account_activation_service.py",
+        "api/services/account_adapters.py"
+      ],
+      "meaning": "后端接口目录"
+    },
+    {
+      "dir": "web/features",
+      "count": 364,
+      "sample": [
+        "web/features/tag-management/utils.ts",
+        "web/features/tag-management/hooks/use-tag-mutations.ts",
+        "web/features/tag-management/hooks/__tests__/use-tag-mutations.spec.tsx",
+        "web/features/tag-management/components/app-card-tags.tsx"
+      ],
+      "meaning": null
+    },
+    {
+      "dir": "cli/src",
+      "count": 269,
+      "sample": [
+        "cli/src/index.ts",
+        "cli/src/workspace/resolver.test.ts",
+        "cli/src/workspace/resolver.ts",
+        "cli/src/version/build-info.d.ts"
+      ],
+      "meaning": null
+    },
+    {
+      "dir": "api/providers",
+      "count": 259,
+      "sample": [
+        "api/providers/README.md",
+        "api/providers/conftest.py",
+        "api/providers/vdb/README.md",
+        "api/providers/vdb/conftest.py"
+      ],
+      "meaning": "后端接口目录"
+    },
+    {
+      "dir": "api/controllers",
+      "count": 257,
+      "sample": [
+        "api/controllers/API_SCHEMA_GUIDE.md",
+        "api/controllers/__init__.py",
+        "api/controllers/fastopenapi.py",
+        "api/controllers/web/__init__.py"
+      ],
+      "meaning": "后端接口目录"
+    },
+    {
+      "dir": "api/migrations",
+      "count": 223,
+      "sample": [
+        "api/migrations/README",
+        "api/migrations/alembic.ini",
+        "api/migrations/env.py",
+        "api/migrations/script.py.mako"
+      ],
+      "meaning": "后端接口目录"
+    },
+    {
+      "dir": "packages/contracts",
+      "count": 200,
+      "sample": [
+        "packages/contracts/.gitignore",
+        "packages/contracts/account-profile-zod.test.ts",
+        "packages/contracts/app-model-config.test.ts",
+        "packages/contracts/binary-zod.test.ts"
+      ],
+      "meaning": null
+    }
+  ],
+  "entry_files": [
+    {
+      "path": "api/app.py",
+      "hint": "Web 应用入口"
+    }
+  ],
+  "core_modules": [
+    {
+      "path": "api/models/model.py",
+      "size": "112.9 KB",
+      "why": "数据/AI 模型定义"
+    },
+    {
+      "path": "web/features/agent-v2/agent-detail/configure/components/orchestrate/tools/index.tsx",
+      "size": "19.8 KB",
+      "why": "入口/汇总文件：这个目录的对外门面"
+    },
+    {
+      "path": "web/features/agent-v2/agent-detail/configure/components/orchestrate/skills/index.tsx",
+      "size": "29.3 KB",
+      "why": "入口/汇总文件：这个目录的对外门面"
+    },
+    {
+      "path": "web/features/agent-v2/agent-detail/configure/components/orchestrate/prompt-editor/index.tsx",
+      "size": "38.9 KB",
+      "why": "入口/汇总文件：这个目录的对外门面"
+    },
+    {
+      "path": "web/app/components/workflow/index.tsx",
+      "size": "32.2 KB",
+      "why": "入口/汇总文件：这个目录的对外门面"
+    },
+    {
+      "path": "web/app/components/workflow/workflow-generator/index.tsx",
+      "size": "35.3 KB",
+      "why": "入口/汇总文件：这个目录的对外门面"
+    },
+    {
+      "path": "web/app/components/workflow/panel/env-panel/index.tsx",
+      "size": "30.3 KB",
+      "why": "入口/汇总文件：这个目录的对外门面"
+    },
+    {
+      "path": "web/app/components/workflow/nodes/_base/components/workflow-panel/index.tsx",
+      "size": "29.2 KB",
+      "why": "入口/汇总文件：这个目录的对外门面"
+    }
+  ],
+  "data_flow": [
+    "你（用户/调用方）发起一个动作：运行命令、打开网页或调用接口。",
+    "程序从入口文件「api/app.py」启动，先做初始化：读配置、准备环境、注册要用的组件。",
+    "请求进入「api/models/model.py」这类分发层：它判断「你想要什么」，把活儿派给对应的处理单元。",
+    "核心逻辑在「api/models/model.py」这类模块里：真正的计算/推理/业务规则都发生在这里。",
+    "处理完成后，结果原路返回：渲染成页面、打印到终端或打包成 API 响应，交回给你。",
+    "任何一步出错都会被 try/catch 兜住，转成友好的错误提示，而不是直接崩溃。"
+  ],
+  "flow_graph": {
+    "nodes": [
+      {
+        "id": "user",
+        "label": "用户 / 调用方",
+        "type": "actor"
+      },
+      {
+        "id": "entry",
+        "label": "app.py",
+        "type": "entry"
+      },
+      {
+        "id": "dispatch",
+        "label": "model.py",
+        "type": "dispatch"
+      },
+      {
+        "id": "core",
+        "label": "model.py",
+        "type": "core"
+      },
+      {
+        "id": "output",
+        "label": "输出：结果返回",
+        "type": "output"
+      },
+      {
+        "id": "api",
+        "label": "gRPC 接口",
+        "type": "api"
+      }
+    ],
+    "edges": [
+      [
+        "user",
+        "entry"
+      ],
+      [
+        "user",
+        "api"
+      ],
+      [
+        "entry",
+        "dispatch"
+      ],
+      [
+        "dispatch",
+        "core"
+      ],
+      [
+        "core",
+        "output"
+      ],
+      [
+        "api",
+        "entry"
+      ]
+    ]
+  },
+  "patterns": [
+    {
+      "pattern": "async/await",
+      "speak": "用同步写法处理异步，代码更好读",
+      "severity": "common",
+      "where": "lint.config.ts"
+    },
+    {
+      "pattern": "GraphQL",
+      "speak": "按需取数据的新式 API 风格",
+      "severity": "notable",
+      "where": "vite.config.ts"
+    },
+    {
+      "pattern": "模块化导出",
+      "speak": "功能拆成模块互相引用",
+      "severity": "common",
+      "where": "web/env.ts"
+    },
+    {
+      "pattern": "接口约定",
+      "speak": "TypeScript 定义数据形状，契约先行",
+      "severity": "common",
+      "where": "web/env.ts"
+    },
+    {
+      "pattern": "路由分发",
+      "speak": "URL 映射到处理函数",
+      "severity": "common",
+      "where": "web/proxy.ts"
+    },
+    {
+      "pattern": "React Hooks",
+      "speak": "函数组件里管理状态的钩子",
+      "severity": "common",
+      "where": "web/vitest.setup.ts"
+    },
+    {
+      "pattern": "异常捕获",
+      "speak": "出错不崩溃，兜住处理",
+      "severity": "common",
+      "where": "web/utils/clipboard.ts"
+    },
+    {
+      "pattern": "Promise 异步模式",
+      "speak": "先答应后兑现：发起耗时操作不干等，完成后回调",
+      "severity": "common",
+      "where": "web/utils/create-app-tracking.ts"
+    },
+    {
+      "pattern": "事件驱动",
+      "speak": "「有事叫我」：注册回调等事件发生",
+      "severity": "common",
+      "where": "web/utils/page-leave-guard.ts"
+    },
+    {
+      "pattern": "状态管理",
+      "speak": "全局状态集中管理，UI 只负责显示",
+      "severity": "notable",
+      "where": "web/utils/query-atoms.spec.ts"
+    }
+  ],
+  "doc_quotes": [
+    {
+      "file": "AGENTS.md",
+      "text": "Dify is an open-source platform for building LLM applications, agentic workflows, and RAG pipelines. This monorepo contains the backend API (`api/`), frontend application (`web/`), deployment assets (`docker/`), standalone agent backend (`dify-agent/`), CLI (`cli/`), and end-to-end suite (`e2e/`). F"
+    },
+    {
+      "file": "CONTRIBUTING.md",
+      "text": "So you're looking to contribute to Dify - that's awesome, we can't wait to see what you do. As a startup with limited headcount and funding, we have grand ambitions to design the most intuitive workflow for building and managing LLM applications. Any help from the community counts, truly."
+    },
+    {
+      "file": "README.md",
+      "text": "![cover-v5-optimized](./images/GitHub_README_if.png)"
+    }
+  ],
+  "read_suggestions": [
+    {
+      "title": "第一步：读 README",
+      "body": "打开仓库根目录的 README.md，了解它「是什么、解决什么问题、怎么跑起来」。它有官网/文档：https://dify.ai"
+    },
+    {
+      "title": "第三步：从入口顺藤摸瓜",
+      "body": "从「api/app.py」开始读，每遇到一个陌生函数就跳过去看一眼，回来继续。像逛公园，先走主路再钻小径。"
+    },
+    {
+      "title": "善用目录语义",
+      "body": "src=源码、tests=测试、docs=文档、examples=示例，目录名本身就是地图。"
+    },
+    {
+      "title": "带着问题读",
+      "body": "比如「数据从哪进来」「结果存在哪」「错误怎么处理」，带着三个问题读任何项目都不会迷路。"
+    }
+  ],
+  "interfaces": [
+    {
+      "kind": "JS 模块导出",
+      "where": "sdks/nodejs-client/package.json",
+      "speak": "作为 npm 库被 import 使用"
+    },
+    {
+      "kind": "CLI 命令行接口",
+      "where": "packages/migrate-no-unchecked-indexed-access/package.json",
+      "speak": "装完就能在终端敲的命令"
+    },
+    {
+      "kind": "OpenAPI/Swagger 文档",
+      "where": "web/service/base.ts",
+      "speak": "机器可读的接口说明书"
+    },
+    {
+      "kind": "gRPC 接口",
+      "where": "web/public/vs/basic-languages/protobuf/protobuf.js",
+      "speak": "高性能远程调用接口（.proto 文件定义）"
+    },
+    {
+      "kind": "WebSocket",
+      "where": "web/config/index.ts",
+      "speak": "双向实时通信通道"
+    },
+    {
+      "kind": "脚本入口",
+      "where": "web/app/components/workflow/nodes/code/use-config.ts",
+      "speak": "直接 python 运行的脚本入口"
+    }
+  ],
+  "dependencies": {
+    "manifest": "package.json",
+    "total": 33,
+    "runtime": [],
+    "build": [
+      {
+        "name": "@eslint-community/eslint-plugin-eslint-comments",
+        "note": null
+      },
+      {
+        "name": "@eslint-react/eslint-plugin",
+        "note": null
+      },
+      {
+        "name": "@eslint/markdown",
+        "note": null
+      },
+      {
+        "name": "@iconify-json/heroicons",
+        "note": null
+      },
+      {
+        "name": "@iconify-json/ri",
+        "note": null
+      },
+      {
+        "name": "@shadcn/lint",
+        "note": null
+      },
+      {
+        "name": "@tanstack/eslint-plugin-query",
+        "note": null
+      },
+      {
+        "name": "@types/node",
+        "note": null
+      },
+      {
+        "name": "@typescript-eslint/parser",
+        "note": null
+      },
+      {
+        "name": "@typescript/native",
+        "note": null
+      },
+      {
+        "name": "concurrently",
+        "note": null
+      },
+      {
+        "name": "eslint",
+        "note": null
+      },
+      {
+        "name": "eslint-config-flat-gitignore",
+        "note": null
+      },
+      {
+        "name": "eslint-markdown",
+        "note": null
+      },
+      {
+        "name": "eslint-plugin-antfu",
+        "note": null
+      },
+      {
+        "name": "eslint-plugin-better-tailwindcss",
+        "note": null
+      },
+      {
+        "name": "eslint-plugin-command",
+        "note": null
+      },
+      {
+        "name": "eslint-plugin-jsdoc",
+        "note": null
+      },
+      {
+        "name": "eslint-plugin-jsonc",
+        "note": null
+      },
+      {
+        "name": "eslint-plugin-markdown-preferences",
+        "note": null
+      }
+    ]
+  },
+  "demo_links": [
+    {
+      "kind": "在线试用",
+      "url": "https://custom-icon-badges.demolab.com/badge/LinkedIn-0A66C2?logo=linkedin-white&logoColor=fff"
+    }
+  ],
+  "scenarios": [
+    {
+      "when": "想低成本跑/部署开源大模型，或学习推理引擎内部实现",
+      "not": "想训练自己的大模型（应去看训练框架）"
+    }
+  ],
+  "competitors": {
+    "matched": "category",
+    "list": [
+      {
+        "name": "llama.cpp",
+        "repo": "ggml-org/llama.cpp",
+        "edge": "本地推理代表"
+      },
+      {
+        "name": "vLLM",
+        "repo": "vllm-project/vllm",
+        "edge": "服务化推理代表"
+      },
+      {
+        "name": "Ollama",
+        "repo": "ollama/ollama",
+        "edge": "易用性代表"
+      }
+    ]
+  },
+  "rework_ideas": [
+    {
+      "idea": "接入自己的模型文件（GGUF/安全张量），跑通一条完整推理链路",
+      "difficulty": "入门"
+    },
+    {
+      "idea": "加一个 Web API 层（FastAPI），把它变成可调用的推理服务",
+      "difficulty": "进阶"
+    },
+    {
+      "idea": "实现自定义量化/裁剪，在低端显卡上压出可接受的速度",
+      "difficulty": "硬核"
+    }
+  ],
+  "pitfalls": [
+    {
+      "pit": "环境不隔离：直接在系统 Python/node 里装依赖，装到一半互相打架",
+      "fix": "先建 venv / 用 nvm 固定版本，再装依赖"
+    },
+    {
+      "pit": "CUDA/驱动不匹配：torch 装了 CUDA 12 版本但驱动只支持 11",
+      "fix": "先 nvidia-smi 看驱动支持的上限，再选对应版本安装"
+    },
+    {
+      "pit": "模型文件放错目录：程序默认去 ./models 找，你下到了下载文件夹",
+      "fix": "先跑一次看报错里的路径，把文件挪过去"
+    },
+    {
+      "pit": "显存不够直接 OOM：模型全精度加载，显卡撑不住",
+      "fix": "用量化版本（4bit/8bit）或换小一号模型"
+    },
+    {
+      "pit": "上下文拉满导致推理极慢",
+      "fix": "控制输入长度，长文档走 RAG 而非硬塞"
+    },
+    {
+      "pit": "并发一上来就崩：单进程扛不住",
+      "fix": "上 vLLM 类服务框架或加队列限流"
+    }
+  ],
+  "community": {
+    "contributors": "100+",
+    "latest_release": {
+      "tag": "1.17.1",
+      "name": "v1.17.1 - Bug Fixes and Improvements",
+      "published_at": "2026-09-10T10:04:06Z",
+      "notes_excerpt": "> [!WARNING] > **Self-hosted deployments using the bundled Weaviate must complete a manual, staged upgrade before starting 1.17.1.** The bundled Weaviate server moves from `1.27.0` to `1.39.2` — 12 minor versions — and skipping minors **is unsupported**. Pulling and restarting can silently and perma"
+    },
+    "releases_count": 10,
+    "commit_activity": null,
+    "verdict": [
+      "最近 0 天内还有代码提交，维护很活跃",
+      "有 100+ 位贡献者提交过代码",
+      "最新版本 1.17.1（2026-09-10 发布）",
+      "开放 issue 占星数比例很低，社区响应健康"
+    ],
+    "repo_age_days": 1265
+  },
+  "category": "llm",
+  "stats": {
+    "files": 14133,
+    "bytes": 127573135,
+    "sampled": 3000
+  },
+  "generated_at": "2026-09-28T09:21:11.264Z",
+  "analyzer": "claw-static-analyzer v2"
+}

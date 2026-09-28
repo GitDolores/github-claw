@@ -3,117 +3,114 @@
     "category": "agents",
     "category_label": "AI 智能体",
     "category_speak": "能自主规划调用工具的 AI 程序",
-    "name": "AutoGPT",
-    "description": "AutoGPT is the vision of accessible AI for everyone, to use and to build on. Our mission is to provide the tools, so that you can focus on what matters.",
-    "repo": "Significant-Gravitas/AutoGPT",
-    "repo_url": "https://github.com/Significant-Gravitas/AutoGPT",
+    "name": "dify",
+    "description": "Build Agentic workflows, RAG pipelines, with rich AI model and tool support on one collaborative workspace. Deploy on cloud, VPC, or self-hosted, so teams move from prototype to production without rebuilding the stack.",
+    "repo": "langgenius/dify",
+    "repo_url": "https://github.com/langgenius/dify",
     "tags": [
       "智能体",
-      "自动化"
+      "工作流",
+      "RAG"
     ],
-    "stars": 187469,
-    "added": "2026-08-27",
-    "forks": 46007,
-    "last_updated": "2026-09-21",
+    "stars": 157386,
+    "forks": 24801,
+    "last_updated": "2026-09-28",
     "archived": false,
-    "featured_since": "2026-08-27"
+    "featured_since": "2026-09-28"
   },
   {
     "category": "vision",
     "category_label": "计算机视觉",
     "category_speak": "图像识别、目标检测、分割与生成",
-    "name": "stable-diffusion-webui",
-    "description": "Stable Diffusion web UI",
-    "repo": "AUTOMATIC1111/stable-diffusion-webui",
-    "repo_url": "https://github.com/AUTOMATIC1111/stable-diffusion-webui",
+    "name": "ComfyUI",
+    "description": "The most powerful and modular diffusion model GUI, api and backend with a graph/nodes interface. The fastest local inference engine in the world.",
+    "repo": "Comfy-Org/ComfyUI",
+    "repo_url": "https://github.com/Comfy-Org/ComfyUI",
     "tags": [
       "文生图",
-      "WebUI"
+      "节点式",
+      "Stable Diffusion"
     ],
-    "stars": 165033,
-    "added": "2026-08-27",
-    "forks": 31246,
-    "last_updated": "2026-03-02",
+    "stars": 135286,
+    "forks": 16032,
+    "last_updated": "2026-09-28",
     "archived": false,
-    "featured_since": "2026-08-27"
-  },
-  {
-    "category": "llm",
-    "category_label": "大模型 / LLM",
-    "category_speak": "语言大模型与相关训练、推理工具",
-    "name": "llama.cpp",
-    "description": "LLM inference in C/C++",
-    "repo": "ggml-org/llama.cpp",
-    "repo_url": "https://github.com/ggml-org/llama.cpp",
-    "tags": [
-      "LLM",
-      "推理",
-      "C++"
-    ],
-    "stars": 129017,
-    "added": "2026-08-27",
-    "forks": 23522,
-    "last_updated": "2026-09-21",
-    "archived": false,
-    "featured_since": "2026-08-27"
-  },
-  {
-    "category": "audio",
-    "category_label": "语音 / 音频",
-    "category_speak": "语音识别、合成与音乐生成",
-    "name": "whisper",
-    "description": "Robust Speech Recognition via Large-Scale Weak Supervision",
-    "repo": "openai/whisper",
-    "repo_url": "https://github.com/openai/whisper",
-    "tags": [
-      "语音识别",
-      "多语言"
-    ],
-    "stars": 109421,
-    "added": "2026-08-27",
-    "forks": 13275,
-    "last_updated": "2026-08-31",
-    "archived": false,
-    "featured_since": "2026-08-27"
+    "featured_since": "2026-09-28"
   },
   {
     "category": "learning",
     "category_label": "教程 / 学习资源",
     "category_speak": "课程、笔记、面试题与示例集",
-    "name": "ML-For-Beginners",
-    "description": "12 weeks, 26 lessons, 52 quizzes, classic Machine Learning for all",
-    "repo": "microsoft/ML-For-Beginners",
-    "repo_url": "https://github.com/microsoft/ML-For-Beginners",
+    "name": "llm-course",
+    "description": "Course to get into Large Language Models (LLMs) with roadmaps and Colab notebooks.",
+    "repo": "mlabonne/llm-course",
+    "repo_url": "https://github.com/mlabonne/llm-course",
     "tags": [
       "课程",
-      "入门",
-      "机器学习"
+      "LLM",
+      "入门"
     ],
-    "stars": 90788,
-    "added": "2026-08-27",
-    "forks": 22381,
-    "last_updated": "2026-09-15",
+    "stars": 83187,
+    "forks": 9685,
+    "last_updated": "2026-02-05",
     "archived": false,
-    "featured_since": "2026-08-27"
+    "featured_since": "2026-09-28"
   },
   {
-    "category": "llm",
-    "category_label": "大模型 / LLM",
-    "category_speak": "语言大模型与相关训练、推理工具",
-    "name": "vllm",
-    "description": "A high-throughput and memory-efficient inference and serving engine for LLMs",
-    "repo": "vllm-project/vllm",
-    "repo_url": "https://github.com/vllm-project/vllm",
+    "category": "mlops",
+    "category_label": "训练 / 部署框架",
+    "category_speak": "模型训练、加速与生产部署的基础设施",
+    "name": "LlamaFactory",
+    "description": "Unified Efficient Fine-Tuning of 100+ LLMs & VLMs (ACL 2024)",
+    "repo": "hiyouga/LlamaFactory",
+    "repo_url": "https://github.com/hiyouga/LlamaFactory",
     "tags": [
-      "推理",
-      "服务",
-      "部署"
+      "微调",
+      "训练框架",
+      "LLM"
     ],
-    "stars": 92300,
-    "added": "2026-08-27",
-    "forks": 22468,
-    "last_updated": "2026-09-21",
+    "stars": 75132,
+    "forks": 9200,
+    "last_updated": "2026-09-28",
     "archived": false,
-    "featured_since": "2026-08-27"
+    "featured_since": "2026-09-28"
+  },
+  {
+    "category": "agents",
+    "category_label": "AI 智能体",
+    "category_speak": "能自主规划调用工具的 AI 程序",
+    "name": "MetaGPT",
+    "description": "🌟 The Multi-Agent Framework: First AI Software Company, Towards Natural Language Programming",
+    "repo": "FoundationAgents/MetaGPT",
+    "repo_url": "https://github.com/FoundationAgents/MetaGPT",
+    "tags": [
+      "智能体",
+      "多智能体",
+      "软件工程"
+    ],
+    "stars": 70661,
+    "forks": 8972,
+    "last_updated": "2026-01-21",
+    "archived": false,
+    "featured_since": "2026-09-28"
+  },
+  {
+    "category": "rag",
+    "category_label": "RAG / 知识库",
+    "category_speak": "检索增强生成与向量知识库",
+    "name": "chroma",
+    "description": "Search infrastructure for AI",
+    "repo": "chroma-core/chroma",
+    "repo_url": "https://github.com/chroma-core/chroma",
+    "tags": [
+      "向量数据库",
+      "RAG",
+      "检索"
+    ],
+    "stars": 29403,
+    "forks": 2536,
+    "last_updated": "2026-09-26",
+    "archived": false,
+    "featured_since": "2026-09-28"
   }
 ]

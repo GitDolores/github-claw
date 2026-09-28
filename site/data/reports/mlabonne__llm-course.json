@@ -1,0 +1,220 @@
+{
+  "meta": {
+    "full_name": "mlabonne/llm-course",
+    "description": "Course to get into Large Language Models (LLMs) with roadmaps and Colab notebooks.",
+    "stars": 83187,
+    "forks": 9685,
+    "open_issues": 91,
+    "language": null,
+    "topics": [
+      "course",
+      "large-language-models",
+      "llm",
+      "machine-learning",
+      "roadmap"
+    ],
+    "license": "Apache-2.0",
+    "default_branch": "main",
+    "pushed_at": "2026-02-05T13:09:26Z",
+    "created_at": "2023-06-17T22:16:25Z",
+    "homepage": "https://mlabonne.github.io/blog/",
+    "size_kb": 7637,
+    "archived": false
+  },
+  "overview": "「mlabonne/llm-course」是一个以 未知 为主的项目，仓库里大约有 7 个文件（不含 git 内部文件），源码规模约 847.5 KB。 官方一句话介绍：Course to get into Large Language Models (LLMs) with roadmaps and Colab notebooks. 它在 GitHub 上拿到了 83.2k 颗星、9.7k 次复刻（fork），还有 91 个开放中的 issue。 官方标签：course、large-language-models、llm、machine-learning、roadmap。 许可证是 Apache-2.0，决定了你怎么合法使用这些代码。 主要语言：未知。 一句话总结：这是一个 AI/机器学习项目，适合想了解「模型是怎么搭起来」的读者。",
+  "languages": [],
+  "frameworks": [],
+  "dir_tree": [
+    {
+      "dir": "img",
+      "count": 5,
+      "sample": [
+        "img/banner.png",
+        "img/colab.svg",
+        "img/roadmap_engineer.png",
+        "img/roadmap_fundamentals.png"
+      ],
+      "meaning": null
+    },
+    {
+      "dir": "/",
+      "count": 2,
+      "sample": [
+        "LICENSE",
+        "README.md"
+      ],
+      "meaning": null
+    }
+  ],
+  "entry_files": [],
+  "core_modules": [],
+  "data_flow": [
+    "你（用户/调用方）发起一个动作：运行命令、打开网页或调用接口。",
+    "处理完成后，结果原路返回：渲染成页面、打印到终端或打包成 API 响应，交回给你。"
+  ],
+  "flow_graph": {
+    "nodes": [
+      {
+        "id": "user",
+        "label": "用户 / 调用方",
+        "type": "actor"
+      },
+      {
+        "id": "entry",
+        "label": "入口文件",
+        "type": "entry"
+      },
+      {
+        "id": "output",
+        "label": "输出：结果返回",
+        "type": "output"
+      }
+    ],
+    "edges": [
+      [
+        "user",
+        "entry"
+      ],
+      [
+        "entry",
+        "output"
+      ]
+    ]
+  },
+  "patterns": [],
+  "doc_quotes": [
+    {
+      "file": "README.md",
+      "text": "<div align=\"center\"> <img src=\"img/banner.png\" alt=\"LLM Course\">   <p align=\"center\">     𝕏 <a href=\"https://twitter.com/maximelabonne\">Follow me on X</a> •      🤗 <a href=\"https://huggingface.co/mlabonne\">Hugging Face</a> •      💻 <a href=\"https://mlabonne.github.io/blog\">Blog</a> •      📙 <a h"
+    }
+  ],
+  "read_suggestions": [
+    {
+      "title": "第一步：读 README",
+      "body": "打开仓库根目录的 README.md，了解它「是什么、解决什么问题、怎么跑起来」。它有官网/文档：https://mlabonne.github.io/blog/"
+    },
+    {
+      "title": "善用目录语义",
+      "body": "src=源码、tests=测试、docs=文档、examples=示例，目录名本身就是地图。"
+    },
+    {
+      "title": "带着问题读",
+      "body": "比如「数据从哪进来」「结果存在哪」「错误怎么处理」，带着三个问题读任何项目都不会迷路。"
+    }
+  ],
+  "interfaces": [],
+  "dependencies": {
+    "manifest": null,
+    "total": null,
+    "runtime": [],
+    "build": []
+  },
+  "demo_links": [
+    {
+      "kind": "效果截图",
+      "url": "https://i.imgur.com/7iNjEq2.png"
+    },
+    {
+      "kind": "视频演示",
+      "url": "https://www.youtube.com/watch?v=fNk_zzaMoSs&list=PLZHQObOWTQDPD3MizzM2xVFitgF8hE_ab"
+    },
+    {
+      "kind": "视频演示",
+      "url": "https://www.youtube.com/watch?v=qBigTkBLU6g&list=PLblh5JKOoLUK0FLuzwntyYI10UQFUhsY9"
+    },
+    {
+      "kind": "视频演示",
+      "url": "https://www.youtube.com/watch?v=rfscVS0vtbw"
+    },
+    {
+      "kind": "视频演示",
+      "url": "https://youtu.be/i_LwzRVP7bg"
+    }
+  ],
+  "scenarios": [
+    {
+      "when": "想低成本跑/部署开源大模型，或学习推理引擎内部实现",
+      "not": "想训练自己的大模型（应去看训练框架）"
+    }
+  ],
+  "competitors": {
+    "matched": "category",
+    "list": [
+      {
+        "name": "llama.cpp",
+        "repo": "ggml-org/llama.cpp",
+        "edge": "本地推理代表"
+      },
+      {
+        "name": "vLLM",
+        "repo": "vllm-project/vllm",
+        "edge": "服务化推理代表"
+      },
+      {
+        "name": "Ollama",
+        "repo": "ollama/ollama",
+        "edge": "易用性代表"
+      }
+    ]
+  },
+  "rework_ideas": [
+    {
+      "idea": "接入自己的模型文件（GGUF/安全张量），跑通一条完整推理链路",
+      "difficulty": "入门"
+    },
+    {
+      "idea": "加一个 Web API 层（FastAPI），把它变成可调用的推理服务",
+      "difficulty": "进阶"
+    },
+    {
+      "idea": "实现自定义量化/裁剪，在低端显卡上压出可接受的速度",
+      "difficulty": "硬核"
+    }
+  ],
+  "pitfalls": [
+    {
+      "pit": "环境不隔离：直接在系统 Python/node 里装依赖，装到一半互相打架",
+      "fix": "先建 venv / 用 nvm 固定版本，再装依赖"
+    },
+    {
+      "pit": "CUDA/驱动不匹配：torch 装了 CUDA 12 版本但驱动只支持 11",
+      "fix": "先 nvidia-smi 看驱动支持的上限，再选对应版本安装"
+    },
+    {
+      "pit": "模型文件放错目录：程序默认去 ./models 找，你下到了下载文件夹",
+      "fix": "先跑一次看报错里的路径，把文件挪过去"
+    },
+    {
+      "pit": "显存不够直接 OOM：模型全精度加载，显卡撑不住",
+      "fix": "用量化版本（4bit/8bit）或换小一号模型"
+    },
+    {
+      "pit": "上下文拉满导致推理极慢",
+      "fix": "控制输入长度，长文档走 RAG 而非硬塞"
+    },
+    {
+      "pit": "并发一上来就崩：单进程扛不住",
+      "fix": "上 vLLM 类服务框架或加队列限流"
+    }
+  ],
+  "community": {
+    "contributors": "3",
+    "latest_release": null,
+    "releases_count": null,
+    "commit_activity": null,
+    "verdict": [
+      "已超过半年没有提交，注意评估是否停更",
+      "有 3 位贡献者提交过代码",
+      "开放 issue 占星数比例很低，社区响应健康"
+    ],
+    "repo_age_days": 1198
+  },
+  "category": "llm",
+  "stats": {
+    "files": 7,
+    "bytes": 867825,
+    "sampled": 0
+  },
+  "generated_at": "2026-09-28T09:21:16.708Z",
+  "analyzer": "claw-static-analyzer v2"
+}

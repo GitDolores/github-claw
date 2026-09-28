@@ -1,0 +1,616 @@
+{
+  "meta": {
+    "full_name": "Comfy-Org/ComfyUI",
+    "description": "The most powerful and modular diffusion model GUI, api and backend with a graph/nodes interface. The fastest local inference engine in the world.",
+    "stars": 135286,
+    "forks": 16032,
+    "open_issues": 4991,
+    "language": "Python",
+    "topics": [
+      "ai",
+      "comfy",
+      "comfyui",
+      "python",
+      "pytorch",
+      "stable-diffusion"
+    ],
+    "license": "GPL-3.0",
+    "default_branch": "master",
+    "pushed_at": "2026-09-28T06:28:24Z",
+    "created_at": "2023-01-17T03:15:56Z",
+    "homepage": "https://www.comfy.org/",
+    "size_kb": 100530,
+    "archived": false
+  },
+  "overview": "「Comfy-Org/ComfyUI」是一个以 Python 为主的项目，仓库里大约有 1229 个文件（不含 git 内部文件），源码规模约 46.0 MB。 官方一句话介绍：The most powerful and modular diffusion model GUI, api and backend with a graph/nodes interface. The fastest local inference engine in the world. 它在 GitHub 上拿到了 135.3k 颗星、16.0k 次复刻（fork），还有 4991 个开放中的 issue。 官方标签：ai、comfy、comfyui、python、pytorch、stable-diffusion。 许可证是 GPL-3.0，决定了你怎么合法使用这些代码。 主要语言构成（按文件数）：Python 929 个文件、Shell 1 个文件。 用到的关键框架/工具：Transformers、NumPy、pytest、.gitignore、GitHub Actions。 一句话总结：这是一个 AI/机器学习项目（主力语言 Python），适合想了解「模型是怎么搭起来」的读者。",
+  "languages": [
+    {
+      "label": "Python",
+      "speak": "AI 领域第一语言，语法简单好读",
+      "color": "#3572A5",
+      "files": 929
+    },
+    {
+      "label": "Shell",
+      "speak": "命令行脚本，粘合各种工具",
+      "color": "#89e051",
+      "files": 1
+    }
+  ],
+  "frameworks": [
+    {
+      "dep": "transformers",
+      "label": "Transformers",
+      "speak": "Hugging Face 模型库，NLP 事实标准",
+      "category": "AI"
+    },
+    {
+      "dep": "numpy",
+      "label": "NumPy",
+      "speak": "科学计算基石",
+      "category": "科学"
+    },
+    {
+      "ext": true,
+      "dep": "pytest",
+      "label": "pytest",
+      "speak": "Python 测试框架",
+      "category": "测试"
+    },
+    {
+      "label": ".gitignore",
+      "speak": "声明哪些文件不进版本库",
+      "category": "Git"
+    },
+    {
+      "label": "GitHub Actions",
+      "speak": "仓库内置自动化流水线",
+      "category": "CI/CD"
+    }
+  ],
+  "dir_tree": [
+    {
+      "dir": "comfy/ldm",
+      "count": 187,
+      "sample": [
+        "comfy/ldm/colormap.py",
+        "comfy/ldm/common_dit.py",
+        "comfy/ldm/util.py",
+        "comfy/ldm/yue2/model.py"
+      ],
+      "meaning": null
+    },
+    {
+      "dir": "comfy_extras",
+      "count": 143,
+      "sample": [
+        "comfy_extras/color_util.py",
+        "comfy_extras/compositor_blend.py",
+        "comfy_extras/nodes_ace.py",
+        "comfy_extras/nodes_advanced_samplers.py"
+      ],
+      "meaning": null
+    },
+    {
+      "dir": "blueprints",
+      "count": 117,
+      "sample": [
+        "blueprints/Audio Generation (Stable Audio 3 Medium Base).json",
+        "blueprints/Audio Generation (Stable Audio 3 Medium).json",
+        "blueprints/Brightness and Contrast.json",
+        "blueprints/Canny to Image (Z-Image-Turbo).json"
+      ],
+      "meaning": null
+    },
+    {
+      "dir": "tests-unit/assets_test",
+      "count": 89,
+      "sample": [
+        "tests-unit/assets_test/__init__.py",
+        "tests-unit/assets_test/conftest.py",
+        "tests-unit/assets_test/helpers.py",
+        "tests-unit/assets_test/test_api_surface.py"
+      ],
+      "meaning": null
+    },
+    {
+      "dir": "comfy/text_encoders",
+      "count": 84,
+      "sample": [
+        "comfy/text_encoders/ace.py",
+        "comfy/text_encoders/ace15.py",
+        "comfy/text_encoders/ace_text_cleaners.py",
+        "comfy/text_encoders/anima.py"
+      ],
+      "meaning": null
+    },
+    {
+      "dir": "comfy",
+      "count": 56,
+      "sample": [
+        "comfy/audio.py",
+        "comfy/bg_removal_model.py",
+        "comfy/cli_args.py",
+        "comfy/clip_config_bigg.json"
+      ],
+      "meaning": null
+    },
+    {
+      "dir": "comfy_api_nodes",
+      "count": 43,
+      "sample": [
+        "comfy_api_nodes/__init__.py",
+        "comfy_api_nodes/nodes_anthropic.py",
+        "comfy_api_nodes/nodes_beeble.py",
+        "comfy_api_nodes/nodes_bfl.py"
+      ],
+      "meaning": null
+    },
+    {
+      "dir": "comfy_api_nodes/apis",
+      "count": 41,
+      "sample": [
+        "comfy_api_nodes/apis/__init__.py",
+        "comfy_api_nodes/apis/anthropic.py",
+        "comfy_api_nodes/apis/beeble.py",
+        "comfy_api_nodes/apis/bfl.py"
+      ],
+      "meaning": null
+    },
+    {
+      "dir": "app/assets",
+      "count": 32,
+      "sample": [
+        "app/assets/event_log.py",
+        "app/assets/helpers.py",
+        "app/assets/lifecycle.py",
+        "app/assets/manager.py"
+      ],
+      "meaning": "应用代码目录"
+    },
+    {
+      "dir": "/",
+      "count": 29,
+      "sample": [
+        ".coderabbit.yaml",
+        ".gitattributes",
+        ".gitignore",
+        ".spectral.yaml"
+      ],
+      "meaning": null
+    },
+    {
+      "dir": "tests-unit/comfy_extras_test",
+      "count": 28,
+      "sample": [
+        "tests-unit/comfy_extras_test/__init__.py",
+        "tests-unit/comfy_extras_test/canny_alpha_test.py",
+        "tests-unit/comfy_extras_test/compositor_blend_fixture_gen.py",
+        "tests-unit/comfy_extras_test/compositor_blend_golden.json"
+      ],
+      "meaning": null
+    },
+    {
+      "dir": ".github/workflows",
+      "count": 28,
+      "sample": [
+        ".github/workflows/api-node-template.yml",
+        ".github/workflows/backport_release.yaml",
+        ".github/workflows/check-ai-co-authors.yml",
+        ".github/workflows/check-line-endings.yml"
+      ],
+      "meaning": "GitHub 平台专属配置（Actions、Issue 模板等）"
+    }
+  ],
+  "entry_files": [
+    {
+      "path": "main.py",
+      "hint": "Python 程序主入口"
+    }
+  ],
+  "core_modules": [
+    {
+      "path": "comfy/ldm/sam3d_body/model/model.py",
+      "size": "52.2 KB",
+      "why": "数据/AI 模型定义"
+    },
+    {
+      "path": "main.py",
+      "size": "24.8 KB",
+      "why": "程序主入口：整个应用从这里启动"
+    },
+    {
+      "path": "server.py",
+      "size": "63.3 KB",
+      "why": null
+    },
+    {
+      "path": "comfy/ldm/wan/model.py",
+      "size": "81.8 KB",
+      "why": "数据/AI 模型定义"
+    },
+    {
+      "path": "comfy/ldm/trellis2/model.py",
+      "size": "51.6 KB",
+      "why": "数据/AI 模型定义"
+    },
+    {
+      "path": "comfy/ldm/sensenova/model.py",
+      "size": "24.1 KB",
+      "why": "数据/AI 模型定义"
+    },
+    {
+      "path": "comfy/ldm/seedvr/model.py",
+      "size": "47.9 KB",
+      "why": "数据/AI 模型定义"
+    },
+    {
+      "path": "comfy/ldm/qwen_image21/model.py",
+      "size": "20.9 KB",
+      "why": "数据/AI 模型定义"
+    }
+  ],
+  "data_flow": [
+    "你（用户/调用方）发起一个动作：运行命令、打开网页或调用接口。",
+    "程序从入口文件「main.py」启动，先做初始化：读配置、准备环境、注册要用的组件。",
+    "请求进入「server.py」这类分发层：它判断「你想要什么」，把活儿派给对应的处理单元。",
+    "核心逻辑在「comfy/ldm/sam3d_body/model/model.py」这类模块里：真正的计算/推理/业务规则都发生在这里。",
+    "需要存取的数据会落到数据库，通过 ORM 层读写。",
+    "处理完成后，结果原路返回：渲染成页面、打印到终端或打包成 API 响应，交回给你。"
+  ],
+  "flow_graph": {
+    "nodes": [
+      {
+        "id": "user",
+        "label": "用户 / 调用方",
+        "type": "actor"
+      },
+      {
+        "id": "entry",
+        "label": "main.py",
+        "type": "entry"
+      },
+      {
+        "id": "dispatch",
+        "label": "server.py",
+        "type": "dispatch"
+      },
+      {
+        "id": "core",
+        "label": "model.py",
+        "type": "core"
+      },
+      {
+        "id": "db",
+        "label": "数据库 / 存储",
+        "type": "store"
+      },
+      {
+        "id": "output",
+        "label": "输出：结果返回",
+        "type": "output"
+      },
+      {
+        "id": "api",
+        "label": "REST 路由",
+        "type": "api"
+      }
+    ],
+    "edges": [
+      [
+        "user",
+        "entry"
+      ],
+      [
+        "user",
+        "api"
+      ],
+      [
+        "entry",
+        "dispatch"
+      ],
+      [
+        "dispatch",
+        "core"
+      ],
+      [
+        "core",
+        "db"
+      ],
+      [
+        "db",
+        "output"
+      ],
+      [
+        "api",
+        "entry"
+      ]
+    ]
+  },
+  "patterns": [
+    {
+      "pattern": "async/await",
+      "speak": "用同步写法处理异步，代码更好读",
+      "severity": "common",
+      "where": "execution.py"
+    },
+    {
+      "pattern": "中间件",
+      "speak": "请求像流水线过安检，每站处理一点",
+      "severity": "common",
+      "where": "server.py"
+    },
+    {
+      "pattern": "路由分发",
+      "speak": "URL 映射到处理函数",
+      "severity": "common",
+      "where": "server.py"
+    },
+    {
+      "pattern": "观察者/响应式流",
+      "speak": "数据像水流，订阅了就能收到",
+      "severity": "notable",
+      "where": "tests-unit/assets_test/test_upload_hashing_modes.py"
+    },
+    {
+      "pattern": "接口约定",
+      "speak": "TypeScript 定义数据形状，契约先行",
+      "severity": "common",
+      "where": "comfy_extras/nodes_depth_anything_3.py"
+    },
+    {
+      "pattern": "事件驱动",
+      "speak": "「有事叫我」：注册回调等事件发生",
+      "severity": "common",
+      "where": "comfy_extras/nodes_post_processing.py"
+    },
+    {
+      "pattern": "经典 GoF 模式",
+      "speak": "用名字就能看出意图的面向对象套路",
+      "severity": "notable",
+      "where": "comfy_execution/graph_utils.py"
+    }
+  ],
+  "doc_quotes": [
+    {
+      "file": "AGENTS.md",
+      "text": "- Keep changes small and direct. Most fixes should touch the narrowest code path   that explains the bug, performance issue, dtype issue, model-format issue, or   user-facing behavior. - Change the least amount of files possible. A change that touches many files is   more likely to be a bad change t"
+    },
+    {
+      "file": "CONTRIBUTING.md",
+      "text": "Welcome, and thank you for your interest in contributing to ComfyUI!"
+    },
+    {
+      "file": "QUANTIZATION.md",
+      "text": "Quantization aims to map a high-precision value x_f to a lower precision format with minimal loss in accuracy. These smaller formats then serve to reduce the models memory footprint and increase throughput by using specialized hardware."
+    }
+  ],
+  "read_suggestions": [
+    {
+      "title": "第一步：读 README",
+      "body": "打开仓库根目录的 README.md，了解它「是什么、解决什么问题、怎么跑起来」。它有官网/文档：https://www.comfy.org/"
+    },
+    {
+      "title": "第三步：从入口顺藤摸瓜",
+      "body": "从「main.py」开始读，每遇到一个陌生函数就跳过去看一眼，回来继续。像逛公园，先走主路再钻小径。"
+    },
+    {
+      "title": "善用目录语义",
+      "body": "src=源码、tests=测试、docs=文档、examples=示例，目录名本身就是地图。"
+    },
+    {
+      "title": "带着问题读",
+      "body": "比如「数据从哪进来」「结果存在哪」「错误怎么处理」，带着三个问题读任何项目都不会迷路。"
+    }
+  ],
+  "interfaces": [
+    {
+      "kind": "脚本入口",
+      "where": "main.py",
+      "speak": "直接 python 运行的脚本入口"
+    },
+    {
+      "kind": "REST 路由",
+      "where": "server.py",
+      "speak": "把 URL 规则映射到处理函数"
+    },
+    {
+      "kind": "WebSocket",
+      "where": "server.py",
+      "speak": "双向实时通信通道"
+    },
+    {
+      "kind": "CLI 命令行接口",
+      "where": "tests-unit/app_test/frontend_manager_test.py",
+      "speak": "命令行参数接口：python xxx.py --arg"
+    },
+    {
+      "kind": "OpenAPI/Swagger 文档",
+      "where": "comfy_api_nodes/nodes_meshy.py",
+      "speak": "机器可读的接口说明书"
+    },
+    {
+      "kind": "CLI 参数",
+      "where": "comfy/cli_args.py",
+      "speak": "命令行参数定义"
+    }
+  ],
+  "dependencies": {
+    "manifest": "requirements.txt",
+    "total": 34,
+    "runtime": [
+      {
+        "name": "comfyui-frontend-package",
+        "note": null
+      },
+      {
+        "name": "comfyui-workflow-templates",
+        "note": null
+      },
+      {
+        "name": "comfyui-embedded-docs",
+        "note": null
+      },
+      {
+        "name": "torch",
+        "note": null
+      },
+      {
+        "name": "torchsde",
+        "note": null
+      },
+      {
+        "name": "torchvision",
+        "note": null
+      },
+      {
+        "name": "numpy",
+        "note": "科学计算基石"
+      },
+      {
+        "name": "einops",
+        "note": null
+      },
+      {
+        "name": "transformers",
+        "note": null
+      },
+      {
+        "name": "tokenizers",
+        "note": null
+      },
+      {
+        "name": "sentencepiece",
+        "note": null
+      },
+      {
+        "name": "safetensors",
+        "note": "更安全的模型权重格式（相比 pickle）"
+      },
+      {
+        "name": "aiohttp",
+        "note": null
+      },
+      {
+        "name": "yarl",
+        "note": null
+      },
+      {
+        "name": "pyyaml",
+        "note": null
+      },
+      {
+        "name": "Pillow",
+        "note": "Python 图像处理库"
+      },
+      {
+        "name": "scipy",
+        "note": null
+      },
+      {
+        "name": "tqdm",
+        "note": null
+      },
+      {
+        "name": "psutil",
+        "note": null
+      },
+      {
+        "name": "alembic",
+        "note": null
+      }
+    ],
+    "build": []
+  },
+  "demo_links": [],
+  "scenarios": [
+    {
+      "when": "做图像识别、文生图、目标检测类应用或 demo",
+      "not": "纯文本任务（直接用 LLM 类项目）"
+    }
+  ],
+  "competitors": {
+    "matched": "category",
+    "list": [
+      {
+        "name": "YOLOv8",
+        "repo": "ultralytics/ultralytics",
+        "edge": "目标检测代表"
+      },
+      {
+        "name": "Real-ESRGAN",
+        "repo": "xinntao/Real-ESRGAN",
+        "edge": "超分辨率代表"
+      }
+    ]
+  },
+  "rework_ideas": [
+    {
+      "idea": "换一个自定义数据集微调，认识训练-评估完整闭环",
+      "difficulty": "入门"
+    },
+    {
+      "idea": "用 FastAPI/Gradio 包一层，做个网页演示界面",
+      "difficulty": "进阶"
+    },
+    {
+      "idea": "加批量推理 + 任务队列，把它包成图片处理服务",
+      "difficulty": "进阶"
+    },
+    {
+      "idea": "做多模型级联（检测→生成→后处理），搭一条 pipeline",
+      "difficulty": "硬核"
+    }
+  ],
+  "pitfalls": [
+    {
+      "pit": "环境不隔离：直接在系统 Python/node 里装依赖，装到一半互相打架",
+      "fix": "先建 venv / 用 nvm 固定版本，再装依赖"
+    },
+    {
+      "pit": "CUDA/驱动不匹配：torch 装了 CUDA 12 版本但驱动只支持 11",
+      "fix": "先 nvidia-smi 看驱动支持的上限，再选对应版本安装"
+    },
+    {
+      "pit": "模型文件放错目录：程序默认去 ./models 找，你下到了下载文件夹",
+      "fix": "先跑一次看报错里的路径，把文件挪过去"
+    },
+    {
+      "pit": "显存爆在反而是预处理：图片没缩放直接进模型",
+      "fix": "预处理里 resize 到模型期望的尺寸"
+    },
+    {
+      "pit": "采样器参数抄别人的导致输出全噪点",
+      "fix": "用官方 README 给的推荐参数起步，再微调"
+    },
+    {
+      "pit": "模型与权重版本不匹配：旧代码配新权重",
+      "fix": "锁定 release 版本，代码和权重同版本"
+    }
+  ],
+  "community": {
+    "contributors": "100+",
+    "latest_release": {
+      "tag": "v0.37.0",
+      "name": "v0.37.0",
+      "published_at": "2026-09-21T07:35:01Z",
+      "notes_excerpt": "## What's Changed * Aimdo 0.5.5 + Auto-detect and enable --fast-disk when the disk is fast (CORE-440) by @rattus128 in https://github.com/Comfy-Org/ComfyUI/pull/16333 * [Partner Nodes] feat(OpenAI): add transparent background support for GPT Image 2 by @bigcat88 in https://github.com/Comfy-Org/Comfy"
+    },
+    "releases_count": 10,
+    "commit_activity": null,
+    "verdict": [
+      "最近 0 天内还有代码提交，维护很活跃",
+      "有 100+ 位贡献者提交过代码",
+      "最新版本 v0.37.0（2026-09-21 发布）"
+    ],
+    "repo_age_days": 1350
+  },
+  "category": "vision",
+  "stats": {
+    "files": 1229,
+    "bytes": 48231903,
+    "sampled": 907
+  },
+  "generated_at": "2026-09-28T09:21:14.951Z",
+  "analyzer": "claw-static-analyzer v2"
+}

@@ -61,5 +61,134 @@
     "archived": false,
     "archived_at": "2026-08-27",
     "featured_weeks": 0.1
+  },
+  {
+    "category": "agents",
+    "category_label": "AI 智能体",
+    "category_speak": "能自主规划调用工具的 AI 程序",
+    "name": "AutoGPT",
+    "description": "AutoGPT is the vision of accessible AI for everyone, to use and to build on. Our mission is to provide the tools, so that you can focus on what matters.",
+    "repo": "Significant-Gravitas/AutoGPT",
+    "repo_url": "https://github.com/Significant-Gravitas/AutoGPT",
+    "tags": [
+      "智能体",
+      "自动化"
+    ],
+    "stars": 187593,
+    "added": "2026-08-27",
+    "forks": 45982,
+    "last_updated": "2026-09-28",
+    "archived": false,
+    "featured_since": "2026-08-27",
+    "archived_at": "2026-09-28",
+    "featured_weeks": 4.6
+  },
+  {
+    "category": "vision",
+    "category_label": "计算机视觉",
+    "category_speak": "图像识别、目标检测、分割与生成",
+    "name": "stable-diffusion-webui",
+    "description": "Stable Diffusion web UI",
+    "repo": "AUTOMATIC1111/stable-diffusion-webui",
+    "repo_url": "https://github.com/AUTOMATIC1111/stable-diffusion-webui",
+    "tags": [
+      "文生图",
+      "WebUI"
+    ],
+    "stars": 165147,
+    "added": "2026-08-27",
+    "forks": 31947,
+    "last_updated": "2026-03-02",
+    "archived": false,
+    "featured_since": "2026-08-27",
+    "archived_at": "2026-09-28",
+    "featured_weeks": 4.6
+  },
+  {
+    "category": "llm",
+    "category_label": "大模型 / LLM",
+    "category_speak": "语言大模型与相关训练、推理工具",
+    "name": "llama.cpp",
+    "description": "LLM inference in C/C++",
+    "repo": "ggml-org/llama.cpp",
+    "repo_url": "https://github.com/ggml-org/llama.cpp",
+    "tags": [
+      "LLM",
+      "推理",
+      "C++"
+    ],
+    "stars": 129749,
+    "added": "2026-08-27",
+    "forks": 23841,
+    "last_updated": "2026-09-28",
+    "archived": false,
+    "featured_since": "2026-08-27",
+    "archived_at": "2026-09-28",
+    "featured_weeks": 4.6
+  },
+  {
+    "category": "audio",
+    "category_label": "语音 / 音频",
+    "category_speak": "语音识别、合成与音乐生成",
+    "name": "whisper",
+    "description": "Robust Speech Recognition via Large-Scale Weak Supervision",
+    "repo": "openai/whisper",
+    "repo_url": "https://github.com/openai/whisper",
+    "tags": [
+      "语音识别",
+      "多语言"
+    ],
+    "stars": 109677,
+    "added": "2026-08-27",
+    "forks": 13298,
+    "last_updated": "2026-08-31",
+    "archived": false,
+    "featured_since": "2026-08-27",
+    "archived_at": "2026-09-28",
+    "featured_weeks": 4.6
+  },
+  {
+    "category": "learning",
+    "category_label": "教程 / 学习资源",
+    "category_speak": "课程、笔记、面试题与示例集",
+    "name": "ML-For-Beginners",
+    "description": "12 weeks, 26 lessons, 52 quizzes, classic Machine Learning for all",
+    "repo": "microsoft/ML-For-Beginners",
+    "repo_url": "https://github.com/microsoft/ML-For-Beginners",
+    "tags": [
+      "课程",
+      "入门",
+      "机器学习"
+    ],
+    "stars": 91067,
+    "added": "2026-08-27",
+    "forks": 22477,
+    "last_updated": "2026-09-15",
+    "archived": false,
+    "featured_since": "2026-08-27",
+    "archived_at": "2026-09-28",
+    "featured_weeks": 4.6
+  },
+  {
+    "category": "llm",
+    "category_label": "大模型 / LLM",
+    "category_speak": "语言大模型与相关训练、推理工具",
+    "name": "vllm",
+    "description": "A high-throughput and memory-efficient inference and serving engine for LLMs",
+    "repo": "vllm-project/vllm",
+    "repo_url": "https://github.com/vllm-project/vllm",
+    "tags": [
+      "推理",
+      "服务",
+      "部署"
+    ],
+    "stars": 92849,
+    "added": "2026-08-27",
+    "forks": 22745,
+    "last_updated": "2026-09-28",
+    "archived": false,
+    "featured_since": "2026-08-27",
+    "archived_at": "2026-09-28",
+    "featured_weeks": 4.6
   }
 ]
