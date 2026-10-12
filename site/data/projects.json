@@ -12,9 +12,9 @@
       "工作流",
       "RAG"
     ],
-    "stars": 157864,
-    "forks": 24908,
-    "last_updated": "2026-10-05",
+    "stars": 158225,
+    "forks": 25009,
+    "last_updated": "2026-10-12",
     "archived": false,
     "featured_since": "2026-09-28"
   },
@@ -31,9 +31,9 @@
       "节点式",
       "Stable Diffusion"
     ],
-    "stars": 136132,
-    "forks": 16143,
-    "last_updated": "2026-10-05",
+    "stars": 137046,
+    "forks": 16312,
+    "last_updated": "2026-10-12",
     "archived": false,
     "featured_since": "2026-09-28"
   },
@@ -50,8 +50,8 @@
       "LLM",
       "入门"
     ],
-    "stars": 83290,
-    "forks": 9686,
+    "stars": 83509,
+    "forks": 9719,
     "last_updated": "2026-02-05",
     "archived": false,
     "featured_since": "2026-09-28"
@@ -69,9 +69,9 @@
       "训练框架",
       "LLM"
     ],
-    "stars": 75316,
-    "forks": 9227,
-    "last_updated": "2026-09-28",
+    "stars": 75423,
+    "forks": 9241,
+    "last_updated": "2026-10-10",
     "archived": false,
     "featured_since": "2026-09-28"
   },
@@ -88,8 +88,8 @@
       "多智能体",
       "软件工程"
     ],
-    "stars": 70745,
-    "forks": 8989,
+    "stars": 70815,
+    "forks": 9005,
     "last_updated": "2026-01-21",
     "archived": false,
     "featured_since": "2026-09-28"
@@ -107,9 +107,9 @@
       "RAG",
       "检索"
     ],
-    "stars": 29439,
-    "forks": 2546,
-    "last_updated": "2026-10-04",
+    "stars": 29484,
+    "forks": 2561,
+    "last_updated": "2026-10-12",
     "archived": false,
     "featured_since": "2026-09-28"
   }
