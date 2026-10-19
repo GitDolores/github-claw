@@ -1,9 +1,9 @@
 {
-  "generated_at": "2026-10-12T10:12:34.289Z",
+  "generated_at": "2026-10-19T08:28:24.301Z",
   "total_projects": 15,
   "total_featured": 6,
   "total_archived": 9,
-  "total_stars": 1504855,
+  "total_stars": 1508491,
   "categories": [
     {
       "id": "llm",
@@ -46,7 +46,7 @@
         },
         {
           "name": "ComfyUI",
-          "stars": 137046,
+          "stars": 138986,
           "repo_url": "https://github.com/Comfy-Org/ComfyUI"
         },
         {
@@ -56,7 +56,7 @@
         }
       ],
       "main_language": "Python",
-      "total_stars": 311968,
+      "total_stars": 313908,
       "summary": "计算机视觉（图像识别、目标检测、分割与生成）：收录 3 个项目（正在精选 1 个）。最热门的是「stable-diffusion-webui」（⭐165.1k）；主力语言 Python。"
     },
     {
@@ -90,17 +90,17 @@
         },
         {
           "name": "dify",
-          "stars": 158225,
+          "stars": 158860,
           "repo_url": "https://github.com/langgenius/dify"
         },
         {
           "name": "MetaGPT",
-          "stars": 70815,
+          "stars": 70917,
           "repo_url": "https://github.com/FoundationAgents/MetaGPT"
         }
       ],
       "main_language": "TypeScript + HTML",
-      "total_stars": 416633,
+      "total_stars": 417370,
       "summary": "AI 智能体（能自主规划调用工具的 AI 程序）：收录 3 个项目（正在精选 2 个）。最热门的是「AutoGPT」（⭐187.6k）；主力语言 TypeScript + HTML。"
     },
     {
@@ -112,13 +112,13 @@
       "top_projects": [
         {
           "name": "LlamaFactory",
-          "stars": 75423,
+          "stars": 75580,
           "repo_url": "https://github.com/hiyouga/LlamaFactory"
         }
       ],
       "main_language": "Python",
-      "total_stars": 75423,
-      "summary": "训练 / 部署框架（模型训练、加速与生产部署的基础设施）：收录 1 个项目（正在精选 1 个）。最热门的是「LlamaFactory」（⭐75.4k）；主力语言 Python。"
+      "total_stars": 75580,
+      "summary": "训练 / 部署框架（模型训练、加速与生产部署的基础设施）：收录 1 个项目（正在精选 1 个）。最热门的是「LlamaFactory」（⭐75.6k）；主力语言 Python。"
     },
     {
       "id": "rag",
@@ -129,12 +129,12 @@
       "top_projects": [
         {
           "name": "chroma",
-          "stars": 29484,
+          "stars": 29530,
           "repo_url": "https://github.com/chroma-core/chroma"
         }
       ],
       "main_language": "Rust",
-      "total_stars": 29484,
+      "total_stars": 29530,
       "summary": "RAG / 知识库（检索增强生成与向量知识库）：收录 1 个项目（正在精选 1 个）。最热门的是「chroma」（⭐29.5k）；主力语言 Rust。"
     },
     {
@@ -151,7 +151,7 @@
         },
         {
           "name": "llm-course",
-          "stars": 83509,
+          "stars": 84265,
           "repo_url": "https://github.com/mlabonne/llm-course"
         },
         {
@@ -161,7 +161,7 @@
         }
       ],
       "main_language": "JavaScript + HTML",
-      "total_stars": 174576,
+      "total_stars": 175332,
       "summary": "教程 / 学习资源（课程、笔记、面试题与示例集）：收录 3 个项目（正在精选 1 个）。最热门的是「ML-For-Beginners」（⭐91.1k）；主力语言 JavaScript + HTML。"
     }
   ],
