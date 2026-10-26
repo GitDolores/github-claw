@@ -1,9 +1,9 @@
 {
-  "generated_at": "2026-10-19T08:28:24.301Z",
+  "generated_at": "2026-10-26T08:30:21.961Z",
   "total_projects": 15,
-  "total_featured": 6,
-  "total_archived": 9,
-  "total_stars": 1508491,
+  "total_featured": 0,
+  "total_archived": 15,
+  "total_stars": 1514042,
   "categories": [
     {
       "id": "llm",
@@ -37,7 +37,7 @@
       "label": "计算机视觉",
       "speak": "图像识别、目标检测、分割与生成",
       "count": 3,
-      "featured_now": 1,
+      "featured_now": 0,
       "top_projects": [
         {
           "name": "stable-diffusion-webui",
@@ -46,7 +46,7 @@
         },
         {
           "name": "ComfyUI",
-          "stars": 138986,
+          "stars": 143070,
           "repo_url": "https://github.com/Comfy-Org/ComfyUI"
         },
         {
@@ -56,8 +56,8 @@
         }
       ],
       "main_language": "Python",
-      "total_stars": 313908,
-      "summary": "计算机视觉（图像识别、目标检测、分割与生成）：收录 3 个项目（正在精选 1 个）。最热门的是「stable-diffusion-webui」（⭐165.1k）；主力语言 Python。"
+      "total_stars": 317992,
+      "summary": "计算机视觉（图像识别、目标检测、分割与生成）：收录 3 个项目（正在精选 0 个）。最热门的是「stable-diffusion-webui」（⭐165.1k）；主力语言 Python。"
     },
     {
       "id": "audio",
@@ -81,7 +81,7 @@
       "label": "AI 智能体",
       "speak": "能自主规划调用工具的 AI 程序",
       "count": 3,
-      "featured_now": 2,
+      "featured_now": 0,
       "top_projects": [
         {
           "name": "AutoGPT",
@@ -90,59 +90,59 @@
         },
         {
           "name": "dify",
-          "stars": 158860,
+          "stars": 159575,
           "repo_url": "https://github.com/langgenius/dify"
         },
         {
           "name": "MetaGPT",
-          "stars": 70917,
+          "stars": 71020,
           "repo_url": "https://github.com/FoundationAgents/MetaGPT"
         }
       ],
-      "main_language": "TypeScript + HTML",
-      "total_stars": 417370,
-      "summary": "AI 智能体（能自主规划调用工具的 AI 程序）：收录 3 个项目（正在精选 2 个）。最热门的是「AutoGPT」（⭐187.6k）；主力语言 TypeScript + HTML。"
+      "main_language": "Python + TypeScript",
+      "total_stars": 418188,
+      "summary": "AI 智能体（能自主规划调用工具的 AI 程序）：收录 3 个项目（正在精选 0 个）。最热门的是「AutoGPT」（⭐187.6k）；主力语言 Python + TypeScript。"
     },
     {
       "id": "mlops",
       "label": "训练 / 部署框架",
       "speak": "模型训练、加速与生产部署的基础设施",
       "count": 1,
-      "featured_now": 1,
+      "featured_now": 0,
       "top_projects": [
         {
           "name": "LlamaFactory",
-          "stars": 75580,
+          "stars": 75735,
           "repo_url": "https://github.com/hiyouga/LlamaFactory"
         }
       ],
       "main_language": "Python",
-      "total_stars": 75580,
-      "summary": "训练 / 部署框架（模型训练、加速与生产部署的基础设施）：收录 1 个项目（正在精选 1 个）。最热门的是「LlamaFactory」（⭐75.6k）；主力语言 Python。"
+      "total_stars": 75735,
+      "summary": "训练 / 部署框架（模型训练、加速与生产部署的基础设施）：收录 1 个项目（正在精选 0 个）。最热门的是「LlamaFactory」（⭐75.7k）；主力语言 Python。"
     },
     {
       "id": "rag",
       "label": "RAG / 知识库",
       "speak": "检索增强生成与向量知识库",
       "count": 1,
-      "featured_now": 1,
+      "featured_now": 0,
       "top_projects": [
         {
           "name": "chroma",
-          "stars": 29530,
+          "stars": 29583,
           "repo_url": "https://github.com/chroma-core/chroma"
         }
       ],
       "main_language": "Rust",
-      "total_stars": 29530,
-      "summary": "RAG / 知识库（检索增强生成与向量知识库）：收录 1 个项目（正在精选 1 个）。最热门的是「chroma」（⭐29.5k）；主力语言 Rust。"
+      "total_stars": 29583,
+      "summary": "RAG / 知识库（检索增强生成与向量知识库）：收录 1 个项目（正在精选 0 个）。最热门的是「chroma」（⭐29.6k）；主力语言 Rust。"
     },
     {
       "id": "learning",
       "label": "教程 / 学习资源",
       "speak": "课程、笔记、面试题与示例集",
       "count": 3,
-      "featured_now": 1,
+      "featured_now": 0,
       "top_projects": [
         {
           "name": "ML-For-Beginners",
@@ -151,7 +151,7 @@
         },
         {
           "name": "llm-course",
-          "stars": 84265,
+          "stars": 84706,
           "repo_url": "https://github.com/mlabonne/llm-course"
         },
         {
@@ -161,9 +161,9 @@
         }
       ],
       "main_language": "JavaScript + HTML",
-      "total_stars": 175332,
-      "summary": "教程 / 学习资源（课程、笔记、面试题与示例集）：收录 3 个项目（正在精选 1 个）。最热门的是「ML-For-Beginners」（⭐91.1k）；主力语言 JavaScript + HTML。"
+      "total_stars": 175773,
+      "summary": "教程 / 学习资源（课程、笔记、面试题与示例集）：收录 3 个项目（正在精选 0 个）。最热门的是「ML-For-Beginners」（⭐91.1k）；主力语言 JavaScript + HTML。"
     }
   ],
-  "headline": "共收录 15 个项目：当前精选 6 个、历史 9 个，覆盖 7 个分类。星数最多的分类是「AI 智能体」。"
+  "headline": "共收录 15 个项目：当前精选 0 个、历史 15 个，覆盖 7 个分类。星数最多的分类是「AI 智能体」。"
 }
